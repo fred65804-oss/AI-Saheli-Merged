@@ -1,0 +1,22 @@
+// The FastAPI backend. The browser never talks to it directly; instead the
+// Next.js server proxies these exact API paths to it (rewrites below), so the
+// whole app is reachable through a single origin / single ngrok tunnel.
+const BACKEND_ORIGIN = process.env.BACKEND_ORIGIN || "http://127.0.0.1:8000";
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      { source: "/chat", destination: `${BACKEND_ORIGIN}/chat` },
+      { source: "/voice", destination: `${BACKEND_ORIGIN}/voice` },
+      { source: "/warmup", destination: `${BACKEND_ORIGIN}/warmup` },
+      { source: "/health", destination: `${BACKEND_ORIGIN}/health` },
+      // Only the dashboard API sub-paths — /dashboard itself is a Next page.
+      { source: "/dashboard/stats", destination: `${BACKEND_ORIGIN}/dashboard/stats` },
+      { source: "/dashboard/recent", destination: `${BACKEND_ORIGIN}/dashboard/recent` },
+    ];
+  },
+};
+
+export default nextConfig;

@@ -1,0 +1,6 @@
+# RAG knowledge-base stage — free & local (no API keys)
+
+qdrant-client>=1.11          # vector DB (local persistent mode)
+sentence-transformers>=3.0   # dense embeddings (multilingual-e5-base) + reranker
+fastembed>=0.3               # BM25 sparse embeddings for hybrid search
+# torch (CPU) is pulled in by sentence-transformers

@@ -1,0 +1,1612 @@
+{
+  "doc": "General_Info_181_112.pdf",
+  "scheme": "shakti",
+  "source": "text",
+  "pages": 25,
+  "n_headings": 104,
+  "n_chunks": 40,
+  "outline": [
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WOMEN HELPLINE",
+      "x0": 255.2,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "MISSION SHAKTI SCHEME",
+      "x0": 233.3,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ABBREVIATIONS",
+      "x0": 233.6,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. ASHA Accredited Social Health Activists",
+      "x0": 95.4,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. C-DAC Centre for Development ofAdvanced Computing 6 CMO Chief Medicai Officer 7 DHEW District Hub for Empowerment of Women",
+      "x0": 95.8,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "8. DLSA District Legal Services Authority 9 DM District Magistrate",
+      "x0": 94.7,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "10. DPO District Program Officer",
+      "x0": 95.8,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "11. DSWO District Social Welfare Officer t2. DYSP Deputy Superintendent of Police",
+      "x0": 95.4,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "13. ERSS Emergency Response Support System t4. FIR First Information Report",
+      "x0": 95.4,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "15. HEW Hub for Empowerment of Women",
+      "x0": 95.0,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "16. MHA Ministry of Home Affairs 77 MIS Management Information System",
+      "x0": 94.7,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "18. MPEW Mission for Protection ald Empowerment of Women",
+      "x0": 94.7,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "19. MPLS Multi-Protocol Layer Switching",
+      "x0": 94.3,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "20. MWCD Ministry of Women and Child Development 2t. NALSA National Legal Services Authority 22- NGOs Non- Governmenta.l Organizations zs. NIMHANS National Institute of Mental Health and Neurosciences OSC One Stop Centre",
+      "x0": 93.2,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "25. PCR Police Control Room",
+      "x0": 92.5,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "26. PO Protection Officer",
+      "x0": 92.2,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "27. SDM Sub Divisional Magistrate 2A SHEW State Hub for Empowerment of Women",
+      "x0": 92.2,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "29. SHO Station House Oflicer so_l SMS Short Message Serrrice",
+      "x0": 92.2,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "31. SOP Standard Operating Procedure SP Superintendent of Police .J.) UT Union Territory 34 WHDs Women Help Desks",
+      "x0": 91.4,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "35. WHL Universalisation of Women Helplines",
+      "x0": 91.1,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "36. wwH Working Women Hostel",
+      "x0": 91.1,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INTRODUCTION",
+      "x0": 279.7,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "x0": 80.3,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. ROLES & RESPONSIBILITIESI",
+      "x0": 206.3,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Supply hardware and technically commission the WHL Control Room in State / UT.",
+      "x0": 355.0,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. C-DAC will provide training including harrds-on training at the WHL Control Room arrd WHL Units at OSCs.",
+      "x0": 355.7,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Troubleshoot all technical operational issues.",
+      "x0": 355.7,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. Generate MIS and data anah'tics of calls.",
+      "x0": 356.4,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Set up Women Help Desk which shall be operational round the clock.",
+      "x0": 357.1,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WHLCONTROLROOM",
+      "x0": 248.4,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.1 Roles and responsibilities of States/UTs:",
+      "x0": 67.7,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.3 Infrastructure:",
+      "x0": 65.2,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "following modules:",
+      "x0": 64.8,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.4 Space Requirement:",
+      "x0": 63.7,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.5 Call Classlfication:",
+      "x0": 84.6,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Emergency calls, ii) Non-emergency calls and iii) Information calls",
+      "x0": 88.9,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.6 Call Management:",
+      "x0": 68.8,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) EmerEency calls: Alt Emergency calls requiring intervention of medical/health I police / fir e I arnbulance/protection from abuse involving violence against women/chi1d marriage etc. shall be forwarded by the WHL Control Rooms to ERSS-112. While forwarding the calls to 112, concerned WHL Unit/OSC also be informed of the case for intervention.",
+      "x0": 79.2,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.7 Call Flow:",
+      "x0": 83.9,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WOMEN HELPLINE 181",
+      "x0": 262.8,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DAIL 181 PROM SMS TO THE",
+      "x0": 154.4,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "EMAIL TO THE",
+      "x0": 384.8,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "SPECIFIED NUMBER",
+      "x0": 261.0,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "PHONE",
+      "x0": 178.6,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "SPECIFIED ADDRESS",
+      "x0": 370.8,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FROM TH€ PHONE",
+      "x0": 264.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALL FORWARDED",
+      "x0": 484.6,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "EM ERGENCY CALL NON EMERGENCY CALL INFORMATION CALL",
+      "x0": 76.7,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT",
+      "x0": 52.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMATION PROVIDED TO",
+      "x0": 440.3,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WHL UNIT AT OSC ALSO BE AT OSC ON POST ASSESSMENT",
+      "x0": 74.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALLER BY WHL CONTROL",
+      "x0": 446.8,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMED ABOUT THE CASE AND BASED ON NATURE OF CALL",
+      "x0": 70.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ROOM/SHEW/DHEW OR CALL",
+      "x0": 438.8,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FORWARDED TO CHL I]NIT AT",
+      "x0": 439.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DCPU/WHL AT OSC FOR",
+      "x0": 451.4,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "SPECIFIC INFORMATION BY",
+      "x0": 444.2,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOLLOW UP OF CASE THE CALLER",
+      "x0": 191.5,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DOCUMENTING ALL CALLS AND RECORDING DETAILS OF THE CALLER AND SHARE THE DETAILS OF THE CASE CLOSED CALLER WITH 112 OR WHL UNITS OF OSCS.",
+      "x0": 158.4,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOLLOW UP WITH 112 OR WHL UNITS AT OSCS FOR DOCUMENTING DETAILS OF INTERVENTION CASES HANDED OVER TO THEM AND TO GET FOLLOW-UP FOR THE CASES HANDLED THROUGH OUTREACH",
+      "x0": 158.4,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "PROGRAMS.",
+      "x0": 158.4,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "following options:",
+      "x0": 68.8,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "of WHL Control Room includes:",
+      "x0": 68.8,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS",
+      "x0": 176.8,
+      "conf": 1.0,
+      "page": 11
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A. Women Helpline Unit at One Stop Centres (OSCs):",
+      "x0": 83.2,
+      "conf": 1.0,
+      "page": 11
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Roles and Responsibilities of OSC:",
+      "x0": 85.3,
+      "conf": 1.0,
+      "page": 11
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Functioning under overall supervision of the OSC concerned; vi) Providing data related to women rescued alrd rehabilitated to OSC/Sakhi Niwas / SwadharGreh for compilation of a national comprehensive database of women protection; vii) Creating awa.reness and ensuring access to the 181 Women Helpline number; ..iii) Research, documentation, awareness and advocacy on issues related to Women Helpline;",
+      "x0": 94.7,
+      "conf": 1.0,
+      "page": 11
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "4.2 Call Flow:",
+      "x0": 68.8,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "RECEIVED IN OSC",
+      "x0": 220.3,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "OSC UNITTO PROVIDE",
+      "x0": 361.8,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "PER THE CASE",
+      "x0": 374.0,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "IIIFORMATION PROVTOEO TO CAIIER INITIAI RESPONSE IN CASE OF EMERGENCY GU OAr,lo: A}10",
+      "x0": 89.3,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": ". IUMEDTATELY AGGRIEVED WOMEN SHOULD PROVIDEO WITH DETAILS Of PRIMARY SUPPOR' -g rlAV ?FITOJ6( ATIEU-A.J.E P:R !AN TO OEC PEETAINING TC RESCIJE. TiSCISAL OR REOUIREMENT :!/oi olrA!",
+      "x0": 162.4,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": ".ASE DLOSED WITHIN TWGFIVE MINUTES INFORMATION WIIL",
+      "x0": 87.8,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "EMTER CASE HISTORY IN THE MIS PI.'T A,{ ALARU OH THE CASE FOR FOLLq'AI UP IN HOUR ATID SECONO FOLLOW UP AFTER 8 HOUAS cAsE closs9",
+      "x0": 169.6,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "IN CASE OF AI'Y COMPIAINI. THE CENTRA!",
+      "x0": 359.3,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOILOW UP AFTER 8 HOURSA6OUT'THE QUALTY OF SERVICE AND INITIATE ACTIONAGAINST THE SERV'CEANO FUTURE COURSE OF ACIION :EF N,'H9 J;i'E E!'",
+      "x0": 158.4,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOR P'E;O!:V IOING SERVICE ' S ESF:Ii:",
+      "x0": 384.8,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "4.3 Call Management:",
+      "x0": 83.2,
+      "conf": 1.0,
+      "page": 13
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WHL Control Room as per the time lines given below:",
+      "x0": 84.2,
+      "conf": 1.0,
+      "page": 13
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "HUMANRESOURCE",
+      "x0": 255.2,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Human Resource at WCD Control Room:",
+      "x0": 103.3,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "The WHL Control Roomshall consist of following contractual stalf:",
+      "x0": 66.6,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "management:",
+      "x0": 64.1,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "6. TRAININGAND CAPACITY BUILDING",
+      "x0": 170.6,
+      "conf": 1.0,
+      "page": 16
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "REPORTINGMECHANISM",
+      "x0": 253.8,
+      "conf": 1.0,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CONVERGENCE",
+      "x0": 266.4,
+      "conf": 1.0,
+      "page": 18
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) First level intervention by Social Workers of Districts/Vil1age/Block/OSC staff, i0 Medical check-up by District Health Department, iiil Tracing of family members with the help of Police iv) Lega-l support by Law Department/NAts.+eEe,",
+      "x0": 80.3,
+      "conf": 1.0,
+      "page": 18
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Counselling and guidance from counsellors/OSC staff, vi) Repatriation of the women with help of police/PRIs.",
+      "x0": 77.8,
+      "conf": 1.0,
+      "page": 18
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-I",
+      "x0": 472.3,
+      "conf": 1.0,
+      "page": 19
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Call Architecture:",
+      "x0": 83.9,
+      "conf": 1.0,
+      "page": 19
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-II",
+      "x0": 450.4,
+      "conf": 1.0,
+      "page": 20
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "classified as under:",
+      "x0": 68.0,
+      "conf": 1.0,
+      "page": 20
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Category A : Population size more than 60 lakh ii) Category B : Population size between 10-60 lakh iii) Category C : Population size less than 1O lakh",
+      "x0": 79.6,
+      "conf": 1.0,
+      "page": 20
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "20 .Iammu & Kashmir 27 Uttarakhand",
+      "x0": 135.0,
+      "conf": 1.0,
+      "page": 20
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-III",
+      "x0": 463.0,
+      "conf": 1.0,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Helpline:",
+      "x0": 83.9,
+      "conf": 1.0,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "x) She will be responsible for conducting advocacy meetings to create good working culture between WHL and different",
+      "x0": 369.7,
+      "conf": 1.0,
+      "page": 22
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WHL.",
+      "x0": 388.4,
+      "conf": 1.0,
+      "page": 22
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) She will be responsible for other work",
+      "x0": 383.4,
+      "conf": 1.0,
+      "page": 23
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-fV",
+      "x0": 463.3,
+      "conf": 1.0,
+      "page": 25
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A. Financial SuDrrort for State/UT level WHL:",
+      "x0": 82.8,
+      "conf": 1.0,
+      "page": 25
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "I. Catesorv A (Larse States/UTsl",
+      "x0": 83.2,
+      "conf": 1.0,
+      "page": 25
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Recurring Erpenditure (per annum| 1 Women Helpline Management @ Rs.5.75 lakh per month 69,OO,000 including insurance(@ Rs.330/- per person 2 TeIe one rent .55 000 month 6,60,OOO",
+      "x0": 83.5,
+      "conf": 1.0,
+      "page": 25
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "General_Info_181_112_0001",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 1,
+      "page_end": 2,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": null,
+      "heading_conf": null,
+      "text": "lT€id c[A Government of India STANDARD OPERATING PROCEDURES (SoPsf te Towards a now dawn Ministry of [Iomen and Child Development Government of India Sl. No. Abbreviation Full Form I AW Aggrieved Women 2 AHTUs Anti Human TrafIicking Units 3 ANM Auxiliary Nurse Midwife",
+      "contextualized_text": "lT€id c[A Government of India STANDARD OPERATING PROCEDURES (SoPsf te Towards a now dawn Ministry of [Iomen and Child Development Government of India Sl. No. Abbreviation Full Form I AW Aggrieved Women 2 AHTUs Anti Human TrafIicking Units 3 ANM Auxiliary Nurse Midwife",
+      "token_estimate": 57,
+      "char_count": 268
+    },
+    {
+      "chunk_id": "General_Info_181_112_0002",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 3,
+      "page_end": 3,
+      "heading": "INTRODUCTION",
+      "heading_path": [
+        "36. wwH Working Women Hostel",
+        "INTRODUCTION"
+      ],
+      "heading_path_str": "36. wwH Working Women Hostel > INTRODUCTION",
+      "level": 4,
+      "heading_x0": 279.7,
+      "heading_conf": 1.0,
+      "text": "The Government of India enacted various legislations, namely, the protection of women from Domestic violence Act, 2005, The lmmor.l Traffic iprevention) Act, 1956, the Dowry Prohibition Act 1961, the prohibition of child Marriage Act, ioo6, for women in need of protection, care, safety and security while iri distress for catering to their basic needs through proper ca-re, protection, d.evelopment, treatment and social re-integration. Despite these legislative interventions, t-here is a,' urgent need to provide women with institutional help either in distress circumsta,ces or provide them enabiing environment for ivail benefrts offered under various schemes launched by the central Government or state Government aimed for her betterment. During the XV Finance commission period, the Ministry of women & child Development has launched Mission Shakti for the overarl development of the women.",
+      "contextualized_text": "36. wwH Working Women Hostel > INTRODUCTION The Government of India enacted various legislations, namely, the protection of women from Domestic violence Act, 2005, The lmmor.l Traffic iprevention) Act, 1956, the Dowry Prohibition Act 1961, the prohibition of child Marriage Act, ioo6, for women in need of protection, care, safety and security while iri distress for catering to their basic needs through proper ca-re, protection, d.evelopment, treatment and social re-integration. Despite these legislative interventions, t-here is a,' urgent need to provide women with institutional help either in distress circumsta,ces or provide them enabiing environment for ivail benefrts offered under various schemes launched by the central Government or state Government aimed for her betterment. During the XV Finance commission period, the Ministry of women & child Development has launched Mission Shakti for the overarl development of the women.",
+      "token_estimate": 173,
+      "char_count": 898
+    },
+    {
+      "chunk_id": "General_Info_181_112_0003",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 3,
+      "page_end": 4,
+      "heading": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "heading_path": [
+        "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of"
+      ],
+      "heading_path_str": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "level": 2,
+      "heading_x0": 80.3,
+      "heading_conf": 1.0,
+      "text": "govemance lt has two sub-schemes - 'sambal' and 'Samarthya'. In the ,Sambal, sub-scheme, which is for safety and security of women, the existing scheme of one Stop Centre (OSC), Women Helpline (WHL), Beti Bachao Beti padhlo (BBBp) have been included with modifrcations and a ne\\M component of Nari Adiat - women collective has been added. 3. women Helprine is intended to provide tor free 24x7 immediate and emergency response to women affected by violence tJrrough referra-l (linking with appropriate authority such as porice, one stop centre, hospitar) and infoniation about women related government schemes prog.r-s ih. country throu-gsht\" pa single uniform number. women Herprine (wHL) win \" b \" e .o i \" n \" te grated wit\"h o\"\" centre.Scheme (osc) under which_ one oSC shal1 be estabrisied in every State/Ui to.provide integrated support a,d assistance to women affected by violence, both in private a,d public spaces under one roof. women affected by vio-lence and in need of redressal services will be referred to OSC through WHL. For WHL, the States/UTs will utilise or augment their eisting women helplines through a dedicated single nationa-1 number.",
+      "contextualized_text": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of govemance lt has two sub-schemes - 'sambal' and 'Samarthya'. In the ,Sambal, sub-scheme, which is for safety and security of women, the existing scheme of one Stop Centre (OSC), Women Helpline (WHL), Beti Bachao Beti padhlo (BBBp) have been included with modifrcations and a ne\\M component of Nari Adiat - women collective has been added. 3. women Helprine is intended to provide tor free 24x7 immediate and emergency response to women affected by violence tJrrough referra-l (linking with appropriate authority such as porice, one stop centre, hospitar) and infoniation about women related government schemes prog.r-s ih. country throu-gsht\" pa single uniform number. women Herprine (wHL) win \" b \" e .o i \" n \" te grated wit\"h o\"\" centre.Scheme (osc) under which_ one oSC shal1 be estabrisied in every State/Ui to.provide integrated support a,d assistance to women affected by violence, both in private a,d public spaces under one roof. women affected by vio-lence and in need of redressal services will be referred to OSC through WHL. For WHL, the States/UTs will utilise or augment their eisting women helplines through a dedicated single nationa-1 number.",
+      "token_estimate": 247,
+      "char_count": 1160
+    },
+    {
+      "chunk_id": "General_Info_181_112_0004",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 3,
+      "page_end": 4,
+      "heading": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "heading_path": [
+        "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of"
+      ],
+      "heading_path_str": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "level": 2,
+      "heading_x0": 80.3,
+      "heading_conf": 1.0,
+      "text": "For WHL, the States/UTs will utilise or augment their eisting women helplines through a dedicated single nationa-1 number. Departirent of Telecommunication, Government of India has allocated short cod'e 1g 1 to all States/UTs which are being used Lry some States/UTs. Under this Scheme, states/urs need to adopt this short code 1g 1 as women Herpline (wHL). It is envisaged that this number. w_ould be compatible with aI the existing telecommunication channels whether providing post/pre-paid mob e or landrine services through any public or private network i.e. CS A, bOUn, 3G, 4G etc. The Ministry of women and child Deveropment has issued the g,iielines of Mission llakti Thgme according to which States and Districts wi-ll execute the 24xT women Helpline '181' service for women. The women Helprine sharl tre run in coordination with State and District functionaries ald integrated with the Emergency Response Support System 112 (ERSS_ 112) helpline of tIgn. _i: The State/UTs shall submit their financial proposals annually regarding women Helpline services dury filled in the prescribed formats, ,to..g *ifr trr\"i. implementation plans for scrutiny before the Project Approval Board under Mission Shatti Scheme. 6.",
+      "contextualized_text": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of For WHL, the States/UTs will utilise or augment their eisting women helplines through a dedicated single nationa-1 number. Departirent of Telecommunication, Government of India has allocated short cod'e 1g 1 to all States/UTs which are being used Lry some States/UTs. Under this Scheme, states/urs need to adopt this short code 1g 1 as women Herpline (wHL). It is envisaged that this number. w_ould be compatible with aI the existing telecommunication channels whether providing post/pre-paid mob e or landrine services through any public or private network i.e. CS A, bOUn, 3G, 4G etc. The Ministry of women and child Deveropment has issued the g,iielines of Mission llakti Thgme according to which States and Districts wi-ll execute the 24xT women Helpline '181' service for women. The women Helprine sharl tre run in coordination with State and District functionaries ald integrated with the Emergency Response Support System 112 (ERSS_ 112) helpline of tIgn. _i: The State/UTs shall submit their financial proposals annually regarding women Helpline services dury filled in the prescribed formats, ,to..g *ifr trr\"i. implementation plans for scrutiny before the Project Approval Board under Mission Shatti Scheme. 6.",
+      "token_estimate": 248,
+      "char_count": 1220
+    },
+    {
+      "chunk_id": "General_Info_181_112_0005",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 3,
+      "page_end": 4,
+      "heading": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "heading_path": [
+        "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of"
+      ],
+      "heading_path_str": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of",
+      "level": 2,
+      "heading_x0": 80.3,
+      "heading_conf": 1.0,
+      "text": "6. During the 15th Finarce Commission period, Women Helpline shall be 100% funded under Mission Shalti by the Government of India, for all States/UTs. The funds would be released to State/UT Governments through Public Financial Management System (PFMS). States/UTs shall comply with all the guidelines issued by the Department of Expenditure, Ministry of Finance regarding procedure of release of funds ald aly further protocols on operation of Women Helpline issued from tirne to time by the Ministry. 7. The States/UT shall reflect the amount in the audited statement of accounts together with the necessary Utilization Certificate and Statement of Expenditure in reipect of the grant for Women Heipline and submit the same to the Ministry after close of financial year. 8. The Utilization certificate and Statement of Expenditure in respect of grants received for Women Helpline shatl be furnished in accordance to Rule 239-24O GFR 2Ol7 andin the Form 12c ofGFR 2017. The provision of Rule 241 GFR 2017 shall a,lso be ensured.",
+      "contextualized_text": "2. 'Mission shakti' aims at .qtrengthening interventions for women safety, security and empowerment. It seeks to rea-lise the Government,s commitment for homen-led development' by addressing issues affecting women on a iife-cycle continuum basis and by making them equar pa-rtners in nation-bu ding throlgh convergence a',d citizen-ownership. It seeks to focus on proposing stra:tegies for improving convergence across Ministries/Departments ad at different l&els of 6. During the 15th Finarce Commission period, Women Helpline shall be 100% funded under Mission Shalti by the Government of India, for all States/UTs. The funds would be released to State/UT Governments through Public Financial Management System (PFMS). States/UTs shall comply with all the guidelines issued by the Department of Expenditure, Ministry of Finance regarding procedure of release of funds ald aly further protocols on operation of Women Helpline issued from tirne to time by the Ministry. 7. The States/UT shall reflect the amount in the audited statement of accounts together with the necessary Utilization Certificate and Statement of Expenditure in reipect of the grant for Women Heipline and submit the same to the Ministry after close of financial year. 8. The Utilization certificate and Statement of Expenditure in respect of grants received for Women Helpline shatl be furnished in accordance to Rule 239-24O GFR 2Ol7 andin the Form 12c ofGFR 2017. The provision of Rule 241 GFR 2017 shall a,lso be ensured.",
+      "token_estimate": 217,
+      "char_count": 1029
+    },
+    {
+      "chunk_id": "General_Info_181_112_0006",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": "2. ROLES & RESPONSIBILITIESI",
+      "heading_path": [
+        "2. ROLES & RESPONSIBILITIESI"
+      ],
+      "heading_path_str": "2. ROLES & RESPONSIBILITIESI",
+      "level": 2,
+      "heading_x0": 206.3,
+      "heading_conf": 1.0,
+      "text": "Women Helpline under Mission Shakti scheme at State Level shall be run under the overall supervision of the Additional chief Secretary/ Principal Secretary/Secretary of the Department of women and child Development/ Social Justice & E-po*\"r-\"nt of the State identified to implement tl-e Mission Shakti scheme and District Magistrate at the district level. 2. State lrvel Monitoring Committee of Mission Shakti Scheme headed by Chief secretary during their meetings shall review the performance of women Helpline at the State level. The review of Women Helpline must inter-alia includes key performalce indicators for effectiveness, impact and response time of Women Helpline. Summary of the roles ar1d the responsibilities of different agencies are given below: sl. Name of Agency Role Responsibillty No. C-DAC Technolory 1. Technolory solution provider solution provider to integrate Women Helpline 181 vrith ERSS I 12.",
+      "contextualized_text": "2. ROLES & RESPONSIBILITIESI Women Helpline under Mission Shakti scheme at State Level shall be run under the overall supervision of the Additional chief Secretary/ Principal Secretary/Secretary of the Department of women and child Development/ Social Justice & E-po*\"r-\"nt of the State identified to implement tl-e Mission Shakti scheme and District Magistrate at the district level. 2. State lrvel Monitoring Committee of Mission Shakti Scheme headed by Chief secretary during their meetings shall review the performance of women Helpline at the State level. The review of Women Helpline must inter-alia includes key performalce indicators for effectiveness, impact and response time of Women Helpline. Summary of the roles ar1d the responsibilities of different agencies are given below: sl. Name of Agency Role Responsibillty No. C-DAC Technolory 1. Technolory solution provider solution provider to integrate Women Helpline 181 vrith ERSS I 12.",
+      "token_estimate": 181,
+      "char_count": 920
+    },
+    {
+      "chunk_id": "General_Info_181_112_0007",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": "5. Generate MIS and data anah'tics of calls.",
+      "heading_path": [
+        "5. Generate MIS and data anah'tics of calls."
+      ],
+      "heading_path_str": "5. Generate MIS and data anah'tics of calls.",
+      "level": 2,
+      "heading_x0": 356.4,
+      "heading_conf": 1.0,
+      "text": "2 State Overall superrrision 1. Set up 24x7 dedicated WHL Government/UT of Women Helpline Control Room(WHL-CR). Administration under Mission 2. Set up Women Helpline Unit Unit (to be Shakti at OSCs in each district. identifred ald set 3. Coordinate with allied up by the departments for convergence State/UT Admin) strategies.",
+      "contextualized_text": "5. Generate MIS and data anah'tics of calls. 2 State Overall superrrision 1. Set up 24x7 dedicated WHL Government/UT of Women Helpline Control Room(WHL-CR). Administration under Mission 2. Set up Women Helpline Unit Unit (to be Shakti at OSCs in each district. identifred ald set 3. Coordinate with allied up by the departments for convergence State/UT Admin) strategies.",
+      "token_estimate": 67,
+      "char_count": 326
+    },
+    {
+      "chunk_id": "General_Info_181_112_0008",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": "4. Set up Women Help Desk which shall be operational round the clock.",
+      "heading_path": [
+        "4. Set up Women Help Desk which shall be operational round the clock."
+      ],
+      "heading_path_str": "4. Set up Women Help Desk which shall be operational round the clock.",
+      "level": 2,
+      "heading_x0": 357.1,
+      "heading_conf": 1.0,
+      "text": "OSC - At each Nodal agency 1. Supervise ald monitor the district under I day-to-day operations of the administrative I Women Helpline Unit at control of District OSCs. Magistrate to 2. Coordinate rescue teams implement Mission with allied police, hospitals Shakti scheme. - etc. One stop Centre",
+      "contextualized_text": "4. Set up Women Help Desk which shall be operational round the clock. OSC - At each Nodal agency 1. Supervise ald monitor the district under I day-to-day operations of the administrative I Women Helpline Unit at control of District OSCs. Magistrate to 2. Coordinate rescue teams implement Mission with allied police, hospitals Shakti scheme. - etc. One stop Centre",
+      "token_estimate": 63,
+      "char_count": 294
+    },
+    {
+      "chunk_id": "General_Info_181_112_0009",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "WHLCONTROLROOM",
+      "heading_path": [
+        "4. Set up Women Help Desk which shall be operational round the clock.",
+        "WHLCONTROLROOM"
+      ],
+      "heading_path_str": "4. Set up Women Help Desk which shall be operational round the clock. > WHLCONTROLROOM",
+      "level": 4,
+      "heading_x0": 248.4,
+      "heading_conf": 1.0,
+      "text": "As per the Mission Shakti scheme guidelines, since women Helpline shall be run in coordination with the state and District Administration , a 24x7 dedicated wHL control Room(wHL-cR) wil1 be setup for women Helpline in each state/UT and witl be integrated with ERSS- 1 12. Ministry of women and child Development through G-DAC shall provide necessarj. technical infrastructure for setting up of wHL control Room in aI1 states/UTs where cHL and wHL call takers shall be co-located so as to handle women and child related calls in a single location.",
+      "contextualized_text": "4. Set up Women Help Desk which shall be operational round the clock. > WHLCONTROLROOM As per the Mission Shakti scheme guidelines, since women Helpline shall be run in coordination with the state and District Administration , a 24x7 dedicated wHL control Room(wHL-cR) wil1 be setup for women Helpline in each state/UT and witl be integrated with ERSS- 1 12. Ministry of women and child Development through G-DAC shall provide necessarj. technical infrastructure for setting up of wHL control Room in aI1 states/UTs where cHL and wHL call takers shall be co-located so as to handle women and child related calls in a single location.",
+      "token_estimate": 120,
+      "char_count": 546
+    },
+    {
+      "chunk_id": "General_Info_181_112_0010",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 67.7,
+      "heading_conf": 1.0,
+      "text": "1 Identi$z state-level Nodal officer and second level Nodal officer with one of them possessing technical knowledge and expertise to support C-DAC. 11. Provide sufficient space for setting up the WHL Control Room. iii. WHL and CHL Call-Takers to be co-located in same control room premises. -CAt-frU.rg iv. Electrical wiring with necessary power sockets for powering consoles. Assist in establishing Multi-Protocol Layer Switching (MpLS), Internet Leased Line (ILL) and Primary Rate Interface (pRI) connectivity. vi Provisioning of other basic infrastructure in WHL Control Room. vii Air-Conditioned Server and Cal1 Taker,s rooms at WHL Control Room with UPS facility vl11 Facilitate conducting user-training for WHL/CHL users. ix Provide digital GIS Points of Interests (pOIs) relevant to WHL and CHL operations. x Ensuring data protection at the WCD Control Room. xi Extend all support to C-DAC for successful installation & commissioning. xl1 Preparing a Resource Directory for linking women related calls to available services. 3.2 The Call Architecture is given at Annexure-I. The technical infrastructure of wHL-cR shall consist of servers and client components shall be provided by c-DAC. The server infrastructure comprises of the",
+      "contextualized_text": "1 Identi$z state-level Nodal officer and second level Nodal officer with one of them possessing technical knowledge and expertise to support C-DAC. 11. Provide sufficient space for setting up the WHL Control Room. iii. WHL and CHL Call-Takers to be co-located in same control room premises. -CAt-frU.rg iv. Electrical wiring with necessary power sockets for powering consoles. Assist in establishing Multi-Protocol Layer Switching (MpLS), Internet Leased Line (ILL) and Primary Rate Interface (pRI) connectivity. vi Provisioning of other basic infrastructure in WHL Control Room. vii Air-Conditioned Server and Cal1 Taker,s rooms at WHL Control Room with UPS facility vl11 Facilitate conducting user-training for WHL/CHL users. ix Provide digital GIS Points of Interests (pOIs) relevant to WHL and CHL operations. x Ensuring data protection at the WCD Control Room. xi Extend all support to C-DAC for successful installation & commissioning. xl1 Preparing a Resource Directory for linking women related calls to available services. 3.2 The Call Architecture is given at Annexure-I. The technical infrastructure of wHL-cR shall consist of servers and client components shall be provided by c-DAC. The server infrastructure comprises of the",
+      "token_estimate": 244,
+      "char_count": 1238
+    },
+    {
+      "chunk_id": "General_Info_181_112_0011",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "following modules:",
+      "heading_path": [
+        "3.3 Infrastructure:",
+        "following modules:"
+      ],
+      "heading_path_str": "3.3 Infrastructure: > following modules:",
+      "level": 4,
+      "heading_x0": 64.8,
+      "heading_conf": 1.0,
+      "text": "Application Server ii) Database Server iii) GIS Server iv) Automated Call Distribution and Computer Telephone Integration Voice logger vi) E-Mail gateway viil SMS Gateway viii) Report Server The client components consist of the workstations and Ip phones.",
+      "contextualized_text": "3.3 Infrastructure: > following modules: Application Server ii) Database Server iii) GIS Server iv) Automated Call Distribution and Computer Telephone Integration Voice logger vi) E-Mail gateway viil SMS Gateway viii) Report Server The client components consist of the workstations and Ip phones.",
+      "token_estimate": 49,
+      "char_count": 255
+    },
+    {
+      "chunk_id": "General_Info_181_112_0012",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 7,
+      "page_end": 7,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 63.7,
+      "heading_conf": 1.0,
+      "text": "The WHL Control Room to be provided with adequate space and infrastructure by the concerned States/UTs. The WHL-CR may function from the premises of the State Depa.rtment working on the women protection/welfare issues in the State Efforts may be made to utilize the existing infrastructure of States/UTs instead of creation of new infrastructure. Space requirement for each State/UT will vary as the number of call taking consoles (No. of workstations) for a State/UT depends on the category. Each CallTaking console requires 30 sq.ft [6x5) and the Data Centre requires 10O sq. ft The data centre facility envisaged is common for WHL and CHL operations and there shall be no separate sanction for physical infrastructurer building, machines etc. for WIIL or CHL. For the optimum and efficient use of available resources, it is mandated that WIIL and CHL Call-Takers are co-located in the same venue (WHL-CRI. The Data Centre will be setup in the WHL Centre. In any case if the CI{L Call-Takers sit at a dlffereat locatlon' additional dedicated MPLSI connectivity would be arranged between WCD CR and CHL unit the State UT. A11 incoming calls to 181 may be classified into following categories:",
+      "contextualized_text": "The WHL Control Room to be provided with adequate space and infrastructure by the concerned States/UTs. The WHL-CR may function from the premises of the State Depa.rtment working on the women protection/welfare issues in the State Efforts may be made to utilize the existing infrastructure of States/UTs instead of creation of new infrastructure. Space requirement for each State/UT will vary as the number of call taking consoles (No. of workstations) for a State/UT depends on the category. Each CallTaking console requires 30 sq.ft [6x5) and the Data Centre requires 10O sq. ft The data centre facility envisaged is common for WHL and CHL operations and there shall be no separate sanction for physical infrastructurer building, machines etc. for WIIL or CHL. For the optimum and efficient use of available resources, it is mandated that WIIL and CHL Call-Takers are co-located in the same venue (WHL-CRI. The Data Centre will be setup in the WHL Centre. In any case if the CI{L Call-Takers sit at a dlffereat locatlon' additional dedicated MPLSI connectivity would be arranged between WCD CR and CHL unit the State UT. A11 incoming calls to 181 may be classified into following categories:",
+      "token_estimate": 259,
+      "char_count": 1193
+    },
+    {
+      "chunk_id": "General_Info_181_112_0013",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 7,
+      "page_end": 8,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 88.9,
+      "heading_conf": 1.0,
+      "text": "Emergency calls Non-Emergency calls/ matters Information calls Medical/Health Psycho-social support/ Information about Emotional Support and guidance referral and other services Police Legal support Fire Education Ambulance Technical/ Customer Care Protection from abuse Blank/ Silent Women in conflict with Wrong/fun/ crank law Child Marriage Personal calls/calls from friends arrd family Missing Inbound other calls Follow up calls Death related Administrative Restoration Depending upon the category of the call, tre cail operator shall follow the below laid down procedure for transferring the call to 1 12 or WHL unit of OSCs:",
+      "contextualized_text": "Emergency calls Non-Emergency calls/ matters Information calls Medical/Health Psycho-social support/ Information about Emotional Support and guidance referral and other services Police Legal support Fire Education Ambulance Technical/ Customer Care Protection from abuse Blank/ Silent Women in conflict with Wrong/fun/ crank law Child Marriage Personal calls/calls from friends arrd family Missing Inbound other calls Follow up calls Death related Administrative Restoration Depending upon the category of the call, tre cail operator shall follow the below laid down procedure for transferring the call to 1 12 or WHL unit of OSCs:",
+      "token_estimate": 119,
+      "char_count": 631
+    },
+    {
+      "chunk_id": "General_Info_181_112_0014",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 8,
+      "page_end": 9,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 79.2,
+      "heading_conf": 1.0,
+      "text": "ii) Non-Emergencv calls: Non-emergency calls requiring psycho-social support/emotional support and guidance/legal support/education etc. on post assessment and nature of the call shall be transferred to WHL Units of OSCs for providing necessar5r support ald intervention as per the case. iii) Information Calls: These are ca-lls wherein caller is looking for information either pertaining to other services/ schemes of the Government. The call may be handled by the Call Operators of the WHL-CR wherever information is available or may be transferred to SHEW/DHEW/WHL Units of OSCs for providing information to the caller. ii)",
+      "contextualized_text": "ii) Non-Emergencv calls: Non-emergency calls requiring psycho-social support/emotional support and guidance/legal support/education etc. on post assessment and nature of the call shall be transferred to WHL Units of OSCs for providing necessar5r support ald intervention as per the case. iii) Information Calls: These are ca-lls wherein caller is looking for information either pertaining to other services/ schemes of the Government. The call may be handled by the Call Operators of the WHL-CR wherever information is available or may be transferred to SHEW/DHEW/WHL Units of OSCs for providing information to the caller. ii)",
+      "token_estimate": 123,
+      "char_count": 626
+    },
+    {
+      "chunk_id": "General_Info_181_112_0015",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "PROGRAMS.",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT",
+        "PROGRAMS."
+      ],
+      "heading_path_str": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > PROGRAMS.",
+      "level": 4,
+      "heading_x0": 158.4,
+      "heading_conf": 1.0,
+      "text": "WHL Control Room shall answer the caJls 24x7,365 days in a weekly shift pattern. The State level control room for WHL \\Mi11 have dedicated infrastructure that czrr handle different types of distress signals like voice calls, SMS, emails etc. It will have specialized call takers for women related ca-lls. A womal can seek help using",
+      "contextualized_text": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > PROGRAMS. WHL Control Room shall answer the caJls 24x7,365 days in a weekly shift pattern. The State level control room for WHL \\Mi11 have dedicated infrastructure that czrr handle different types of distress signals like voice calls, SMS, emails etc. It will have specialized call takers for women related ca-lls. A womal can seek help using",
+      "token_estimate": 73,
+      "char_count": 332
+    },
+    {
+      "chunk_id": "General_Info_181_112_0016",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "following options:",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT",
+        "following options:"
+      ],
+      "heading_path_str": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > following options:",
+      "level": 4,
+      "heading_x0": 68.8,
+      "heading_conf": 1.0,
+      "text": "il Dial 181 for Women Helpline ii) Send SMS to the specified number from the phone iii) Send email to the specified address Women related help requests can be received in the ERSS a-lso. This occurs when a person makes a call to 112 or sends SMS or panic signals to 112. The call takers assess the nature and severity of the case and if required it will be dispatched to the WHL control room/ WHL unit at OSC as the case may be. Ca-1l Operator should be trained for answering calls and sha1l practice on scripts for answering various categories of calls. Whenever a ca-Il is made to 181, call is autorouted to concemed State's or UT's WHL Control Room. Caller's identification and caller location is obtained through Telephone Subscriber database and Location Based Services. Once a call lands on WHL-CR, a Unique ID Number is generated for each call and call is transferred to the call operator. The decision of tralsferring the call to WHL units shall be done within 5 minutes of the ca-11. The responsibility",
+      "contextualized_text": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > following options: il Dial 181 for Women Helpline ii) Send SMS to the specified number from the phone iii) Send email to the specified address Women related help requests can be received in the ERSS a-lso. This occurs when a person makes a call to 112 or sends SMS or panic signals to 112. The call takers assess the nature and severity of the case and if required it will be dispatched to the WHL control room/ WHL unit at OSC as the case may be. Ca-1l Operator should be trained for answering calls and sha1l practice on scripts for answering various categories of calls. Whenever a ca-Il is made to 181, call is autorouted to concemed State's or UT's WHL Control Room. Caller's identification and caller location is obtained through Telephone Subscriber database and Location Based Services. Once a call lands on WHL-CR, a Unique ID Number is generated for each call and call is transferred to the call operator. The decision of tralsferring the call to WHL units shall be done within 5 minutes of the ca-11. The responsibility",
+      "token_estimate": 239,
+      "char_count": 1011
+    },
+    {
+      "chunk_id": "General_Info_181_112_0017",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "of WHL Control Room includes:",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT",
+        "of WHL Control Room includes:"
+      ],
+      "heading_path_str": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > of WHL Control Room includes:",
+      "level": 4,
+      "heading_x0": 68.8,
+      "heading_conf": 1.0,
+      "text": "i) Answering all inbound calls to 181 and transfer the call to ll2 or Women Helpline Unit at OSCs or 1098 in case of calls related to child. i0 Documenting all calls ald recording details of the ca,ller and share the details of the caller with 1 12 or WHL units of OSCs. iiil Follow up with 112 or WHL unit at OSCs for documenting details of intervention cases handed over to tJlem and to get follow-up for the cases handled through outreach programs. iv) Providing information to the caller of different services/resources for the welfare o[ women. Closing the call after seeking follow up from 112 or WHL units.",
+      "contextualized_text": "3.7 Call Flow: > CALL FORWARDED TO ERSS.112 AND CALL FORWARDED TO WHL UNIT > of WHL Control Room includes: i) Answering all inbound calls to 181 and transfer the call to ll2 or Women Helpline Unit at OSCs or 1098 in case of calls related to child. i0 Documenting all calls ald recording details of the ca,ller and share the details of the caller with 1 12 or WHL units of OSCs. iiil Follow up with 112 or WHL unit at OSCs for documenting details of intervention cases handed over to tJlem and to get follow-up for the cases handled through outreach programs. iv) Providing information to the caller of different services/resources for the welfare o[ women. Closing the call after seeking follow up from 112 or WHL units.",
+      "token_estimate": 147,
+      "char_count": 613
+    },
+    {
+      "chunk_id": "General_Info_181_112_0018",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 11,
+      "page_end": 11,
+      "heading": "A. Women Helpline Unit at One Stop Centres (OSCs):",
+      "heading_path": [
+        "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS",
+        "A. Women Helpline Unit at One Stop Centres (OSCs):"
+      ],
+      "heading_path_str": "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS > A. Women Helpline Unit at One Stop Centres (OSCs):",
+      "level": 3,
+      "heading_x0": 83.2,
+      "heading_conf": 1.0,
+      "text": "The one Stop centre working under the overall supervision of District Magistrate is the nodal agency for ensuring service delivery and care and protection of women in the district. The OSC shall implement all women protection legislations, schemes ald work for achievement of women protection goals as laid out in the Mission Shakti scheme guidelines. The central Administrator working under the overall administrative control of District Magistrate sha-lI be available round the clock and provide outreach service for women in crisis linking them to emergency and long-term care and rehabilitation services. Each of this unit shall abide by the provisions as laid down under Mission Shakti guidelines while handling cases of women. All efforts should be made to provide space for WHL Unit in the existing OSCs for better coordination and monitoring with proper security arrangement. The existing manpower of OSC shall ensure that none of the calls forwarded by the WHL should remain unanswered.",
+      "contextualized_text": "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS > A. Women Helpline Unit at One Stop Centres (OSCs): The one Stop centre working under the overall supervision of District Magistrate is the nodal agency for ensuring service delivery and care and protection of women in the district. The OSC shall implement all women protection legislations, schemes ald work for achievement of women protection goals as laid out in the Mission Shakti scheme guidelines. The central Administrator working under the overall administrative control of District Magistrate sha-lI be available round the clock and provide outreach service for women in crisis linking them to emergency and long-term care and rehabilitation services. Each of this unit shall abide by the provisions as laid down under Mission Shakti guidelines while handling cases of women. All efforts should be made to provide space for WHL Unit in the existing OSCs for better coordination and monitoring with proper security arrangement. The existing manpower of OSC shall ensure that none of the calls forwarded by the WHL should remain unanswered.",
+      "token_estimate": 207,
+      "char_count": 995
+    },
+    {
+      "chunk_id": "General_Info_181_112_0019",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 11,
+      "page_end": 11,
+      "heading": "Roles and Responsibilities of OSC:",
+      "heading_path": [
+        "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS",
+        "A. Women Helpline Unit at One Stop Centres (OSCs):",
+        "Roles and Responsibilities of OSC:"
+      ],
+      "heading_path_str": "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS > A. Women Helpline Unit at One Stop Centres (OSCs): > Roles and Responsibilities of OSC:",
+      "level": 4,
+      "heading_x0": 85.3,
+      "heading_conf": 1.0,
+      "text": "i) Responding to calls related to women which have been transferred from WHL Control Room and provision of rescue and outreach services for women in need of care and protection; ii) Reaching the woman in distress requiring physical intervention is expected to be completed within 3O minutes on €rn average; iii) Coordinating rescue and other outreach services with the help of relevant local departments like police, administration, health, and others; iv) Ensuring proper documentation of all women rescued to facilitate their rehabilitation ald restoration;",
+      "contextualized_text": "4. WOMEN HELPLINE I'NIT (CHLI AT OSCS > A. Women Helpline Unit at One Stop Centres (OSCs): > Roles and Responsibilities of OSC: i) Responding to calls related to women which have been transferred from WHL Control Room and provision of rescue and outreach services for women in need of care and protection; ii) Reaching the woman in distress requiring physical intervention is expected to be completed within 3O minutes on €rn average; iii) Coordinating rescue and other outreach services with the help of relevant local departments like police, administration, health, and others; iv) Ensuring proper documentation of all women rescued to facilitate their rehabilitation ald restoration;",
+      "token_estimate": 112,
+      "char_count": 559
+    },
+    {
+      "chunk_id": "General_Info_181_112_0020",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 11,
+      "page_end": 12,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 94.7,
+      "heading_conf": 1.0,
+      "text": "ix) Establishing linkages with other women protection services, community and local bodies for meeting the immediate needs of women rescued; x) Compiling and updating t1:e Resource Directory of Services for women in the city. -) Monthly reporting to the DM/DC/Mission Sha-l<ti Dashboard about the functioning of WHL unit in the district; xii) Orientation and sensitization of various Government Departments on women protection in coordination with the OSC; CALL'TR'dSFERREO FROM WCIMEiT HELPLIIE 1!t TO OSC OR DIRECTLY",
+      "contextualized_text": "ix) Establishing linkages with other women protection services, community and local bodies for meeting the immediate needs of women rescued; x) Compiling and updating t1:e Resource Directory of Services for women in the city. -) Monthly reporting to the DM/DC/Mission Sha-l<ti Dashboard about the functioning of WHL unit in the district; xii) Orientation and sensitization of various Government Departments on women protection in coordination with the OSC; CALL'TR'dSFERREO FROM WCIMEiT HELPLIIE 1!t TO OSC OR DIRECTLY",
+      "token_estimate": 101,
+      "char_count": 518
+    },
+    {
+      "chunk_id": "General_Info_181_112_0021",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 12,
+      "page_end": 12,
+      "heading": "4.2 Call Flow:",
+      "heading_path": [
+        "4.2 Call Flow:"
+      ],
+      "heading_path_str": "4.2 Call Flow:",
+      "level": 1,
+      "heading_x0": 361.8,
+      "heading_conf": 1.0,
+      "text": "S I E I' E F K O | 8 N G M A C T { IO LI N S CASE SP€C]FIC CALLg A N N E S C E IM SS IE A A R V Y E M S T U I P O P N O R A T S \\E'OEiJON:S'IGEL LII.tG 'ALLs aaltia_L\"tc SEi{I TO -rHE CONCERNED S HO,C[!O/pO?OO FOILOW.UP FPOMV\\&MAN AFTER I HOURAnlD SECOITO ADN,ilINISTRATOR WJLL ENS{JRE THE OUALIT\\'",
+      "contextualized_text": "4.2 Call Flow: S I E I' E F K O | 8 N G M A C T { IO LI N S CASE SP€C]FIC CALLg A N N E S C E IM SS IE A A R V Y E M S T U I P O P N O R A T S \\E'OEiJON:S'IGEL LII.tG 'ALLs aaltia_L\"tc SEi{I TO -rHE CONCERNED S HO,C[!O/pO?OO FOILOW.UP FPOMV\\&MAN AFTER I HOURAnlD SECOITO ADN,ilINISTRATOR WJLL ENS{JRE THE OUALIT\\'",
+      "token_estimate": 100,
+      "char_count": 298
+    },
+    {
+      "chunk_id": "General_Info_181_112_0022",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 13,
+      "page_end": 13,
+      "heading": "4.3 Call Management:",
+      "heading_path": [
+        "4.3 Call Management:"
+      ],
+      "heading_path_str": "4.3 Call Management:",
+      "level": 2,
+      "heading_x0": 83.2,
+      "heading_conf": 1.0,
+      "text": "The WHL unit staff shall respond to the tralsferred calls to OSC as given below: i) Emersencv calls: Emergency calls as forwarded by the WHL Control Rooms for assistanceii) Non-Eme cv calls: Non-emergency calls on post assessment and nature of the call as transferred to OSCs for providing necessar5r support and intervention as per the case. iii) Information Calls: Calls as tralsferred by WHL Control Room to the OSC. These are calls wherein caller is looking for information either pertaining to other sewices/schemes of the Governmentt which may be provided by the ca-ll taker. 4.4 Timelines for Follow Up of Cases by WHL Unit and Closing of the Case: Each call sha-ll be followed up to ascertain whether the women in distress has been rescued/given medical aid and temporary rehabilitation status and any other necessary intervention. OSC should take follow-up of cases transferred to them by",
+      "contextualized_text": "4.3 Call Management: The WHL unit staff shall respond to the tralsferred calls to OSC as given below: i) Emersencv calls: Emergency calls as forwarded by the WHL Control Rooms for assistanceii) Non-Eme cv calls: Non-emergency calls on post assessment and nature of the call as transferred to OSCs for providing necessar5r support and intervention as per the case. iii) Information Calls: Calls as tralsferred by WHL Control Room to the OSC. These are calls wherein caller is looking for information either pertaining to other sewices/schemes of the Governmentt which may be provided by the ca-ll taker. 4.4 Timelines for Follow Up of Cases by WHL Unit and Closing of the Case: Each call sha-ll be followed up to ascertain whether the women in distress has been rescued/given medical aid and temporary rehabilitation status and any other necessary intervention. OSC should take follow-up of cases transferred to them by",
+      "token_estimate": 195,
+      "char_count": 897
+    },
+    {
+      "chunk_id": "General_Info_181_112_0023",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 13,
+      "page_end": 13,
+      "heading": "WHL Control Room as per the time lines given below:",
+      "heading_path": [
+        "4.3 Call Management:",
+        "WHL Control Room as per the time lines given below:"
+      ],
+      "heading_path_str": "4.3 Call Management: > WHL Control Room as per the time lines given below:",
+      "level": 4,
+      "heading_x0": 84.2,
+      "heading_conf": 1.0,
+      "text": "In emergency cases i) First follow-up to be done within t hour of transferring the case' ii) Second follow-up within 8 hours of transferring the case. iii) Third fol1ow-up to be done within 24 hours of transferring the case. iv) Subsequent foliow-up after every 7 days from 1s day of case handover till case is marked as closed by the WHL unit. In non-emergency cases v) Follow-up to be after 24 hours of providing the information to the caller seeking information about Government Schemes. vi) Subsequent follow-up after every 7 days from 1$ day of case haldover ti1l case is marked as closed by the WHL unit. OSC will send a daily report to the WHL Control Room regarding transferred cases to the WHL unit.",
+      "contextualized_text": "4.3 Call Management: > WHL Control Room as per the time lines given below: In emergency cases i) First follow-up to be done within t hour of transferring the case' ii) Second follow-up within 8 hours of transferring the case. iii) Third fol1ow-up to be done within 24 hours of transferring the case. iv) Subsequent foliow-up after every 7 days from 1s day of case handover till case is marked as closed by the WHL unit. In non-emergency cases v) Follow-up to be after 24 hours of providing the information to the caller seeking information about Government Schemes. vi) Subsequent follow-up after every 7 days from 1$ day of case haldover ti1l case is marked as closed by the WHL unit. OSC will send a daily report to the WHL Control Room regarding transferred cases to the WHL unit.",
+      "token_estimate": 167,
+      "char_count": 708
+    },
+    {
+      "chunk_id": "General_Info_181_112_0024",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "HUMANRESOURCE",
+      "heading_path": [
+        "4.3 Call Management:",
+        "HUMANRESOURCE"
+      ],
+      "heading_path_str": "4.3 Call Management: > HUMANRESOURCE",
+      "level": 4,
+      "heading_x0": 255.2,
+      "heading_conf": 1.0,
+      "text": "States/UTs as per their population have been categorized as A, B & C (Large, Medium a'rd Small), accordingly financial support sha-ll be provided to each state/UT. states/UTs will be responsible for extending support and cooperation to G-DAC in setting up of wcD control Rooms. The categorization of Stales/UTs is given at Annexure-Il.",
+      "contextualized_text": "4.3 Call Management: > HUMANRESOURCE States/UTs as per their population have been categorized as A, B & C (Large, Medium a'rd Small), accordingly financial support sha-ll be provided to each state/UT. states/UTs will be responsible for extending support and cooperation to G-DAC in setting up of wcD control Rooms. The categorization of Stales/UTs is given at Annexure-Il.",
+      "token_estimate": 69,
+      "char_count": 335
+    },
+    {
+      "chunk_id": "General_Info_181_112_0025",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "The WHL Control Roomshall consist of following contractual stalf:",
+      "heading_path": [
+        "4.3 Call Management:",
+        "The WHL Control Roomshall consist of following contractual stalf:"
+      ],
+      "heading_path_str": "4.3 Call Management: > The WHL Control Roomshall consist of following contractual stalf:",
+      "level": 4,
+      "heading_x0": 66.6,
+      "heading_conf": 1.0,
+      "text": "Helpline Administrator - 01 ii) Call Operators - from 12 to 18* iii) IT Supervisor - O1 iv) Multi-purpose Staff - 03 Security Guard/Night Guard - O3 *Number of Call Operators at WHL Control Rooms may vary on the basis of categorization of the State/UT given at Annexure-Il. Human Resource at 1VHL Unit at OSC: The existing manpower of OSC will attend the telephone calls diverted from the WHL CR. Vlelfare Measures for the WHL Stalf. The Human resources engaged for the weifare of women in need of care and protection and women in conflict-with 1aw will play a vital role in the prompt and effective delivery of services as well as ensuring safety and protection of children in diflicutt circumstalces. The staff shall be engaged on contract or outsource basis by the States/UTs and shall ordinarily be upto the 15s Fina.rlce Commission cycle i.e., upto 2025-26 subject to alnual performance appraisal. Background verification of Staff by Police is mandatory prior to their appointment, to ensure credibility and accountability of staff. A11 manpower engaged under the women Helpline shal1 maintain confidentiality of al1 records failing which suitable action may be taken.",
+      "contextualized_text": "4.3 Call Management: > The WHL Control Roomshall consist of following contractual stalf: Helpline Administrator - 01 ii) Call Operators - from 12 to 18* iii) IT Supervisor - O1 iv) Multi-purpose Staff - 03 Security Guard/Night Guard - O3 *Number of Call Operators at WHL Control Rooms may vary on the basis of categorization of the State/UT given at Annexure-Il. Human Resource at 1VHL Unit at OSC: The existing manpower of OSC will attend the telephone calls diverted from the WHL CR. Vlelfare Measures for the WHL Stalf. The Human resources engaged for the weifare of women in need of care and protection and women in conflict-with 1aw will play a vital role in the prompt and effective delivery of services as well as ensuring safety and protection of children in diflicutt circumstalces. The staff shall be engaged on contract or outsource basis by the States/UTs and shall ordinarily be upto the 15s Fina.rlce Commission cycle i.e., upto 2025-26 subject to alnual performance appraisal. Background verification of Staff by Police is mandatory prior to their appointment, to ensure credibility and accountability of staff. A11 manpower engaged under the women Helpline shal1 maintain confidentiality of al1 records failing which suitable action may be taken.",
+      "token_estimate": 256,
+      "char_count": 1174
+    },
+    {
+      "chunk_id": "General_Info_181_112_0026",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "The WHL Control Roomshall consist of following contractual stalf:",
+      "heading_path": [
+        "4.3 Call Management:",
+        "The WHL Control Roomshall consist of following contractual stalf:"
+      ],
+      "heading_path_str": "4.3 Call Management: > The WHL Control Roomshall consist of following contractual stalf:",
+      "level": 4,
+      "heading_x0": 66.6,
+      "heading_conf": 1.0,
+      "text": "A11 manpower engaged under the women Helpline shal1 maintain confidentiality of al1 records failing which suitable action may be taken. 5.1 The Indicative Qualifrcations of staff at WHL-CR, is given at Annexure-Ill. 5.2 Financial Support for WHL Control Room is given at Annexure-fV. Data Securitys Data Security is one of the most importarrt functions and should be given high priority by all states/UTs. Any report should only be accessible to authorized personnel working in WCD Control Rooms/ SHEW. Servers should be kept in secured environment. Engagement of dilferent stakeholders at State, Districts and others for case",
+      "contextualized_text": "4.3 Call Management: > The WHL Control Roomshall consist of following contractual stalf: A11 manpower engaged under the women Helpline shal1 maintain confidentiality of al1 records failing which suitable action may be taken. 5.1 The Indicative Qualifrcations of staff at WHL-CR, is given at Annexure-Ill. 5.2 Financial Support for WHL Control Room is given at Annexure-fV. Data Securitys Data Security is one of the most importarrt functions and should be given high priority by all states/UTs. Any report should only be accessible to authorized personnel working in WCD Control Rooms/ SHEW. Servers should be kept in secured environment. Engagement of dilferent stakeholders at State, Districts and others for case",
+      "token_estimate": 128,
+      "char_count": 626
+    },
+    {
+      "chunk_id": "General_Info_181_112_0027",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 14,
+      "page_end": 15,
+      "heading": "management:",
+      "heading_path": [
+        "4.3 Call Management:",
+        "management:"
+      ],
+      "heading_path_str": "4.3 Call Management: > management:",
+      "level": 3,
+      "heading_x0": 64.1,
+      "heading_conf": 1.0,
+      "text": "All States/UTs must make concerted efforts to work closely with ail a-llied departments like Education, Health, Home/Police, hospitals etc., in order to ensure convergence, support and cooperation during case intervention. This takes place through four main areas of collaboration: (a) case intervention (rescue, restoration with families, access to entitlements and rehabilitation); (b) orientation capacity building of allied departments to share understarding towards more effective interventions mentioned in (a); (c) co-organizing with state and district administration special campaigns, events on days of significance, awareness drives, facilitating access of schemes, (d) coordination and convergence from micro to macro level, a continued work in progress towards better women friendly services, timely effective rehabilitation and access to justice. The feedback and findings of women protection issues intervened by WHL cR/oSCs should be collated and shared as and when asked by the central state Government/ UT Administration. (i) In case of requirement of police or medical assistance, ca-ll shall be trarsferred to ERSS- 1 12 to provide all possible assistance to the caller.",
+      "contextualized_text": "4.3 Call Management: > management: All States/UTs must make concerted efforts to work closely with ail a-llied departments like Education, Health, Home/Police, hospitals etc., in order to ensure convergence, support and cooperation during case intervention. This takes place through four main areas of collaboration: (a) case intervention (rescue, restoration with families, access to entitlements and rehabilitation); (b) orientation capacity building of allied departments to share understarding towards more effective interventions mentioned in (a); (c) co-organizing with state and district administration special campaigns, events on days of significance, awareness drives, facilitating access of schemes, (d) coordination and convergence from micro to macro level, a continued work in progress towards better women friendly services, timely effective rehabilitation and access to justice. The feedback and findings of women protection issues intervened by WHL cR/oSCs should be collated and shared as and when asked by the central state Government/ UT Administration. (i) In case of requirement of police or medical assistance, ca-ll shall be trarsferred to ERSS- 1 12 to provide all possible assistance to the caller.",
+      "token_estimate": 224,
+      "char_count": 1189
+    },
+    {
+      "chunk_id": "General_Info_181_112_0028",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 16,
+      "page_end": 16,
+      "heading": "6. TRAININGAND CAPACITY BUILDING",
+      "heading_path": [
+        "6. TRAININGAND CAPACITY BUILDING"
+      ],
+      "heading_path_str": "6. TRAININGAND CAPACITY BUILDING",
+      "level": 2,
+      "heading_x0": 170.6,
+      "heading_conf": 1.0,
+      "text": "C-DAC will provide technical training including halds-on training at the WHL Control Room/SHEW/DHEW where WHL/CHL/OSC personnel to work on the system and to familiarize the operations of the system. Manuals required for operations will be provided by C-DAC. State/UT sha-Il extend all support to C-DAC for conducting the training. Ministry will also collaborate with C-DAC, Nationa-l Institute of Public Cooperatron and Child Development (NIPCCD), and Nationa-l Institute of Mental Health and Neurosciences (NIMHANS) for capacity building of staff, developing of intervention protocols/training modules for effective impiementation of t1 e Mission Shakti schemes and for providing psycho-social support to women during calls and physical interventions. Ministry w'ilt also support outreach strategies to universalize access and use of the Women Helpline in the States/UTs.",
+      "contextualized_text": "6. TRAININGAND CAPACITY BUILDING C-DAC will provide technical training including halds-on training at the WHL Control Room/SHEW/DHEW where WHL/CHL/OSC personnel to work on the system and to familiarize the operations of the system. Manuals required for operations will be provided by C-DAC. State/UT sha-Il extend all support to C-DAC for conducting the training. Ministry will also collaborate with C-DAC, Nationa-l Institute of Public Cooperatron and Child Development (NIPCCD), and Nationa-l Institute of Mental Health and Neurosciences (NIMHANS) for capacity building of staff, developing of intervention protocols/training modules for effective impiementation of t1 e Mission Shakti schemes and for providing psycho-social support to women during calls and physical interventions. Ministry w'ilt also support outreach strategies to universalize access and use of the Women Helpline in the States/UTs.",
+      "token_estimate": 163,
+      "char_count": 872
+    },
+    {
+      "chunk_id": "General_Info_181_112_0029",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 17,
+      "page_end": 17,
+      "heading": "REPORTINGMECHANISM",
+      "heading_path": [
+        "6. TRAININGAND CAPACITY BUILDING",
+        "REPORTINGMECHANISM"
+      ],
+      "heading_path_str": "6. TRAININGAND CAPACITY BUILDING > REPORTINGMECHANISM",
+      "level": 4,
+      "heading_x0": 253.8,
+      "heading_conf": 1.0,
+      "text": "G-DAC shall develop MIS report generation modules for States/UTs for reviewing of cases and better decision making which may be customized as per specilic needs of the states, if required. An MIS module shall a-lso be prepared for the Ministry for monitoring of wHL at state and district leve1s. This MIS will generate data which would enable policy decision making for the best interest of the women. Reporting module based on following parameters is to be developed by C-DAC: i) State-wise calls related to women landing at 181. ii) State-wise calls landing at 112 forwarded to 181. iii) State-wise calls forwarded from 181 to 112 requiring specialized services of Police, fire and medical. irr) Categorization of calls answered based on providing merely information, advice, psychosocial support or requiring physical intervention and forwarded to OSCs as the case may be. v) Average time taken to close the call. vi) Make Women Helpline data available on Mission Shal<ti dashboard portal.",
+      "contextualized_text": "6. TRAININGAND CAPACITY BUILDING > REPORTINGMECHANISM G-DAC shall develop MIS report generation modules for States/UTs for reviewing of cases and better decision making which may be customized as per specilic needs of the states, if required. An MIS module shall a-lso be prepared for the Ministry for monitoring of wHL at state and district leve1s. This MIS will generate data which would enable policy decision making for the best interest of the women. Reporting module based on following parameters is to be developed by C-DAC: i) State-wise calls related to women landing at 181. ii) State-wise calls landing at 112 forwarded to 181. iii) State-wise calls forwarded from 181 to 112 requiring specialized services of Police, fire and medical. irr) Categorization of calls answered based on providing merely information, advice, psychosocial support or requiring physical intervention and forwarded to OSCs as the case may be. v) Average time taken to close the call. vi) Make Women Helpline data available on Mission Shal<ti dashboard portal.",
+      "token_estimate": 211,
+      "char_count": 992
+    },
+    {
+      "chunk_id": "General_Info_181_112_0030",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 18,
+      "page_end": 18,
+      "heading": "CONVERGENCE",
+      "heading_path": [
+        "6. TRAININGAND CAPACITY BUILDING",
+        "CONVERGENCE"
+      ],
+      "heading_path_str": "6. TRAININGAND CAPACITY BUILDING > CONVERGENCE",
+      "level": 4,
+      "heading_x0": 266.4,
+      "heading_conf": 1.0,
+      "text": "States/UTs shall encourage convergence for Women Helpline Services with other line departments, agencies, organizations and all stakeholders for enabling a protective environment for women. Indicative list of activities for convergence under WHL are as under:",
+      "contextualized_text": "6. TRAININGAND CAPACITY BUILDING > CONVERGENCE States/UTs shall encourage convergence for Women Helpline Services with other line departments, agencies, organizations and all stakeholders for enabling a protective environment for women. Indicative list of activities for convergence under WHL are as under:",
+      "token_estimate": 47,
+      "char_count": 259
+    },
+    {
+      "chunk_id": "General_Info_181_112_0031",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 19,
+      "page_end": 19,
+      "heading": "Call Architecture:",
+      "heading_path": [
+        "Annexure-I",
+        "Call Architecture:"
+      ],
+      "heading_path_str": "Annexure-I > Call Architecture:",
+      "level": 4,
+      "heading_x0": 83.9,
+      "heading_conf": 1.0,
+      "text": "State level WCD Control Room and lntegrarion with ERSS WCD ControlRoom Public SrI€,ty Answering Point (FSAP) dwfit a,[ dF6rbnd a6 afiL- (.li6pordeB d sdd dd l.-BI l ... L Gat€$ray GB App$ation DEtastore Gt Appli.ation Datastora Gatevray Mru 1 I I d(oiscrl sd dc€tntre s(lxo",
+      "contextualized_text": "Annexure-I > Call Architecture: State level WCD Control Room and lntegrarion with ERSS WCD ControlRoom Public SrI€,ty Answering Point (FSAP) dwfit a,[ dF6rbnd a6 afiL- (.li6pordeB d sdd dd l.-BI l ... L Gat€$ray GB App$ation DEtastore Gt Appli.ation Datastora Gatevray Mru 1 I I d(oiscrl sd dc€tntre s(lxo",
+      "token_estimate": 60,
+      "char_count": 273
+    },
+    {
+      "chunk_id": "General_Info_181_112_0032",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 20,
+      "page_end": 20,
+      "heading": "Annexure-II",
+      "heading_path": [
+        "Annexure-II"
+      ],
+      "heading_path_str": "Annexure-II",
+      "level": 1,
+      "heading_x0": 450.4,
+      "heading_conf": 1.0,
+      "text": "Category of States/UTs: Based on the data of population as per 2011 Census, States/UTs have been categorized in categories A, B ald C. The categorization of States/UTs is similar to that of Women Helpline. A11 States/UTs have been",
+      "contextualized_text": "Annexure-II Category of States/UTs: Based on the data of population as per 2011 Census, States/UTs have been categorized in categories A, B ald C. The categorization of States/UTs is similar to that of Women Helpline. A11 States/UTs have been",
+      "token_estimate": 51,
+      "char_count": 230
+    },
+    {
+      "chunk_id": "General_Info_181_112_0033",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 20,
+      "page_end": 20,
+      "heading": "i) Category A : Population size more than 60 lakh ii) Category B : Population size between 10-60 lakh iii) Category C : Population size less than 1O lakh",
+      "heading_path": [
+        "Annexure-II",
+        "i) Category A : Population size more than 60 lakh ii) Category B : Population size between 10-60 lakh iii) Category C : Population size less than 1O lakh"
+      ],
+      "heading_path_str": "Annexure-II > i) Category A : Population size more than 60 lakh ii) Category B : Population size between 10-60 lakh iii) Category C : Population size less than 1O lakh",
+      "level": 4,
+      "heading_x0": 79.6,
+      "heading_conf": 1.0,
+      "text": "S1. No States/UTs Catego (Large) Uttar Pradesh 2 Ma1-arashtra Bihar 4 West Bengal 5 Madhya Pradesh 6 Tamil Nadu 7 Ra asthan 8 Karnataka 9 Gui arat Category-B ( Medium! 10 Andhra Pradesh 11 Odisha 72 Telangarla 13 Kerala t4 Jharkhand 15 Assam 16 Pun ab 77 Chha h 19 Delhi",
+      "contextualized_text": "Annexure-II > i) Category A. Population size more than 60 lakh ii) Category B. Population size between 10-60 lakh iii) Category C. Population size less than 1O lakh S1. No States/UTs Catego (Large) Uttar Pradesh 2 Ma1-arashtra Bihar 4 West Bengal 5 Madhya Pradesh 6 Tamil Nadu 7 Ra asthan 8 Karnataka 9 Gui arat Category-B ( Medium! 10 Andhra Pradesh 11 Odisha 72 Telangarla 13 Kerala t4 Jharkhand 15 Assam 16 Pun ab 77 Chha h 19 Delhi",
+      "token_estimate": 68,
+      "char_count": 270
+    },
+    {
+      "chunk_id": "General_Info_181_112_0034",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 20,
+      "page_end": 21,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 135.0,
+      "heading_conf": 1.0,
+      "text": "Catego (Small) 22 Himachal Pradesh aa, Tri IA 24 Me a ,< Malipur 27 Goa 2A Arunachal Pradesh 29 Pu duch 30 Mizorarn 11 Chandisarh 32 Sikkim JJ A & N Islands Dadra & Nagar Haveli and Damal & Diu 35 Lakshad 36 Ladakh Indicative oualifications and Roles and Responsibilities of staff for women",
+      "contextualized_text": "Catego (Small) 22 Himachal Pradesh aa, Tri IA 24 Me a ,< Malipur 27 Goa 2A Arunachal Pradesh 29 Pu duch 30 Mizorarn 11 Chandisarh 32 Sikkim JJ A & N Islands Dadra & Nagar Haveli and Damal & Diu 35 Lakshad 36 Ladakh Indicative oualifications and Roles and Responsibilities of staff for women",
+      "token_estimate": 72,
+      "char_count": 290
+    },
+    {
+      "chunk_id": "General_Info_181_112_0035",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 21,
+      "page_end": 22,
+      "heading": "Helpline:",
+      "heading_path": [
+        "Annexure-III",
+        "Helpline:"
+      ],
+      "heading_path_str": "Annexure-III > Helpline:",
+      "level": 4,
+      "heading_x0": 83.9,
+      "heading_conf": 1.0,
+      "text": "A. WHL Control Room Inde nndent Set-u / or with SHEW s. Position Number Qualification Roles & Responsibilities o of Staff 1 Helpline 01 . Any women i) The Helpline Administrator having a Masters in Administrator will be in Law/ Socia-l Work/ charge for the overall Sociolory/Social smooth functioning of Science/Psychologr WHL. with at least 5 ii) She will ensure prompt years' experience of and meaningful working on women response towa:'ds every related relevant call received at the domains in ar Helpline. administrative set- iii) She will be responsible up with to monitor a and Government or intervene (if required) in Non-Government aly ongoing calls. project/programme iv) She will supervise each and preferably with case, take it to a logical at least 1-year conclusion and later experience of follow up with the counselling either aggrieved child. within or v) outside She will ensure effective the same set-up. convergence with .",
+      "contextualized_text": "Annexure-III > Helpline: A. WHL Control Room Inde nndent Set-u / or with SHEW s. Position Number Qualification Roles & Responsibilities o of Staff 1 Helpline 01 . Any women i) The Helpline Administrator having a Masters in Administrator will be in Law/ Socia-l Work/ charge for the overall Sociolory/Social smooth functioning of Science/Psychologr WHL. with at least 5 ii) She will ensure prompt years' experience of and meaningful working on women response towa:'ds every related relevant call received at the domains in ar Helpline. administrative set- iii) She will be responsible up with to monitor a and Government or intervene (if required) in Non-Government aly ongoing calls. project/programme iv) She will supervise each and preferably with case, take it to a logical at least 1-year conclusion and later experience of follow up with the counselling either aggrieved child. within or v) outside She will ensure effective the same set-up. convergence with .",
+      "token_estimate": 200,
+      "char_count": 940
+    },
+    {
+      "chunk_id": "General_Info_181_112_0036",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 21,
+      "page_end": 22,
+      "heading": "Annexure-III",
+      "heading_path": [
+        "Annexure-III"
+      ],
+      "heading_path_str": "Annexure-III",
+      "level": 1,
+      "heading_x0": 83.9,
+      "heading_conf": 1.0,
+      "text": "She concerned should agencies/ be preferably a institutions. resident of the local vi) She will facilitate community so that redressal of issues local human related to non resource and responsiveness of State expertise is utilized agencies/institutions in for collaboration effective \\Mith functioning of the Director, WCD. centre. vii) She will be responsible for making schedules for the team ald maaaging tl:te team in such a way that the Helpline is up and active 24 hours a day seven day a week. viii) She will be responsible for preparing daily, weekly ald monthly reports and preparing periodical reports. ix) She will be responsible for formulating Resource Dire containing information about the relevalt State and private authorilies institutions / individuals related to child protection and child rights. service providers. xi) She will conduct awa-reness generation acLivities within community to raise awareness around",
+      "contextualized_text": "Annexure-III She concerned should agencies/ be preferably a institutions. resident of the local vi) She will facilitate community so that redressal of issues local human related to non resource and responsiveness of State expertise is utilized agencies/institutions in for collaboration effective \\Mith functioning of the Director, WCD. centre. vii) She will be responsible for making schedules for the team ald maaaging tl:te team in such a way that the Helpline is up and active 24 hours a day seven day a week. viii) She will be responsible for preparing daily, weekly ald monthly reports and preparing periodical reports. ix) She will be responsible for formulating Resource Dire containing information about the relevalt State and private authorilies institutions / individuals related to child protection and child rights. service providers. xi) She will conduct awa-reness generation acLivities within community to raise awareness around",
+      "token_estimate": 187,
+      "char_count": 931
+    },
+    {
+      "chunk_id": "General_Info_181_112_0037",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 22,
+      "page_end": 24,
+      "heading": "Annexure-III",
+      "heading_path": [
+        "Annexure-III"
+      ],
+      "heading_path_str": "Annexure-III",
+      "level": 1,
+      "heading_x0": 388.4,
+      "heading_conf": 1.0,
+      "text": "xii) She will monitor the functioning of WHL, conduct the performance appraisal of the staff, facilitate capacity building, guidance and support for the team. xiii) She will be responsible for day-to-daY of management WHL team ald reporting to Director, WCD and aly other competent authority as ald when uired. 2 Call Operator 12 to Can be outsourced i) She will attend the 18 to any women calls. do primarY having good referrals, does data communication entry and forward skills in Hindi, serious cases and cases English and / or which need first point regional lalguages counselling to HelPline and having requisite Administrator. qualilications and ii) She \\Mil1 Provide experience of information about the working on telecom Government Schemes / web based and programmes related relevant systems. to Women protection and Women Rights. iii) She will provide all the to assistarrce women appllrng for any such above mentioned schemes or programmes and de them throu the process to be adopted for accessing the same. iv) She will help the Helpline Administrator in attending missed ca-l1s. as assigned by the Helpline Administrator.",
+      "contextualized_text": "Annexure-III xii) She will monitor the functioning of WHL, conduct the performance appraisal of the staff, facilitate capacity building, guidance and support for the team. xiii) She will be responsible for day-to-daY of management WHL team ald reporting to Director, WCD and aly other competent authority as ald when uired. 2 Call Operator 12 to Can be outsourced i) She will attend the 18 to any women calls. do primarY having good referrals, does data communication entry and forward skills in Hindi, serious cases and cases English and / or which need first point regional lalguages counselling to HelPline and having requisite Administrator. qualilications and ii) She \\Mil1 Provide experience of information about the working on telecom Government Schemes / web based and programmes related relevant systems. to Women protection and Women Rights. iii) She will provide all the to assistarrce women appllrng for any such above mentioned schemes or programmes and de them throu the process to be adopted for accessing the same. iv) She will help the Helpline Administrator in attending missed ca-l1s. as assigned by the Helpline Administrator.",
+      "token_estimate": 241,
+      "char_count": 1134
+    },
+    {
+      "chunk_id": "General_Info_181_112_0038",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 23,
+      "page_end": 24,
+      "heading": "v) She will be responsible for other work",
+      "heading_path": [
+        "Annexure-III",
+        "v) She will be responsible for other work"
+      ],
+      "heading_path_str": "Annexure-III > v) She will be responsible for other work",
+      "level": 4,
+      "heading_x0": 383.4,
+      "heading_conf": 1.0,
+      "text": "as assigned by the Helpline Administrator. 3 IT Supervisor o1 The IT services i) The IT stalf will look after could be outsourced the technological aspect of to aly person who WHL and ensure that it is a graduate witJr remains functional at all at least diploma in times. computers/ IT etc ii) She/he would follow with a minimum of strict proceedings to 3 years' experience maintain privacy with in data regard to data generated management, and will ensure that name process and other details of documentation and aggrieved womarr remain web-based reporting confidential in each step of formats, case video history conferencing at documentation. state or district level iii) She/he would dra-ft the with government or daiiy/ monthly/ quarterly Non-Governmental/ report based on the MIS, IT based web trased data collection organizations. which would be approved at the level of the Helpline Administrator for submission. iv) She/he with the help of Helpline Administrator will formulate the resource directory containing information about the relevant State and private authorities institutions/ individual related to women rotection 4 Multi- 03 The multi-purpose i) She/he would be purpose Staff activity could be responsible for maintaining outsourced to any hygiene and sanitation at person who is He1pline. literate with ii) She/he will be knowledge/ responsible for the house experience of keeping at WHL. working in the relevant domain 5 Security 03 The services could i) She/he will be responsible Guard/ Night be outsourced to for the overall securi ty of Guard any person having Helpline Centre. at least 2 years' ii) She/he would be experience of responsible",
+      "contextualized_text": "Annexure-III > v) She will be responsible for other work as assigned by the Helpline Administrator. 3 IT Supervisor o1 The IT services i) The IT stalf will look after could be outsourced the technological aspect of to aly person who WHL and ensure that it is a graduate witJr remains functional at all at least diploma in times. computers/ IT etc ii) She/he would follow with a minimum of strict proceedings to 3 years' experience maintain privacy with in data regard to data generated management, and will ensure that name process and other details of documentation and aggrieved womarr remain web-based reporting confidential in each step of formats, case video history conferencing at documentation. state or district level iii) She/he would dra-ft the with government or daiiy/ monthly/ quarterly Non-Governmental/ report based on the MIS, IT based web trased data collection organizations. which would be approved at the level of the Helpline Administrator for submission. iv) She/he with the help of Helpline Administrator will formulate the resource directory containing information about the relevant State and private authorities institutions/ individual related to women rotection 4 Multi- 03 The multi-purpose i) She/he would be purpose Staff activity could be responsible for maintaining outsourced to any hygiene and sanitation at person who is He1pline. literate with ii) She/he will be knowledge/ responsible for the house experience of keeping at WHL. working in the relevant domain 5 Security 03 The services could i) She/he will be responsible Guard/ Night be outsourced to for the overall securi ty of Guard any person having Helpline Centre. at least 2 years' ii) She/he would be experience of responsible",
+      "token_estimate": 349,
+      "char_count": 1668
+    },
+    {
+      "chunk_id": "General_Info_181_112_0039",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 23,
+      "page_end": 25,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 383.4,
+      "heading_conf": 1.0,
+      "text": "for safety of all working as security capital assets, furniture and personnel in a equipment at WHL. government or reputed organization at the district/state level. she He/ should preferably be retired military / paramilitary personnel. s. Items of Erpenditure Amount No. in Rs,",
+      "contextualized_text": "for safety of all working as security capital assets, furniture and personnel in a equipment at WHL. government or reputed organization at the district/state level. she He/ should preferably be retired military / paramilitary personnel. s. Items of Erpenditure Amount No. in Rs,",
+      "token_estimate": 57,
+      "char_count": 278
+    },
+    {
+      "chunk_id": "General_Info_181_112_0040",
+      "doc": "General_Info_181_112.pdf",
+      "scheme": "shakti",
+      "page_start": 25,
+      "page_end": 25,
+      "heading": "(A) Recurring Erpenditure (per annum| 1 Women Helpline Management @ Rs.5.75 lakh per month 69,OO,000 including insurance(@ Rs.330/- per person 2 TeIe one rent .55 000 month 6,60,OOO",
+      "heading_path": [
+        "Annexure-fV",
+        "(A) Recurring Erpenditure (per annum| 1 Women Helpline Management @ Rs.5.75 lakh per month 69,OO,000 including insurance(@ Rs.330/- per person 2 TeIe one rent .55 000 month 6,60,OOO"
+      ],
+      "heading_path_str": "Annexure-fV > (A) Recurring Erpenditure (per annum| 1 Women Helpline Management @ Rs.5.75 lakh per month 69,OO,000 including insurance(@ Rs.330/- per person 2 TeIe one rent .55 000 month 6,60,OOO",
+      "level": 3,
+      "heading_x0": 83.5,
+      "heading_conf": 1.0,
+      "text": "Total 75,60,OOO II.CatesorvB&C Medium and Small States/UTsl s. Items of Drpenditure Amount No (in Rs,l (Bl Rec Ex nditure r annum 1 Women Helpline Management @Rs.4.25 lakh per month 51,00,000 including insuranc{@ Rs.33O/- per person 2 Telephone rent @Rs.35,OOO/- per month 4,20,OOO Total 55,20,OOO",
+      "contextualized_text": "Annexure-fV > (A) Recurring Erpenditure (per annum| 1 Women Helpline Management @ Rs.5.75 lakh per month 69,OO,000 including insurance(@ Rs.330/- per person 2 TeIe one rent .55 000 month 6,60,OOO Total 75,60,OOO II.CatesorvB&C Medium and Small States/UTsl s. Items of Drpenditure Amount No (in Rs,l (Bl Rec Ex nditure r annum 1 Women Helpline Management @Rs.4.25 lakh per month 51,00,000 including insuranc{@ Rs.33O/- per person 2 Telephone rent @Rs.35,OOO/- per month 4,20,OOO Total 55,20,OOO",
+      "token_estimate": 59,
+      "char_count": 297
+    }
+  ]
+}

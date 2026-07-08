@@ -1,0 +1,6 @@
+[project]
+name = "ai-saheli"
+version = "0.1.0"
+
+[tool.vercel]
+entrypoint = "apps.backend.main:app"

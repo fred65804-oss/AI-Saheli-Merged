@@ -1,0 +1,19 @@
+# Normalize line endings across platforms.
+# Text files are stored with LF in the repo; Git handles working-copy conversion.
+* text=auto eol=lf
+
+# Explicit: source and config stay LF everywhere
+*.py    text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.ini   text eol=lf
+*.json  text eol=lf
+*.jsonl text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Binary files: never convert
+*.png binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary

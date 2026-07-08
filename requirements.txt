@@ -1,0 +1,36 @@
+# AI Saheli — Orchestrator (Phase 1, core engine)
+# Python 3.10+
+
+# Web / API
+fastapi>=0.111
+uvicorn[standard]>=0.30
+
+# Agent orchestration
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-anthropic>=0.2.0
+langchain-openai>=0.2.0
+
+# Models / validation
+pydantic>=2.7
+pydantic-settings>=2.3
+
+# Config
+python-dotenv>=1.0
+
+# Language layer — free, zero-key ASR/NMT/TTS
+# ASR  : faster-whisper (local Whisper, ~150 MB model downloaded on first use)
+# NMT  : deep-translator (Google Translate free endpoint)
+# TTS  : edge-tts (Microsoft Edge voices, near-human Hindi quality)
+faster-whisper>=1.0
+deep-translator>=1.11
+edge-tts>=7.0
+
+# Knowledge base — hybrid retrieval over the Qdrant KB (rag/, mcp/knowledge_base/)
+qdrant-client>=1.11
+sentence-transformers>=3.0
+fastembed>=0.3
+
+# Testing
+pytest>=8.0
+pytest-asyncio>=0.23

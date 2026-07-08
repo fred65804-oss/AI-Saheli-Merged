@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+ 
+# Env / secrets
+.env
+.env.local
+ 
+# Logs / audit traces
+logs/
+*.jsonl
+ 
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# local backups and caches - not for git
+rag/chunks_raw_backup/
+rag/qdrant_db_backup/
+logs/
+.pytest_cache/
+voice_test.mp3

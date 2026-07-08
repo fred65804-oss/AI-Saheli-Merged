@@ -1,0 +1,2785 @@
+{
+  "doc": "sop_ch_vatsalya.pdf",
+  "scheme": "vatsalya",
+  "source": "ocr",
+  "pages": 37,
+  "n_headings": 202,
+  "n_chunks": 59,
+  "outline": [
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Hfm ga am faen Hamg",
+      "x0": 1047.8,
+      "conf": 0.532,
+      "page": 1
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+      "x0": 92.8,
+      "conf": 0.976,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "MINISTRY OF WOMEN&CHILD DEVELOPMENT",
+      "x0": 949.2,
+      "conf": 0.988,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "NEWDELHI-110001(INDIA)",
+      "x0": 1079.6,
+      "conf": 0.975,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Qear Medauw / Sir",
+      "x0": 149.2,
+      "conf": 0.783,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "guidelines of Mission Vatsalya scheme according to which States and Districts will execute the24x7Child Helpline'1098'service for children as defined under the Juvenile Justice (Care and Protection of Children) Act,2015(as amended in2021).The Child Helpline will be run in coordination with State and District functionaries and integrated with the Emergency Response Support System112(ERSS-112) helpline of Ministry of Home Affairs.",
+      "x0": 186.8,
+      "conf": 0.974,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ews ucese",
+      "x0": 1090.1,
+      "conf": 0.652,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "STANDARD OPERATING PROCEDURES (SoPS)",
+      "x0": 478.4,
+      "conf": 0.956,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CHILD HELPLINE",
+      "x0": 701.7,
+      "conf": 0.974,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "MISSION VATSALYA SCHEME",
+      "x0": 607.7,
+      "conf": 0.992,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ABBREVIATIONS",
+      "x0": 660.6,
+      "conf": 0.992,
+      "page": 3
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INTRODUCTION",
+      "x0": 755.8,
+      "conf": 0.995,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. ROLES&RESPONSIBILITIES",
+      "x0": 558.3,
+      "conf": 0.989,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Supply hardware and technically",
+      "x0": 947.4,
+      "conf": 0.986,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. C-DAC will provide training",
+      "x0": 949.7,
+      "conf": 0.933,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Troubleshoot all technical",
+      "x0": 948.6,
+      "conf": 0.997,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. Generate MIS and data analytics",
+      "x0": 949.7,
+      "conf": 0.965,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Coordinate with allied",
+      "x0": 948.6,
+      "conf": 0.994,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Set up Child Help Desk/Kiosk/",
+      "x0": 950.9,
+      "conf": 0.959,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Coordinate to ensure production",
+      "x0": 947.4,
+      "conf": 0.994,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Assist the ERSS 112 in",
+      "x0": 950.9,
+      "conf": 0.996,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Shall be available round the",
+      "x0": 949.7,
+      "conf": 0.983,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "linking them to emergency and long-term care and rehabilitation services.",
+      "x0": 997.9,
+      "conf": 0.993,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. WCDCONTROLROOM",
+      "x0": 604.2,
+      "conf": 0.991,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ERSS-112.",
+      "x0": 199.8,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3.1Roles and responsibilities of States/UTs:",
+      "x0": 201.0,
+      "conf": 0.97,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i. ldentifyStatelevelNodalofficerandsecondlevelNodalOfficerwithoneofthem",
+      "x0": 226.9,
+      "conf": 0.974,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.3 Infrastructure:",
+      "x0": 198.6,
+      "conf": 0.966,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Application Server",
+      "x0": 288.0,
+      "conf": 0.962,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Database Server",
+      "x0": 282.1,
+      "conf": 0.896,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) GISServer iv) Automated Call Distribution and Computer Telephone Integration",
+      "x0": 278.6,
+      "conf": 0.98,
+      "page": 7
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Voice Logger vi) E-Mail gateway vii) SMS Gateway vii) Report Server",
+      "x0": 282.1,
+      "conf": 0.858,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3.4Space Requirement:",
+      "x0": 201.0,
+      "conf": 0.996,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3.5Call Classification:",
+      "x0": 201.0,
+      "conf": 0.994,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "All incoming calls to 1098 may be classified into following categories:",
+      "x0": 199.8,
+      "conf": 0.985,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Emergency calls, ii) Non-emergency calls and ii) Information calls",
+      "x0": 212.8,
+      "conf": 0.99,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Police Legal support Fire Education",
+      "x0": 210.4,
+      "conf": 0.986,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "and family",
+      "x0": 638.3,
+      "conf": 0.983,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "identified as lost (missing)",
+      "x0": 211.6,
+      "conf": 0.976,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.6 Call Management:",
+      "x0": 198.6,
+      "conf": 0.999,
+      "page": 8
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "procedure for transferring the call to112orCHLunitof DCPU:",
+      "x0": 202.2,
+      "conf": 0.996,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "3.7 Call Flow:",
+      "x0": 198.6,
+      "conf": 0.928,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CHILD HELPLINE1098",
+      "x0": 668.8,
+      "conf": 0.995,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "SMSTOTHE",
+      "x0": 742.9,
+      "conf": 0.994,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DIAL1098FROM SPECIFIED NUMBER EMAIL TO THE",
+      "x0": 404.3,
+      "conf": 0.957,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "PHONE SPECIFIED ADDRESS",
+      "x0": 469.0,
+      "conf": 0.992,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FROM THE PHONE",
+      "x0": 700.6,
+      "conf": 0.996,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "WOMEN RELATED",
+      "x0": 1317.7,
+      "conf": 0.995,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALL",
+      "x0": 1397.6,
+      "conf": 0.999,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALL FORWARDED",
+      "x0": 1314.1,
+      "conf": 0.997,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "EMERGENCY CALL NON EMERGENCY CALL INFORMATION CALL",
+      "x0": 178.7,
+      "conf": 0.969,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALLFORWARDEDTOERSS-112AND CALLFORWARDEDTOCHLUNIT",
+      "x0": 114.0,
+      "conf": 0.994,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMATION PROVIDED",
+      "x0": 1196.6,
+      "conf": 0.995,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CHLUNITAT DCPU ALSO BE AT DCPU ON POST ASSESSMENT",
+      "x0": 169.3,
+      "conf": 0.998,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "TO CALLERBYWCD",
+      "x0": 1234.2,
+      "conf": 0.965,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMED ABOUT THE CASE AND BASED ON NATURE OF CALL",
+      "x0": 162.2,
+      "conf": 0.997,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CONTROL ROOM OR CALL",
+      "x0": 1196.6,
+      "conf": 0.997,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FORWARDEDTOCHLUNIT",
+      "x0": 1190.7,
+      "conf": 0.998,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "AT DCPU FOR SPECIFIC",
+      "x0": 1216.6,
+      "conf": 0.997,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMATION BY THE",
+      "x0": 1216.6,
+      "conf": 0.998,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOLLOWUP OF CASE CALLER",
+      "x0": 499.6,
+      "conf": 0.999,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) DOCUMENTING ALL CALLS AND RECORDING",
+      "x0": 459.6,
+      "conf": 0.963,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DETAILS OF THE CALLER AND SHARE THE CASE CLOSED DETAILS OF THE CALLER WITH 112 OR CHL UNITS OF DCPUS.",
+      "x0": 526.6,
+      "conf": 0.951,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) FOLLOW IUP WITH112ORCHLUNITS AT",
+      "x0": 451.4,
+      "conf": 0.792,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DCPUS FOR DOCUMENTING DETAILS OF",
+      "x0": 528.9,
+      "conf": 0.998,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INTERVENTION CASES HANDED OVER TO THEM AND TO GETFOLLOW-UPFOR THE CASES HANDLED THROUGHOUT REACH PROGRAMS.",
+      "x0": 527.8,
+      "conf": 0.995,
+      "page": 10
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Dial1098for child helpline",
+      "x0": 276.2,
+      "conf": 0.96,
+      "page": 11
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) SendSMStothespecifiednumberfromthephone ii) Send email to the specified address",
+      "x0": 272.7,
+      "conf": 0.954,
+      "page": 11
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "minutes of the call. The responsibility of WCDControl Room includes:",
+      "x0": 198.6,
+      "conf": 0.968,
+      "page": 11
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. CHILD HELPLINE UNIT (CHL)",
+      "x0": 558.3,
+      "conf": 0.988,
+      "page": 12
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A. Child Helpline Unit at DcPU:",
+      "x0": 198.6,
+      "conf": 0.95,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Roles and Responsibilities of CHL Unit atDCPU:",
+      "x0": 201.0,
+      "conf": 0.95,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) RespondingtocallsrelatedtochildrenwhichhavebeentransferredfromWCD",
+      "x0": 230.4,
+      "conf": 0.655,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Functioning under overall supervision of the DCPU; vi) Producing children before the Child Welfare Committee (CWC) for ensuring care and",
+      "x0": 221.0,
+      "conf": 0.859,
+      "page": 12
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "B. Child Help Desk at Railway Station:",
+      "x0": 197.5,
+      "conf": 0.961,
+      "page": 13
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "protection at the station and on moving train means:",
+      "x0": 201.0,
+      "conf": 0.978,
+      "page": 13
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ChildHelpDeskatBusStands:",
+      "x0": 300.9,
+      "conf": 0.994,
+      "page": 13
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "D. ChildHelpGroupatSub-district level Ward/PRl:",
+      "x0": 198.6,
+      "conf": 0.988,
+      "page": 14
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Financial Support for Child Help Group is given in Annexure-IV (Part-B) under Child Helpline Unit at DCPU.",
+      "x0": 198.6,
+      "conf": 0.992,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4.1Awareness Generation and Outreach Activities:",
+      "x0": 198.6,
+      "conf": 0.993,
+      "page": 14
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DSLSA.",
+      "x0": 299.7,
+      "conf": 0.998,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "4.2 Call Flow:",
+      "x0": 196.3,
+      "conf": 0.951,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALLSTRANSFERREDFROMWCDCONTROLROOM",
+      "x0": 486.6,
+      "conf": 0.992,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "EMERGENCY CALL NONEMERGENCYCALL INFORMATION CALL",
+      "x0": 179.8,
+      "conf": 0.996,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CALL UNIT TO PROVIDE NECESSARY CHLUNITTOPROVIDENECESSARY",
+      "x0": 123.4,
+      "conf": 0.997,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "INFORMATION PROVIDED",
+      "x0": 1196.6,
+      "conf": 0.995,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "ASSISTANCE SUPPORT AND INTERVENTION AS",
+      "x0": 264.5,
+      "conf": 0.997,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "PERTHE CASE TOCALLERBYCHLUNITAT",
+      "x0": 662.9,
+      "conf": 0.958,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DCPU",
+      "x0": 1318.8,
+      "conf": 0.999,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "FOLLOWUP OF CASE",
+      "x0": 499.6,
+      "conf": 0.999,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) FIRST FOLLOW-UP TO BE DONE WITHIN1HOUROF",
+      "x0": 298.6,
+      "conf": 0.723,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "TRANSFERRING THECASE. CASE CLOSED",
+      "x0": 351.5,
+      "conf": 0.981,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "SECOND FOLLOW WITHIN8HOURS OF TRANSFERRING THE CASE.",
+      "x0": 350.3,
+      "conf": 0.997,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "THIRD FOLLOWUP TO BE DONE WITHIN24HOURSOF TRANSFERRING THE CASE.",
+      "x0": 351.5,
+      "conf": 0.998,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "1STDAY OF CASE HANDOVER TILL CASE IS MARKED AS CLOSEDBYTHECHLUNIT.",
+      "x0": 350.3,
+      "conf": 0.942,
+      "page": 15
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CHLUNITWILLSENDADAILYREPORTTOTHEWCD CONTROL ROOM REGARDING TRANSFERRED CASES TO THE CHL UNIT.",
+      "x0": 353.8,
+      "conf": 0.999,
+      "page": 15
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4.3Call Management:",
+      "x0": 199.8,
+      "conf": 0.989,
+      "page": 16
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "below:",
+      "x0": 198.6,
+      "conf": 0.996,
+      "page": 16
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. HUMAN RESOURCE",
+      "x0": 624.2,
+      "conf": 0.994,
+      "page": 17
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A. Human Resource at WcD Control Room:",
+      "x0": 198.6,
+      "conf": 0.957,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "The WCD Control Room shall consist of following contractual staff:",
+      "x0": 201.0,
+      "conf": 0.99,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Helpline Administrator-01 ii) Call Operators -from 12 to 18* ii) IT Supervisor- 01 iv) Multi-purpose Staff-03",
+      "x0": 313.8,
+      "conf": 0.941,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Security Guard/Night Guard-03",
+      "x0": 309.1,
+      "conf": 0.786,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Human Resource atCHLUnit atDCPU:",
+      "x0": 296.2,
+      "conf": 0.963,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Counselor-01 ii) Child Helpline Supervisors - 03 or 04* iv) CaseWorkers-03or04*",
+      "x0": 335.0,
+      "conf": 0.962,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Bus Stand:",
+      "x0": 198.6,
+      "conf": 0.954,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "the following contractual staff:",
+      "x0": 201.0,
+      "conf": 0.997,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": "paren_lower",
+      "text": "(ii) Case Workers -03",
+      "x0": 246.8,
+      "conf": 0.958,
+      "page": 17
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and",
+      "x0": 196.3,
+      "conf": 0.992,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Data Security:",
+      "x0": 199.8,
+      "conf": 0.989,
+      "page": 18
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "management:",
+      "x0": 202.2,
+      "conf": 0.952,
+      "page": 18
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "6. TRAINING AND CAPACITY BUILDING",
+      "x0": 500.7,
+      "conf": 0.69,
+      "page": 19
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "7. REPORTING MECHANISM",
+      "x0": 583.0,
+      "conf": 0.992,
+      "page": 20
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "is to be developed by C-DAC:",
+      "x0": 197.5,
+      "conf": 0.993,
+      "page": 20
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "8. CONVERGENCE",
+      "x0": 651.2,
+      "conf": 0.997,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Indicative list of activities for convergence under CHL are asunder:",
+      "x0": 199.8,
+      "conf": 0.96,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Rescue by Railway Police/ Labour Department,",
+      "x0": 226.9,
+      "conf": 0.952,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) First level intervention by Social Workers ofDCPUs/SJPUs,",
+      "x0": 221.0,
+      "conf": 0.872,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Medical check-up by District Health Department, iv) Tracing of family members with the help of Police/SJPUs",
+      "x0": 216.3,
+      "conf": 0.962,
+      "page": 21
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "v) Production before the CWC, vi) Ensure Placement of the child with a “fit person' from civil society or “fit institution', vii) Legal support by Law Department and CwC, vi) Counselling and guidance from counsellors/Social Workers, ix) Repatriation of the child with help of police/labour department officials/PRls.",
+      "x0": 221.0,
+      "conf": 0.911,
+      "page": 21
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-l",
+      "x0": 1296.5,
+      "conf": 0.976,
+      "page": 22
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Call Architecture:",
+      "x0": 197.5,
+      "conf": 0.968,
+      "page": 22
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "MPLS MPLS MPLS MPLS",
+      "x0": 357.3,
+      "conf": 0.974,
+      "page": 22
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-ll",
+      "x0": 1287.1,
+      "conf": 0.94,
+      "page": 23
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Category A : Population size more than 60 lakh",
+      "x0": 226.9,
+      "conf": 0.954,
+      "page": 23
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Category B : Population size between 10-60 lakh",
+      "x0": 222.2,
+      "conf": 0.931,
+      "page": 23
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "i) Category C : Population size less than 10 lakh",
+      "x0": 216.3,
+      "conf": 0.914,
+      "page": 23
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-ll",
+      "x0": 1277.7,
+      "conf": 0.919,
+      "page": 24
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A.WCDCONTROLROOM",
+      "x0": 632.4,
+      "conf": 0.995,
+      "page": 24
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+      "x0": 189.2,
+      "conf": 0.977,
+      "page": 24
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "CHL.",
+      "x0": 1072.0,
+      "conf": 0.999,
+      "page": 25
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "approved at the level of the Helpline Administrator for submission.",
+      "x0": 1021.4,
+      "conf": 0.997,
+      "page": 26
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "government or reputed organization atthe district/state level.",
+      "x0": 614.7,
+      "conf": 0.987,
+      "page": 26
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "military / para-military personnel.",
+      "x0": 614.7,
+      "conf": 0.885,
+      "page": 26
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "B.CHILD HELPLINE UNIT AT DCPU",
+      "x0": 559.5,
+      "conf": 0.993,
+      "page": 27
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+      "x0": 193.9,
+      "conf": 0.967,
+      "page": 27
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns.",
+      "x0": 600.6,
+      "conf": 0.957,
+      "page": 27
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Assisting Project Coordinator in organizing awareness activities and",
+      "x0": 1060.2,
+      "conf": 1.0,
+      "page": 28
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "C.CHILDHELPDESKATRAILWAYSTATIONANDBUSSTAND",
+      "x0": 364.4,
+      "conf": 0.994,
+      "page": 29
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Child 03 Graduate preferably in i. The staff available on duty",
+      "x0": 198.6,
+      "conf": 0.978,
+      "page": 29
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-Iv",
+      "x0": 1267.1,
+      "conf": 0.959,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A.Financial SupportforWcDControl Room:",
+      "x0": 198.6,
+      "conf": 0.966,
+      "page": 30
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1.Category A (Large States/UTs)",
+      "x0": 199.8,
+      "conf": 0.984,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Items of Expenditure Amount No. (in Rs.)",
+      "x0": 212.8,
+      "conf": 0.979,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time)",
+      "x0": 197.5,
+      "conf": 0.983,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years)",
+      "x0": 196.3,
+      "conf": 0.979,
+      "page": 30
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "uninterrupted power supply in hilly, North East and hard to reach areas)",
+      "x0": 295.0,
+      "conf": 0.988,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Child Helpline Management @ Rs.5.75 lakh per month including 69,00,000",
+      "x0": 197.5,
+      "conf": 0.973,
+      "page": 30
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "(Rent, salaries, water, electricity, postage, stationary,",
+      "x0": 295.0,
+      "conf": 0.972,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Items of Expenditure Amount No (in Rs.)",
+      "x0": 195.1,
+      "conf": 0.983,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time)",
+      "x0": 195.1,
+      "conf": 0.986,
+      "page": 30
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (A) 20,00,000",
+      "x0": 638.3,
+      "conf": 0.995,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years)",
+      "x0": 196.3,
+      "conf": 0.981,
+      "page": 30
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "power supply in hilly, North East and hard to reach areas)",
+      "x0": 271.5,
+      "conf": 0.994,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Child Helpline Management @Rs.4.25 lakh per month including 51,00,000",
+      "x0": 197.5,
+      "conf": 0.981,
+      "page": 30
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "B.Financial Support for CHL Unit at DCPU:",
+      "x0": 198.6,
+      "conf": 0.951,
+      "page": 31
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "s ) o lrs Scheme on the basis of the population of the district submitted along with the financial proposal by State/UT.",
+      "x0": 197.5,
+      "conf": 0.518,
+      "page": 31
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "As per Census 2011, 640 districts have been categorized as under:",
+      "x0": 197.5,
+      "conf": 0.995,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Population Size Number of districts as ManpowerofCHL No. per Census 2011 Unit (Indicative)",
+      "x0": 193.9,
+      "conf": 0.979,
+      "page": 31
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. Population size less than1lakh:",
+      "x0": 193.9,
+      "conf": 0.859,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 197.5,
+      "conf": 0.958,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time) 1 One time grant for Site readiness (refurbishment cost, working 5,00,000",
+      "x0": 195.1,
+      "conf": 0.989,
+      "page": 31
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (A) 5,00,000",
+      "x0": 587.7,
+      "conf": 0.966,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years) 1 Furniture, computers/laptops and other office equipment 2,50,000",
+      "x0": 197.5,
+      "conf": 0.956,
+      "page": 31
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (B) 2,50,000",
+      "x0": 588.9,
+      "conf": 0.998,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Remuneration of CHL unit at DCPU including insurance@ 20,88,000",
+      "x0": 195.1,
+      "conf": 0.982,
+      "page": 31
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 198.6,
+      "conf": 0.976,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time) 1 One time grant for Site readiness (refurbishment cost, working 5,00,000",
+      "x0": 192.8,
+      "conf": 0.975,
+      "page": 32
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (A) 5,00,000",
+      "x0": 588.9,
+      "conf": 0.994,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years) 1 Furniture, computers/laptops and other office equipment 2,50,000",
+      "x0": 195.1,
+      "conf": 0.985,
+      "page": 32
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (B) 2,50,000",
+      "x0": 588.9,
+      "conf": 0.99,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Remuneration of CHL unit at DCPU including insurance@ 20,88,000",
+      "x0": 196.3,
+      "conf": 0.975,
+      "page": 32
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Ill. Population size from 10 lakhs - less than 30lakhs:",
+      "x0": 195.1,
+      "conf": 0.734,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 198.6,
+      "conf": 0.975,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time) 1 One time grant for Site readiness (refurbishment cost, working 5,00,000",
+      "x0": 193.9,
+      "conf": 0.983,
+      "page": 32
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years) 1 Furniture, computers/laptops and other office equipment 2,50,000",
+      "x0": 196.3,
+      "conf": 0.981,
+      "page": 32
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (B) 2,50,000",
+      "x0": 590.1,
+      "conf": 0.99,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Remuneration of CHL unit at DCPU including insurance@ 20,88,000",
+      "x0": 195.1,
+      "conf": 0.99,
+      "page": 33
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Rs.330/-per person",
+      "x0": 279.8,
+      "conf": 0.971,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 197.5,
+      "conf": 0.975,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time) 1 One time grant for Site readiness (refurbishment cost, working 5,00,000",
+      "x0": 193.9,
+      "conf": 0.988,
+      "page": 33
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (A) 5,00,000",
+      "x0": 587.7,
+      "conf": 0.989,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years) 1 Furniture, computers/laptops and other office equipment 2,50,000",
+      "x0": 197.5,
+      "conf": 0.96,
+      "page": 33
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (B) 2,50,000",
+      "x0": 588.9,
+      "conf": 0.993,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Remuneration of CHL unit at DCPU including insurance@ 20,88,000",
+      "x0": 196.3,
+      "conf": 0.982,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "V. Population size from 60 lakhs and more:",
+      "x0": 193.9,
+      "conf": 0.871,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 197.5,
+      "conf": 0.962,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (one time) 1 One time grant for Site readiness (refurbishment cost, working 5,00,000",
+      "x0": 193.9,
+      "conf": 0.987,
+      "page": 33
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sub-total (A) 5,00,000",
+      "x0": 587.7,
+      "conf": 0.998,
+      "page": 33
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Non-recurring Expenditure (once in five years) 1 Furniture, computers/laptops and other office equipment 3,00,000",
+      "x0": 198.6,
+      "conf": 0.972,
+      "page": 34
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) Recurring Expenditure (per annum) 1 Remuneration of CHL unit at DCPU including insurance@ 25,80,000",
+      "x0": 195.1,
+      "conf": 0.986,
+      "page": 34
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Bus Stand*:",
+      "x0": 198.6,
+      "conf": 0.993,
+      "page": 34
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Item of Expenditure Amount No. (in Rs.)",
+      "x0": 205.7,
+      "conf": 0.953,
+      "page": 34
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(A) Non-recurring Expenditure (once in five years) 1 Furniture and other office equipments 1,00,000",
+      "x0": 197.5,
+      "conf": 0.973,
+      "page": 34
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "machine, UPS etc.)",
+      "x0": 286.8,
+      "conf": 0.999,
+      "page": 34
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(B) Recurring Expenditure (per annum) 1 Remuneration of Child Help Desk Staff including 14,76,000",
+      "x0": 197.5,
+      "conf": 0.98,
+      "page": 34
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-V",
+      "x0": 1276.5,
+      "conf": 0.961,
+      "page": 35
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+      "x0": 195.1,
+      "conf": 0.988,
+      "page": 35
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Andaman, Rudraprayag, Mon, Bijapur, Ribhoi, Champawat, Bageshwar，S Shupiyan， Kohima, Chur a chandpur，East Sikkim，Ramban, Ganderbal, Debagarh, Reasi, East Garo Hills, Samba, Uttar kashi, Dadra &Nagar Haveli, Dhalai, Dimapur, Bilaspur, West Khasi Hills, Chamoli, Bandi pore, Jaintia Hills, Aizawl, Doda Thoubal, Kulgam, Kullu, Baudh, Hamirpur, Imphal East, Lohardaga, Punch, Sena pati, Chirang, Pithoragarh, Imphal West, Chamba, Una, Sirmaur,",
+      "x0": 699.4,
+      "conf": 0.988,
+      "page": 35
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Kandhamal, The Nilgiris, Bongaigaon, Uttar Bastar Kanker, Anuppur, Badgam, Ariyalur Burhanpur, Mansa, Nalbari, Datia, Jamtara, Dhamtari, Tapi, Shimla, Kapurthala a，Wayanad，NorthGoa, Kabeerdham, East Khasi Hills, Neemuch, Udalguri, Ashok nagar, Sindhudurg, Jashpur, Pratapgarh, Kupwara, Mahoba, South Tripura, Kokrajhar, North Delhi, Rewari，Pakur，Muktsar，Mahendragarh, Darrang, Fatehabad, Ramgarh, Baksa, Puducherry,",
+      "x0": 699.4,
+      "conf": 0.981,
+      "page": 35
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Yamuna nagar, Nabarangapur ， Lalitpur, Baran, Karim ganj, Srinagar, Hoshangabad, Guna, Theni , Kamrup Metropolitan, Chikkaballapura, Damoh, Thiruvarur, Anugul , Katni, Sirsa, Wardha, Baghpat, Kasaragod, Khandwa (East Nimar), Sehore, Godda, Dumka, Gondiya, Garhwa, Dibrugarh, Tinsukia, Navsari, Raisen, Jind, Sawai Madhopur, Siva ganga, Mandsaur, Patan, Ramanathapuram, Munger, Seoni, Auraiya, Koraput, Barwani, Bathinda, Dungarpur,",
+      "x0": 699.4,
+      "conf": 0.974,
+      "page": 36
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Puruliya, Rohtas, Sri Potti Sriramulu Nellore, Begusarai.",
+      "x0": 700.6,
+      "conf": 0.963,
+      "page": 37
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "sop_ch_vatsalya_0001",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 1,
+      "page_end": 2,
+      "heading": "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+      "heading_path": [
+        "INDRA MALLO (IAS) GOVERNMENT OF INDIA"
+      ],
+      "heading_path_str": "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+      "level": 1,
+      "heading_x0": 186.8,
+      "heading_conf": 0.974,
+      "text": "2. The Standard Operating Procedures (SoPs）of Child Helpline is enclosed for implementation by the States/UTs. 3. I shall be grateful, if you kindly prepare and include financial proposal of Child Helpline under Mission Vatsalya Scheme for approval of Project Approval Board for consideration and approval. Detailed SoPs will also be available on the Ministry'swebsite i.e.www.wcd.nic.in. With regards, (Indra Mallo) Principal Secretaries/Secretaries Department of Women and Child Development, Social Justice/Welfare, AllState Government s/UTAdministrations Government of India Savdhanta Sanrakshnam Towardsanewdawn Ministry of Women and Child Development Government of India Joint Secretary SHASTRI BHAWAN E-mail: indra.mallo@ias.nic.in Dated:31stMarch,2023",
+      "contextualized_text": "INDRA MALLO (IAS) GOVERNMENT OF INDIA 2. The Standard Operating Procedures (SoPs）of Child Helpline is enclosed for implementation by the States/UTs. 3. I shall be grateful, if you kindly prepare and include financial proposal of Child Helpline under Mission Vatsalya Scheme for approval of Project Approval Board for consideration and approval. Detailed SoPs will also be available on the Ministry'swebsite i.e.www.wcd.nic.in. With regards, (Indra Mallo) Principal Secretaries/Secretaries Department of Women and Child Development, Social Justice/Welfare, AllState Government s/UTAdministrations Government of India Savdhanta Sanrakshnam Towardsanewdawn Ministry of Women and Child Development Government of India Joint Secretary SHASTRI BHAWAN E-mail: indra.mallo@ias.nic.in Dated:31stMarch,2023",
+      "token_estimate": 125,
+      "char_count": 758
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0002",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 3,
+      "page_end": 3,
+      "heading": "ABBREVIATIONS",
+      "heading_path": [
+        "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+        "ABBREVIATIONS"
+      ],
+      "heading_path_str": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > ABBREVIATIONS",
+      "level": 4,
+      "heading_x0": 660.6,
+      "heading_conf": 0.992,
+      "text": "CCL Child in conflict with law C-DAC Centre for Development of Advanced Computing CHL Child Helpline CNCP Child in need of Care and Protection CWC Child Welfare Committee DCPO District Child Protection Officer DCPU District Child Protection Unit ERSS Emergency Response Support System GIS Geographic Information System ILL Internet Leased Line JJB Juvenile Justice Board JJ Act Juvenile Justice Act JJ Rules Juvenile Justice Rules MHA Ministry of Home Affairs MIS Management Information System MPLS Multi-Protocol Layer Switching NGO Non-Government Organization NIPCCD National Institute of Public Cooperation and Child Development NIMHANS National InstituteofMentalHealthandNeurosciences PFMS Public Financial Management System POCSO Protection of Children from Sexual Offences POI Points of Interest PRI Panchayat i Raj Institution SCPS State Child Protection Society SJPU Special Juvenile Police Unit SMS Short Message Service SoP Standard Operating Procedure TSP Total Solution Provider WCD-CR WCDControl Room WHL Women Helpline WCD Women and Child Development",
+      "contextualized_text": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > ABBREVIATIONS CCL Child in conflict with law C-DAC Centre for Development of Advanced Computing CHL Child Helpline CNCP Child in need of Care and Protection CWC Child Welfare Committee DCPO District Child Protection Officer DCPU District Child Protection Unit ERSS Emergency Response Support System GIS Geographic Information System ILL Internet Leased Line JJB Juvenile Justice Board JJ Act Juvenile Justice Act JJ Rules Juvenile Justice Rules MHA Ministry of Home Affairs MIS Management Information System MPLS Multi-Protocol Layer Switching NGO Non-Government Organization NIPCCD National Institute of Public Cooperation and Child Development NIMHANS National InstituteofMentalHealthandNeurosciences PFMS Public Financial Management System POCSO Protection of Children from Sexual Offences POI Points of Interest PRI Panchayat i Raj Institution SCPS State Child Protection Society SJPU Special Juvenile Police Unit SMS Short Message Service SoP Standard Operating Procedure TSP Total Solution Provider WCD-CR WCDControl Room WHL Women Helpline WCD Women and Child Development",
+      "token_estimate": 196,
+      "char_count": 1064
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0003",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 4,
+      "page_end": 4,
+      "heading": "INTRODUCTION",
+      "heading_path": [
+        "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+        "INTRODUCTION"
+      ],
+      "heading_path_str": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > INTRODUCTION",
+      "level": 4,
+      "heading_x0": 755.8,
+      "heading_conf": 0.995,
+      "text": "The Government of India enacted the Juvenile Justice (Care and Protection of Children) Act, 2015as amended in2021forchildreninconflictwithlaw (CCL) and children in need of care development, treatment, social re-integration and by adopting a child-friendly approach. Child line Services is defined under section 2(25) in Juvenile Justice (Care & Protection of Children) Act, 2015 as a twenty-four hours emergency outreach service for children in crisis which links them to emergency or long-term care and rehabilitation service. ‘1098' is a national toll free24x7helpline number dedicated for children in difficult situations. The ProtectionofChildrenfromSexualOffencesAct,2012as amended in2019and Rules made The Child line Services are to be saturated from presently functional in 568 districts, 11 Bus Stands and 135 Railway Stations to all the districts, identified Bus Stands and at the Railway Stations identified by the Ministry of Railways. The primary aim of Child Helpline Service is to support and assist any child who has fallen out of the safety net to provide emergency and immediate response and connect the child to distress conditions and services available for their rehabilitation, restoration or social reintegration.",
+      "contextualized_text": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > INTRODUCTION The Government of India enacted the Juvenile Justice (Care and Protection of Children) Act, 2015as amended in2021forchildreninconflictwithlaw (CCL) and children in need of care development, treatment, social re-integration and by adopting a child-friendly approach. Child line Services is defined under section 2(25) in Juvenile Justice (Care & Protection of Children) Act, 2015 as a twenty-four hours emergency outreach service for children in crisis which links them to emergency or long-term care and rehabilitation service. ‘1098' is a national toll free24x7helpline number dedicated for children in difficult situations. The ProtectionofChildrenfromSexualOffencesAct,2012as amended in2019and Rules made The Child line Services are to be saturated from presently functional in 568 districts, 11 Bus Stands and 135 Railway Stations to all the districts, identified Bus Stands and at the Railway Stations identified by the Ministry of Railways. The primary aim of Child Helpline Service is to support and assist any child who has fallen out of the safety net to provide emergency and immediate response and connect the child to distress conditions and services available for their rehabilitation, restoration or social reintegration.",
+      "token_estimate": 236,
+      "char_count": 1235
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0004",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 4,
+      "page_end": 4,
+      "heading": "INTRODUCTION",
+      "heading_path": [
+        "INDRA MALLO (IAS) GOVERNMENT OF INDIA",
+        "INTRODUCTION"
+      ],
+      "heading_path_str": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > INTRODUCTION",
+      "level": 4,
+      "heading_x0": 755.8,
+      "heading_conf": 0.995,
+      "text": "For children with different needs, who call in anytime, anywhere, and for anything, it acts as a one-point contact which facilitates instant access to support, advice and active intervention. The Ministry of Women and Child Development has issued the guidelines of Mission Vatsalya scheme according to which States and Districts will execute the 24x7Child Helpline‘1098'service for children as defined under theJJAct,2015.The Child Helpline shall be run in coordination with State and District functionaries and integrated with the The State/UTs shall submit their financial proposals annually regarding Child Helpline Services duly filled in the prescribed formats, along with their implementation plans fon During the 15th Finance Commission period, Child Helpline shall be 100% funded under Mission Vatsalya by the Government of India, for all States/UTs. The funds would be States/UTs shall comply with all the guidelines issued by the Department of Expenditure, Ministry of Finance regarding procedure of release of funds and any further protocols on operation of Child Helpline issued from time to time by the Ministry. The States/UTshallreflect the amount in the audited statement of accounts together with Child Helpline shall be furnished in accordance to Rule239-240GFR2017and in the Form",
+      "contextualized_text": "INDRA MALLO (IAS) GOVERNMENT OF INDIA > INTRODUCTION For children with different needs, who call in anytime, anywhere, and for anything, it acts as a one-point contact which facilitates instant access to support, advice and active intervention. The Ministry of Women and Child Development has issued the guidelines of Mission Vatsalya scheme according to which States and Districts will execute the 24x7Child Helpline‘1098'service for children as defined under theJJAct,2015.The Child Helpline shall be run in coordination with State and District functionaries and integrated with the The State/UTs shall submit their financial proposals annually regarding Child Helpline Services duly filled in the prescribed formats, along with their implementation plans fon During the 15th Finance Commission period, Child Helpline shall be 100% funded under Mission Vatsalya by the Government of India, for all States/UTs. The funds would be States/UTs shall comply with all the guidelines issued by the Department of Expenditure, Ministry of Finance regarding procedure of release of funds and any further protocols on operation of Child Helpline issued from time to time by the Ministry. The States/UTshallreflect the amount in the audited statement of accounts together with Child Helpline shall be furnished in accordance to Rule239-240GFR2017and in the Form",
+      "token_estimate": 255,
+      "char_count": 1298
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0005",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 558.3,
+      "heading_conf": 0.989,
+      "text": "Child Helpline under Mission Vatsalya scheme at State Level shall be run under the overall supervision of the Additional Chief Secretary/Principal Secretary/Secretary of the Department of Women and Child Development/Social Justice& Empowerment of the State identified to implement the Mission Vatsalya scheme and District Magistrate at the district level. State Level Monitoring and Review Committee of Mission Vatsalya Scheme headed by Chief Secretary during their meetings shall review the performance of Child Helpline at the State level and at district level, District Child Welfare and Protection Committee which is chaired review of Child Helpline must inter-alia include key performance indicators for effectiveness, impact and response time of Child Helpline. Summary of the roles and the responsibilities of different agencies are given below:SI. Name of Agency Role Responsibility No. 1 C-DAC Technology solution 1. Technology solution provider to provider integrate Child Helpline1098 withERSS 112. commission the WCDControl Room inState/UT. including hands-on training at the WCD Control Room and CHL Units at DCPUs. operational issues.",
+      "contextualized_text": "Child Helpline under Mission Vatsalya scheme at State Level shall be run under the overall supervision of the Additional Chief Secretary/Principal Secretary/Secretary of the Department of Women and Child Development/Social Justice& Empowerment of the State identified to implement the Mission Vatsalya scheme and District Magistrate at the district level. State Level Monitoring and Review Committee of Mission Vatsalya Scheme headed by Chief Secretary during their meetings shall review the performance of Child Helpline at the State level and at district level, District Child Welfare and Protection Committee which is chaired review of Child Helpline must inter-alia include key performance indicators for effectiveness, impact and response time of Child Helpline. Summary of the roles and the responsibilities of different agencies are given below:SI. Name of Agency Role Responsibility No. 1 C-DAC Technology solution 1. Technology solution provider to provider integrate Child Helpline1098 withERSS 112. commission the WCDControl Room inState/UT. including hands-on training at the WCD Control Room and CHL Units at DCPUs. operational issues.",
+      "token_estimate": 217,
+      "char_count": 1148
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0006",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 949.7,
+      "heading_conf": 0.965,
+      "text": "of calls. 2 State Child Overall supervision of 1. Set up24x7 dedicated dWCD Protection Society Child Helpline under Control Room (WCD-CR). (SCPS) Mission Vatsalya 2. Set up Child Helpline Unit at all DCPUs. departments for convergence strategies.",
+      "contextualized_text": "of calls. 2 State Child Overall supervision of 1. Set up24x7 dedicated dWCD Protection Society Child Helpline under Control Room (WCD-CR). (SCPS) Mission Vatsalya 2. Set up Child Helpline Unit at all DCPUs. departments for convergence strategies.",
+      "token_estimate": 49,
+      "char_count": 246
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0007",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": "4. Set up Child Help Desk/Kiosk/",
+      "heading_path": [
+        "4. Set up Child Help Desk/Kiosk/"
+      ],
+      "heading_path_str": "4. Set up Child Help Desk/Kiosk/",
+      "level": 2,
+      "heading_x0": 950.9,
+      "heading_conf": 0.959,
+      "text": "Booth at the selected Railway Stations which shall be operational round the clock. 3 District Child Nodal agency under 1. Supervise and monitor the dayProtection Unit administrative control to-day operations of the Child of District Magistrate Helpline Unit at DCPU. to implement Mission 2. Coordinate rescue teams with Vatsalya scheme. allied SJPU, Railways, Labour, etc.",
+      "contextualized_text": "4. Set up Child Help Desk/Kiosk/ Booth at the selected Railway Stations which shall be operational round the clock. 3 District Child Nodal agency under 1. Supervise and monitor the dayProtection Unit administrative control to-day operations of the Child of District Magistrate Helpline Unit at DCPU. to implement Mission 2. Coordinate rescue teams with Vatsalya scheme. allied SJPU, Railways, Labour, etc.",
+      "token_estimate": 73,
+      "char_count": 372
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0008",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 5,
+      "page_end": 6,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 947.4,
+      "heading_conf": 0.994,
+      "text": "of children before the CWC/JJB as the case maybe. 4 Child Helpline Unit Nodal Child Helpline 1.Take non-emergency calls at DCPU Unit at DCPU level to requiring legal, psycho-social attend to all calls for counselling or education, help for children support landing at WCD-CR and forwarded to CHL Unit established at DCPU. emergency calls as required. clock and provide outreach service for（ children in crisis",
+      "contextualized_text": "of children before the CWC/JJB as the case maybe. 4 Child Helpline Unit Nodal Child Helpline 1.Take non-emergency calls at DCPU Unit at DCPU level to requiring legal, psycho-social attend to all calls for counselling or education, help for children support landing at WCD-CR and forwarded to CHL Unit established at DCPU. emergency calls as required. clock and provide outreach service for（ children in crisis",
+      "token_estimate": 87,
+      "char_count": 409
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0009",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "linking them to emergency and long-term care and rehabilitation services.",
+      "heading_path": [
+        "3. Shall be available round the",
+        "linking them to emergency and long-term care and rehabilitation services."
+      ],
+      "heading_path_str": "3. Shall be available round the > linking them to emergency and long-term care and rehabilitation services.",
+      "level": 4,
+      "heading_x0": 997.9,
+      "heading_conf": 0.993,
+      "text": "5 Ministry of To rescue child in 1. The Railways shall provide Railways need of care and space of 6x6 sq.feet free of cost protection travelling, for setting up of a Child Help living, working or in Desk/kiosk. conflict with law，on 2 Implement the SoP of2021 any part of the issued by the DG RPF. Railways premises or in train or Railway Vehicle. 6 Child Helpline To rescue child in 1. The States/UTsshallprovide Desk at Bus needof care and space of 6x6 sq. feet free of cost Stands protection travelling, for setting up of a Child Help living, working or in Desk/kioskat identifiedBus conflict with law，on Stand. any part of the Bus 2. The Child Helpline Desk shall be Stands. available round the clock and provide outreach service efor children in crisis linking them to emergency and long-term care and rehabilitation services. 7 Child Help Group rescue child in 1.",
+      "contextualized_text": "3. Shall be available round the > linking them to emergency and long-term care and rehabilitation services. 5 Ministry of To rescue child in 1. The Railways shall provide Railways need of care and space of 6x6 sq.feet free of cost protection travelling, for setting up of a Child Help living, working or in Desk/kiosk. conflict with law，on 2 Implement the SoP of2021 any part of the issued by the DG RPF. Railways premises or in train or Railway Vehicle. 6 Child Helpline To rescue child in 1. The States/UTsshallprovide Desk at Bus needof care and space of 6x6 sq. feet free of cost Stands protection travelling, for setting up of a Child Help living, working or in Desk/kioskat identifiedBus conflict with law，on Stand. any part of the Bus 2. The Child Helpline Desk shall be Stands. available round the clock and provide outreach service efor children in crisis linking them to emergency and long-term care and rehabilitation services. 7 Child Help Group rescue child in 1.",
+      "token_estimate": 200,
+      "char_count": 868
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0010",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "linking them to emergency and long-term care and rehabilitation services.",
+      "heading_path": [
+        "3. Shall be available round the",
+        "linking them to emergency and long-term care and rehabilitation services."
+      ],
+      "heading_path_str": "3. Shall be available round the > linking them to emergency and long-term care and rehabilitation services.",
+      "level": 4,
+      "heading_x0": 997.9,
+      "heading_conf": 0.993,
+      "text": "7 Child Help Group rescue child in 1. States/UTs shall engage Child at sub- needof careand Help Groups/ volunteers to rush district/Ward/PRI protection travelling, toimmediateaidofchildrenin level living, working or in distress situations. conflict with law, in 2.To assist the CHLunit at DCPU emergency situations on the spot in such cases. atthe sub-district level/ward/PRI. 8 Allied Toaidintherescue Coordinate to ensure production Departments- of child in need of of children before the Medical Labour, Police, care and protection Authorities/CWC/JJB/SJPU as Education, Health, or in conflict with law, the case may be. Skill, rural in emergency development, situations intheir Panchayat i Raj, area of jurisdiction. Urban Local Bodies, Municipal Authorities etc",
+      "contextualized_text": "3. Shall be available round the > linking them to emergency and long-term care and rehabilitation services. 7 Child Help Group rescue child in 1. States/UTs shall engage Child at sub- needof careand Help Groups/ volunteers to rush district/Ward/PRI protection travelling, toimmediateaidofchildrenin level living, working or in distress situations. conflict with law, in 2.To assist the CHLunit at DCPU emergency situations on the spot in such cases. atthe sub-district level/ward/PRI. 8 Allied Toaidintherescue Coordinate to ensure production Departments- of child in need of of children before the Medical Labour, Police, care and protection Authorities/CWC/JJB/SJPU as Education, Health, or in conflict with law, the case may be. Skill, rural in emergency development, situations intheir Panchayat i Raj, area of jurisdiction. Urban Local Bodies, Municipal Authorities etc",
+      "token_estimate": 144,
+      "char_count": 766
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0011",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 7,
+      "page_end": 7,
+      "heading": "3. WCDCONTROLROOM",
+      "heading_path": [
+        "3. WCDCONTROLROOM"
+      ],
+      "heading_path_str": "3. WCDCONTROLROOM",
+      "level": 2,
+      "heading_x0": 604.2,
+      "heading_conf": 0.991,
+      "text": "As per the Mission Vatsalya scheme guidelines, since Child Helpline shallberunin coordination with the State and District Administration, a24x7dedicatedWCDControlRoom (WCD-CR) will be setup for Child Helpline in each State/UTand will be integrated with",
+      "contextualized_text": "3. WCDCONTROLROOM As per the Mission Vatsalya scheme guidelines, since Child Helpline shallberunin coordination with the State and District Administration, a24x7dedicatedWCDControlRoom (WCD-CR) will be setup for Child Helpline in each State/UTand will be integrated with",
+      "token_estimate": 44,
+      "char_count": 252
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0012",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 7,
+      "page_end": 7,
+      "heading": "ERSS-112.",
+      "heading_path": [
+        "3. WCDCONTROLROOM",
+        "ERSS-112."
+      ],
+      "heading_path_str": "3. WCDCONTROLROOM > ERSS-112.",
+      "level": 4,
+      "heading_x0": 199.8,
+      "heading_conf": 1.0,
+      "text": "infrastructure for setting up of WCD Control Room in all States/UTs where CHL and WHL calltakersshallbeco-located so as to handle women and child related calls in a single location. The WCD-CR shall work in close coordination and supervision of State Child Protection Society (SCPS) in matters related to children.",
+      "contextualized_text": "3. WCDCONTROLROOM > ERSS-112. infrastructure for setting up of WCD Control Room in all States/UTs where CHL and WHL calltakersshallbeco-located so as to handle women and child related calls in a single location. The WCD-CR shall work in close coordination and supervision of State Child Protection Society (SCPS) in matters related to children.",
+      "token_estimate": 65,
+      "char_count": 314
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0013",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 7,
+      "page_end": 7,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 226.9,
+      "heading_conf": 0.974,
+      "text": "possessing technical knowledge and expertise to support C-DAC. ii. ili. WHL and CHL Call-Takers to be co-located in same control room premises. iv. Electrical wiring with necessary power sockets for powering Call-Taking consoles. V. Assist in establishing Multi-Protocol Layer Switching (MPLS), Internet Leased Line (ILL) and Primary Rate Interface (PRl) connectivity. vi. Provisioning of other basic infrastructure in WcD Control Room. vii. Air-Conditioned Server and Call Taker's rooms at WCD with UPS facility vii. Facilitate conducting user-training for WHL/CHL users. ix. Provide digital GISPointsofInterests (POls) relevant toWHLand CHLoperations. X. Ensuring data protection at theWCD Control Room. xi. Extend all support to C-DAC for successful installation & commissioning. xii. Preparing a Resource Director y for linking child related calls to available services. 3.2 The Call Architecture is given at Annexure-l. The technical infrastructure of WCD-CR shall consist of servers and client components shall be provided by C-DAC. The server infrastructure comprises of the following modules: The client components consist of the workstations and IPPhones.",
+      "contextualized_text": "possessing technical knowledge and expertise to support C-DAC. ii. ili. WHL and CHL Call-Takers to be co-located in same control room premises. iv. Electrical wiring with necessary power sockets for powering Call-Taking consoles. V. Assist in establishing Multi-Protocol Layer Switching (MPLS), Internet Leased Line (ILL) and Primary Rate Interface (PRl) connectivity. vi. Provisioning of other basic infrastructure in WcD Control Room. vii. Air-Conditioned Server and Call Taker's rooms at WCD with UPS facility vii. Facilitate conducting user-training for WHL/CHL users. ix. Provide digital GISPointsofInterests (POls) relevant toWHLand CHLoperations. X. Ensuring data protection at theWCD Control Room. xi. Extend all support to C-DAC for successful installation & commissioning. xii. Preparing a Resource Director y for linking child related calls to available services. 3.2 The Call Architecture is given at Annexure-l. The technical infrastructure of WCD-CR shall consist of servers and client components shall be provided by C-DAC. The server infrastructure comprises of the following modules: The client components consist of the workstations and IPPhones.",
+      "token_estimate": 217,
+      "char_count": 1164
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0014",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 7,
+      "page_end": 8,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 201.0,
+      "heading_conf": 0.996,
+      "text": "The WCDControl Room to be provided with adequate space and infrastructure by the Department working on the child protection/welfare issues in the State. In case the State/UT Government is unable to provide space, it may function from a rented building. Efforts may be made to utilize the existing infrastructure of States/UTs instead of creation of new infrastructure. Space requirement for each State/UT will vary as the number of call taking consoles (No. of sq.ft (6x5) and the Data Centre requires 100 sq. ft (10x10). The data centre facility envisaged is common for WHL and CHL operations. For the optimum and efficient use of available resources, it is mandated thatWHL and CHLCall-Takers are co-located in the same venue (WCD-CR). The Data Centre will be setup in the WHL Centre. Inanycase if theCHLCall-Takerssitatadifferentlocation, additionaldedicatedMPLS connectivity would be arranged betweenWCD CR and CHL unit by the State/UT. Emergency calls Non-Emergency calls Information calls Medical/Health Psycho-social support/Emotional Information about Support and guidance referral and other services Ambulance Technical/Customer Care Protection from abuse Blank/Silent Childinconflictwithlaw Wrong/fun/crank Child Marriage Personal calls/calls from friends Missing Inbound other calls Child lost/found and Follow up calls Child labour Administrative Death related Restoration Depending upon the category of the call, the Call Operator shall follow the below laid down",
+      "contextualized_text": "The WCDControl Room to be provided with adequate space and infrastructure by the Department working on the child protection/welfare issues in the State. In case the State/UT Government is unable to provide space, it may function from a rented building. Efforts may be made to utilize the existing infrastructure of States/UTs instead of creation of new infrastructure. Space requirement for each State/UT will vary as the number of call taking consoles (No. of sq.ft (6x5) and the Data Centre requires 100 sq. ft (10x10). The data centre facility envisaged is common for WHL and CHL operations. For the optimum and efficient use of available resources, it is mandated thatWHL and CHLCall-Takers are co-located in the same venue (WCD-CR). The Data Centre will be setup in the WHL Centre. Inanycase if theCHLCall-Takerssitatadifferentlocation, additionaldedicatedMPLS connectivity would be arranged betweenWCD CR and CHL unit by the State/UT. Emergency calls Non-Emergency calls Information calls Medical/Health Psycho-social support/Emotional Information about Support and guidance referral and other services Ambulance Technical/Customer Care Protection from abuse Blank/Silent Childinconflictwithlaw Wrong/fun/crank Child Marriage Personal calls/calls from friends Missing Inbound other calls Child lost/found and Follow up calls Child labour Administrative Death related Restoration Depending upon the category of the call, the Call Operator shall follow the below laid down",
+      "token_estimate": 279,
+      "char_count": 1476
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0015",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 9,
+      "page_end": 9,
+      "heading": "procedure for transferring the call to112orCHLunitof DCPU:",
+      "heading_path": [
+        "3.6 Call Management:",
+        "procedure for transferring the call to112orCHLunitof DCPU:"
+      ],
+      "heading_path_str": "3.6 Call Management: > procedure for transferring the call to112orCHLunitof DCPU:",
+      "level": 4,
+      "heading_x0": 202.2,
+      "heading_conf": 0.996,
+      "text": "i) Emergency calls: All Emergency calls shall be forwarded by the WCD Control Rooms to ERSS-112. While forwarding the calls to 112, concerned CHL Unit also be informed of the case for intervention. ii) call shall be transferred to CHL Units of DCPUs for providing necessary support and intervention as per the case. iIi) Information Calls: These are calls where in caller is looking for information either pertaining to other services/schemes of the Government. The call may be handled by the Call Operators of the Control Rooms wherever information is available or maybe transferred to CHL Units of DCPUs for providing information to the caller.",
+      "contextualized_text": "3.6 Call Management: > procedure for transferring the call to112orCHLunitof DCPU: i) Emergency calls: All Emergency calls shall be forwarded by the WCD Control Rooms to ERSS-112. While forwarding the calls to 112, concerned CHL Unit also be informed of the case for intervention. ii) call shall be transferred to CHL Units of DCPUs for providing necessary support and intervention as per the case. iIi) Information Calls: These are calls where in caller is looking for information either pertaining to other services/schemes of the Government. The call may be handled by the Call Operators of the Control Rooms wherever information is available or maybe transferred to CHL Units of DCPUs for providing information to the caller.",
+      "token_estimate": 140,
+      "char_count": 646
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0016",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 11,
+      "page_end": 11,
+      "heading": "INTERVENTION CASES HANDED OVER TO THEM AND TO GETFOLLOW-UPFOR THE CASES HANDLED THROUGHOUT REACH PROGRAMS.",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "INTERVENTION CASES HANDED OVER TO THEM AND TO GETFOLLOW-UPFOR THE CASES HANDLED THROUGHOUT REACH PROGRAMS."
+      ],
+      "heading_path_str": "3.7 Call Flow: > INTERVENTION CASES HANDED OVER TO THEM AND TO GETFOLLOW-UPFOR THE CASES HANDLED THROUGHOUT REACH PROGRAMS.",
+      "level": 4,
+      "heading_x0": 527.8,
+      "heading_conf": 0.995,
+      "text": "WCDControlRoomshallanswerthecalls24x7，365days in a weekly shift pattern. The StatelevelcontrolroomforWcDwillhavededicatedinfrastructurethatcanhandledifferent types of distress signals like voice calls, SMS, emailsetc. It will have specialized call takers for child related calls. A Child can seek help using following options:",
+      "contextualized_text": "3.7 Call Flow: > INTERVENTION CASES HANDED OVER TO THEM AND TO GETFOLLOW-UPFOR THE CASES HANDLED THROUGHOUT REACH PROGRAMS. WCDControlRoomshallanswerthecalls24x7，365days in a weekly shift pattern. The StatelevelcontrolroomforWcDwillhavededicatedinfrastructurethatcanhandledifferent types of distress signals like voice calls, SMS, emailsetc. It will have specialized call takers for child related calls. A Child can seek help using following options:",
+      "token_estimate": 47,
+      "char_count": 326
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0017",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 11,
+      "page_end": 11,
+      "heading": "i) SendSMStothespecifiednumberfromthephone ii) Send email to the specified address",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "i) SendSMStothespecifiednumberfromthephone ii) Send email to the specified address"
+      ],
+      "heading_path_str": "3.7 Call Flow: > i) SendSMStothespecifiednumberfromthephone ii) Send email to the specified address",
+      "level": 4,
+      "heading_x0": 272.7,
+      "heading_conf": 0.954,
+      "text": "Child related help requests can be received in the ERSS also. This occurs when a person and severity of the case and if required it will be dispatched to the WCD control room. Call Operator should be trained for answering calls and shall practice on scripts for concerned State'sorUT'sWCDControlRoom. Caller'sidentificationandcallerlocationis obtained through Telephone Subscriber database and Location Based Services. Once a call lands on WCD-CR, a Unique ID Number is generated for each call and call is transferred to the call operator. The decision of transferring thecall to CHLunits shallbe done within5",
+      "contextualized_text": "3.7 Call Flow: > i) SendSMStothespecifiednumberfromthephone ii) Send email to the specified address Child related help requests can be received in the ERSS also. This occurs when a person and severity of the case and if required it will be dispatched to the WCD control room. Call Operator should be trained for answering calls and shall practice on scripts for concerned State'sorUT'sWCDControlRoom. Caller'sidentificationandcallerlocationis obtained through Telephone Subscriber database and Location Based Services. Once a call lands on WCD-CR, a Unique ID Number is generated for each call and call is transferred to the call operator. The decision of transferring thecall to CHLunits shallbe done within5",
+      "token_estimate": 123,
+      "char_count": 609
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0018",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 11,
+      "page_end": 11,
+      "heading": "minutes of the call. The responsibility of WCDControl Room includes:",
+      "heading_path": [
+        "3.7 Call Flow:",
+        "minutes of the call. The responsibility of WCDControl Room includes:"
+      ],
+      "heading_path_str": "3.7 Call Flow: > minutes of the call. The responsibility of WCDControl Room includes:",
+      "level": 4,
+      "heading_x0": 198.6,
+      "heading_conf": 0.968,
+      "text": "i) Answering all inbound calls to 1098 and transfer the call to 112 or Child Helpline Unit at DCPUs or 181 in case of calls related to women. i) Documenting all calls and recording details of the caller and share the details of the caller with112orCHLunitsof DCPU s. ii) Follow up with112 or CHLunits at DCPUs for documenting details of handled throughout reach programs. iv) welfare of children. V) Closing the call after seeking follow up from 112 or CHL units.",
+      "contextualized_text": "3.7 Call Flow: > minutes of the call. The responsibility of WCDControl Room includes: i) Answering all inbound calls to 1098 and transfer the call to 112 or Child Helpline Unit at DCPUs or 181 in case of calls related to women. i) Documenting all calls and recording details of the caller and share the details of the caller with112orCHLunitsof DCPU s. ii) Follow up with112 or CHLunits at DCPUs for documenting details of handled throughout reach programs. iv) welfare of children. V) Closing the call after seeking follow up from 112 or CHL units.",
+      "token_estimate": 108,
+      "char_count": 463
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0019",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 12,
+      "page_end": 12,
+      "heading": "A. Child Helpline Unit at DcPU:",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "A. Child Helpline Unit at DcPU:"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU:",
+      "level": 3,
+      "heading_x0": 198.6,
+      "heading_conf": 0.95,
+      "text": "The District Child Protection Unit working under the overall supervision of District Magistrate TheCHLUnitworkingundertheoveralladministrativecontrolofDistrictMagistrateshallbe available round the clock and provide outreach service for children in crisis linking them to emergency and long-term care and rehabilitation services. Each of this unit shall abide by o n r s of child. coordination and monitoring or in nearby building failing which rent provision has been made for CHL Units with proper security arrangement.",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU: The District Child Protection Unit working under the overall supervision of District Magistrate TheCHLUnitworkingundertheoveralladministrativecontrolofDistrictMagistrateshallbe available round the clock and provide outreach service for children in crisis linking them to emergency and long-term care and rehabilitation services. Each of this unit shall abide by o n r s of child. coordination and monitoring or in nearby building failing which rent provision has been made for CHL Units with proper security arrangement.",
+      "token_estimate": 93,
+      "char_count": 520
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0020",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 12,
+      "page_end": 12,
+      "heading": "i) RespondingtocallsrelatedtochildrenwhichhavebeentransferredfromWCD",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "A. Child Helpline Unit at DcPU:",
+        "i) RespondingtocallsrelatedtochildrenwhichhavebeentransferredfromWCD"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU: > i) RespondingtocallsrelatedtochildrenwhichhavebeentransferredfromWCD",
+      "level": 4,
+      "heading_x0": 230.4,
+      "heading_conf": 0.655,
+      "text": "Control Room and provision of rescue and outreach services for children inneed of care and protection; ii) Reaching the child in distress requiring physical intervention is expected to be completed within30minutes on an average; i) Coordinating rescue and other outreach services with the help of relevant local departments like police, administration, labour, health, railways and others; iv) Ensuring proper documentation of all children rescued to facilitate their rehabilitation and restoration;",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU: > i) RespondingtocallsrelatedtochildrenwhichhavebeentransferredfromWCD Control Room and provision of rescue and outreach services for children inneed of care and protection; ii) Reaching the child in distress requiring physical intervention is expected to be completed within30minutes on an average; i) Coordinating rescue and other outreach services with the help of relevant local departments like police, administration, labour, health, railways and others; iv) Ensuring proper documentation of all children rescued to facilitate their rehabilitation and restoration;",
+      "token_estimate": 93,
+      "char_count": 499
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0021",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 12,
+      "page_end": 12,
+      "heading": "v) Functioning under overall supervision of the DCPU; vi) Producing children before the Child Welfare Committee (CWC) for ensuring care and",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "A. Child Helpline Unit at DcPU:",
+        "v) Functioning under overall supervision of the DCPU; vi) Producing children before the Child Welfare Committee (CWC) for ensuring care and"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU: > v) Functioning under overall supervision of the DCPU; vi) Producing children before the Child Welfare Committee (CWC) for ensuring care and",
+      "level": 4,
+      "heading_x0": 221.0,
+      "heading_conf": 0.859,
+      "text": "protection; vii) Supporting the CWC in the long term rehabilitation of children, where required; vii) ix) compilation of a national comprehensive database of child protection; x) Creating awareness and ensuring access to the 1098 Child helpline number; xi) Research, documentation, awareness and advocacy on issues related to Child Helpline; xii) Establishing linkages with other child protection services, community and local bodies for meeting the immediate needs of children rescued; xii) xiv) xv) Orientation and sensitization of various Government Departments on child protection in coordination with the DCPU andSCPS;",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > A. Child Helpline Unit at DcPU: > v) Functioning under overall supervision of the DCPU; vi) Producing children before the Child Welfare Committee (CWC) for ensuring care and protection; vii) Supporting the CWC in the long term rehabilitation of children, where required; vii) ix) compilation of a national comprehensive database of child protection; x) Creating awareness and ensuring access to the 1098 Child helpline number; xi) Research, documentation, awareness and advocacy on issues related to Child Helpline; xii) Establishing linkages with other child protection services, community and local bodies for meeting the immediate needs of children rescued; xii) xiv) xv) Orientation and sensitization of various Government Departments on child protection in coordination with the DCPU andSCPS;",
+      "token_estimate": 117,
+      "char_count": 623
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0022",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 13,
+      "page_end": 13,
+      "heading": "B. Child Help Desk at Railway Station:",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "B. Child Help Desk at Railway Station:"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > B. Child Help Desk at Railway Station:",
+      "level": 3,
+      "heading_x0": 197.5,
+      "heading_conf": 0.961,
+      "text": "Ministry of Women and Child Development and Ministry of Railways have signed anMoU on 19.05.2015 to ensure care and protection, security and well- being of run-away, unaccompanied and trafficked children who came into contact with the Railways. A Revised Standard Operating Procedure (SoP) hasbeen issuedbyDG/RPFletter No.2012/Sec (Crime)/45/72 dated 23.12.2021 for the Railways'2021 to ensure care and States/UTswhiledealingwithchildrenincontactwithRailways. The child in contact with the Railways is a child as defined in section 2(12) of the Juvenile justice Act, 2015 (as amended in 2021) as requiring care and protection and also includes premises or in trainor Railway Vehicle.",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > B. Child Help Desk at Railway Station: Ministry of Women and Child Development and Ministry of Railways have signed anMoU on 19.05.2015 to ensure care and protection, security and well- being of run-away, unaccompanied and trafficked children who came into contact with the Railways. A Revised Standard Operating Procedure (SoP) hasbeen issuedbyDG/RPFletter No.2012/Sec (Crime)/45/72 dated 23.12.2021 for the Railways'2021 to ensure care and States/UTswhiledealingwithchildrenincontactwithRailways. The child in contact with the Railways is a child as defined in section 2(12) of the Juvenile justice Act, 2015 (as amended in 2021) as requiring care and protection and also includes premises or in trainor Railway Vehicle.",
+      "token_estimate": 128,
+      "char_count": 683
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0023",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 13,
+      "page_end": 13,
+      "heading": "B. Child Help Desk at Railway Station:",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "B. Child Help Desk at Railway Station:"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > B. Child Help Desk at Railway Station:",
+      "level": 2,
+      "heading_x0": 201.0,
+      "heading_conf": 0.978,
+      "text": "Unaccompanied children inneed of support. · Child travelling alone and is in crisis. Missing children found at the stations or in the moving train. Children being trafficked. Children separated from their family either by missing the train or left out by parents. Children run away from their homes and families. Children living at the station. Working children at the station or on train. Injured, ill/physically challenged children at the station. Abused children or vulnerable to abuse. Children involved in drug addiction at the station. Ragpicking children. Abandoned including disabled children at the station. Child beggars. selected Railway Stations which shall be operational round the clock. The Railways shall The concerned DCPU sincoordinationwithRailwayauthoritieswillhavetheoverall responsibility of implementing SoP for the Railways' 2021 to ensure care and protection of children in contact with the Indian Railways. Desk/kioskatidentifiedBusStands. TheChildHelplineDeskatBusStandshallbeavailable be of the concerned DCPU s.",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > B. Child Help Desk at Railway Station: Unaccompanied children inneed of support. · Child travelling alone and is in crisis. Missing children found at the stations or in the moving train. Children being trafficked. Children separated from their family either by missing the train or left out by parents. Children run away from their homes and families. Children living at the station. Working children at the station or on train. Injured, ill/physically challenged children at the station. Abused children or vulnerable to abuse. Children involved in drug addiction at the station. Ragpicking children. Abandoned including disabled children at the station. Child beggars. selected Railway Stations which shall be operational round the clock. The Railways shall The concerned DCPU sincoordinationwithRailwayauthoritieswillhavetheoverall responsibility of implementing SoP for the Railways' 2021 to ensure care and protection of children in contact with the Indian Railways. Desk/kioskatidentifiedBusStands. TheChildHelplineDeskatBusStandshallbeavailable be of the concerned DCPU s.",
+      "token_estimate": 188,
+      "char_count": 1040
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0024",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "D. ChildHelpGroupatSub-district level Ward/PRl:",
+      "heading_path": [
+        "4. CHILD HELPLINE UNIT (CHL)",
+        "D. ChildHelpGroupatSub-district level Ward/PRl:"
+      ],
+      "heading_path_str": "4. CHILD HELPLINE UNIT (CHL) > D. ChildHelpGroupatSub-district level Ward/PRl:",
+      "level": 3,
+      "heading_x0": 198.6,
+      "heading_conf": 0.988,
+      "text": "States/UTs shall engage Child Help Groups/volunteers to rush to immediate aid of children in distress situations which will assist theCHLunit at DCPU on the spot in such cases. Government initiative like Bharat Scout and Guide, NSS Volunteers, Nehru Yuva Kendras etc., or the NGOs, Self-Help Groups etc., which are already working for the similar objectives, may be identified.",
+      "contextualized_text": "4. CHILD HELPLINE UNIT (CHL) > D. ChildHelpGroupatSub-district level Ward/PRl: States/UTs shall engage Child Help Groups/volunteers to rush to immediate aid of children in distress situations which will assist theCHLunit at DCPU on the spot in such cases. Government initiative like Bharat Scout and Guide, NSS Volunteers, Nehru Yuva Kendras etc., or the NGOs, Self-Help Groups etc., which are already working for the similar objectives, may be identified.",
+      "token_estimate": 77,
+      "char_count": 377
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0025",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 14,
+      "page_end": 16,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 198.6,
+      "heading_conf": 0.993,
+      "text": "i) The CHL Unit at district level /Child Help Desk at Railway Stations/Bus Stands and Child Help Group at sub-district/Ward/PRlwillbe responsible for conducting awareness and outreach activities regarding provisions of Juvenile Justice (Care & Protection of Children） Act, 2015, Mission Vatsalya Scheme guidelines and awareness about Child line-1098. i) Organizing active outreach programs and display of Child Helpline kiosks during Melas for providing assistance and support to children found in distress situations. ii) Help Desk at Railway Stations/BusStands and Child Help Group at subdistrict/Ward/PRl. TheseactivitiesshallbeundertakenbyCHLstaff in accordance to thecalendarandDCPOshallmakesurethatsuchactivitiesascoveredinthe calendarareconductedbythestaffofCHL.TheCHLstaffof the district, in addition to this can also decide for additional activities to be undertaken for purposes of awareness generation. iv) The DCPO shall be responsible for making tie up arrangements with different organizationsforconductingforconductingactivitieswiththeCHLstaff. iv) SUBSEQUENT FOLLOWUP AFTER EVERY7DAYS FROM The CHL unit staff shall respond to the transferred calls to CHL unit of DCPU as given",
+      "contextualized_text": "i) The CHL Unit at district level /Child Help Desk at Railway Stations/Bus Stands and Child Help Group at sub-district/Ward/PRlwillbe responsible for conducting awareness and outreach activities regarding provisions of Juvenile Justice (Care & Protection of Children） Act, 2015, Mission Vatsalya Scheme guidelines and awareness about Child line-1098. i) Organizing active outreach programs and display of Child Helpline kiosks during Melas for providing assistance and support to children found in distress situations. ii) Help Desk at Railway Stations/BusStands and Child Help Group at subdistrict/Ward/PRl. TheseactivitiesshallbeundertakenbyCHLstaff in accordance to thecalendarandDCPOshallmakesurethatsuchactivitiesascoveredinthe calendarareconductedbythestaffofCHL.TheCHLstaffof the district, in addition to this can also decide for additional activities to be undertaken for purposes of awareness generation. iv) The DCPO shall be responsible for making tie up arrangements with different organizationsforconductingforconductingactivitieswiththeCHLstaff. iv) SUBSEQUENT FOLLOWUP AFTER EVERY7DAYS FROM The CHL unit staff shall respond to the transferred calls to CHL unit of DCPU as given",
+      "token_estimate": 196,
+      "char_count": 1192
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0026",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 16,
+      "page_end": 16,
+      "heading": "below:",
+      "heading_path": [
+        "4.3Call Management:",
+        "below:"
+      ],
+      "heading_path_str": "4.3Call Management: > below:",
+      "level": 4,
+      "heading_x0": 198.6,
+      "heading_conf": 0.996,
+      "text": "i) Emergency calls: Emergency calls as forwarded by the WCD Control Rooms for assistance. intervention as per the case. ii) Information Calls: Calls as transferred by WCD Control room to the CHL unit. These are calls wherein caller is looking for information either pertaining to other 4.4 Timelines for Follow Up of Cases by CHL Unit and Closing of the Case: Each calls hall be followed up to ascertain whether the child in distress has been and any other necessary intervention. CHL unit should take follow-up of cases transferred to them by WCD Control Room as per the time lines given below: First follow-up to be done within 1 hour of transferring the case. ii) Second follow-up within8hours of transferring the case. ii) Third follow-up to be done within24hours of transferring thecase. iv) markedasclosedbytheCHLunit. cases to the CHL unit.",
+      "contextualized_text": "4.3Call Management: > below: i) Emergency calls: Emergency calls as forwarded by the WCD Control Rooms for assistance. intervention as per the case. ii) Information Calls: Calls as transferred by WCD Control room to the CHL unit. These are calls wherein caller is looking for information either pertaining to other 4.4 Timelines for Follow Up of Cases by CHL Unit and Closing of the Case: Each calls hall be followed up to ascertain whether the child in distress has been and any other necessary intervention. CHL unit should take follow-up of cases transferred to them by WCD Control Room as per the time lines given below: First follow-up to be done within 1 hour of transferring the case. ii) Second follow-up within8hours of transferring the case. ii) Third follow-up to be done within24hours of transferring thecase. iv) markedasclosedbytheCHLunit. cases to the CHL unit.",
+      "token_estimate": 185,
+      "char_count": 847
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0027",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 17,
+      "page_end": 17,
+      "heading": "5. HUMAN RESOURCE",
+      "heading_path": [
+        "5. HUMAN RESOURCE"
+      ],
+      "heading_path_str": "5. HUMAN RESOURCE",
+      "level": 1,
+      "heading_x0": 624.2,
+      "heading_conf": 0.994,
+      "text": "States/UTs as per their population have been categorized as A, B & C (Large, Medium and Small), accordingly financial support shall be provided to each State/UT. States/UTs will be responsibleforextendingsupportandcooperationtoC-DACinsettingupofWCDControl Rooms. The categorization of States/UTs is given at Annexure-ll. *Number of Call Operators at WCD Control Rooms may vary on the basis of categorization of the State/UT given at Annexure-ll. The CHL Unit at DCPU shall consist of following contractual staff: i）Project Coordinator - 01",
+      "contextualized_text": "5. HUMAN RESOURCE States/UTs as per their population have been categorized as A, B & C (Large, Medium and Small), accordingly financial support shall be provided to each State/UT. States/UTs will be responsibleforextendingsupportandcooperationtoC-DACinsettingupofWCDControl Rooms. The categorization of States/UTs is given at Annexure-ll. *Number of Call Operators at WCD Control Rooms may vary on the basis of categorization of the State/UT given at Annexure-ll. The CHL Unit at DCPU shall consist of following contractual staff: i）Project Coordinator - 01",
+      "token_estimate": 100,
+      "char_count": 539
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0028",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 17,
+      "page_end": 17,
+      "heading": "A. Human Resource at WcD Control Room:",
+      "heading_path": [
+        "5. HUMAN RESOURCE",
+        "A. Human Resource at WcD Control Room:"
+      ],
+      "heading_path_str": "5. HUMAN RESOURCE > A. Human Resource at WcD Control Room:",
+      "level": 2,
+      "heading_x0": 335.0,
+      "heading_conf": 0.962,
+      "text": "*The number of posts in the category of Child Helpline Supervisors and Case Workers would proportionately increase/decrease on the basis of population of the districts (Refer: Annexure-V). States/UTs shall be provided budget for CHL Unit at DCPU based on the IV (Part-B)). The Child Help Desk at Railway Station and Child Help Desk at Bus Stand shall consist of () Child Helpline Supervisors - 03",
+      "contextualized_text": "5. HUMAN RESOURCE > A. Human Resource at WcD Control Room: *The number of posts in the category of Child Helpline Supervisors and Case Workers would proportionately increase/decrease on the basis of population of the districts (Refer: Annexure-V). States/UTs shall be provided budget for CHL Unit at DCPU based on the IV (Part-B)). The Child Help Desk at Railway Station and Child Help Desk at Bus Stand shall consist of () Child Helpline Supervisors - 03",
+      "token_estimate": 87,
+      "char_count": 396
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0029",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 17,
+      "page_end": 18,
+      "heading": "D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and",
+      "heading_path": [
+        "5. HUMAN RESOURCE",
+        "D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and"
+      ],
+      "heading_path_str": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and",
+      "level": 3,
+      "heading_x0": 196.3,
+      "heading_conf": 0.992,
+      "text": "outsource basis by the States/UTsandshallordinarilybeuptothe15thFinanceCommission cyclei.e., upto2025-26subject to annual performance appraisal. maintain confidentiality of all records failing which suitable action may be taken. wages by the States/UTs for the relevant skills/ knowledge sets. The social security benefits the State/ District, as per extant provisions of law. Any statutory taxes / duties such as GST etc. would not be deducted from the salary of the contractual staff. The applicable taxes and duties would be payable by the respective State Government/UTs from their own budget. The staff deployed at the institutions shall be permitted to avail 12 days leave in a year with the approval of designated authority. Further, Maternity Leave to the women staff shall not institutions stay operational at all times. 5.2 Financial Support for WCD Control Room is given at Annexure-IV (Part-A). 5.3 Financial Support for CHL unit at DCPU is given at Annexure-IV (Part-B). 5.4 Financial Support for Child Help Desk at Railway Station and Child Help Desk at Bus stand is given at Annexure-IV (Part-C).",
+      "contextualized_text": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff. The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and outsource basis by the States/UTsandshallordinarilybeuptothe15thFinanceCommission cyclei.e., upto2025-26subject to annual performance appraisal. maintain confidentiality of all records failing which suitable action may be taken. wages by the States/UTs for the relevant skills/ knowledge sets. The social security benefits the State/ District, as per extant provisions of law. Any statutory taxes / duties such as GST etc. would not be deducted from the salary of the contractual staff. The applicable taxes and duties would be payable by the respective State Government/UTs from their own budget. The staff deployed at the institutions shall be permitted to avail 12 days leave in a year with the approval of designated authority. Further, Maternity Leave to the women staff shall not institutions stay operational at all times. 5.2 Financial Support for WCD Control Room is given at Annexure-IV (Part-A). 5.3 Financial Support for CHL unit at DCPU is given at Annexure-IV (Part-B). 5.4 Financial Support for Child Help Desk at Railway Station and Child Help Desk at Bus stand is given at Annexure-IV (Part-C).",
+      "token_estimate": 224,
+      "char_count": 1111
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0030",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 18,
+      "page_end": 18,
+      "heading": "Data Security:",
+      "heading_path": [
+        "5. HUMAN RESOURCE",
+        "D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and",
+        "Data Security:"
+      ],
+      "heading_path_str": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and > Data Security:",
+      "level": 4,
+      "heading_x0": 199.8,
+      "heading_conf": 0.989,
+      "text": "all States/UTs. Any report should only be accessible to authorized personnel working in WCDControl Rooms. Servers should be kept in secured environment. Engagement of different stakeholders at State, Districts and others for case",
+      "contextualized_text": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff. The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and > Data Security: all States/UTs. Any report should only be accessible to authorized personnel working in WCDControl Rooms. Servers should be kept in secured environment. Engagement of different stakeholders at State, Districts and others for case",
+      "token_estimate": 44,
+      "char_count": 229
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0031",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 18,
+      "page_end": 18,
+      "heading": "management:",
+      "heading_path": [
+        "5. HUMAN RESOURCE",
+        "D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and",
+        "management:"
+      ],
+      "heading_path_str": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff : The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and > management:",
+      "level": 4,
+      "heading_x0": 202.2,
+      "heading_conf": 0.952,
+      "text": "All States/UTsmustmakeconcertedeffortstoworkcloselywithallallieddepartmentslike Education, Health, Home/Police，Labour, Railways etc.，in order to ensure convergence, support and cooperation during case intervention. This takes place through four main areas of collaboration:(a）case intervention (rescue, restoration with families, access to entitlements and rehabilitation); (b) orientation capacity building of allied departments to awareness drives, facilitating access of schemes, (d) coordination and convergence from micro to macro level, a continued work in progress towards better child friendly services, timely effective rehabilitation and access to justice. presented before District Magistrate/Collector for seeking guidance and support. (# In case of requirement of police or medical assistance, call shall be transferred to ERSS-112to provide all possible assistance to the caller.",
+      "contextualized_text": "5. HUMAN RESOURCE > D. Welfare Measures for the CHL Staff. The Human resources engaged for the welfare of children in need of care and protection and children in conflict with law will play a vital role in the prompt and effective delivery of services as well as ensuring safety and > management: All States/UTsmustmakeconcertedeffortstoworkcloselywithallallieddepartmentslike Education, Health, Home/Police，Labour, Railways etc.，in order to ensure convergence, support and cooperation during case intervention. This takes place through four main areas of collaboration:(a）case intervention (rescue, restoration with families, access to entitlements and rehabilitation); (b) orientation capacity building of allied departments to awareness drives, facilitating access of schemes, (d) coordination and convergence from micro to macro level, a continued work in progress towards better child friendly services, timely effective rehabilitation and access to justice. presented before District Magistrate/Collector for seeking guidance and support. (# In case of requirement of police or medical assistance, call shall be transferred to ERSS-112to provide all possible assistance to the caller.",
+      "token_estimate": 144,
+      "char_count": 893
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0032",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 19,
+      "page_end": 19,
+      "heading": "6. TRAINING AND CAPACITY BUILDING",
+      "heading_path": [
+        "6. TRAINING AND CAPACITY BUILDING"
+      ],
+      "heading_path_str": "6. TRAINING AND CAPACITY BUILDING",
+      "level": 2,
+      "heading_x0": 500.7,
+      "heading_conf": 0.69,
+      "text": "C-DAC will provide technical training including hands-on training at the WCD Control Room whereWHL/CHLpersonnelandCHLUnitsat DCPU stoworkontheSystemandto familiarize the operations of the system. Manuals required for operations willbe provided by C-DAC. State/UT shall extend all support to C-DAC for conducting the training. Ministry will also collaborate with C-DAC, National Institute of Public Cooperation and Child Neurosciences (NIMHANS) for capacity building of staff, developing of intervention protocols/training modules for effective implementation of the Juvenile Justice Act (Care and Protection of Children) Act, 2015 (as amended in 2021） and for providing psycho-social support to children during calls and physical interventions. Ministry will also support outreach strategies to universalize access and use of the Child Helpline in the States/UTs.",
+      "contextualized_text": "6. TRAINING AND CAPACITY BUILDING C-DAC will provide technical training including hands-on training at the WCD Control Room whereWHL/CHLpersonnelandCHLUnitsat DCPU stoworkontheSystemandto familiarize the operations of the system. Manuals required for operations willbe provided by C-DAC. State/UT shall extend all support to C-DAC for conducting the training. Ministry will also collaborate with C-DAC, National Institute of Public Cooperation and Child Neurosciences (NIMHANS) for capacity building of staff, developing of intervention protocols/training modules for effective implementation of the Juvenile Justice Act (Care and Protection of Children) Act, 2015 (as amended in 2021） and for providing psycho-social support to children during calls and physical interventions. Ministry will also support outreach strategies to universalize access and use of the Child Helpline in the States/UTs.",
+      "token_estimate": 153,
+      "char_count": 863
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0033",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 20,
+      "page_end": 20,
+      "heading": "7. REPORTING MECHANISM",
+      "heading_path": [
+        "7. REPORTING MECHANISM"
+      ],
+      "heading_path_str": "7. REPORTING MECHANISM",
+      "level": 2,
+      "heading_x0": 583.0,
+      "heading_conf": 0.992,
+      "text": "C-DAC shall develop MIS report generation modules for States/UTs for reviewing of cases and better decision making which may be customized as per specific needs of the States, if State and district levels. This MlS will generate data which would enable policy decision making for the best interest of the children. Reporting module based on following parameters",
+      "contextualized_text": "7. REPORTING MECHANISM C-DAC shall develop MIS report generation modules for States/UTs for reviewing of cases and better decision making which may be customized as per specific needs of the States, if State and district levels. This MlS will generate data which would enable policy decision making for the best interest of the children. Reporting module based on following parameters",
+      "token_estimate": 76,
+      "char_count": 361
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0034",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 20,
+      "page_end": 21,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 197.5,
+      "heading_conf": 0.993,
+      "text": "i) State-wise calls related to children landing at1098. i) State-wise calls landing at112forwarded to1098. ii) State-wise calls forwarded from 1098 to 112 requiring specialized services of Police, fire and medical. iv) Categorization of calls answered based on providing merely information, advice, V) Average time taken to close the call. vi) Make Child Help linedata available on Mission Vatsalya portal. States/UTs shall encourage convergence for Child Helpline Services with other line departments, agencies, organizations and all stakeholders for e nabl ing a protective environment for children.",
+      "contextualized_text": "i) State-wise calls related to children landing at1098. i) State-wise calls landing at112forwarded to1098. ii) State-wise calls forwarded from 1098 to 112 requiring specialized services of Police, fire and medical. iv) Categorization of calls answered based on providing merely information, advice, V) Average time taken to close the call. vi) Make Child Help linedata available on Mission Vatsalya portal. States/UTs shall encourage convergence for Child Helpline Services with other line departments, agencies, organizations and all stakeholders for e nabl ing a protective environment for children.",
+      "token_estimate": 113,
+      "char_count": 601
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0035",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 22,
+      "page_end": 22,
+      "heading": "Annexure-l",
+      "heading_path": [
+        "Annexure-l"
+      ],
+      "heading_path_str": "Annexure-l",
+      "level": 1,
+      "heading_x0": 197.5,
+      "heading_conf": 0.968,
+      "text": "StatelevelWcDControl Roomand IntegrationwithERss WCDControlRoom Public Safety Answering Point (PSAP) WHL-Call Responders CHL-Call Responders Supervisor Call Takers Dispatchers 181/1098 MPLS 112Calls Calls Gateway GIS Application Data store GIS Application Data store Gateway One Stop Centres Child Protection Units Central Support District Coordination National Support (OSCs) (CPUs) Services (css) Cerntre (DcC) Services (css) OSC1 OSCn CPU1 CPUn Server SMS Dispatcher Dispatcher LBS",
+      "contextualized_text": "Annexure-l StatelevelWcDControl Roomand IntegrationwithERss WCDControlRoom Public Safety Answering Point (PSAP) WHL-Call Responders CHL-Call Responders Supervisor Call Takers Dispatchers 181/1098 MPLS 112Calls Calls Gateway GIS Application Data store GIS Application Data store Gateway One Stop Centres Child Protection Units Central Support District Coordination National Support (OSCs) (CPUs) Services (css) Cerntre (DcC) Services (css) OSC1 OSCn CPU1 CPUn Server SMS Dispatcher Dispatcher LBS",
+      "token_estimate": 80,
+      "char_count": 484
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0036",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 23,
+      "page_end": 23,
+      "heading": "Annexure-ll",
+      "heading_path": [
+        "Annexure-ll"
+      ],
+      "heading_path_str": "Annexure-ll",
+      "level": 1,
+      "heading_x0": 1287.1,
+      "heading_conf": 0.94,
+      "text": "Category of States/UTs: Based onthe data of population asper 2011 Census, States/UTs have been categorized in categories A, B and C. The categorization of States/UTs is similar to that of Women Helpline. All States/UTs have been classified as under:",
+      "contextualized_text": "Annexure-ll Category of States/UTs: Based onthe data of population asper 2011 Census, States/UTs have been categorized in categories A, B and C. The categorization of States/UTs is similar to that of Women Helpline. All States/UTs have been classified as under:",
+      "token_estimate": 52,
+      "char_count": 249
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0037",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 23,
+      "page_end": 25,
+      "heading": "Annexure-ll",
+      "heading_path": [
+        "Annexure-ll"
+      ],
+      "heading_path_str": "Annexure-ll",
+      "level": 1,
+      "heading_x0": 216.3,
+      "heading_conf": 0.914,
+      "text": "SI. No States/UTs Category-A (Large) 1 Uttar Pradesh 2 Maharashtra 3 Bihar 4 West Bengal 5 Madhya Pradesh 6 Tamil Nadu 7 Rajasthan 8 Karnataka 9 Gujarat Category-B (Medium) 10 Andhra Pradesh 11 Odisha 12 Telangana 13 Kerala 14 Jharkhand 15 Assam 16 Punjab 17 Chhatisgarh 18 Haryana 19 Delhi 20 Jammu & Kashmir 21 Uttarakhand Category-C (Small) 22 Himachal Pradesh 23 Tripura 24 Meghalaya 25 Manipur 26 Nagaland 27 Goa 28 Arunachal Pradesh 29 Puducherry 30 Mizoram 31 Chandigarh 32 Sikkim 33 A&NIslands 34 Dadra &Nagar Haveli and Daman&Diu 35 Lakshadweep 36 Ladakh Indicative Qualifications and Roles and Responsibilities of staff for Child Helpline: Administrator a Masters in Law/ will be in charge for the Social Work/ overall smooth functioning Sociology/Social of CHL.",
+      "contextualized_text": "Annexure-ll SI. No States/UTs Category-A (Large) 1 Uttar Pradesh 2 Maharashtra 3 Bihar 4 West Bengal 5 Madhya Pradesh 6 Tamil Nadu 7 Rajasthan 8 Karnataka 9 Gujarat Category-B (Medium) 10 Andhra Pradesh 11 Odisha 12 Telangana 13 Kerala 14 Jharkhand 15 Assam 16 Punjab 17 Chhatisgarh 18 Haryana 19 Delhi 20 Jammu & Kashmir 21 Uttarakhand Category-C (Small) 22 Himachal Pradesh 23 Tripura 24 Meghalaya 25 Manipur 26 Nagaland 27 Goa 28 Arunachal Pradesh 29 Puducherry 30 Mizoram 31 Chandigarh 32 Sikkim 33 A&NIslands 34 Dadra &Nagar Haveli and Daman&Diu 35 Lakshadweep 36 Ladakh Indicative Qualifications and Roles and Responsibilities of staff for Child Helpline: Administrator a Masters in Law/ will be in charge for the Social Work/ overall smooth functioning Sociology/Social of CHL.",
+      "token_estimate": 165,
+      "char_count": 772
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0038",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 24,
+      "page_end": 25,
+      "heading": "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator"
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+      "level": 3,
+      "heading_x0": 189.2,
+      "heading_conf": 0.977,
+      "text": "Administrator a Masters in Law/ will be in charge for the Social Work/ overall smooth functioning Sociology/Social of CHL. Science/Psychology ii) She/he will ensure prompt with atleast5years' and meaningful response experience of working towards every call received on child related at the Helpline. relevant domains in an She/he will be responsible administrative set-up to monitor and intervene (if with a Government or required) in any ongoing Non-Government calls. project/programme and iv) She/he will supervise each preferably with atleast case, take it to a logical 1-year experience of conclusion and later follow counselling either up with the aggrieved child. within or outside the She/he will ensure effective same set-up. convergence with She/he should concerned agencies/ be preferably a institutions. resident of the local vi）She/he will facilitate community SO that redressalofissuesrelated local human resource to non responsiveness of and expertise is State agencies/institutions utilized for effective in collaboration with functioning of the Director, WCD. centre. vii) She/he ewillberesponsible for making schedules for the team and managing the team in such a way that the Helpline is up and active 24 hours a day seven day a week. vii) She/he will be responsible for preparing daily, weekly and monthly reports and preparing periodical reports. ix) She/he will be responsible for formulating Resource Director y containing information about the relevant State and private authorities/institutions/ individuals related to child protection and child rights. She/he will be responsible for conducting advocacy meetings to create good working culture between CHLanddifferentservice providers. xi)） She/he will conduct awareness generation activities within community toraise awareness around",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator Administrator a Masters in Law/ will be in charge for the Social Work/ overall smooth functioning Sociology/Social of CHL. Science/Psychology ii) She/he will ensure prompt with atleast5years' and meaningful response experience of working towards every call received on child related at the Helpline. relevant domains in an She/he will be responsible administrative set-up to monitor and intervene (if with a Government or required) in any ongoing Non-Government calls. project/programme and iv) She/he will supervise each preferably with atleast case, take it to a logical 1-year experience of conclusion and later follow counselling either up with the aggrieved child. within or outside the She/he will ensure effective same set-up. convergence with She/he should concerned agencies/ be preferably a institutions. resident of the local vi）She/he will facilitate community SO that redressalofissuesrelated local human resource to non responsiveness of and expertise is State agencies/institutions utilized for effective in collaboration with functioning of the Director, WCD. centre. vii) She/he ewillberesponsible for making schedules for the team and managing the team in such a way that the Helpline is up and active 24 hours a day seven day a week. vii) She/he will be responsible for preparing daily, weekly and monthly reports and preparing periodical reports. ix) She/he will be responsible for formulating Resource Director y containing information about the relevant State and private authorities/institutions/ individuals related to child protection and child rights. She/he will be responsible for conducting advocacy meetings to create good working culture between CHLanddifferentservice providers. xi)） She/he will conduct awareness generation activities within community toraise awareness around",
+      "token_estimate": 341,
+      "char_count": 1809
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0039",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 25,
+      "page_end": 26,
+      "heading": "CHL.",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+        "CHL."
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator > CHL.",
+      "level": 4,
+      "heading_x0": 1072.0,
+      "heading_conf": 0.999,
+      "text": "xii) She/he will monitor the functioning of CHL, conduct the performance appraisal of the staff, facilitate capacity building， guidance and support for the team. xili) She/he will be responsible for day-to-day management of CHL team and reporting to Director, WCD and any other competent authority as and when required. 2 Call 12 to 18 Canbe outsourced to i) She/he will attend the calls; Operator any person having do primary referrals, does poob communication data entry and forward skills Hindi, English serious cases and( cases and or regional which need first point languages and having counselling to Helpline requisite qualifications Administrator. and experience of ii) She/he will provide working on telecom information about the webbasedrelevant Government Schemes and systems. programmes related to Child protection and Child Rights. She/he will provide all the assistance to children applying for any such above mentioned schemes or programmes and guide them through the process to be adopted for accessing the same. iv) She/he will help the Helpline Administrator in attending missed calls. She/he will be responsible for other work as assigned by the Helpline Administrator.",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator > CHL. xii) She/he will monitor the functioning of CHL, conduct the performance appraisal of the staff, facilitate capacity building， guidance and support for the team. xili) She/he will be responsible for day-to-day management of CHL team and reporting to Director, WCD and any other competent authority as and when required. 2 Call 12 to 18 Canbe outsourced to i) She/he will attend the calls; Operator any person having do primary referrals, does poob communication data entry and forward skills Hindi, English serious cases and( cases and or regional which need first point languages and having counselling to Helpline requisite qualifications Administrator. and experience of ii) She/he will provide working on telecom information about the webbasedrelevant Government Schemes and systems. programmes related to Child protection and Child Rights. She/he will provide all the assistance to children applying for any such above mentioned schemes or programmes and guide them through the process to be adopted for accessing the same. iv) She/he will help the Helpline Administrator in attending missed calls. She/he will be responsible for other work as assigned by the Helpline Administrator.",
+      "token_estimate": 240,
+      "char_count": 1188
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0040",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 25,
+      "page_end": 26,
+      "heading": "CHL.",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+        "CHL."
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator > CHL.",
+      "level": 4,
+      "heading_x0": 1072.0,
+      "heading_conf": 0.999,
+      "text": "She/he will be responsible for other work as assigned by the Helpline Administrator. 3 IT 01 The IT services could i) The IT staff will look after the Supervisor be outsourced to any technological aspect of CHL person who is a and ensure that it remains graduate with at least functional at all times. diploma in computers/ ii）She/he would follow strict IT etcwith a minimum proceedings to maintain privacy of 3 years’ experience with regard to data generated in data management, and will ensure that name and process documentation other details of aggrieved child and web-based remain confidential in each reporting formats, video step of case history conferencing at state or documentation. district level with i）She/he would draft the government or Non- daily/monthly/quarterly report Government al/ IT based on the MlS, web based based organizations. data collection which would be",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator > CHL. She/he will be responsible for other work as assigned by the Helpline Administrator. 3 IT 01 The IT services could i) The IT staff will look after the Supervisor be outsourced to any technological aspect of CHL person who is a and ensure that it remains graduate with at least functional at all times. diploma in computers/ ii）She/he would follow strict IT etcwith a minimum proceedings to maintain privacy of 3 years’ experience with regard to data generated in data management, and will ensure that name and process documentation other details of aggrieved child and web-based remain confidential in each reporting formats, video step of case history conferencing at state or documentation. district level with i）She/he would draft the government or Non- daily/monthly/quarterly report Government al/ IT based on the MlS, web based based organizations. data collection which would be",
+      "token_estimate": 187,
+      "char_count": 885
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0041",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 26,
+      "page_end": 26,
+      "heading": "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator"
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator",
+      "level": 2,
+      "heading_x0": 1021.4,
+      "heading_conf": 0.997,
+      "text": "iv）She/he with the help Helpline Administrator will formulate the resource director y containing information about the relevant State and private authorities/institutions/individual related to child protection. 4 Multi- 03 The multi-purpose i) She/he would be responsible purpose activity could be for maintaining hygiene and Staff outsourced to any sanitation at Helpline. person who is literate ii）She/he will be responsible with knowledge/ for the house keeping at CHL. experience of working in the relevant domain 5 Security 03 The services couldbe i) She/he will be responsible for the Guard/ Night outsourced to any overall security of Helpline Centre. Guard person having atleast 2 ii) She/he would be responsible for years' experience of safety of all capital assets, furniture working as security and equipment at CHL. personnel in a He/she should preferably be retired",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No of Staff 1 Helpline 01 Any person having i) The Helpline Administrator iv）She/he with the help Helpline Administrator will formulate the resource director y containing information about the relevant State and private authorities/institutions/individual related to child protection. 4 Multi- 03 The multi-purpose i) She/he would be responsible purpose activity could be for maintaining hygiene and Staff outsourced to any sanitation at Helpline. person who is literate ii）She/he will be responsible with knowledge/ for the house keeping at CHL. experience of working in the relevant domain 5 Security 03 The services couldbe i) She/he will be responsible for the Guard/ Night outsourced to any overall security of Helpline Centre. Guard person having atleast 2 ii) She/he would be responsible for years' experience of safety of all capital assets, furniture working as security and equipment at CHL. personnel in a He/she should preferably be retired",
+      "token_estimate": 175,
+      "char_count": 878
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0042",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 27,
+      "page_end": 27,
+      "heading": "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for"
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+      "level": 3,
+      "heading_x0": 193.9,
+      "heading_conf": 0.967,
+      "text": "Coordinator in Social Work supervision and /Sociology/ Child management of Child Development/Human Helpline Unit at DCPU. Rights Administration/ Public i) Developing strategy for Psychology/ Psychiatry/ districts that he/she is Law/ Public Health/ directly responsible for Community Resource Child line network and Management from a facilitation based on call recognized University. trends analysis and（ other OR qualitative data generated. ii) Capacity building of team Graduate in Social during visits. Work/Sociology/ Child iv) Laisoning with local Development/ Human administration for advocacy. Rights Public Providing data on initiatives Administration/ taken dn towards Psychology/Psychiatry/ Institutionalizing Child Law/ Public Health/ Community Resource Rights in functioning of Management froma allied systems at the district recognized University level. with 2 years'experience vi) Needs assessment of",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for Coordinator in Social Work supervision and /Sociology/ Child management of Child Development/Human Helpline Unit at DCPU. Rights Administration/ Public i) Developing strategy for Psychology/ Psychiatry/ districts that he/she is Law/ Public Health/ directly responsible for Community Resource Child line network and Management from a facilitation based on call recognized University. trends analysis and（ other OR qualitative data generated. ii) Capacity building of team Graduate in Social during visits. Work/Sociology/ Child iv) Laisoning with local Development/ Human administration for advocacy. Rights Public Providing data on initiatives Administration/ taken dn towards Psychology/Psychiatry/ Institutionalizing Child Law/ Public Health/ Community Resource Rights in functioning of Management froma allied systems at the district recognized University level. with 2 years'experience vi) Needs assessment of",
+      "token_estimate": 157,
+      "char_count": 913
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0043",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 27,
+      "page_end": 28,
+      "heading": "in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns.",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+        "in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns."
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns.",
+      "level": 4,
+      "heading_x0": 600.6,
+      "heading_conf": 0.957,
+      "text": "supervision in the preferably in the field of vii) Responsible for developing Women & Child good networking and Development/Social linkages with the Anganwadi Welfare. workers and members of panchayat/local bodies at Proficiency in community/block levels. Computers. Preference may be given to personnels of working in Emergency Help lines. 2 Counselor 01 Graduate in Social Each Child Helpline Unit Work District level shall have a /Sociology/Psychology/ counselor for providing Public counseling services to children Health/ Counselling coming in contact with CHL Unit from a recognized and shall work in close university. coordination with counselor in OR DCPU. Calls srequiring gurgent PG Diploma in nature of psycho-social Counselling and support/Emotional Support and Communication. guidance shall be handled by Experience: At least 1 the counselor on priority. year of working experience with the Govt./NGOpreferably in the field ofWomen &Child Development. Proficiency in Computers. Preference may be given to personnels of working in Emergency Help lines.",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns. supervision in the preferably in the field of vii) Responsible for developing Women & Child good networking and Development/Social linkages with the Anganwadi Welfare. workers and members of panchayat/local bodies at Proficiency in community/block levels. Computers. Preference may be given to personnels of working in Emergency Help lines. 2 Counselor 01 Graduate in Social Each Child Helpline Unit Work District level shall have a /Sociology/Psychology/ counselor for providing Public counseling services to children Health/ Counselling coming in contact with CHL Unit from a recognized and shall work in close university. coordination with counselor in OR DCPU. Calls srequiring gurgent PG Diploma in nature of psycho-social Counselling and support/Emotional Support and Communication. guidance shall be handled by Experience: At least 1 the counselor on priority. year of working experience with the Govt./NGOpreferably in the field ofWomen &Child Development. Proficiency in Computers. Preference may be given to personnels of working in Emergency Help lines.",
+      "token_estimate": 203,
+      "char_count": 1064
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0044",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 27,
+      "page_end": 28,
+      "heading": "in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns.",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+        "in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns."
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns.",
+      "level": 4,
+      "heading_x0": 600.6,
+      "heading_conf": 0.957,
+      "text": "Proficiency in Computers. Preference may be given to personnels of working in Emergency Help lines. 3 Child from03 Graduate preferably in i) Each Child Helpline Helpline to 04 B.Ain Social Work/ Supervisor at district level Supervisor Computer shall work as a link between Sciences/lnformation the community and the CHL Technology/ unit at District Child Community Protection Unit. Sociology/Social ii) Responsible for taking calls Sciences from a transferred from WCD recognized university. Control Room at theCHL Weightage for unit and taking appropriate experienced candidate action as per the provisions of Juvenile Justice (Care & Proficiency in Protection of Children） Act, Computers 2015. Preference may be ii) Responsible for identifying given to personnels families and children at risk having experience of and offer necessary support working in Emergency services. Help lines. iv) Tending to child related needs like medical, shelter, restoration and nutrition to children in need of care and support.",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > in project formulation/ district, organizing advocacy implementation, initiatives and regional monitoring and networks & campa igns. Proficiency in Computers. Preference may be given to personnels of working in Emergency Help lines. 3 Child from03 Graduate preferably in i) Each Child Helpline Helpline to 04 B.Ain Social Work/ Supervisor at district level Supervisor Computer shall work as a link between Sciences/lnformation the community and the CHL Technology/ unit at District Child Community Protection Unit. Sociology/Social ii) Responsible for taking calls Sciences from a transferred from WCD recognized university. Control Room at theCHL Weightage for unit and taking appropriate experienced candidate action as per the provisions of Juvenile Justice (Care & Proficiency in Protection of Children） Act, Computers 2015. Preference may be ii) Responsible for identifying given to personnels families and children at risk having experience of and offer necessary support working in Emergency services. Help lines. iv) Tending to child related needs like medical, shelter, restoration and nutrition to children in need of care and support.",
+      "token_estimate": 199,
+      "char_count": 1012
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0045",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 29,
+      "page_end": 29,
+      "heading": "Assisting Project Coordinator in organizing awareness activities and",
+      "heading_path": [
+        "Annexure-ll",
+        "S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for",
+        "Assisting Project Coordinator in organizing awareness activities and"
+      ],
+      "heading_path_str": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > Assisting Project Coordinator in organizing awareness activities and",
+      "level": 4,
+      "heading_x0": 1060.2,
+      "heading_conf": 1.0,
+      "text": "outreach programmes. 4 Case from03 12th passed froma Caseworkers shall assist Child Worker to 04 recognized Board/ Helpline Administrator in the Equivalent Board. implementation of CHL unit at Good Communication DCPU，intervention of cases, Skills. awareness activities and Weightage for outreach programmes. experienced candidate. Preference may be given to personnels of working in Emergency Help lines.",
+      "contextualized_text": "Annexure-ll > S. Position Number Qualification Roles&Responsibilities No. of Staff 1 Project 01 Post Graduate edegree i) Overall responsible for > Assisting Project Coordinator in organizing awareness activities and outreach programmes. 4 Case from03 12th passed froma Caseworkers shall assist Child Worker to 04 recognized Board/ Helpline Administrator in the Equivalent Board. implementation of CHL unit at Good Communication DCPU，intervention of cases, Skills. awareness activities and Weightage for outreach programmes. experienced candidate. Preference may be given to personnels of working in Emergency Help lines.",
+      "token_estimate": 73,
+      "char_count": 404
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0046",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 29,
+      "page_end": 31,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 198.6,
+      "heading_conf": 0.978,
+      "text": "Helpline B.Ain Social Work/ at the Child Help Desk will Supervisor Computer make every effort to ensure Sciences/lnformation that the procedures relating Technology/ to the rescue of the child are Community Sociology/Social promptly completed and the Sciences from a child is produced before the recognized university. Child Welfare Committee Weightage for (CWC). experienced candidate ii. The staff deputed at the Proficiency in Child Help Desk shall be Computers available round the clock to offer assistance to children Preference may be need of care and given to personnels protection on t the Railway having experience of Stations/BusStands. working in Emergency ii. The staff of Child Help Desk Help lines. will review and monitor the 2 Case 03 12th passed from a Worker recognized Board/ child care and protection Equivalent Board. activities at the Railway Good Communication Stations/BusStands. Skills. iv. The staff of Child Help Desk will provide the reports of Weightage for each case to the concerned experienced candidate. DCPUs. Preference may be V. Child Help Desk shall given to personnels of conduct regular awareness working in Emergency and outreach at the Help lines. premises of Railway Stations/BusStands. 1 One time grant for Site readiness (refurbishment cost, working 20,00,000 cubicles, minor civil/electrical works etc.) Sub-total (A) 20,00,000 1 Furniture, Computers/laptops and other office equipment 8,00,000 (tables, chairs， computer tables, air conditioner， cupboards, photocopier-cum-scanner machine, UPS, Gensetfor Sub-total (B) 8,00,000 insurance@Rs.330/-per person maintenance of systems, etc.) 2 Telephone rent @Rs.55,000/- per month 6,60,000 Sub-total (C) 75,60,000 Il. Category B&C (Medium and Small States/UTs) 1 One time grant for Site readiness (refurbishment cost, working 20,00,000 cubicles, minor civil/electrical works etc.) 1 Furniture, Computers/laptops and other office equipment 7,00,000 (tables, chairs, computer tables, air conditioner， cupboards, photocopier-cum-scanner machine, UPS, Genset for uninterrupted Sub-total (B) 7,00,000 insurance@Rs.330/-per person (Rent, salaries, water, electricity, postage, stationary, photocopy, documentation, travel, training and capacity building, maintenance of systems, etc.) 2 Telephone rent @Rs.35,000/-per month 4,20,000 Sub-total (C) 55,20,000",
+      "contextualized_text": "Helpline B.Ain Social Work/ at the Child Help Desk will Supervisor Computer make every effort to ensure Sciences/lnformation that the procedures relating Technology/ to the rescue of the child are Community Sociology/Social promptly completed and the Sciences from a child is produced before the recognized university. Child Welfare Committee Weightage for (CWC). experienced candidate ii. The staff deputed at the Proficiency in Child Help Desk shall be Computers available round the clock to offer assistance to children Preference may be need of care and given to personnels protection on t the Railway having experience of Stations/BusStands. working in Emergency ii. The staff of Child Help Desk Help lines. will review and monitor the 2 Case 03 12th passed from a Worker recognized Board/ child care and protection Equivalent Board. activities at the Railway Good Communication Stations/BusStands. Skills. iv. The staff of Child Help Desk will provide the reports of Weightage for each case to the concerned experienced candidate. DCPUs. Preference may be V. Child Help Desk shall given to personnels of conduct regular awareness working in Emergency and outreach at the Help lines. premises of Railway Stations/BusStands. 1 One time grant for Site readiness (refurbishment cost, working 20,00,000 cubicles, minor civil/electrical works etc.) Sub-total (A) 20,00,000 1 Furniture, Computers/laptops and other office equipment 8,00,000 (tables, chairs， computer tables, air conditioner， cupboards, photocopier-cum-scanner machine, UPS, Gensetfor Sub-total (B) 8,00,000 insurance@Rs.330/-per person maintenance of systems, etc.) 2 Telephone rent @Rs.55,000/- per month 6,60,000 Sub-total (C) 75,60,000 Il. Category B&C (Medium and Small States/UTs) 1 One time grant for Site readiness (refurbishment cost, working 20,00,000 cubicles, minor civil/electrical works etc.) 1 Furniture, Computers/laptops and other office equipment 7,00,000 (tables, chairs, computer tables, air conditioner， cupboards, photocopier-cum-scanner machine, UPS, Genset for uninterrupted Sub-total (B) 7,00,000 insurance@Rs.330/-per person (Rent, salaries, water, electricity, postage, stationary, photocopy, documentation, travel, training and capacity building, maintenance of systems, etc.) 2 Telephone rent @Rs.35,000/-per month 4,20,000 Sub-total (C) 55,20,000",
+      "token_estimate": 425,
+      "char_count": 2341
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0047",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 31,
+      "page_end": 31,
+      "heading": "B.Financial Support for CHL Unit at DCPU:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1.Category A (Large States/UTs)",
+        "B.Financial Support for CHL Unit at DCPU:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1.Category A (Large States/UTs) > B.Financial Support for CHL Unit at DCPU:",
+      "level": 3,
+      "heading_x0": 198.6,
+      "heading_conf": 0.951,
+      "text": "Category of Districts: As per 2011 Census, district-wise population is available for 640 districts. Based on the information of the population for 640 districts, five categories for s ns s districts as per population criteria, based on population Census-2011 is at Annexure-V.",
+      "contextualized_text": "Annexure-Iv > 1.Category A (Large States/UTs) > B.Financial Support for CHL Unit at DCPU: Category of Districts: As per 2011 Census, district-wise population is available for 640 districts. Based on the information of the population for 640 districts, five categories for s ns s districts as per population criteria, based on population Census-2011 is at Annexure-V.",
+      "token_estimate": 56,
+      "char_count": 276
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0048",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 31,
+      "page_end": 31,
+      "heading": "Annexure-Iv",
+      "heading_path": [
+        "Annexure-Iv"
+      ],
+      "heading_path_str": "Annexure-Iv",
+      "level": 1,
+      "heading_x0": 193.9,
+      "heading_conf": 0.979,
+      "text": "Less than 1 lakh 26 8 1 lakh- less than 10 lakhs 169 8 III 10 lakhs - less than 30 lakhs 320 8 IV 30lakhs-less than60lakhs 113 8 V 60lakhs and more 12 10 cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "contextualized_text": "Annexure-Iv Less than 1 lakh 26 8 1 lakh- less than 10 lakhs 169 8 III 10 lakhs - less than 30 lakhs 320 8 IV 30lakhs-less than60lakhs 113 8 V 60lakhs and more 12 10 cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "token_estimate": 68,
+      "char_count": 303
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0049",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 31,
+      "page_end": 32,
+      "heading": "1. Population size less than1lakh:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1. Population size less than1lakh:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1. Population size less than1lakh:",
+      "level": 2,
+      "heading_x0": 195.1,
+      "heading_conf": 0.982,
+      "text": "Rs.330/-per person 2 Child related contingency fund including costs for medical, 80,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD， photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 26,98,000 Il. Population size from 1 lakh - less than 10 lakhs: cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "contextualized_text": "Annexure-Iv > 1. Population size less than1lakh: Rs.330/-per person 2 Child related contingency fund including costs for medical, 80,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD， photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 26,98,000 Il. Population size from 1 lakh - less than 10 lakhs: cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "token_estimate": 100,
+      "char_count": 592
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0050",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 32,
+      "page_end": 32,
+      "heading": "1. Population size less than1lakh:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1. Population size less than1lakh:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1. Population size less than1lakh:",
+      "level": 2,
+      "heading_x0": 196.3,
+      "heading_conf": 0.975,
+      "text": "Rs.330/-per person 2 Child related contingency fund including costs for medical, 1,00,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD， photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,18,000 cubicles, minor civil/electrical works etc.) Sub-total (A) 5,00,000 (tables, chairs, computer tables，air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "contextualized_text": "Annexure-Iv > 1. Population size less than1lakh: Rs.330/-per person 2 Child related contingency fund including costs for medical, 1,00,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD， photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,18,000 cubicles, minor civil/electrical works etc.) Sub-total (A) 5,00,000 (tables, chairs, computer tables，air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "token_estimate": 88,
+      "char_count": 562
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0051",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 33,
+      "page_end": 33,
+      "heading": "1. Population size less than1lakh:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1. Population size less than1lakh:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1. Population size less than1lakh:",
+      "level": 2,
+      "heading_x0": 279.8,
+      "heading_conf": 0.971,
+      "text": "2 Child related contingency fund including costs for medical, 1,25,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity， postage, 3,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,43,000 IV. Population size from 30 lakhs - less than 60 lakhs: cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "contextualized_text": "Annexure-Iv > 1. Population size less than1lakh: 2 Child related contingency fund including costs for medical, 1,25,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity， postage, 3,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,43,000 IV. Population size from 30 lakhs - less than 60 lakhs: cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.)",
+      "token_estimate": 97,
+      "char_count": 577
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0052",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 33,
+      "page_end": 34,
+      "heading": "1. Population size less than1lakh:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1. Population size less than1lakh:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1. Population size less than1lakh:",
+      "level": 2,
+      "heading_x0": 196.3,
+      "heading_conf": 0.982,
+      "text": "Rs.330/-per person 2 Child related contingency fund including costs for medical, 1,50,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,68,000 cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.) Sub-total (B) 3,00,000",
+      "contextualized_text": "Annexure-Iv > 1. Population size less than1lakh: Rs.330/-per person 2 Child related contingency fund including costs for medical, 1,50,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 3,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,50,000 5 Child Help Group at Sub-district level/ward/PRI 80,000 Sub-total (C) 27,68,000 cubicles, minor civil/electrical works etc.) (tables, chairs, computer tables, air conditioner, cupboards, photocopier-cum-scanner machine, UPS etc.) Sub-total (B) 3,00,000",
+      "token_estimate": 89,
+      "char_count": 563
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0053",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 34,
+      "page_end": 34,
+      "heading": "1. Population size less than1lakh:",
+      "heading_path": [
+        "Annexure-Iv",
+        "1. Population size less than1lakh:"
+      ],
+      "heading_path_str": "Annexure-Iv > 1. Population size less than1lakh:",
+      "level": 2,
+      "heading_x0": 195.1,
+      "heading_conf": 0.986,
+      "text": "Rs.330/- per person 2 Child related contingency fund including costs for medical, 1,75,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 4,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,75,000 5 Child Help Group atSub-district level/ward/PRI 1,00,000 Sub-total (C) 34,30,000 C.Financial Support for Child Help Desk at Railway Station and Child Help Desk at (computer/laptop, tables, chairs, photocopier-cum-scanner Sub-total (A) 1,00,000",
+      "contextualized_text": "Annexure-Iv > 1. Population size less than1lakh: Rs.330/- per person 2 Child related contingency fund including costs for medical, 1,75,000 shelter, restoration, nutrition etc. 3 Administrative Expenditure (rent, water, electricity, postage, 4,00,000 stationary, telephone with STD, photocopy, documentation, etc.) 4 Travel Expenses/Hiring of Vehicle 1,75,000 5 Child Help Group atSub-district level/ward/PRI 1,00,000 Sub-total (C) 34,30,000 C.Financial Support for Child Help Desk at Railway Station and Child Help Desk at (computer/laptop, tables, chairs, photocopier-cum-scanner Sub-total (A) 1,00,000",
+      "token_estimate": 92,
+      "char_count": 555
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0054",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 34,
+      "page_end": 35,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 197.5,
+      "heading_conf": 0.98,
+      "text": "insurance@ Rs.330/- per person 2 Administrative Expenditure (child related contingency fund 1,00,000 including costs for medical, shelter, restoration, nutrition, water, electricity, postage, stationary, telephone, photocopy, documentation, travel etc) Sub-total (B) 15,76,000 *The budget of Child Help Desk at Railway Station shall be subject to renewal of MoU with the Ministry of Railways. Similarly, the budget of Child Help Desk at Bus Stands shall be subject to locations identified by States/UTs. Indicative list of districts as per population criteria, based on population Census-",
+      "contextualized_text": "insurance@ Rs.330/- per person 2 Administrative Expenditure (child related contingency fund 1,00,000 including costs for medical, shelter, restoration, nutrition, water, electricity, postage, stationary, telephone, photocopy, documentation, travel etc) Sub-total (B) 15,76,000 *The budget of Child Help Desk at Railway Station shall be subject to renewal of MoU with the Ministry of Railways. Similarly, the budget of Child Help Desk at Bus Stands shall be subject to locations identified by States/UTs. Indicative list of districts as per population criteria, based on population Census-",
+      "token_estimate": 109,
+      "char_count": 588
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0055",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 35,
+      "page_end": 35,
+      "heading": "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+      "heading_path": [
+        "Annexure-V",
+        "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,"
+      ],
+      "heading_path_str": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+      "level": 3,
+      "heading_x0": 195.1,
+      "heading_conf": 0.988,
+      "text": "lakh Nicobars, Mahe, North Sikkim, Tawang, Long leng, Diu， Lower Dibang gValley， Yanam, Saiha, Lakshadweep, Serchhip, Kiphire, East Kameng, Lower Subansiri, Upper Subansiri, West Kameng, Kolasib, Kinnaur, Mamit, Kurung Kumey, Peren, East Siang. 2 1 lakh-less 169 North &Middle Andaman, Tirap, West Siang, than10 lakhs Lawngtlai, Champhai, Leh (Ladakh), West Sikkim, Narayanpur, Tamenglong, Zunheboto, Kargil, New Delhi, South Garo Hills, Chandel, Lohit, South Sikkim, Chang lang, Lunglei, Phek, Wokha, Papum Pare, Ukhrul, Daman, Mokokchung, Tuensang, Karaikal Dima Hasao, The Dangs, Kishtwar, Bishnupur, South",
+      "contextualized_text": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, lakh Nicobars, Mahe, North Sikkim, Tawang, Long leng, Diu， Lower Dibang gValley， Yanam, Saiha, Lakshadweep, Serchhip, Kiphire, East Kameng, Lower Subansiri, Upper Subansiri, West Kameng, Kolasib, Kinnaur, Mamit, Kurung Kumey, Peren, East Siang. 2 1 lakh-less 169 North &Middle Andaman, Tirap, West Siang, than10 lakhs Lawngtlai, Champhai, Leh (Ladakh), West Sikkim, Narayanpur, Tamenglong, Zunheboto, Kargil, New Delhi, South Garo Hills, Chandel, Lohit, South Sikkim, Chang lang, Lunglei, Phek, Wokha, Papum Pare, Ukhrul, Daman, Mokokchung, Tuensang, Karaikal Dima Hasao, The Dangs, Kishtwar, Bishnupur, South",
+      "token_estimate": 111,
+      "char_count": 609
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0056",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 35,
+      "page_end": 35,
+      "heading": "Andaman, Rudraprayag, Mon, Bijapur, Ribhoi, Champawat, Bageshwar，S Shupiyan， Kohima, Chur a chandpur，East Sikkim，Ramban, Ganderbal, Debagarh, Reasi, East Garo Hills, Samba, Uttar kashi, Dadra &Nagar Haveli, Dhalai, Dimapur, Bilaspur, West Khasi Hills, Chamoli, Bandi pore, Jaintia Hills, Aizawl, Doda Thoubal, Kulgam, Kullu, Baudh, Hamirpur, Imphal East, Lohardaga, Punch, Sena pati, Chirang, Pithoragarh, Imphal West, Chamba, Una, Sirmaur,",
+      "heading_path": [
+        "Annexure-V",
+        "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+        "Andaman, Rudraprayag, Mon, Bijapur, Ribhoi, Champawat, Bageshwar，S Shupiyan， Kohima, Chur a chandpur，East Sikkim，Ramban, Ganderbal, Debagarh, Reasi, East Garo Hills, Samba, Uttar kashi, Dadra &Nagar Haveli, Dhalai, Dimapur, Bilaspur, West Khasi Hills, Chamoli, Bandi pore, Jaintia Hills, Aizawl, Doda Thoubal, Kulgam, Kullu, Baudh, Hamirpur, Imphal East, Lohardaga, Punch, Sena pati, Chirang, Pithoragarh, Imphal West, Chamba, Una, Sirmaur,"
+      ],
+      "heading_path_str": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Andaman, Rudraprayag, Mon, Bijapur, Ribhoi, Champawat, Bageshwar，S Shupiyan， Kohima, Chur a chandpur，East Sikkim，Ramban, Ganderbal, Debagarh, Reasi, East Garo Hills, Samba, Uttar kashi, Dadra &Nagar Haveli, Dhalai, Dimapur, Bilaspur, West Khasi Hills, Chamoli, Bandi pore, Jaintia Hills, Aizawl, Doda Thoubal, Kulgam, Kullu, Baudh, Hamirpur, Imphal East, Lohardaga, Punch, Sena pati, Chirang, Pithoragarh, Imphal West, Chamba, Una, Sirmaur,",
+      "level": 4,
+      "heading_x0": 699.4,
+      "heading_conf": 0.988,
+      "text": "Khunti, ’ Dakshin Bastar， Dante wada， Kodagu, Udhampur, Pulwama, Panchkula, Perambalur , Harda , Gajapati, Jharsuguda, Solan, Central Delhi, Porbandar Narmada, Barnala, Simdega, Fatehgarh Sahib, Subarnapur, Nuapada, Shahid Bhagat Singh Nagar , Malkangiri , Kathua, Faridkot, Tehri Garhwal, Almora, Sheikh pura, South Goa, Rajouri, West Garo Hills, Umaria, Sheohar, Koriya, Hailakandi, Jaisalmer, Rupnagar, Dhemaji, Garhwal, Sheopur , North Tripura, Arwal，[ Dindori，Kodarma，Latehar， Alirajpur,",
+      "contextualized_text": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Andaman, Rudraprayag, Mon, Bijapur, Ribhoi, Champawat, Bageshwar，S Shupiyan， Kohima, Chur a chandpur，East Sikkim，Ramban, Ganderbal, Debagarh, Reasi, East Garo Hills, Samba, Uttar kashi, Dadra &Nagar Haveli, Dhalai, Dimapur, Bilaspur, West Khasi Hills, Chamoli, Bandi pore, Jaintia Hills, Aizawl, Doda Thoubal, Kulgam, Kullu, Baudh, Hamirpur, Imphal East, Lohardaga, Punch, Sena pati, Chirang, Pithoragarh, Imphal West, Chamba, Una, Sirmaur, Khunti, ’ Dakshin Bastar， Dante wada， Kodagu, Udhampur, Pulwama, Panchkula, Perambalur , Harda , Gajapati, Jharsuguda, Solan, Central Delhi, Porbandar Narmada, Barnala, Simdega, Fatehgarh Sahib, Subarnapur, Nuapada, Shahid Bhagat Singh Nagar , Malkangiri , Kathua, Faridkot, Tehri Garhwal, Almora, Sheikh pura, South Goa, Rajouri, West Garo Hills, Umaria, Sheohar, Koriya, Hailakandi, Jaisalmer, Rupnagar, Dhemaji, Garhwal, Sheopur , North Tripura, Arwal，[ Dindori，Kodarma，Latehar， Alirajpur,",
+      "token_estimate": 83,
+      "char_count": 492
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0057",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 35,
+      "page_end": 36,
+      "heading": "Kandhamal, The Nilgiris, Bongaigaon, Uttar Bastar Kanker, Anuppur, Badgam, Ariyalur Burhanpur, Mansa, Nalbari, Datia, Jamtara, Dhamtari, Tapi, Shimla, Kapurthala a，Wayanad，NorthGoa, Kabeerdham, East Khasi Hills, Neemuch, Udalguri, Ashok nagar, Sindhudurg, Jashpur, Pratapgarh, Kupwara, Mahoba, South Tripura, Kokrajhar, North Delhi, Rewari，Pakur，Muktsar，Mahendragarh, Darrang, Fatehabad, Ramgarh, Baksa, Puducherry,",
+      "heading_path": [
+        "Annexure-V",
+        "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+        "Kandhamal, The Nilgiris, Bongaigaon, Uttar Bastar Kanker, Anuppur, Badgam, Ariyalur Burhanpur, Mansa, Nalbari, Datia, Jamtara, Dhamtari, Tapi, Shimla, Kapurthala a，Wayanad，NorthGoa, Kabeerdham, East Khasi Hills, Neemuch, Udalguri, Ashok nagar, Sindhudurg, Jashpur, Pratapgarh, Kupwara, Mahoba, South Tripura, Kokrajhar, North Delhi, Rewari，Pakur，Muktsar，Mahendragarh, Darrang, Fatehabad, Ramgarh, Baksa, Puducherry,"
+      ],
+      "heading_path_str": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Kandhamal, The Nilgiris, Bongaigaon, Uttar Bastar Kanker, Anuppur, Badgam, Ariyalur Burhanpur, Mansa, Nalbari, Datia, Jamtara, Dhamtari, Tapi, Shimla, Kapurthala a，Wayanad，NorthGoa, Kabeerdham, East Khasi Hills, Neemuch, Udalguri, Ashok nagar, Sindhudurg, Jashpur, Pratapgarh, Kupwara, Mahoba, South Tripura, Kokrajhar, North Delhi, Rewari，Pakur，Muktsar，Mahendragarh, Darrang, Fatehabad, Ramgarh, Baksa, Puducherry,",
+      "level": 4,
+      "heading_x0": 699.4,
+      "heading_conf": 0.981,
+      "text": "Nainital, Karbi Anglong, Mori gaon, Jhajar, Nayagarh, Kurukshetra, Rayagada, Bangalore Rural, Chitrakoot, Sahibzada Ajit Singh Nagar, Moga, Mandi. 3 10 lakhs - 320 Lakh is arai, Bara mula, Goal para, Panna, less than30 Chama raja nagar, Jhabua, Gumla, Mahasamund, lakhs Sirohi, Sambal pur, Lakhimpur, Palwal ， Chatra, Mandla, Chandigarh, Rohtak, Karur, Gadag, Sarai kelaKharsawan, Shahdol，Golaghat, Gadchiroli，Kaithal, Anantnag, Rama nagara, Mewat, Narsimhapur, Jorhat, Hamirpur, Idukki, Bundi, Shrawasti, Tarn Taran, Jehanabad, Sidhi, Ambala, ，Jagatsinghapur , Chikmagalur, Sahib ganj, Sivas agar, Rajsamand, Yadgir, Hingoli, Udupi, Singrauli, Dhenkanal, Washim, Pathanamthitta, Bhandara, Panipat, Dhaulpur, Korba,",
+      "contextualized_text": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Kandhamal, The Nilgiris, Bongaigaon, Uttar Bastar Kanker, Anuppur, Badgam, Ariyalur Burhanpur, Mansa, Nalbari, Datia, Jamtara, Dhamtari, Tapi, Shimla, Kapurthala a，Wayanad，NorthGoa, Kabeerdham, East Khasi Hills, Neemuch, Udalguri, Ashok nagar, Sindhudurg, Jashpur, Pratapgarh, Kupwara, Mahoba, South Tripura, Kokrajhar, North Delhi, Rewari，Pakur，Muktsar，Mahendragarh, Darrang, Fatehabad, Ramgarh, Baksa, Puducherry, Nainital, Karbi Anglong, Mori gaon, Jhajar, Nayagarh, Kurukshetra, Rayagada, Bangalore Rural, Chitrakoot, Sahibzada Ajit Singh Nagar, Moga, Mandi. 3 10 lakhs - 320 Lakh is arai, Bara mula, Goal para, Panna, less than30 Chama raja nagar, Jhabua, Gumla, Mahasamund, lakhs Sirohi, Sambal pur, Lakhimpur, Palwal ， Chatra, Mandla, Chandigarh, Rohtak, Karur, Gadag, Sarai kelaKharsawan, Shahdol，Golaghat, Gadchiroli，Kaithal, Anantnag, Rama nagara, Mewat, Narsimhapur, Jorhat, Hamirpur, Idukki, Bundi, Shrawasti, Tarn Taran, Jehanabad, Sidhi, Ambala, ，Jagatsinghapur , Chikmagalur, Sahib ganj, Sivas agar, Rajsamand, Yadgir, Hingoli, Udupi, Singrauli, Dhenkanal, Washim, Pathanamthitta, Bhandara, Panipat, Dhaulpur, Korba,",
+      "token_estimate": 120,
+      "char_count": 715
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0058",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 36,
+      "page_end": 37,
+      "heading": "Yamuna nagar, Nabarangapur ， Lalitpur, Baran, Karim ganj, Srinagar, Hoshangabad, Guna, Theni , Kamrup Metropolitan, Chikkaballapura, Damoh, Thiruvarur, Anugul , Katni, Sirsa, Wardha, Baghpat, Kasaragod, Khandwa (East Nimar), Sehore, Godda, Dumka, Gondiya, Garhwa, Dibrugarh, Tinsukia, Navsari, Raisen, Jind, Sawai Madhopur, Siva ganga, Mandsaur, Patan, Ramanathapuram, Munger, Seoni, Auraiya, Koraput, Barwani, Bathinda, Dungarpur,",
+      "heading_path": [
+        "Annexure-V",
+        "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+        "Yamuna nagar, Nabarangapur ， Lalitpur, Baran, Karim ganj, Srinagar, Hoshangabad, Guna, Theni , Kamrup Metropolitan, Chikkaballapura, Damoh, Thiruvarur, Anugul , Katni, Sirsa, Wardha, Baghpat, Kasaragod, Khandwa (East Nimar), Sehore, Godda, Dumka, Gondiya, Garhwa, Dibrugarh, Tinsukia, Navsari, Raisen, Jind, Sawai Madhopur, Siva ganga, Mandsaur, Patan, Ramanathapuram, Munger, Seoni, Auraiya, Koraput, Barwani, Bathinda, Dungarpur,"
+      ],
+      "heading_path_str": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Yamuna nagar, Nabarangapur ， Lalitpur, Baran, Karim ganj, Srinagar, Hoshangabad, Guna, Theni , Kamrup Metropolitan, Chikkaballapura, Damoh, Thiruvarur, Anugul , Katni, Sirsa, Wardha, Baghpat, Kasaragod, Khandwa (East Nimar), Sehore, Godda, Dumka, Gondiya, Garhwa, Dibrugarh, Tinsukia, Navsari, Raisen, Jind, Sawai Madhopur, Siva ganga, Mandsaur, Patan, Ramanathapuram, Munger, Seoni, Auraiya, Koraput, Barwani, Bathinda, Dungarpur,",
+      "level": 4,
+      "heading_x0": 699.4,
+      "heading_conf": 0.974,
+      "text": "Koppal，Gandhi nagar，Jhalawar，Bastar，Tonk, Kanshiram Nagar, Uttara Kannada, Kendra para, Tikamgarh, Sonipat, Ratlam, Karauli, Vidisha, Bargarh, Deoghar, Raigarh, Pashchimi Singhbhum, Karnal, Bhadrak, Dharmapuri，Kangra，Shajapur，Amreli, Gurgaon, Kamrup, Jammu, Kolar, Rajnandgaon, Chittaurgarh, Rajgarh, Bharuch, Dewas, Maha may a Nagar， Betul，Kalahandi， Sant Ravidas Nagar (Bhadohi), Etawah, Hoshiarpur, Haveri， Kaushambi, Ratna giri, Nagapattinam ， Pudukkottai, Janjgir Champa, Kaimur (Bhabua), Dausa, Bhiwani, Gautam Buddha Nagar, Nandurbar, Udham Singh Nagar, Balangir, Sangrur, Kannauj, Osmanabad, Chitra durga, Khagaria, Dakshin Dinajpur, Jalaun ， Kish an ganj, Barpeta， Dehradun， Puri, Bala ghat, Bhind, Bidar, Valsad, Buxar, East Delhi, Sant Kabir Nagar, West Tripura，Shivpuri, Namakkal, Hazaribagh, Cachar, Hisar, Thoothukkudi, Shimoga, Sure ndra nagar, Jamui， Chhatarpur， Etah, Hanumangarh, Hassan, Kanpur Dehat, Banswara, Banda, Kendujhar, Mandya, Faridabad, Akola, Jajapur, Jalor, Parbhani, Jyotiba Phule Nagar, Darjling, Dharwad， Sonbhadra， Mainpuri， Kanniyakumari, Khar gone (West Nimar), Krishna giri, Farrukhabad, Bagalkot ，Hardwar, Patiala，Saharsa, Sonitpur, Raichur, Palamu, Virudhunagar, Davanagere, Dhubri, Kota, Chandauli, Jalna, Morena， Ganga nagar Kottayam, Ujain, Jhansi, Madhepura, Firozpur, Pilibhit, Gwalior, Banka, Mahesana, Pali, Churu, Dhule, Bokaro，Dakshina Kannada, Chhindwara, Kachchh, Anand , Sundargarh, Dohad , Alappuzha, Jhunjhunun, Balrampur, Dindigul， Jamnagar， Bijapur, Dhar, Jalandhar, Chandrapur，Mau，Nawada，Satna, Supaul， North East Delhi, Khordha，Erode, South West Delhi, Purbi Singhbhum, Gurdaspur, Kheda, Baleshwar, Rampur, Vizianagaram, Surguja, Bikaner, Rewa, Bhopal，Sagar, Panch Mahals，Ambedkar Nagar, Thanjavur, Bhilwara, Sabar Kantha, Giridih, Bellary, Latur, Jabalpur, Basti, Tiruvannamalai, Faizabad, Tiruppur, Amritsar, Mirzapur, Firozabad, Mayurbhanj， Kannur, Aurangabad，West Delhi, Mathura, Bharatpur, Nizamabad, Siddharthnagar, Gopal ganj, Gulbarga， Ajmer, Bid, Buldana, Barmer, Cuddalore, Cuttack, Fatehpur, Raigarh, Kollam, Bilaspur, Sikar, Tumkur, Dhanbad, Mahrajganj, Srikakulam, Tiruchirappalli, Bhojpur, South Delhi, Adilabad, Junagadh, ，Yavatmal, Khammam, Palakkad， Araria, Koch Bihar, Sangli, Nagaon, Nalanda，E Bhavnagar, Y.S.R.， Amravati, Ranchi,",
+      "contextualized_text": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Yamuna nagar, Nabarangapur ， Lalitpur, Baran, Karim ganj, Srinagar, Hoshangabad, Guna, Theni , Kamrup Metropolitan, Chikkaballapura, Damoh, Thiruvarur, Anugul , Katni, Sirsa, Wardha, Baghpat, Kasaragod, Khandwa (East Nimar), Sehore, Godda, Dumka, Gondiya, Garhwa, Dibrugarh, Tinsukia, Navsari, Raisen, Jind, Sawai Madhopur, Siva ganga, Mandsaur, Patan, Ramanathapuram, Munger, Seoni, Auraiya, Koraput, Barwani, Bathinda, Dungarpur, Koppal，Gandhi nagar，Jhalawar，Bastar，Tonk, Kanshiram Nagar, Uttara Kannada, Kendra para, Tikamgarh, Sonipat, Ratlam, Karauli, Vidisha, Bargarh, Deoghar, Raigarh, Pashchimi Singhbhum, Karnal, Bhadrak, Dharmapuri，Kangra，Shajapur，Amreli, Gurgaon, Kamrup, Jammu, Kolar, Rajnandgaon, Chittaurgarh, Rajgarh, Bharuch, Dewas, Maha may a Nagar， Betul，Kalahandi， Sant Ravidas Nagar (Bhadohi), Etawah, Hoshiarpur, Haveri， Kaushambi, Ratna giri, Nagapattinam ， Pudukkottai, Janjgir Champa, Kaimur (Bhabua), Dausa, Bhiwani, Gautam Buddha Nagar, Nandurbar, Udham Singh Nagar, Balangir, Sangrur, Kannauj, Osmanabad, Chitra durga, Khagaria, Dakshin Dinajpur, Jalaun ， Kish an ganj, Barpeta， Dehradun， Puri, Bala ghat, Bhind, Bidar, Valsad, Buxar, East Delhi, Sant Kabir Nagar, West Tripura，Shivpuri, Namakkal, Hazaribagh, Cachar, Hisar, Thoothukkudi, Shimoga, Sure ndra nagar, Jamui， Chhatarpur， Etah, Hanumangarh, Hassan, Kanpur Dehat, Banswara, Banda, Kendujhar, Mandya, Faridabad, Akola, Jajapur, Jalor, Parbhani, Jyotiba Phule Nagar, Darjling, Dharwad， Sonbhadra， Mainpuri， Kanniyakumari, Khar gone (West Nimar), Krishna giri, Farrukhabad, Bagalkot ，Hardwar, Patiala，Saharsa, Sonitpur, Raichur, Palamu, Virudhunagar, Davanagere, Dhubri, Kota, Chandauli, Jalna, Morena， Ganga nagar Kottayam, Ujain, Jhansi, Madhepura, Firozpur, Pilibhit, Gwalior, Banka, Mahesana, Pali, Churu, Dhule, Bokaro，Dakshina Kannada, Chhindwara, Kachchh, Anand , Sundargarh, Dohad , Alappuzha, Jhunjhunun, Balrampur, Dindigul， Jamnagar， Bijapur, Dhar, Jalandhar, Chandrapur，Mau，Nawada，Satna, Supaul， North East Delhi, Khordha，Erode, South West Delhi, Purbi Singhbhum, Gurdaspur, Kheda, Baleshwar, Rampur, Vizianagaram, Surguja, Bikaner, Rewa, Bhopal，Sagar, Panch Mahals，Ambedkar Nagar, Thanjavur, Bhilwara, Sabar Kantha, Giridih, Bellary, Latur, Jabalpur, Basti, Tiruvannamalai, Faizabad, Tiruppur, Amritsar, Mirzapur, Firozabad, Mayurbhanj， Kannur, Aurangabad，West Delhi, Mathura, Bharatpur, Nizamabad, Siddharthnagar, Gopal ganj, Gulbarga， Ajmer, Bid, Buldana, Barmer, Cuddalore, Cuttack, Fatehpur, Raigarh, Kollam, Bilaspur, Sikar, Tumkur, Dhanbad, Mahrajganj, Srikakulam, Tiruchirappalli, Bhojpur, South Delhi, Adilabad, Junagadh, ，Yavatmal, Khammam, Palakkad， Araria, Koch Bihar, Sangli, Nagaon, Nalanda，E Bhavnagar, Y.S.R.， Amravati, Ranchi,",
+      "token_estimate": 344,
+      "char_count": 2308
+    },
+    {
+      "chunk_id": "sop_ch_vatsalya_0059",
+      "doc": "sop_ch_vatsalya.pdf",
+      "scheme": "vatsalya",
+      "page_start": 37,
+      "page_end": 37,
+      "heading": "Puruliya, Rohtas, Sri Potti Sriramulu Nellore, Begusarai.",
+      "heading_path": [
+        "Annexure-V",
+        "S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang,",
+        "Puruliya, Rohtas, Sri Potti Sriramulu Nellore, Begusarai."
+      ],
+      "heading_path_str": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Puruliya, Rohtas, Sri Potti Sriramulu Nellore, Begusarai.",
+      "level": 4,
+      "heading_x0": 700.6,
+      "heading_conf": 0.963,
+      "text": "4 30 lakhs - 113 Mysore, Satara, Shahjahanpur， Uttar Dinajpur, less than 60 Medak, Bhagalpur， Madurai, Udaipur, Katihar, lakhs Tirunelveli, Mumbai, Kozhikode, Deoria, Unnao, Banas Kantha, Thrissur, Pratapgarh, Ballia, Bara Banki, Purnia, I Indore，Ernakulam， Thiruvananthapuram, Nagaur, Siwan, Durg, Nanded, Prakasam, Rae Bareli Sitamarhi, Gonda, Meerut, Coimbatore, Viluppuram, Saharanpur, Salem, Bahraich, Nalgonda, Vaishali Ludhiana, Bulandshahr, Birbhum, Warangal, Ganjam, Kush in agar, Bankura ， Ghazipur, North West Delhi, Aligarh, Alwar, Varanasi, Budaun, Bijnor, Jodhpur, Aurangabad, Thiruvallur, Karim nagar, Sultanpur, Rajkot, Jalpaiguri , Kolhapur, Pashchim Champ aran, Vellore, West Godavari， Darbhanga, Hyderabad, Saran, Maldah , Kancheepuram, Kheri, Mahbubnagar, Kurnool, Raipur, Anantapur, Hardoi, Malappuram, Muzaffarnagar, Vadodara, Chit to or， Jalgaon, Samastipur, Visa khapa tnam, Solapur, Gaya, Agra, Gorakhpur, Bareilly, Sitapur, Madhubani, Jaunpur, Kolkata, Krishna, Ahmad nagar, Kanpur Nagar, Lucknow, Azamgarh, Chennai, Nagpur, Ghaziabad, Moradabad， Belgaum，Muzaffarpur, Haora, Guntur, Purba Medinipur, Purba Champ aran, East Godavari, Nadia , Rang a reddy, Hugli , Patna, Paschim Medinipur, Allahabad. 5 60lakhs 12 Surat, Nashik, Jaipur, Murshidabad ， Ahmadabad, and more Barddhaman, South Twenty Four Parganas, Mumbai Suburban, Pune, Bangalore, North Twenty Four Parganas, Thane.",
+      "contextualized_text": "Annexure-V > S. Population Number of Name of districts No. Criteria districts 1 Less than 1 26 Dibang Valley, Anjaw, Lahul & Spiti, Upper Siang, > Puruliya, Rohtas, Sri Potti Sriramulu Nellore, Begusarai. 4 30 lakhs - 113 Mysore, Satara, Shahjahanpur， Uttar Dinajpur, less than 60 Medak, Bhagalpur， Madurai, Udaipur, Katihar, lakhs Tirunelveli, Mumbai, Kozhikode, Deoria, Unnao, Banas Kantha, Thrissur, Pratapgarh, Ballia, Bara Banki, Purnia, I Indore，Ernakulam， Thiruvananthapuram, Nagaur, Siwan, Durg, Nanded, Prakasam, Rae Bareli Sitamarhi, Gonda, Meerut, Coimbatore, Viluppuram, Saharanpur, Salem, Bahraich, Nalgonda, Vaishali Ludhiana, Bulandshahr, Birbhum, Warangal, Ganjam, Kush in agar, Bankura ， Ghazipur, North West Delhi, Aligarh, Alwar, Varanasi, Budaun, Bijnor, Jodhpur, Aurangabad, Thiruvallur, Karim nagar, Sultanpur, Rajkot, Jalpaiguri , Kolhapur, Pashchim Champ aran, Vellore, West Godavari， Darbhanga, Hyderabad, Saran, Maldah , Kancheepuram, Kheri, Mahbubnagar, Kurnool, Raipur, Anantapur, Hardoi, Malappuram, Muzaffarnagar, Vadodara, Chit to or， Jalgaon, Samastipur, Visa khapa tnam, Solapur, Gaya, Agra, Gorakhpur, Bareilly, Sitapur, Madhubani, Jaunpur, Kolkata, Krishna, Ahmad nagar, Kanpur Nagar, Lucknow, Azamgarh, Chennai, Nagpur, Ghaziabad, Moradabad， Belgaum，Muzaffarpur, Haora, Guntur, Purba Medinipur, Purba Champ aran, East Godavari, Nadia , Rang a reddy, Hugli , Patna, Paschim Medinipur, Allahabad. 5 60lakhs 12 Surat, Nashik, Jaipur, Murshidabad ， Ahmadabad, and more Barddhaman, South Twenty Four Parganas, Mumbai Suburban, Pune, Bangalore, North Twenty Four Parganas, Thane.",
+      "token_estimate": 235,
+      "char_count": 1404
+    }
+  ]
+}

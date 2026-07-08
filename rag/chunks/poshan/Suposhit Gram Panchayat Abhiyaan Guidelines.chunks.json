@@ -1,0 +1,1085 @@
+{
+  "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+  "scheme": "poshan",
+  "source": "text",
+  "pages": 14,
+  "n_headings": 83,
+  "n_chunks": 21,
+  "outline": [
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Hfrer V r ftT ATGT Ministry of Women &C hild Development",
+      "x0": 109.9,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "or 3H Poshan Abhiyaan",
+      "x0": 215.2,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Sir/Madam,",
+      "x0": 85.1,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Mission Saksham Anganwadi and Poshan 2.0f ocuses on the significance of the role of Jan Bhagidari for addressing the challenge of malnutrition in India. The Suposhit Gram Panchayat Abhiyaan by the Government of India is aimed at improving the nutritional outcomes and well-being of targeted population across the country.",
+      "x0": 112.6,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "(AYkaja Das)",
+      "x0": 416.3,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Copy to:",
+      "x0": 83.9,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Directors/N odal officers dealing with Poshan Abhiyaan of all States/UTs",
+      "x0": 115.8,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Copy for information to:",
+      "x0": 84.5,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. PPS to Additional Secretary (AWS), Mlo WCD, Government of India",
+      "x0": 95.3,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. PS to Joint Secretary (Poshan), M/o WCD, Government of lndia",
+      "x0": 98.4,
+      "conf": 1.0,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Government of India",
+      "x0": 239.0,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Ministry of Women and Child Development",
+      "x0": 173.4,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Suposhit Gram",
+      "x0": 146.2,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Panchayat Abhiyaan",
+      "x0": 88.8,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Guidelines",
+      "x0": 193.6,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Mission Saksham Anganwadi & Poshan 2.0",
+      "x0": 96.1,
+      "conf": 1.0,
+      "page": 2
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Contents:",
+      "x0": 76.6,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. Suposhit Gram Panchayat Abhiyaan 1",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Implementation of the Abhiyaan 2",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Ranking of Gram Panchayat 5",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Selection Committee 6",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. Reporting and publishing of Results 6",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "6. Convergence with other Ministries 6",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-I 7",
+      "x0": 83.1,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-II 8",
+      "x0": 83.1,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-III 9",
+      "x0": 83.1,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-IV 10",
+      "x0": 83.1,
+      "conf": 1.0,
+      "page": 3
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Glossary",
+      "x0": 76.6,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. MoWCD Ministry of Women and Child Development",
+      "x0": 85.9,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. NFSA National Food Security Act",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. SDG Sustainable Development Goals",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. PW Pregnant Women",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "5. LM Lactating Mothers",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "6. PRI Panchayati Raj Institution",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "7. ICDS Integrated Child Development Services",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "8. SAM Severe Acute Malnutrition",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "9. MAM Moderate Acute Malnutrition",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "10. AWC Anganwadi Centers",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "11. GP Gram Panchayat",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "12. SHG Self Help Group",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "13. SUW Severely Underweight",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "14. DNC District Nutrition Committee",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "15. DPO District Programme Officer",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "16. UC Utilization Certificate",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "17. LGD Local Government Directory",
+      "x0": 85.7,
+      "conf": 1.0,
+      "page": 4
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Suposhit Gram Panchayat Abhiyaan",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "1.1 Nutrition is acknowledged as one of the most important aspects for human development, poverty reduction and economic development, with high economic returns. For addressing the challenge of malnutrition in India, Mission Saksham Anganwadi and Poshan 2.0 guidelines focuses on the significance of the role of Jan Bhagidari for addressing the problem of malnutrition.",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "1.2 The Suposhit Gram Panchayat Abhiyaan by the Government of Indiais aimed at improving the nutritional outcomes and well-being of targeted population across the country. This initiative focuses on improving nutrition by strengthening implementation of nutrition related services, in convergence with multiple stakeholders at the local level, and ensuring active community participation. The significance of the Suposhit Gram Panchayat Abhiyaan",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "powerful catalyst for change, inspiring communities to embrace sustainable practices and innovative approaches in their fight against malnutrition through positive competition.",
+      "x0": 85.6,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "1.3 The objective of this initiative is to incentivize Anganwadis in Gram Panchayats to achieve a benchmark level of infrastructure, service delivery status and nutritional outcomes of beneficiaries. It aims to mobilize and motivate Gram Panchayats and Anganwadi functionaries to take proactive measures towards eradicating malnutrition in the catchment area.",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "1.4 This initiative supports the achievement of Sustainable Development Goals 2 & 3 (SDG2- end hunger, achieve food security and improved nutrition and SDG 3- ensure healthy lives and promote well-being for all ages) at local level. Suposhit Gram Panchayat Abhiyaan focuses on improving nutritional outcomes through practices such as use of millets in HCM & THR, development of Poshan Vatikas/nutri-gardens in AWCs, using its produce for",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "preparation of HCM for the beneficiaries, diet diversity and use of local food etc.",
+      "x0": 85.6,
+      "conf": 1.0,
+      "page": 5
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Implementation of the Abhiyaan",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "2.2 Incentive Structure",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": "alpha_lower",
+      "text": "a. 25% to Anganwadi Workers & Helpers",
+      "x0": 90.0,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "2.3 Timeline",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "2.4 Identification, Nomination and preliminary Screening of GPs",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Step 1: Identification of GPs:",
+      "x0": 93.4,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Step 2: Nomination of GPs:",
+      "x0": 93.4,
+      "conf": 1.0,
+      "page": 6
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Step 3 Publishing the List of eligible Gram Panchayats:",
+      "x0": 93.4,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "2.5 Assessment Framework",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "assessed against the following indicators:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. Maternal and Child 50 Healthcare 1a. Improvement in children under 10 ● Average Percentage Change 5 years with Severe Acute (APC)* in children under 5 years Malnutrition (SAM) with SAM, calculated from baseline",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 7
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Indicators Related to 35 Saturation of Services 2a. Percentage of Pregnant women 15 and Lactating mothers 95-100 % 15 Marks receiving Supplementary 90-95 % 10 Marks Nutrition regularly 85-90 % 5 Marks",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure IV. 70-80 % 2 Marks",
+      "x0": 114.7,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Indicators Related to 10 Infrastructure 3a. Anganwadi Centers with 10 T + DW + RE (All 3)-10 Marks functional toilets facility (T), T/ DW/ RE (Any 2)- 6 Marks",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Indicators Related to Dietary 5 Diversity",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 8
+    },
+    {
+      "level": 2,
+      "num_type": "num_multi",
+      "text": "2.6 Data Verification",
+      "x0": 67.5,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Ranking of Gram Panchayat",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 9
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Selection Committee",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Reporting and publishing of Results",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Convergence with other Ministries",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "required at various stages:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 10
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-I",
+      "x0": 459.1,
+      "conf": 1.0,
+      "page": 11
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-II",
+      "x0": 454.1,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Name of Gram Panchayat:",
+      "x0": 102.0,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "AWC 1:",
+      "x0": 102.0,
+      "conf": 1.0,
+      "page": 12
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-III",
+      "x0": 695.6,
+      "conf": 1.0,
+      "page": 13
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure-IV",
+      "x0": 449.7,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. Calculate the Monthly Percentage Changes:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "3. Convert Average Percentage Change to the Scaled Score:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Illustrative Example:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 14
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Measurement accuracy:",
+      "x0": 72.0,
+      "conf": 1.0,
+      "page": 14
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0001",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 1,
+      "page_end": 1,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 215.2,
+      "heading_conf": 1.0,
+      "text": "3rd Floor, Jeevan Vihar Building Sansad Marg, New Delhi -110001 Dated: 24th December, 2024 To, The Principal Secretaries/ Secretaries of the Department of Social Welfare/ VWomen and Child Development of all States/UTS. Subject: Guidelines for Suposhit Gram Panchayat Abhiyaan - regarding. Government of India",
+      "contextualized_text": "3rd Floor, Jeevan Vihar Building Sansad Marg, New Delhi -110001 Dated: 24th December, 2024 To, The Principal Secretaries/ Secretaries of the Department of Social Welfare/ VWomen and Child Development of all States/UTS. Subject: Guidelines for Suposhit Gram Panchayat Abhiyaan - regarding. Government of India",
+      "token_estimate": 59,
+      "char_count": 308
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0002",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 1,
+      "page_end": 5,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 112.6,
+      "heading_conf": 1.0,
+      "text": "2 Under this initiative the top performing 1000 Suposhit Gram Panchayats will be selected in September/October 2025 and an incentive of 1l akh each will be awarded to them. Further, the top performing 3 Districts with maximum Suposhit Gram Panchayats under them will also be recognised. The detailed guidelines for Suposhit Gram Panchayat Abhiyaan are enclosed herewith. 3 The nominations of Gram Panchayats will begin from 26th December, 2024. This issues with the approval of Competent Authority. Encl: as above. Yours sincerely, Director tot he Government of India Email: arkaja.das@gov.in 1. Sr. PPS to Secretary, M/o WCD, Government of India S. No. Abbreviation Full Form extends far beyond the mere recognition of achievements. It serves as a",
+      "contextualized_text": "2 Under this initiative the top performing 1000 Suposhit Gram Panchayats will be selected in September/October 2025 and an incentive of 1l akh each will be awarded to them. Further, the top performing 3 Districts with maximum Suposhit Gram Panchayats under them will also be recognised. The detailed guidelines for Suposhit Gram Panchayat Abhiyaan are enclosed herewith. 3 The nominations of Gram Panchayats will begin from 26th December, 2024. This issues with the approval of Competent Authority. Encl: as above. Yours sincerely, Director tot he Government of India Email: arkaja.das@gov.in 1. Sr. PPS to Secretary, M/o WCD, Government of India S. No. Abbreviation Full Form extends far beyond the mere recognition of achievements. It serves as a",
+      "token_estimate": 156,
+      "char_count": 748
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0003",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "Implementation of the Abhiyaan",
+      "heading_path": [
+        "Annexure-IV 10",
+        "1.4 This initiative supports the achievement of Sustainable Development Goals 2 & 3 (SDG2- end hunger, achieve food security and improved nutrition and SDG 3- ensure healthy lives and promote well-being for all ages) at local level. Suposhit Gram Panchayat Abhiyaan focuses on improving nutritional outcomes through practices such as use of millets in HCM & THR, development of Poshan Vatikas/nutri-gardens in AWCs, using its produce for",
+        "Implementation of the Abhiyaan"
+      ],
+      "heading_path_str": "Annexure-IV 10 > 1.4 This initiative supports the achievement of Sustainable Development Goals 2 & 3 (SDG2- end hunger, achieve food security and improved nutrition and SDG 3- ensure healthy lives and promote well-being for all ages) at local level. Suposhit Gram Panchayat Abhiyaan focuses on improving nutritional outcomes through practices such as use of millets in HCM & THR, development of Poshan Vatikas/nutri-gardens in AWCs, using its produce for > Implementation of the Abhiyaan",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "2.1 Budget: Rs.10 Crore per annum. It is the part of Poshan Abhiyaan, a centrally sponsored scheme where the incentive will be released on cost sharing between Center and State as per scheme guidelines. • 1 lakh per Gram Panchayat.",
+      "contextualized_text": "Annexure-IV 10 > 1.4 This initiative supports the achievement of Sustainable Development Goals 2 & 3 (SDG2- end hunger, achieve food security and improved nutrition and SDG 3- ensure healthy lives and promote well-being for all ages) at local level. Suposhit Gram Panchayat Abhiyaan focuses on improving nutritional outcomes through practices such as use of millets in HCM & THR, development of Poshan Vatikas/nutri-gardens in AWCs, using its produce for > Implementation of the Abhiyaan 2.1 Budget: Rs.10 Crore per annum. It is the part of Poshan Abhiyaan, a centrally sponsored scheme where the incentive will be released on cost sharing between Center and State as per scheme guidelines. • 1 lakh per Gram Panchayat.",
+      "token_estimate": 53,
+      "char_count": 231
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0004",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "2.2 Incentive Structure",
+      "heading_path": [
+        "Annexure-IV 10",
+        "2.2 Incentive Structure"
+      ],
+      "heading_path_str": "Annexure-IV 10 > 2.2 Incentive Structure",
+      "level": 2,
+      "heading_x0": 67.5,
+      "heading_conf": 1.0,
+      "text": "The Suposhit Gram Panchayat Incentive will grant 1 lakh rupees per GP to the top 1000 qualified Gram Panchayats It is proposed to utilize the incentive money for the following:",
+      "contextualized_text": "Annexure-IV 10 > 2.2 Incentive Structure The Suposhit Gram Panchayat Incentive will grant 1 lakh rupees per GP to the top 1000 qualified Gram Panchayats It is proposed to utilize the incentive money for the following:",
+      "token_estimate": 40,
+      "char_count": 176
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0005",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "a. 25% to Anganwadi Workers & Helpers",
+      "heading_path": [
+        "Annexure-IV 10",
+        "2.2 Incentive Structure",
+        "a. 25% to Anganwadi Workers & Helpers"
+      ],
+      "heading_path_str": "Annexure-IV 10 > 2.2 Incentive Structure > a. 25% to Anganwadi Workers & Helpers",
+      "level": 4,
+      "heading_x0": 90.0,
+      "heading_conf": 1.0,
+      "text": "b. 25% to Gram Panchayat for community mobilization & increasing beneficiary enrollment in AWCs. c. 50% for nutrition related activities at the AWCs including development of Poshan Vatikas, value addition to SNP, etc.",
+      "contextualized_text": "Annexure-IV 10 > 2.2 Incentive Structure > a. 25% to Anganwadi Workers & Helpers b. 25% to Gram Panchayat for community mobilization & increasing beneficiary enrollment in AWCs. c. 50% for nutrition related activities at the AWCs including development of Poshan Vatikas, value addition to SNP, etc.",
+      "token_estimate": 44,
+      "char_count": 217
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0006",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 6,
+      "page_end": 6,
+      "heading": "Annexure-IV 10",
+      "heading_path": [
+        "Annexure-IV 10"
+      ],
+      "heading_path_str": "Annexure-IV 10",
+      "level": 1,
+      "heading_x0": 67.5,
+      "heading_conf": 1.0,
+      "text": "• Nominations of GPs by States/UTs: 26th December, 2024 – 31st January, 2025 • Preliminary screening of nominations based on minimum eligibility criteria for participation and publication of final eligible GPs on Poshan Tracker dashboard: By 15th February, 2025 • Peer review by State teams and field visits by Central teams: 15th February, 2025 – 31st July, 2025 • Third Party validation: August - September 2025 • Declaration of the result: September/October 2025 A dedicated portal of Suposhit Gram Panchayat Abhiyaan will be made available on Poshan Tracker dashboard State/ UT wise list of eligible GPs will be displayed on the Poshan Tracker dashboard based on eligibility criteria provided by the Ministry at Annexure-I.",
+      "contextualized_text": "Annexure-IV 10 • Nominations of GPs by States/UTs: 26th December, 2024 – 31st January, 2025 • Preliminary screening of nominations based on minimum eligibility criteria for participation and publication of final eligible GPs on Poshan Tracker dashboard: By 15th February, 2025 • Peer review by State teams and field visits by Central teams: 15th February, 2025 – 31st July, 2025 • Third Party validation: August - September 2025 • Declaration of the result: September/October 2025 A dedicated portal of Suposhit Gram Panchayat Abhiyaan will be made available on Poshan Tracker dashboard State/ UT wise list of eligible GPs will be displayed on the Poshan Tracker dashboard based on eligibility criteria provided by the Ministry at Annexure-I.",
+      "token_estimate": 152,
+      "char_count": 727
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0007",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 6,
+      "page_end": 7,
+      "heading": "Annexure-IV 10",
+      "heading_path": [
+        "Annexure-IV 10"
+      ],
+      "heading_path_str": "Annexure-IV 10",
+      "level": 1,
+      "heading_x0": 93.4,
+      "heading_conf": 1.0,
+      "text": "States/UTs will submit the details of final Gram Panchayat nominations to the Ministry for monitoring and evaluation as Suposhit Panchayat through a suposhit gram panchayat dashboard developed for this purpose. (The nomination will be maximum 10% of the total number of Gram Panchayats in that State/UTs.) After Preliminary screening of nominations based on minimum eligibility criteria, Ministry will publish the final list of eligible and competing Gram Panchayats on the dashboard for continuous monitoring. All the nominated Gram Panchayats after preliminary screening will be monitored and S. No. Indicators Marks Marking Methodology",
+      "contextualized_text": "Annexure-IV 10 States/UTs will submit the details of final Gram Panchayat nominations to the Ministry for monitoring and evaluation as Suposhit Panchayat through a suposhit gram panchayat dashboard developed for this purpose. (The nomination will be maximum 10% of the total number of Gram Panchayats in that State/UTs.) After Preliminary screening of nominations based on minimum eligibility criteria, Ministry will publish the final list of eligible and competing Gram Panchayats on the dashboard for continuous monitoring. All the nominated Gram Panchayats after preliminary screening will be monitored and S. No. Indicators Marks Marking Methodology",
+      "token_estimate": 123,
+      "char_count": 638
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0008",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 7,
+      "page_end": 8,
+      "heading": "1. Maternal and Child 50 Healthcare 1a. Improvement in children under 10 ● Average Percentage Change 5 years with Severe Acute (APC)* in children under 5 years Malnutrition (SAM) with SAM, calculated from baseline",
+      "heading_path": [
+        "Annexure-IV 10",
+        "1. Maternal and Child 50 Healthcare 1a. Improvement in children under 10 ● Average Percentage Change 5 years with Severe Acute (APC)* in children under 5 years Malnutrition (SAM) with SAM, calculated from baseline"
+      ],
+      "heading_path_str": "Annexure-IV 10 > 1. Maternal and Child 50 Healthcare 1a. Improvement in children under 10 ● Average Percentage Change 5 years with Severe Acute (APC)* in children under 5 years Malnutrition (SAM) with SAM, calculated from baseline",
+      "level": 2,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "over 6 months. 1b. Improvement in children under 10 ● Average Percentage Change 3 years who are Severely (APC)* in children under 3 years who Underweight (SUW) are SUW, calculated from baseline over 6 months. 1c. Improvement in children under 10 ● Average Percentage Change 3 years who are Severely (APC)* in children under 3 years Stunted who are Severely Stunted, (*Defined as the Percentage of calculated from baseline over 6 Average Percentage Point months. change in children under 5 years who are Severely Stunted. The expanded formula for this calculation is given in the marking methodology) 1d. Improvement in children under 10 ● Average Percentage Change 3 years with Moderate Acute (APC) in children under 3 years Malnutrition (MAM) with MAM, calculated from baseline over 6 months. *A step-by-step scoring methodology is available in Annexure IV. S. No. Indicators Marks Marking Methodology 1e. Percentage of Pregnant women 10 achieving optimum weight 95-100 % 10 Marks gain during pregnancy 90-95 % 6 Marks",
+      "contextualized_text": "Annexure-IV 10 > 1. Maternal and Child 50 Healthcare 1a. Improvement in children under 10 ● Average Percentage Change 5 years with Severe Acute (APC)* in children under 5 years Malnutrition (SAM) with SAM, calculated from baseline over 6 months. 1b. Improvement in children under 10 ● Average Percentage Change 3 years who are Severely (APC)* in children under 3 years who Underweight (SUW) are SUW, calculated from baseline over 6 months. 1c. Improvement in children under 10 ● Average Percentage Change 3 years who are Severely (APC)* in children under 3 years Stunted who are Severely Stunted, (*Defined as the Percentage of calculated from baseline over 6 Average Percentage Point months. change in children under 5 years who are Severely Stunted. The expanded formula for this calculation is given in the marking methodology) 1d. Improvement in children under 10 ● Average Percentage Change 3 years with Moderate Acute (APC) in children under 3 years Malnutrition (MAM) with MAM, calculated from baseline over 6 months. *A step-by-step scoring methodology is available in Annexure IV. S. No. Indicators Marks Marking Methodology 1e. Percentage of Pregnant women 10 achieving optimum weight 95-100 % 10 Marks gain during pregnancy 90-95 % 6 Marks",
+      "token_estimate": 217,
+      "char_count": 1019
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0009",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 8,
+      "page_end": 8,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "2b. Percentage of children from 6 15 months to 6 years receiving 95-100 % 15 Marks Supplementary Nutrition 90-95 % 10 Marks regularly 85-90 % 5 Marks 2c. Measurement accuracy* 5 90 % 5 Marks *Details mentioned at 80-90 % 3 Marks T/ DW/ RE (Any 1)- 4 Marks. drinking water (DW) facility and running electricity (RE)",
+      "contextualized_text": "2b. Percentage of children from 6 15 months to 6 years receiving 95-100 % 15 Marks Supplementary Nutrition 90-95 % 10 Marks regularly 85-90 % 5 Marks 2c. Measurement accuracy* 5 90 % 5 Marks *Details mentioned at 80-90 % 3 Marks T/ DW/ RE (Any 1)- 4 Marks. drinking water (DW) facility and running electricity (RE)",
+      "token_estimate": 76,
+      "char_count": 314
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0010",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 8,
+      "page_end": 8,
+      "heading": "4. Indicators Related to Dietary 5 Diversity",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "4. Indicators Related to Dietary 5 Diversity"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 4. Indicators Related to Dietary 5 Diversity",
+      "level": 2,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "4a. Diet diversity in THR & HCM (diverse menu, local food, use of millets once a week, 5 All components 5 Marks hygiene, quality of food, covered richness of nutrition, etc.) for None NIL more than 21 days in a month Total Marks for Evaluation of 10 100 Indicators",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 4. Indicators Related to Dietary 5 Diversity 4a. Diet diversity in THR & HCM (diverse menu, local food, use of millets once a week, 5 All components 5 Marks hygiene, quality of food, covered richness of nutrition, etc.) for None NIL more than 21 days in a month Total Marks for Evaluation of 10 100 Indicators",
+      "token_estimate": 65,
+      "char_count": 264
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0011",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 9,
+      "page_end": 9,
+      "heading": "2.6 Data Verification",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification",
+      "level": 2,
+      "heading_x0": 67.5,
+      "heading_conf": 1.0,
+      "text": "Step 1: Verification through Field Visits i. Verification by Peer States/UTs The States/UTs to nominate members from Department of WCD, Panchayati Raj, Health and Jal Shakti. • The peer review team to visit minimum 20% of eligible GPs of the peer State/UT. • Teams to visit 2 AWCs in each GP and submit report in the prescribed format on the portal. • The list of peer States/UTs and the checklist for peer review are at Annexure II & III respectively. ii. Sample Check by Central Team Nodal Officer nominated from MoWCD and other partner ministries i.e., Panchayati Raj, Health & Family Welfare and Jal Shakti will visit the eligible GPs for verification. Teams will submit field visit report in the prescribed format on the Suposhit GP portal. Step 2: Third Party Evaluation Third Party Evaluation of top selected GPs will be done. Step 3: Beneficiary Feedback Feedback on quality of services being delivered by AWCs will be taken from Beneficiaries through the Beneficiary Module of Poshan Tracker. Any mismatch in the data reported in Poshan Tracker and field visit report submitted by the Central/State verification teams and Beneficiary Feedback will be evaluated.",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification Step 1: Verification through Field Visits i. Verification by Peer States/UTs The States/UTs to nominate members from Department of WCD, Panchayati Raj, Health and Jal Shakti. • The peer review team to visit minimum 20% of eligible GPs of the peer State/UT. • Teams to visit 2 AWCs in each GP and submit report in the prescribed format on the portal. • The list of peer States/UTs and the checklist for peer review are at Annexure II & III respectively. ii. Sample Check by Central Team Nodal Officer nominated from MoWCD and other partner ministries i.e., Panchayati Raj, Health & Family Welfare and Jal Shakti will visit the eligible GPs for verification. Teams will submit field visit report in the prescribed format on the Suposhit GP portal. Step 2: Third Party Evaluation Third Party Evaluation of top selected GPs will be done. Step 3: Beneficiary Feedback Feedback on quality of services being delivered by AWCs will be taken from Beneficiaries through the Beneficiary Module of Poshan Tracker. Any mismatch in the data reported in Poshan Tracker and field visit report submitted by the Central/State verification teams and Beneficiary Feedback will be evaluated.",
+      "token_estimate": 256,
+      "char_count": 1170
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0012",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 9,
+      "page_end": 9,
+      "heading": "Ranking of Gram Panchayat",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification",
+        "Ranking of Gram Panchayat"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > Ranking of Gram Panchayat",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "Eligible Gram Panchayats will be ranked on the performance against assessment parameters. ● In case of a tie the Gram Panchayat with the highest marks in child health indicators will be given preference. ● If a tie still persists, those with the most improvement in indicators related to the saturation of services will be given preference.",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > Ranking of Gram Panchayat Eligible Gram Panchayats will be ranked on the performance against assessment parameters. ● In case of a tie the Gram Panchayat with the highest marks in child health indicators will be given preference. ● If a tie still persists, those with the most improvement in indicators related to the saturation of services will be given preference.",
+      "token_estimate": 75,
+      "char_count": 340
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0013",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "Selection Committee",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification",
+        "Selection Committee"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > Selection Committee",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "The committee at the National level under the chairpersonship of the Joint Secretary, Poshan Abhiyaan with other members of the committee like Director, Deputy Secretary, Under Secretary etc. from Ministry of Women and Child Development, Government of India and Partner Ministries will screen the third party report of top selected GPs and recommend top 1000 GPs eligible for incentive.",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > Selection Committee The committee at the National level under the chairpersonship of the Joint Secretary, Poshan Abhiyaan with other members of the committee like Director, Deputy Secretary, Under Secretary etc. from Ministry of Women and Child Development, Government of India and Partner Ministries will screen the third party report of top selected GPs and recommend top 1000 GPs eligible for incentive.",
+      "token_estimate": 79,
+      "char_count": 386
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0014",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "2.6 Data Verification",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification",
+      "level": 2,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "The result of top 1000 Gram Panchayats will be declared by Government of India in September/October 2025, and it will be posted on the website of the Ministry of Women and Child Development. Top three districts having maximum number of Suposhit Gram Panchayats will also be recognized. For the implementation of this initiative, convergence with the following Ministries is",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification The result of top 1000 Gram Panchayats will be declared by Government of India in September/October 2025, and it will be posted on the website of the Ministry of Women and Child Development. Top three districts having maximum number of Suposhit Gram Panchayats will also be recognized. For the implementation of this initiative, convergence with the following Ministries is",
+      "token_estimate": 79,
+      "char_count": 373
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0015",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "required at various stages:",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification",
+        "required at various stages:"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > required at various stages:",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "Sr. No. Ministry Convergence required for 1 Ministry of • Nodal officers from the Central and States/UTs to be sent for Panchayati Raj field visits to verify the data during the Peer review process. (MoPR) • Supporting Gram Panchayats to utilize their untied funds for Poshan related activities. • Identification of land for Poshan Vatika and support for its development. 2 Ministry of Jal • Nodal officers from the Central and States/UTs to be sent for Shakti (MoJS) field visits to verify the data during the Peer review process. • Supporting the establishment of drinking water and WASH facilities at AWCs. 3 Ministry of Health • Nodal officers from the Central and States/UTs to be sent for and Family field visits to verify the data during the Peer review process. Welfare • Coordination by Health field functionaries including ASHA, (MoHFW) ANM etc. with Anganwadi Workers for better management of health aspects of Anganwadi beneficiaries. • Support for implementation of CMAM protocol and referral of SAM children to NRCs/Health Facility • To ensure the VHSND organization as per the guidelines • Regular health check-ups of Anganwadi beneficiaries",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > required at various stages: Sr. No. Ministry Convergence required for 1 Ministry of • Nodal officers from the Central and States/UTs to be sent for Panchayati Raj field visits to verify the data during the Peer review process. (MoPR) • Supporting Gram Panchayats to utilize their untied funds for Poshan related activities. • Identification of land for Poshan Vatika and support for its development. 2 Ministry of Jal • Nodal officers from the Central and States/UTs to be sent for Shakti (MoJS) field visits to verify the data during the Peer review process. • Supporting the establishment of drinking water and WASH facilities at AWCs. 3 Ministry of Health • Nodal officers from the Central and States/UTs to be sent for and Family field visits to verify the data during the Peer review process. Welfare • Coordination by Health field functionaries including ASHA, (MoHFW) ANM etc. with Anganwadi Workers for better management of health aspects of Anganwadi beneficiaries. • Support for implementation of CMAM protocol and referral of SAM children to NRCs/Health Facility • To ensure the VHSND organization as per the guidelines • Regular health check-ups of Anganwadi beneficiaries",
+      "token_estimate": 248,
+      "char_count": 1156
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0016",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "required at various stages:",
+      "heading_path": [
+        "Annexure IV. 70-80 % 2 Marks",
+        "2.6 Data Verification",
+        "required at various stages:"
+      ],
+      "heading_path_str": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > required at various stages:",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "• To ensure the VHSND organization as per the guidelines • Regular health check-ups of Anganwadi beneficiaries • Ensure the supply of interventions for prevention and management of anemia to the beneficiaries registered in AWCs including PW, LM, Children 0-6 years age and Adolescent girls.",
+      "contextualized_text": "Annexure IV. 70-80 % 2 Marks > 2.6 Data Verification > required at various stages: • To ensure the VHSND organization as per the guidelines • Regular health check-ups of Anganwadi beneficiaries • Ensure the supply of interventions for prevention and management of anemia to the beneficiaries registered in AWCs including PW, LM, Children 0-6 years age and Adolescent girls.",
+      "token_estimate": 60,
+      "char_count": 290
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0017",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 11,
+      "page_end": 12,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 459.1,
+      "heading_conf": 1.0,
+      "text": "Baseline Criteria for Gram Panchayats by States/UTs 1) Gram Panchayats with Anganwadi Centres (AWCs) open for at least an average of 21 days, having minimum 50 beneficiaries registered and having 90% measurement efficiency in last 3 months September to November 2024. 2) Of the total AWCs within a Gram Panchayat, at least 80% AWCs should have drinking water facility and 70 % AWCs should have functional toilets as on 20th December, 2024. 3) States/UTs can nominate maximum of 10% GPs within their States/UTs. Screening Criteria for final list of GPs at Central level (to be done in February2025) 1) Gram Panchayats not fulfilling the Baseline Criteria as per Poshan Tracker data will be disqualified. 2) Gram Panchayats having Underweight (severe and moderate) above (worse than) National average will be disqualified Evaluation during/after the Peer Review Process Any mismatch in the data reported in Poshan Tracker and field visit report submitted by the Central/State verification teams and Beneficiary Feedback will be evaluated. **The nomination should not exceed 10% of the total number of Gram Panchayats in that State/UT.** Checklist for peer review ● 20% of nominated Gram Panchayats to be visited in 2 rounds. ● At least 2 AWCs in the Gram Panchayat to be visited.",
+      "contextualized_text": "Baseline Criteria for Gram Panchayats by States/UTs 1) Gram Panchayats with Anganwadi Centres (AWCs) open for at least an average of 21 days, having minimum 50 beneficiaries registered and having 90% measurement efficiency in last 3 months September to November 2024. 2) Of the total AWCs within a Gram Panchayat, at least 80% AWCs should have drinking water facility and 70 % AWCs should have functional toilets as on 20th December, 2024. 3) States/UTs can nominate maximum of 10% GPs within their States/UTs. Screening Criteria for final list of GPs at Central level (to be done in February2025) 1) Gram Panchayats not fulfilling the Baseline Criteria as per Poshan Tracker data will be disqualified. 2) Gram Panchayats having Underweight (severe and moderate) above (worse than) National average will be disqualified Evaluation during/after the Peer Review Process Any mismatch in the data reported in Poshan Tracker and field visit report submitted by the Central/State verification teams and Beneficiary Feedback will be evaluated. **The nomination should not exceed 10% of the total number of Gram Panchayats in that State/UT.** Checklist for peer review ● 20% of nominated Gram Panchayats to be visited in 2 rounds. ● At least 2 AWCs in the Gram Panchayat to be visited.",
+      "token_estimate": 273,
+      "char_count": 1277
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0018",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 12,
+      "page_end": 14,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": 102.0,
+      "heading_conf": 1.0,
+      "text": "Growth Measurement Verification- Height and Weight of 3 beneficiaries Sr no Name of the DoB (Date of Birth) DoM (Date of Height Weight beneficiary Measurement Community Interaction (with beneficiaries of Anganwadi Services) for service delivery verification (with at least 2 beneficiary households where Home Visit has already been made by an AWW in the previous/same month) ● Date of last THR delivery and for how many days: ● Do beneficiaries receive SNP regularly every month? Yes/No ● Enquiry about the regular Home visits by AWW: Yes/No Infrastructure verification ● Availability of Drinking Water: Yes/No ● Availability of Functional Toilet: Yes/No ● Availability of Running Electricity: Yes/No Diet Diversity and Hygiene verification ● Menu of Hot Cooked Meal (HCM) and confirmation of its delivery to the children ● Enquiry about Millets in SNP ● Availability of Poshan Vatika Geo Tagged photos of visiting team at AWCs. AWC 2: Same as above Suposhit Gram Panchayat Abhiyaan 9 | Pa g e Step-by-Step Scoring Methodology for Average Percentage Change (APC)-Based Indicators",
+      "contextualized_text": "Growth Measurement Verification- Height and Weight of 3 beneficiaries Sr no Name of the DoB (Date of Birth) DoM (Date of Height Weight beneficiary Measurement Community Interaction (with beneficiaries of Anganwadi Services) for service delivery verification (with at least 2 beneficiary households where Home Visit has already been made by an AWW in the previous/same month) ● Date of last THR delivery and for how many days: ● Do beneficiaries receive SNP regularly every month? Yes/No ● Enquiry about the regular Home visits by AWW: Yes/No Infrastructure verification ● Availability of Drinking Water: Yes/No ● Availability of Functional Toilet: Yes/No ● Availability of Running Electricity: Yes/No Diet Diversity and Hygiene verification ● Menu of Hot Cooked Meal (HCM) and confirmation of its delivery to the children ● Enquiry about Millets in SNP ● Availability of Poshan Vatika Geo Tagged photos of visiting team at AWCs. AWC 2: Same as above Suposhit Gram Panchayat Abhiyaan 9 | Pa g e Step-by-Step Scoring Methodology for Average Percentage Change (APC)-Based Indicators",
+      "token_estimate": 224,
+      "char_count": 1079
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0019",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "Annexure-IV",
+      "heading_path": [
+        "Annexure-IV"
+      ],
+      "heading_path_str": "Annexure-IV",
+      "level": 1,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "● For each month (M1 to M6), calculate the percentage change relative to the baseline (BL). Formula: Percentage Change for each month = [(BL−Current Month Value)/BL] ×100 2. Calculate the Average Percentage Change for the period of 6 months: ● Add up the monthly percentage changes from all six months and divide by 6 to obtain the average percentage change. ● Formula: Average Percentage Change= (Sum of Percentage Changes for M1 to M6)/6 ● Multiply the Average Percentage Change by the weightage (10) to convert it to a score out of the total available marks. ● Formula: Scaled Score = (APC)×10/100",
+      "contextualized_text": "Annexure-IV ● For each month (M1 to M6), calculate the percentage change relative to the baseline (BL). Formula: Percentage Change for each month = [(BL−Current Month Value)/BL] ×100 2. Calculate the Average Percentage Change for the period of 6 months: ● Add up the monthly percentage changes from all six months and divide by 6 to obtain the average percentage change. ● Formula: Average Percentage Change= (Sum of Percentage Changes for M1 to M6)/6 ● Multiply the Average Percentage Change by the weightage (10) to convert it to a score out of the total available marks. ● Formula: Scaled Score = (APC)×10/100",
+      "token_estimate": 135,
+      "char_count": 600
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0020",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "4. Illustrative Example:",
+      "heading_path": [
+        "Annexure-IV",
+        "4. Illustrative Example:"
+      ],
+      "heading_path_str": "Annexure-IV > 4. Illustrative Example:",
+      "level": 2,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "● Suppose Baseline (BL) is 12, and the monthly values over six months (M1 to M6) are ● Calculate the percentage change for each month: Scoring Methodology for Measurement Accuracy",
+      "contextualized_text": "Annexure-IV > 4. Illustrative Example: ● Suppose Baseline (BL) is 12, and the monthly values over six months (M1 to M6) are ● Calculate the percentage change for each month: Scoring Methodology for Measurement Accuracy",
+      "token_estimate": 40,
+      "char_count": 179
+    },
+    {
+      "chunk_id": "Suposhit Gram Panchayat Abhiyaan Guidelines_0021",
+      "doc": "Suposhit Gram Panchayat Abhiyaan Guidelines.pdf",
+      "scheme": "poshan",
+      "page_start": 14,
+      "page_end": 14,
+      "heading": "Measurement accuracy:",
+      "heading_path": [
+        "Annexure-IV",
+        "4. Illustrative Example:",
+        "Measurement accuracy:"
+      ],
+      "heading_path_str": "Annexure-IV > 4. Illustrative Example: > Measurement accuracy:",
+      "level": 3,
+      "heading_x0": 72.0,
+      "heading_conf": 1.0,
+      "text": "Normally any child’s height and weight changes in sequence i.e. SAM to MAM, MAM to Normal; Severe Stunting to Moderate Stunting and Moderate Stunting to Normal height and vice versa for each condition. If there is one level skip in nutritional status of beneficiary in 2 consecutive months. E.g., SAM to Normal, Severe Stunting to Normal and vice versa it will be considered as measurement inaccuracy. Based on the percentage of inaccuracy scoring will be done. 10 | Pa g e",
+      "contextualized_text": "Annexure-IV > 4. Illustrative Example: > Measurement accuracy: Normally any child’s height and weight changes in sequence i.e. SAM to MAM, MAM to Normal; Severe Stunting to Moderate Stunting and Moderate Stunting to Normal height and vice versa for each condition. If there is one level skip in nutritional status of beneficiary in 2 consecutive months. E.g., SAM to Normal, Severe Stunting to Normal and vice versa it will be considered as measurement inaccuracy. Based on the percentage of inaccuracy scoring will be done. 10 | Pa g e",
+      "token_estimate": 108,
+      "char_count": 473
+    }
+  ]
+}

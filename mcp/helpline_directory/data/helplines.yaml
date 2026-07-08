@@ -1,0 +1,72 @@
+# helplines.yaml
+# Authoritative helpline directory for AI Saheli.
+# Every entry MUST include source_url so the guardrail grounding check passes.
+# Categories map to how the specialist agents classify user distress.
+
+version: 1
+updated: "2026-07-01"
+
+helplines:
+  - id: childline_1098
+    name: "CHILDLINE"
+    number: "1098"
+    categories: [child_protection, child_distress, missing_child]
+    when_to_call: "Any child (0 to 18 years) in need of care or protection, or any adult noticing a child in distress."
+    hours: "24x7"
+    languages: [en, hi, bn, ta, te, mr, gu, kn, ml, or, pa]
+    scheme: vatsalya
+    priority: 1
+    source_url: "https://childlineindia.org/a/about/childline-india"
+    escalation_note: "Route immediately on any child-distress signal. Never counsel; never collect abuse details."
+
+  - id: women_helpline_181
+    name: "Women Helpline"
+    number: "181"
+    categories: [women_safety, domestic_violence, harassment, scheme_info_women]
+    when_to_call: "Any woman in distress, or seeking information about women-focused government schemes."
+    hours: "24x7"
+    languages: [en, hi]
+    scheme: shakti
+    priority: 1
+    # Replaced wcd.nic.in link with the Mission Shakti portal — 181 sits under Mission Shakti's Sambal sub-scheme.
+    source_url: "https://missionshakti.wcd.gov.in/public/documents/whatsnew/Mission_Shakti_Guidelines.pdf"
+    escalation_note: "Primary route for women-safety distress. Pair with nearest OSC via geo_locator."
+
+  - id: emergency_112
+    name: "Police Emergency"
+    number: "112"
+    categories: [emergency, women_safety, child_protection, medical_emergency]
+    when_to_call: "Any life-threatening emergency — police, fire, medical, or immediate physical danger."
+    hours: "24x7"
+    languages: [en, hi]
+    scheme: null
+    priority: 0                      # 0 = highest — always mention on any life-safety signal
+    source_url: "https://112.gov.in/"
+    escalation_note: "Mention alongside 181/1098 whenever there is any signal of immediate physical danger."
+
+  - id: nalsa_15100
+    name: "NALSA Legal Aid"
+    number: "15100"
+    categories: [legal_aid]
+    when_to_call: "Free legal aid — court fees, lawyer assignment, legal advice for the poor."
+    hours: "Business hours (varies by state)"
+    languages: [en, hi]
+    scheme: null
+    priority: 2
+    source_url: "https://nalsa.gov.in/"
+    escalation_note: null
+
+  - id: anm_health_referral
+    name: "Local ANM / Anganwadi Worker"
+    number: null                     # not a phone number — instructs agent to route to local ANM
+    categories: [medical_red_flag, nutrition_medical]
+    when_to_call: "Any Poshan-agent query with a medical red-flag (bleeding, severe swelling, high fever, no fetal movement, danger signs in pregnancy or in a child). Route the beneficiary to the local ANM / Anganwadi Worker; do not advise clinically."
+    hours: "Anganwadi/Sub-centre working hours (varies by state)"
+    languages: [en, hi]
+    scheme: poshan
+    priority: 1
+    # TODO(source): confirm the authoritative Poshan 2.0 / ANM referral citation before demo.
+    # Reconstructed after the original YAML row was truncated. Placeholder points at the
+    # Poshan 2.0 portal; replace with the exact operational-guideline URL once verified.
+    source_url: "https://poshantracker.in/"
+    escalation_note: "Not a phone line — this is a routing instruction: hand the beneficiary to the local ANM/AWW. Never give clinical advice in-agent."

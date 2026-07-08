@@ -1,0 +1,840 @@
+{
+  "doc": "aaaaa.pdf",
+  "pages": 18,
+  "n_headings": 21,
+  "n_chunks": 35,
+  "outline": [
+    {
+      "level": 1,
+      "num_type": "subject",
+      "text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+      "x0": 229,
+      "conf": 0.919,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Towards this objective, existing guidelines are streamlined as follows:",
+      "x0": 229,
+      "conf": 0.96,
+      "page": 1
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "1. Quality Assurance:",
+      "x0": 245,
+      "conf": 0.927,
+      "page": 1
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Adherence to Quality Standards and Testing:",
+      "x0": 230,
+      "conf": 0.96,
+      "page": 1
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Supply-Chain Management:",
+      "x0": 230,
+      "conf": 0.83,
+      "page": 2
+    },
+    {
+      "level": 3,
+      "num_type": "alpha_upper",
+      "text": "A. At District Level:",
+      "x0": 230,
+      "conf": 0.938,
+      "page": 2
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "B. _At State Level:",
+      "x0": 239,
+      "conf": 0.93,
+      "page": 3
+    },
+    {
+      "level": 3,
+      "num_type": "paren_upper",
+      "text": "(C) In Village:",
+      "x0": 189,
+      "conf": 0.943,
+      "page": 3
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "3s Data Management and Monitoring through Poshan Tracker:",
+      "x0": 188,
+      "conf": 0.871,
+      "page": 3
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Procedure for Procurement:",
+      "x0": 189,
+      "conf": 0.955,
+      "page": 4
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "6._Integrating AYUSH concepts for holistic nourishment",
+      "x0": 188,
+      "conf": 0.943,
+      "page": 4
+    },
+    {
+      "level": 3,
+      "num_type": null,
+      "text": "Copy to:",
+      "x0": 189,
+      "conf": 0.96,
+      "page": 5
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure |",
+      "x0": 1269,
+      "conf": 0.94,
+      "page": 6
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure II",
+      "x0": 1259,
+      "conf": 0.9,
+      "page": 9
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "2. Encourage Yoga for Wellness:",
+      "x0": 239,
+      "conf": 0.958,
+      "page": 10
+    },
+    {
+      "level": 1,
+      "num_type": "annexure",
+      "text": "Annexure III",
+      "x0": 1242,
+      "conf": 0.825,
+      "page": 11
+    },
+    {
+      "level": 2,
+      "num_type": "num_dot",
+      "text": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "x0": 221,
+      "conf": 0.853,
+      "page": 12
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "AYUSH MWCD",
+      "x0": 725,
+      "conf": 0.915,
+      "page": 16
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "Copy to:",
+      "x0": 217,
+      "conf": 0.96,
+      "page": 17
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "(DR. HARMEET SINGH)",
+      "x0": 1172,
+      "conf": 0.933,
+      "page": 18
+    },
+    {
+      "level": 4,
+      "num_type": null,
+      "text": "DIRECTOR (ICDS)",
+      "x0": 1235,
+      "conf": 0.96,
+      "page": 18
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "aaaaa_0001",
+      "doc": "aaaaa.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "heading": null,
+      "heading_path": [],
+      "heading_path_str": "",
+      "level": 0,
+      "heading_x0": null,
+      "heading_conf": null,
+      "text": "Government of India Ministry of Women and Child Development Shastri Bhawan New Delhi Dated 13 January, 2021 To The Chief Secretary All States/UTs",
+      "contextualized_text": "Government of India Ministry of Women and Child Development Shastri Bhawan New Delhi Dated 13 January, 2021 To The Chief Secretary All States/UTs",
+      "token_estimate": 31,
+      "char_count": 145
+    },
+    {
+      "chunk_id": "aaaaa_0002",
+      "doc": "aaaaa.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "heading": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+      "level": 1,
+      "heading_x0": 229,
+      "heading_conf": 0.919,
+      "text": "Sir/ Madam, The Supplementary Nutrition Programme (SNP) under Anganwadi Services and the POSHAN Abhiyaan are important programmes to address the issue of malnutrition in the country. Under these programmes, there is need to ensure that entitlements reach the intended beneficiaries in a time-bound manner as per quality and nutrition al standards for the achievement of nutrition al goals.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg\n\nSir/ Madam, The Supplementary Nutrition Programme (SNP) under Anganwadi Services and the POSHAN Abhiyaan are important programmes to address the issue of malnutrition in the country. Under these programmes, there is need to ensure that entitlements reach the intended beneficiaries in a time-bound manner as per quality and nutrition al standards for the achievement of nutrition al goals.",
+      "token_estimate": 77,
+      "char_count": 389
+    },
+    {
+      "chunk_id": "aaaaa_0003",
+      "doc": "aaaaa.pdf",
+      "page_start": 1,
+      "page_end": 2,
+      "heading": "Adherence to Quality Standards and Testing:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "1. Quality Assurance:",
+        "Adherence to Quality Standards and Testing:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 1. Quality Assurance: > Adherence to Quality Standards and Testing:",
+      "level": 4,
+      "heading_x0": 230,
+      "heading_conf": 0.96,
+      "text": "States/UTs shall ensure the quality of Supplementary Nutrition being provided with reference to the norms of food safety as well as nutri ent composition. Supplementary Nutrition must conform to prescribed standards laid down under the Food Safety and Standards Act, 2006 and regulations made there under to ensure consistent quality and nutri tive value per serving. The periodicity of sample testing shall be once in a quarter of an annual year, per project. Take-Home Ration (not raw ration), shall be tested from _ FSSAI owned/registered/empaneled/NABL accredited laboratory. Random testing must be conducted by Anganwadi Services functionaries after receipt of stock at the AWC or at the Block level. Anganwadi Services functionaries i.e. CDPO or Supervisor shall draw the samples, as per the prescribed procedure and send the sample for testing to a FSSAl owned/registered/empaneled/NABL accredited laboratory. In case of Hot Cooked Meal, it should be ensured that it is prepared in proper kitchen sheds having adequate sanitation and safe drinking water so as to maintain hygienic conditions.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 1. Quality Assurance: > Adherence to Quality Standards and Testing:\n\nStates/UTs shall ensure the quality of Supplementary Nutrition being provided with reference to the norms of food safety as well as nutri ent composition. Supplementary Nutrition must conform to prescribed standards laid down under the Food Safety and Standards Act, 2006 and regulations made there under to ensure consistent quality and nutri tive value per serving. The periodicity of sample testing shall be once in a quarter of an annual year, per project. Take-Home Ration (not raw ration), shall be tested from _ FSSAI owned/registered/empaneled/NABL accredited laboratory. Random testing must be conducted by Anganwadi Services functionaries after receipt of stock at the AWC or at the Block level. Anganwadi Services functionaries i.e. CDPO or Supervisor shall draw the samples, as per the prescribed procedure and send the sample for testing to a FSSAl owned/registered/empaneled/NABL accredited laboratory. In case of Hot Cooked Meal, it should be ensured that it is prepared in proper kitchen sheds having adequate sanitation and safe drinking water so as to maintain hygienic conditions.",
+      "token_estimate": 223,
+      "char_count": 1099
+    },
+    {
+      "chunk_id": "aaaaa_0004",
+      "doc": "aaaaa.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "heading": "2. Supply-Chain Management:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management:",
+      "level": 2,
+      "heading_x0": 230,
+      "heading_conf": 0.83,
+      "text": "Supply chain process in the States must be made transparent for functionaries to ensure uninterrupted supply to the last mile, which are compliant with FSSAI registration-licensing process for entities involved in manufacture, storage and distribution of food to ensure food safety and hygiene.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management:\n\nSupply chain process in the States must be made transparent for functionaries to ensure uninterrupted supply to the last mile, which are compliant with FSSAI registration-licensing process for entities involved in manufacture, storage and distribution of food to ensure food safety and hygiene.",
+      "token_estimate": 57,
+      "char_count": 294
+    },
+    {
+      "chunk_id": "aaaaa_0005",
+      "doc": "aaaaa.pdf",
+      "page_start": 2,
+      "page_end": 3,
+      "heading": "A. At District Level:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:",
+        "A. At District Level:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level:",
+      "level": 3,
+      "heading_x0": 230,
+      "heading_conf": 0.938,
+      "text": "The District Magistrate shall be the Nodal Point in the district for monitoring nutrition al status and quality standards. The DM/Collector shall chair, supervise and monitor the activities of the District Nutrition Committee. Nutrition Experts suggested in District Committee have to be mandatorily certified nutrition experts. The Child Development Project Officer (CDPO) who is responsible for administration and implementation of nutrition and ICDS projects, shall carry out major responsibilities as follows under the supervision of the DM/Collector: *« coordinate and evaluate deliveries in the district as a Key Performance Indicator of the DM/Collector for nutrition al improvement of beneficiaries, especially SAM/MAM children; e undertake overall administration and coordination of the nutrition project and ensure smooth and effective delivery of all intended services in the project jurisdiction; e conduct periodic monitoring including surprise spot-checks, draw samples for quality testing of supplementary nutrition (THR and HCM) provided, ensure adequate measures for food safety and hygiene are followed throughout the supply chain, assess the quality of pre-school delivery etc., to ensure quality and undertake necessary course correction; ¢ monitor distribution of necessary stocks for delivery of key services;",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level:\n\nThe District Magistrate shall be the Nodal Point in the district for monitoring nutrition al status and quality standards. The DM/Collector shall chair, supervise and monitor the activities of the District Nutrition Committee. Nutrition Experts suggested in District Committee have to be mandatorily certified nutrition experts. The Child Development Project Officer (CDPO) who is responsible for administration and implementation of nutrition and ICDS projects, shall carry out major responsibilities as follows under the supervision of the DM/Collector: *« coordinate and evaluate deliveries in the district as a Key Performance Indicator of the DM/Collector for nutrition al improvement of beneficiaries, especially SAM/MAM children; e undertake overall administration and coordination of the nutrition project and ensure smooth and effective delivery of all intended services in the project jurisdiction; e conduct periodic monitoring including surprise spot-checks, draw samples for quality testing of supplementary nutrition (THR and HCM) provided, ensure adequate measures for food safety and hygiene are followed throughout the supply chain, assess the quality of pre-school delivery etc., to ensure quality and undertake necessary course correction; ¢ monitor distribution of necessary stocks for delivery of key services;",
+      "token_estimate": 247,
+      "char_count": 1331
+    },
+    {
+      "chunk_id": "aaaaa_0006",
+      "doc": "aaaaa.pdf",
+      "page_start": 2,
+      "page_end": 3,
+      "heading": "A. At District Level:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:",
+        "A. At District Level:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level:",
+      "level": 3,
+      "heading_x0": 230,
+      "heading_conf": 0.938,
+      "text": "* participate in the VHSND meetings, community-based events, Jan Andolan activities etc. to motivate field functionaries and beneficiaries; e facilitate preparation of Block Convergence Action Plan and_ its implementation; 2 Cay « conduct Joint Field Visits with Medical Officer (MD) and Joint Review Meetings on monthly basis, especially with regards to SAM children; * ensure collation of monthly progress reports for the District and share with the State; « when visiting AWCs, CDPO must conduct home-visits for pregnant women, new-born and infants crossing 6-months and undertake age-appropriate nutrition counselling, to train and demonstrate the importance of homevisits and counselling to AWWs and motivate them to undertake regular home visits.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level:\n\n* participate in the VHSND meetings, community-based events, Jan Andolan activities etc. to motivate field functionaries and beneficiaries; e facilitate preparation of Block Convergence Action Plan and_ its implementation; 2 Cay « conduct Joint Field Visits with Medical Officer (MD) and Joint Review Meetings on monthly basis, especially with regards to SAM children; * ensure collation of monthly progress reports for the District and share with the State; « when visiting AWCs, CDPO must conduct home-visits for pregnant women, new-born and infants crossing 6-months and undertake age-appropriate nutrition counselling, to train and demonstrate the importance of homevisits and counselling to AWWs and motivate them to undertake regular home visits.",
+      "token_estimate": 145,
+      "char_count": 752
+    },
+    {
+      "chunk_id": "aaaaa_0007",
+      "doc": "aaaaa.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "heading": "B. _At State Level:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:",
+        "A. At District Level:",
+        "B. _At State Level:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level: > B. _At State Level:",
+      "level": 4,
+      "heading_x0": 239,
+      "heading_conf": 0.93,
+      "text": "Nutrition requires convergence of various services that contribute to improved nutrition al status. This requires strong and effective multi-department convergent efforts and actions to address malnutrition. Therefore, Chief Secretary of the States/UTs should coordinate the activities of various departments through a State Level Steering Committee to ensure effective convergence between various schemes/programs having bearing on nutrition and review the progress made regarding Nutrition al Indicators on regular basis. Secretaries of different departments may assess how their schemes/programs can positively impact nutrition levels and also how POSHAN Abhiyaan can be supported to build awareness and create Jan Andolan around nutrition.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > A. At District Level: > B. _At State Level:\n\nNutrition requires convergence of various services that contribute to improved nutrition al status. This requires strong and effective multi-department convergent efforts and actions to address malnutrition. Therefore, Chief Secretary of the States/UTs should coordinate the activities of various departments through a State Level Steering Committee to ensure effective convergence between various schemes/programs having bearing on nutrition and review the progress made regarding Nutrition al Indicators on regular basis. Secretaries of different departments may assess how their schemes/programs can positively impact nutrition levels and also how POSHAN Abhiyaan can be supported to build awareness and create Jan Andolan around nutrition.",
+      "token_estimate": 132,
+      "char_count": 743
+    },
+    {
+      "chunk_id": "aaaaa_0008",
+      "doc": "aaaaa.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "heading": "(C) In Village:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:",
+        "(C) In Village:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > (C) In Village:",
+      "level": 3,
+      "heading_x0": 189,
+      "heading_conf": 0.943,
+      "text": "Involvement of AWC Level Management Committee s, village communities, Mothers Groups, and Panchayat i Raj Institutions (Poshan Panchayats) will bring community ownership and encourage accountability.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > (C) In Village:\n\nInvolvement of AWC Level Management Committee s, village communities, Mothers Groups, and Panchayat i Raj Institutions (Poshan Panchayats) will bring community ownership and encourage accountability.",
+      "token_estimate": 33,
+      "char_count": 199
+    },
+    {
+      "chunk_id": "aaaaa_0009",
+      "doc": "aaaaa.pdf",
+      "page_start": 3,
+      "page_end": 4,
+      "heading": "3s Data Management and Monitoring through Poshan Tracker:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "2. Supply-Chain Management:",
+        "3s Data Management and Monitoring through Poshan Tracker:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > 3s Data Management and Monitoring through Poshan Tracker:",
+      "level": 3,
+      "heading_x0": 188,
+      "heading_conf": 0.871,
+      "text": "The POSHAN Tracker has been built by Ministry of Women and Child Development, Govt of India using centralized data architecture that also aligns with the digital technology systems of other Ministries and programs. The system provides a digital identity to each beneficiary and generates automated alerts to the critical lastmile beneficiaries. It also ensures efficient audit of the delivery system by documenting real time attendance of beneficiaries and duty bearers. Such a robust digital technology platform and management information system will help the nutrition mission to scale efficiently, thereby generating significant positive impact and documentation thereof. Poshan Tracker management application will provide a 360-degree view of the activities of the Anganwadi Centre (AWC), service deliveries of Anganwadi Workers (AWWs) and complete beneficiary management for pregnant women, lactating mothers and children. The system enables real-time monitoring and tracking of all AWCs, AWWs and beneficiaries on defined indicators. It also ensures efficient audit of the delivery system, by documenting real time attendance of beneficiaries, duty bearers and actual receipt of Supplementary Nutrition through QR Code/OTP etc. Such a robust digital technology platform and management information system will help to bring positive impact. Such a robust digital technology platform and management information system will help to bring positive impact. Hence, all States/ UTs shall mandatorily implement Poshan Tracker.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 2. Supply-Chain Management: > 3s Data Management and Monitoring through Poshan Tracker:\n\nThe POSHAN Tracker has been built by Ministry of Women and Child Development, Govt of India using centralized data architecture that also aligns with the digital technology systems of other Ministries and programs. The system provides a digital identity to each beneficiary and generates automated alerts to the critical lastmile beneficiaries. It also ensures efficient audit of the delivery system by documenting real time attendance of beneficiaries and duty bearers. Such a robust digital technology platform and management information system will help the nutrition mission to scale efficiently, thereby generating significant positive impact and documentation thereof. Poshan Tracker management application will provide a 360-degree view of the activities of the Anganwadi Centre (AWC), service deliveries of Anganwadi Workers (AWWs) and complete beneficiary management for pregnant women, lactating mothers and children. The system enables real-time monitoring and tracking of all AWCs, AWWs and beneficiaries on defined indicators. It also ensures efficient audit of the delivery system, by documenting real time attendance of beneficiaries, duty bearers and actual receipt of Supplementary Nutrition through QR Code/OTP etc. Such a robust digital technology platform and management information system will help to bring positive impact. Such a robust digital technology platform and management information system will help to bring positive impact. Hence, all States/ UTs shall mandatorily implement Poshan Tracker.",
+      "token_estimate": 287,
+      "char_count": 1524
+    },
+    {
+      "chunk_id": "aaaaa_0010",
+      "doc": "aaaaa.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "heading": "4. Procedure for Procurement:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "4. Procedure for Procurement:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 4. Procedure for Procurement:",
+      "level": 2,
+      "heading_x0": 189,
+      "heading_conf": 0.955,
+      "text": "State/UT must introduce transparent processes for procurement as per GFR and vigilance guidelines and ensure that THR procured conforms to technical and nutrition al standards set by MoWCD. 5: Convergence: Roles and Responsibilities at Grassroots Level Oversight services at the grassroots level by key stakeholders are critical for achieving good nutrition al outcomes. Such services can be strengthened appropriately by counselling the mothers of children at AWCs. The Mothers Groups and Poshan Panchayat platforms can play an important role in ensuring that interventions designed to address malnutrition are monitored and successfully implemented in each household. Details are at Annexure I.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 4. Procedure for Procurement:\n\nState/UT must introduce transparent processes for procurement as per GFR and vigilance guidelines and ensure that THR procured conforms to technical and nutrition al standards set by MoWCD. 5: Convergence: Roles and Responsibilities at Grassroots Level Oversight services at the grassroots level by key stakeholders are critical for achieving good nutrition al outcomes. Such services can be strengthened appropriately by counselling the mothers of children at AWCs. The Mothers Groups and Poshan Panchayat platforms can play an important role in ensuring that interventions designed to address malnutrition are monitored and successfully implemented in each household. Details are at Annexure I.",
+      "token_estimate": 133,
+      "char_count": 696
+    },
+    {
+      "chunk_id": "aaaaa_0011",
+      "doc": "aaaaa.pdf",
+      "page_start": 4,
+      "page_end": 5,
+      "heading": "6._Integrating AYUSH concepts for holistic nourishment",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "6._Integrating AYUSH concepts for holistic nourishment"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment",
+      "level": 2,
+      "heading_x0": 188,
+      "heading_conf": 0.943,
+      "text": "The Science of AYUSH is a system that builds and promotes health and wellness and can address the requirements of nutrition by tapping into the country’s indigenous traditional practices. Details are at Annexure Il. 7. States shall launch a drive for identification of SAM children for referral to hospitals (if required) and AYUSH centres in accordance with the detailed action plan approved by the District Nutrition Committee to be finalized in consultation with the Chief Medical Officer. This exercise shall be completed by 31% January 2021. The suggested composition of the District Nutrition Committee is at Annexure Ill. 8. Nutrition is a multi-faceted concept with multiple determinants. While Anganwadi Centres (AWCs) deliver services aimed at improving nutrition, the role of other functionaries and programs are equally vital. Health care, water, sanitation, hygiene, mother’s education, etc. are some of the critical factors that contribute to improved nutrition al status. Ensuring that all these services converge on a household is essential for reducing under nutrition in the country. This calls for strong and effective convergent actions on nutrition al quality and delivery.",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment\n\nThe Science of AYUSH is a system that builds and promotes health and wellness and can address the requirements of nutrition by tapping into the country’s indigenous traditional practices. Details are at Annexure Il. 7. States shall launch a drive for identification of SAM children for referral to hospitals (if required) and AYUSH centres in accordance with the detailed action plan approved by the District Nutrition Committee to be finalized in consultation with the Chief Medical Officer. This exercise shall be completed by 31% January 2021. The suggested composition of the District Nutrition Committee is at Annexure Ill. 8. Nutrition is a multi-faceted concept with multiple determinants. While Anganwadi Centres (AWCs) deliver services aimed at improving nutrition, the role of other functionaries and programs are equally vital. Health care, water, sanitation, hygiene, mother’s education, etc. are some of the critical factors that contribute to improved nutrition al status. Ensuring that all these services converge on a household is essential for reducing under nutrition in the country. This calls for strong and effective convergent actions on nutrition al quality and delivery.",
+      "token_estimate": 240,
+      "char_count": 1194
+    },
+    {
+      "chunk_id": "aaaaa_0012",
+      "doc": "aaaaa.pdf",
+      "page_start": 4,
+      "page_end": 5,
+      "heading": "6._Integrating AYUSH concepts for holistic nourishment",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "6._Integrating AYUSH concepts for holistic nourishment"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment",
+      "level": 2,
+      "heading_x0": 188,
+      "heading_conf": 0.943,
+      "text": "This calls for strong and effective convergent actions on nutrition al quality and delivery. Detailed joint letters issued to States/ UTs by this Ministry converging with other Ministries, are annexed herewith for ready reference. Convergence with various departments may regularly be reviewed for effective implementation. 9. States/ UTs are required to adhere to these guidelines scrupulously. 10. Guidelines on Convergence are given at Annexure IV. This issues with approval of Competent Authority. Encl: As Above a ae \\ (Dr Harmeet Singh) Director",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment\n\nThis calls for strong and effective convergent actions on nutrition al quality and delivery. Detailed joint letters issued to States/ UTs by this Ministry converging with other Ministries, are annexed herewith for ready reference. Convergence with various departments may regularly be reviewed for effective implementation. 9. States/ UTs are required to adhere to these guidelines scrupulously. 10. Guidelines on Convergence are given at Annexure IV. This issues with approval of Competent Authority. Encl: As Above a ae \\ (Dr Harmeet Singh) Director",
+      "token_estimate": 109,
+      "char_count": 551
+    },
+    {
+      "chunk_id": "aaaaa_0013",
+      "doc": "aaaaa.pdf",
+      "page_start": 5,
+      "page_end": 5,
+      "heading": "Copy to:",
+      "heading_path": [
+        "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg",
+        "6._Integrating AYUSH concepts for holistic nourishment",
+        "Copy to:"
+      ],
+      "heading_path_str": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment > Copy to:",
+      "level": 3,
+      "heading_x0": 189,
+      "heading_conf": 0.96,
+      "text": "All concerned Gol Ministries",
+      "contextualized_text": "Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg > 6._Integrating AYUSH concepts for holistic nourishment > Copy to:\n\nAll concerned Gol Ministries",
+      "token_estimate": 5,
+      "char_count": 28
+    },
+    {
+      "chunk_id": "aaaaa_0014",
+      "doc": "aaaaa.pdf",
+      "page_start": 6,
+      "page_end": 8,
+      "heading": "Annexure |",
+      "heading_path": [
+        "Annexure |"
+      ],
+      "heading_path_str": "Annexure |",
+      "level": 1,
+      "heading_x0": 1269,
+      "heading_conf": 0.94,
+      "text": "(he fir. Ne CD-E-24 fa 2.02 1-25 Convergence Initiatives for Improving Nutrition: Roles and Responsibilities of ad > Key Grassroots Stakeholders Family / Mother In the fight against hunger and under nutrition, perhaps the most important timeframe is the first 1,000 days between a woman’s pregnancy and her child’s 2 birthday. The right nutrition during this 1,000-day window can have a profound impact on a child’s ability to grow, learn, and rise out of poverty. A community’s long-term economic health, stability and prosperity hangs in the balance when children are at risk. Young children, especially those under two, are at a fragile time in their physical development. Malnutrition and under nutrition during this timeframe can have long-term and irreversible effects. More than a quarter of children under two years of age do not eat a diversified diet. There is a direct correlation between mothers’ education and the well-being of children. Children with mothers with no education have least diversified diets. Levels of stunting, wasting and anaemia prevalence are higher in children whose mothers received no schooling. Mother’s nutrition-related knowledge can be assessed based on five key nutrition and health information as follows:",
+      "contextualized_text": "Annexure |\n\n(he fir. Ne CD-E-24 fa 2.02 1-25 Convergence Initiatives for Improving Nutrition: Roles and Responsibilities of ad > Key Grassroots Stakeholders Family / Mother In the fight against hunger and under nutrition, perhaps the most important timeframe is the first 1,000 days between a woman’s pregnancy and her child’s 2 birthday. The right nutrition during this 1,000-day window can have a profound impact on a child’s ability to grow, learn, and rise out of poverty. A community’s long-term economic health, stability and prosperity hangs in the balance when children are at risk. Young children, especially those under two, are at a fragile time in their physical development. Malnutrition and under nutrition during this timeframe can have long-term and irreversible effects. More than a quarter of children under two years of age do not eat a diversified diet. There is a direct correlation between mothers’ education and the well-being of children. Children with mothers with no education have least diversified diets. Levels of stunting, wasting and anaemia prevalence are higher in children whose mothers received no schooling. Mother’s nutrition-related knowledge can be assessed based on five key nutrition and health information as follows:",
+      "token_estimate": 256,
+      "char_count": 1247
+    },
+    {
+      "chunk_id": "aaaaa_0015",
+      "doc": "aaaaa.pdf",
+      "page_start": 6,
+      "page_end": 8,
+      "heading": "Annexure |",
+      "heading_path": [
+        "Annexure |"
+      ],
+      "heading_path_str": "Annexure |",
+      "level": 1,
+      "heading_x0": 1269,
+      "heading_conf": 0.94,
+      "text": "Mother’s nutrition-related knowledge can be assessed based on five key nutrition and health information as follows: (i) mother’s knowledge of the important of colo strum; (ii) knowledge of continued breastfeeding; (iii) knowledge of diarrhoea prevention and treatment using Oral Rehydration Solution (ORS); (iv) knowledge of child immunization; and (v) knowledge of family planning. It is important for Mothers Groups to receive counselling at the Poshan Panchayats on key nutrition and health information. These counselling sessions can be organized by the CDPO/DPO once a fortnight. AWWs in the panchayat area and the VHSNC should also participate for coordinated and meaningful outcomes. Mothers Groups can use the platform of the Poshan Panchayat and AWC to pool-in knowledge on traditional recipes and food formulations and make efforts to popularize these in their households and in community-based events. Poshan Panchayats The role of Panchayat i Raj Institutions is very important for the success of nutrition al interventions. The Panchayat i Raj Department through Poshan Panchayats can play a very active role for malnutrition free India through a Jan Andolan. Awareness generation on the effects of malnutrition at the Poshan Panchayat platform can be the first step.",
+      "contextualized_text": "Annexure |\n\nMother’s nutrition-related knowledge can be assessed based on five key nutrition and health information as follows: (i) mother’s knowledge of the important of colo strum; (ii) knowledge of continued breastfeeding; (iii) knowledge of diarrhoea prevention and treatment using Oral Rehydration Solution (ORS); (iv) knowledge of child immunization; and (v) knowledge of family planning. It is important for Mothers Groups to receive counselling at the Poshan Panchayats on key nutrition and health information. These counselling sessions can be organized by the CDPO/DPO once a fortnight. AWWs in the panchayat area and the VHSNC should also participate for coordinated and meaningful outcomes. Mothers Groups can use the platform of the Poshan Panchayat and AWC to pool-in knowledge on traditional recipes and food formulations and make efforts to popularize these in their households and in community-based events. Poshan Panchayats The role of Panchayat i Raj Institutions is very important for the success of nutrition al interventions. The Panchayat i Raj Department through Poshan Panchayats can play a very active role for malnutrition free India through a Jan Andolan. Awareness generation on the effects of malnutrition at the Poshan Panchayat platform can be the first step.",
+      "token_estimate": 256,
+      "char_count": 1280
+    },
+    {
+      "chunk_id": "aaaaa_0016",
+      "doc": "aaaaa.pdf",
+      "page_start": 6,
+      "page_end": 8,
+      "heading": "Annexure |",
+      "heading_path": [
+        "Annexure |"
+      ],
+      "heading_path_str": "Annexure |",
+      "level": 1,
+      "heading_x0": 1269,
+      "heading_conf": 0.94,
+      "text": "Awareness generation on the effects of malnutrition at the Poshan Panchayat platform can be the first step. At the grassroots level, Poshan Panchayats can serve as a useful convergence platform for Mothers Groups and VHSNC to discuss issues of nutrition and wellness and sensitize people about the importance of nutrition al deliveries for children at the AWC level. Functionaries of the Anganwadi Centre (AWW, AWH, ASHA and AXM) should participate such meetings. The Poshan Panchayat shall also have the mandate of oversight services with regard to receipt of THR (not raw ration), quality thereof and distribution to all beneficiaries. Village Health and Nutrition Committee The committee has been formed to take collective actions on issues related to health and its social determinants at the village level. They are particularly envisaged as being central to ‘local level community action’ under NRHM, to support the process of decentralised Health Planning. Thus, the committee is envisaged to take leadership in providing a platform for improving health awareness and access of community for health services, address specific local needs and serve as a mechanism for community-based planning and monitoring.",
+      "contextualized_text": "Annexure |\n\nAwareness generation on the effects of malnutrition at the Poshan Panchayat platform can be the first step. At the grassroots level, Poshan Panchayats can serve as a useful convergence platform for Mothers Groups and VHSNC to discuss issues of nutrition and wellness and sensitize people about the importance of nutrition al deliveries for children at the AWC level. Functionaries of the Anganwadi Centre (AWW, AWH, ASHA and AXM) should participate such meetings. The Poshan Panchayat shall also have the mandate of oversight services with regard to receipt of THR (not raw ration), quality thereof and distribution to all beneficiaries. Village Health and Nutrition Committee The committee has been formed to take collective actions on issues related to health and its social determinants at the village level. They are particularly envisaged as being central to ‘local level community action’ under NRHM, to support the process of decentralised Health Planning. Thus, the committee is envisaged to take leadership in providing a platform for improving health awareness and access of community for health services, address specific local needs and serve as a mechanism for community-based planning and monitoring.",
+      "token_estimate": 247,
+      "char_count": 1214
+    },
+    {
+      "chunk_id": "aaaaa_0017",
+      "doc": "aaaaa.pdf",
+      "page_start": 6,
+      "page_end": 8,
+      "heading": "Annexure |",
+      "heading_path": [
+        "Annexure |"
+      ],
+      "heading_path_str": "Annexure |",
+      "level": 1,
+      "heading_x0": 1269,
+      "heading_conf": 0.94,
+      "text": "The committee is formed at the revenue village level and is expected to act as a sub-committee of the Gram Panchayat. All those working for health and health related services should participate, including community members/ beneficiaries and representation from all community sub-groups especially vulnerable sections and hamlets/ habitations. Roles and Responsibilities ° Create awareness about nutrition al issues and significance of nutrition as an important determinant of health. ° Carry out survey on nutrition al status and nutrition al deficiencies in the village especially among women and children. ° Identify locally available food stuffs of high nutri ent value as well as disseminate and promote best practices (traditional wisdom) congruent with local culture, capabilities and physical environment through a process of community consultation. fe) Include nutrition al needs in the Village Health Plan - The committee will do an in-depth analysis of causes of malnutrition at the community and household levels, by involving the ANM, AWW, ASHA and ICDS Supervisors. ° Monitor and supervise Village Health and Nutrition Day to ensure that it is organized every month in the village with the active participation of the whole village.",
+      "contextualized_text": "Annexure |\n\nThe committee is formed at the revenue village level and is expected to act as a sub-committee of the Gram Panchayat. All those working for health and health related services should participate, including community members/ beneficiaries and representation from all community sub-groups especially vulnerable sections and hamlets/ habitations. Roles and Responsibilities ° Create awareness about nutrition al issues and significance of nutrition as an important determinant of health. ° Carry out survey on nutrition al status and nutrition al deficiencies in the village especially among women and children. ° Identify locally available food stuffs of high nutri ent value as well as disseminate and promote best practices (traditional wisdom) congruent with local culture, capabilities and physical environment through a process of community consultation. fe) Include nutrition al needs in the Village Health Plan - The committee will do an in-depth analysis of causes of malnutrition at the community and household levels, by involving the ANM, AWW, ASHA and ICDS Supervisors. ° Monitor and supervise Village Health and Nutrition Day to ensure that it is organized every month in the village with the active participation of the whole village.",
+      "token_estimate": 251,
+      "char_count": 1246
+    },
+    {
+      "chunk_id": "aaaaa_0018",
+      "doc": "aaaaa.pdf",
+      "page_start": 6,
+      "page_end": 8,
+      "heading": "Annexure |",
+      "heading_path": [
+        "Annexure |"
+      ],
+      "heading_path_str": "Annexure |",
+      "level": 1,
+      "heading_x0": 1269,
+      "heading_conf": 0.94,
+      "text": "7 Ow o Facilitate early detection of malnourished children in the community; tie up referral to the nearest Nutrition al Rehabilitation Centre (NRC) as well as follow up for sustained outcome. o Supervise the functioning of Anganwadi Centre (AWC) in the village and facilitate its working in improving nutrition al status of women and children. o Act as a grievance’s redressal forum on health and nutrition issues. Source: NRLM District AYUSH In-charge AYUSH facilities are co-located in several District Hospitals, Community Health Centres and Primary Health Centres in the country. The principles and therapeutics of Ayurveda as modalities of intervention for community nutrition and health problems shall be leveraged to create wellness and develop conditions of holistic nourishment. District AYUSH in-charge will focus on prevention of diseases and promotion of wellness through Yoga, cultivation of medicinal herbs in Poshan Vatikas, and preparation of AYUSH formulations to address conditions like anaemia.",
+      "contextualized_text": "Annexure |\n\n7 Ow o Facilitate early detection of malnourished children in the community; tie up referral to the nearest Nutrition al Rehabilitation Centre (NRC) as well as follow up for sustained outcome. o Supervise the functioning of Anganwadi Centre (AWC) in the village and facilitate its working in improving nutrition al status of women and children. o Act as a grievance’s redressal forum on health and nutrition issues. Source: NRLM District AYUSH In-charge AYUSH facilities are co-located in several District Hospitals, Community Health Centres and Primary Health Centres in the country. The principles and therapeutics of Ayurveda as modalities of intervention for community nutrition and health problems shall be leveraged to create wellness and develop conditions of holistic nourishment. District AYUSH in-charge will focus on prevention of diseases and promotion of wellness through Yoga, cultivation of medicinal herbs in Poshan Vatikas, and preparation of AYUSH formulations to address conditions like anaemia.",
+      "token_estimate": 200,
+      "char_count": 1014
+    },
+    {
+      "chunk_id": "aaaaa_0019",
+      "doc": "aaaaa.pdf",
+      "page_start": 9,
+      "page_end": 10,
+      "heading": "Annexure II",
+      "heading_path": [
+        "Annexure II"
+      ],
+      "heading_path_str": "Annexure II",
+      "level": 1,
+      "heading_x0": 1259,
+      "heading_conf": 0.9,
+      "text": "Integrating AYUSH Concepts for Holistic Nourishment: te dr Ne CD-L-24 [2 = Lb Nourishment through Poshan Vatikas To support awareness and outreach on nutrition, micro-nutri-environments shall be created in every village. Leveraging convergence for food & nutrition, Poshan Vatikas (kitchen gardens and nutri-gardens) shall be set up where benefits can easily be given to women and children. To initiate this program, the space in Anganwadi Centres, panchayat areas, vacant lands of village, any other government premises such as school campus or any other patch of community/government land available in the locality, etc. can be utilized. The main objective of introducing the concept of Poshan Vatika is to encourage community members to cultivate local food crops in their backyards. A nutrition garden ensures an inexpensive, regular and handy supply of fresh fruits and vegetables that are basic to good nutrition. Green vegetables contain vitamins and minerals that protect against micro-nutri ent deficiencies and diseases. The cultivation of local vegetables, fruits and important herbs and medicinal plants in these areas will be a critical resource to fulfil nutrition al needs locally and generate economic activity for local cultivators and village industry.",
+      "contextualized_text": "Annexure II\n\nIntegrating AYUSH Concepts for Holistic Nourishment: te dr Ne CD-L-24 [2 = Lb Nourishment through Poshan Vatikas To support awareness and outreach on nutrition, micro-nutri-environments shall be created in every village. Leveraging convergence for food & nutrition, Poshan Vatikas (kitchen gardens and nutri-gardens) shall be set up where benefits can easily be given to women and children. To initiate this program, the space in Anganwadi Centres, panchayat areas, vacant lands of village, any other government premises such as school campus or any other patch of community/government land available in the locality, etc. can be utilized. The main objective of introducing the concept of Poshan Vatika is to encourage community members to cultivate local food crops in their backyards. A nutrition garden ensures an inexpensive, regular and handy supply of fresh fruits and vegetables that are basic to good nutrition. Green vegetables contain vitamins and minerals that protect against micro-nutri ent deficiencies and diseases. The cultivation of local vegetables, fruits and important herbs and medicinal plants in these areas will be a critical resource to fulfil nutrition al needs locally and generate economic activity for local cultivators and village industry.",
+      "token_estimate": 252,
+      "char_count": 1270
+    },
+    {
+      "chunk_id": "aaaaa_0020",
+      "doc": "aaaaa.pdf",
+      "page_start": 9,
+      "page_end": 10,
+      "heading": "Annexure II",
+      "heading_path": [
+        "Annexure II"
+      ],
+      "heading_path_str": "Annexure II",
+      "level": 1,
+      "heading_x0": 1259,
+      "heading_conf": 0.9,
+      "text": "The fruits and vegetables grown in the Poshan Vatika can be used for consumption by beneficiaries, for preparing traditional recipes (regional meals) and for motivating the local community for diet diversity. Guidelines for management and distribution can be devised at the State/UT level in convergence with nutrition forestry support by MoEF under Campa Fund and convergence with MGNREGS, horticulture and other plantations, AWC Level Management Committee s, village communities, Poshan Panchayats, Mothers Groups can bring community ownership and encourage accountability. AYUSH can populate the Poshan Vatikas with medicinal plants and herbs as a convergence activity with Agriculture District Officer and KVKs. Poshan Vatikas can meet the important dietary diversity gap that has been repeatedly revealed in different surveys by providing different fruits, nuts, herbs and vegetables round the year, thus helping in introducing healthy eating practices to address malnutrition. These can be retrofitted with backyard poultry and fishery units in regions where these are culturally acceptable. Dietary diversity can be as important as dietary adequacy and in case of certain micro nutri ent deficiencies, even more crucial than the dietary adequacy, particularly in younger ages.",
+      "contextualized_text": "Annexure II\n\nThe fruits and vegetables grown in the Poshan Vatika can be used for consumption by beneficiaries, for preparing traditional recipes (regional meals) and for motivating the local community for diet diversity. Guidelines for management and distribution can be devised at the State/UT level in convergence with nutrition forestry support by MoEF under Campa Fund and convergence with MGNREGS, horticulture and other plantations, AWC Level Management Committee s, village communities, Poshan Panchayats, Mothers Groups can bring community ownership and encourage accountability. AYUSH can populate the Poshan Vatikas with medicinal plants and herbs as a convergence activity with Agriculture District Officer and KVKs. Poshan Vatikas can meet the important dietary diversity gap that has been repeatedly revealed in different surveys by providing different fruits, nuts, herbs and vegetables round the year, thus helping in introducing healthy eating practices to address malnutrition. These can be retrofitted with backyard poultry and fishery units in regions where these are culturally acceptable. Dietary diversity can be as important as dietary adequacy and in case of certain micro nutri ent deficiencies, even more crucial than the dietary adequacy, particularly in younger ages.",
+      "token_estimate": 247,
+      "char_count": 1283
+    },
+    {
+      "chunk_id": "aaaaa_0021",
+      "doc": "aaaaa.pdf",
+      "page_start": 9,
+      "page_end": 10,
+      "heading": "Annexure II",
+      "heading_path": [
+        "Annexure II"
+      ],
+      "heading_path_str": "Annexure II",
+      "level": 1,
+      "heading_x0": 1259,
+      "heading_conf": 0.9,
+      "text": "Es | The garden may act as a demonstration activity site for children to enhance their knowledge on plants and their growth process. It can also be used to demonstrate agricultural technique to the community members and for delivering nutrition messages to pregnant women, lactating mothers and the wider community. Anganwadi Workers shall counsel the beneficiaries to sensitize them on the importance of a Nutrition Garden, nutrition al value of fruits and vegetables, their importance in healthy and balanced diets and consequences of their deficiencies. States/UTs shall develop IEC material on Nutrition Gardens and provide to field functionaries to generate awareness. District level Implementation and Monitoring Committee headed by District Collector shall oversee the development of Poshan Vatikas in convergence with MoEF, MoPRI and AYUSH.",
+      "contextualized_text": "Annexure II\n\nEs | The garden may act as a demonstration activity site for children to enhance their knowledge on plants and their growth process. It can also be used to demonstrate agricultural technique to the community members and for delivering nutrition messages to pregnant women, lactating mothers and the wider community. Anganwadi Workers shall counsel the beneficiaries to sensitize them on the importance of a Nutrition Garden, nutrition al value of fruits and vegetables, their importance in healthy and balanced diets and consequences of their deficiencies. States/UTs shall develop IEC material on Nutrition Gardens and provide to field functionaries to generate awareness. District level Implementation and Monitoring Committee headed by District Collector shall oversee the development of Poshan Vatikas in convergence with MoEF, MoPRI and AYUSH.",
+      "token_estimate": 167,
+      "char_count": 848
+    },
+    {
+      "chunk_id": "aaaaa_0022",
+      "doc": "aaaaa.pdf",
+      "page_start": 10,
+      "page_end": 10,
+      "heading": "2. Encourage Yoga for Wellness:",
+      "heading_path": [
+        "Annexure II",
+        "2. Encourage Yoga for Wellness:"
+      ],
+      "heading_path_str": "Annexure II > 2. Encourage Yoga for Wellness:",
+      "level": 2,
+      "heading_x0": 239,
+      "heading_conf": 0.958,
+      "text": "AYUSH will propagate the campa igns of ‘Yoga at Home, Yoga with Family’ at AWCs and households to encourage beneficiaries to practice yoga and stay healthy.",
+      "contextualized_text": "Annexure II > 2. Encourage Yoga for Wellness:\n\nAYUSH will propagate the campa igns of ‘Yoga at Home, Yoga with Family’ at AWCs and households to encourage beneficiaries to practice yoga and stay healthy.",
+      "token_estimate": 35,
+      "char_count": 156
+    },
+    {
+      "chunk_id": "aaaaa_0023",
+      "doc": "aaaaa.pdf",
+      "page_start": 11,
+      "page_end": 12,
+      "heading": "Annexure III",
+      "heading_path": [
+        "Annexure III"
+      ],
+      "heading_path_str": "Annexure III",
+      "level": 1,
+      "heading_x0": 1242,
+      "heading_conf": 0.825,
+      "text": "Suggested Composition of District Nutrition Committee ©¢ ~%°7°!? = ws aw r0}-2021 District Nutrition Committee: Nutrition Experts suggested in District Committee have to be mandatorily certified nutrition experts. District Magistrate/District Collector Chief Executive Officer, Zila Parishad/DRDA District Forest Officer (Social Forestry/ CAMPA) Sub-Divisional Magistrate Chief Medical Officer, Health and Family Welfare District Program Manager, NHM District Education Officer District Planning Officer District Social Welfare (Women and Child Development) Officer District officer, Rural Development/Rural Livelihoods ission ee District AYUSH-in Charge and Sanitation) Executive Engineer (Public Health Engineering, Water jomber District Agriculture Officer/ District Horticulture : Member Officer Any other Department Head of the district nominated :",
+      "contextualized_text": "Annexure III\n\nSuggested Composition of District Nutrition Committee ©¢ ~%°7°!? = ws aw r0}-2021 District Nutrition Committee: Nutrition Experts suggested in District Committee have to be mandatorily certified nutrition experts. District Magistrate/District Collector Chief Executive Officer, Zila Parishad/DRDA District Forest Officer (Social Forestry/ CAMPA) Sub-Divisional Magistrate Chief Medical Officer, Health and Family Welfare District Program Manager, NHM District Education Officer District Planning Officer District Social Welfare (Women and Child Development) Officer District officer, Rural Development/Rural Livelihoods ission ee District AYUSH-in Charge and Sanitation) Executive Engineer (Public Health Engineering, Water jomber District Agriculture Officer/ District Horticulture : Member Officer Any other Department Head of the district nominated :",
+      "token_estimate": 140,
+      "char_count": 853
+    },
+    {
+      "chunk_id": "aaaaa_0024",
+      "doc": "aaaaa.pdf",
+      "page_start": 11,
+      "page_end": 12,
+      "heading": "Annexure III",
+      "heading_path": [
+        "Annexure III"
+      ],
+      "heading_path_str": "Annexure III",
+      "level": 1,
+      "heading_x0": 1242,
+      "heading_conf": 0.825,
+      "text": "Member Officer Any other Department Head of the district nominated : Member by the Chairman Nutrition Experts (2) Nominated by the Chairman wera ore Sunil Kumar Nagendra Nath Sinha Ram Mohan Mishra Secretary Secretary Secretary Government of India Government of India Government of India Ministry of Panchayat i Ministry of Rural Ministry of Women & Raj Development Child Development Krishi Bhawan, New Delhi Krishi Bhawan, New Delhi Shastri Bhawan, New Delhi 31* August, 2020 Dear Chief Secretary We are writing to you to seek your personal intervention and support to address malnutrition amongst Children, pregnant women and lactating mothers in the country. As you are aware, POSHAN Abhiyaan (PM’s Over arching Scheme for Holistic Nourishment) launched in 2018, strives to reduce the level of stunting, under-nutrition, low birth weight in children and anaemia in adolescent girls, pregnant women, lactating mothers as well as children. Leveraging technology and Jan Andolan are two of the main components of the Scheme. 2. Poshan Maah is celebrated during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan A an dolan” through Jan Bhagidari.",
+      "contextualized_text": "Annexure III\n\nMember Officer Any other Department Head of the district nominated : Member by the Chairman Nutrition Experts (2) Nominated by the Chairman wera ore Sunil Kumar Nagendra Nath Sinha Ram Mohan Mishra Secretary Secretary Secretary Government of India Government of India Government of India Ministry of Panchayat i Ministry of Rural Ministry of Women & Raj Development Child Development Krishi Bhawan, New Delhi Krishi Bhawan, New Delhi Shastri Bhawan, New Delhi 31* August, 2020 Dear Chief Secretary We are writing to you to seek your personal intervention and support to address malnutrition amongst Children, pregnant women and lactating mothers in the country. As you are aware, POSHAN Abhiyaan (PM’s Over arching Scheme for Holistic Nourishment) launched in 2018, strives to reduce the level of stunting, under-nutrition, low birth weight in children and anaemia in adolescent girls, pregnant women, lactating mothers as well as children. Leveraging technology and Jan Andolan are two of the main components of the Scheme. 2. Poshan Maah is celebrated during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan A an dolan” through Jan Bhagidari.",
+      "token_estimate": 251,
+      "char_count": 1208
+    },
+    {
+      "chunk_id": "aaaaa_0025",
+      "doc": "aaaaa.pdf",
+      "page_start": 11,
+      "page_end": 12,
+      "heading": "Annexure III",
+      "heading_path": [
+        "Annexure III"
+      ],
+      "heading_path_str": "Annexure III",
+      "level": 1,
+      "heading_x0": 1242,
+      "heading_conf": 0.825,
+      "text": "However COVID-19 protocols will have to be adhered during the period. 3. This year it has been decided to adopt a two-pronged strategy to address malnutrition. Under-nutrition being one of the leading causes of morbidity and mortality in children under the age of 5 years, early identification and referral of severe acute malnutrition is important for initiation of treatment and minimizing the risk of complications. Therefore, one of the objectives of Poshan Maah this year is to carry children. out a drive for identification and referral of Severe Acute Malnourished (SAM)",
+      "contextualized_text": "Annexure III\n\nHowever COVID-19 protocols will have to be adhered during the period. 3. This year it has been decided to adopt a two-pronged strategy to address malnutrition. Under-nutrition being one of the leading causes of morbidity and mortality in children under the age of 5 years, early identification and referral of severe acute malnutrition is important for initiation of treatment and minimizing the risk of complications. Therefore, one of the objectives of Poshan Maah this year is to carry children. out a drive for identification and referral of Severe Acute Malnourished (SAM)",
+      "token_estimate": 121,
+      "char_count": 577
+    },
+    {
+      "chunk_id": "aaaaa_0026",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "We request you to promote plantation of individual and community Nutri Gardens as per the advisory of Ministry of Rural Development vide its Letter Number L-13060/03/2020RE-VIl dt. 04.05.20, under The Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), in convergence with State Schemes and NRLM. 5 POSHAN Panchayats may also be organized during Poshan Maah to Spreading the messages of adequate and appropriate nutrition a y also be engaged for mongst public. 6. We would therefore, request you to kindly issue instructions to the District Magistrates/District Collectors, the CDOs/CEOs/ADCs to ensu activities in the State will certainly help in achieving the intended Jan Bhagidari in activities in all tiers of Panchayats. Your personal supervision of the POSHAN Maah addressing the concerns related to malnutrition. With kind regards, Yours sincerely, Yours sincerely, \\ Yours sincerely, By (Sunil Kumar) (Nagendra Nath Sinha) Secretary, MoPR Secretary, MoRD (Ram Mohan Mishra) Secretary, WCD Chief Secretaries of States/UTs +0 Ly.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\nWe request you to promote plantation of individual and community Nutri Gardens as per the advisory of Ministry of Rural Development vide its Letter Number L-13060/03/2020RE-VIl dt. 04.05.20, under The Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA), in convergence with State Schemes and NRLM. 5 POSHAN Panchayats may also be organized during Poshan Maah to Spreading the messages of adequate and appropriate nutrition a y also be engaged for mongst public. 6. We would therefore, request you to kindly issue instructions to the District Magistrates/District Collectors, the CDOs/CEOs/ADCs to ensu activities in the State will certainly help in achieving the intended Jan Bhagidari in activities in all tiers of Panchayats. Your personal supervision of the POSHAN Maah addressing the concerns related to malnutrition. With kind regards, Yours sincerely, Yours sincerely, \\ Yours sincerely, By (Sunil Kumar) (Nagendra Nath Sinha) Secretary, MoPR Secretary, MoRD (Ram Mohan Mishra) Secretary, WCD Chief Secretaries of States/UTs +0 Ly.",
+      "token_estimate": 207,
+      "char_count": 1050
+    },
+    {
+      "chunk_id": "aaaaa_0027",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "Noe c D-L- 24) >| ASrevs (Ee Pele) Anita Karwal Ram Mohan Mishra Secretary Secretary Government of India Government of India School Education serra arr Ministry of Women & Literacy Child Development Shastri Bhawan, Shastri Bhawan, New Delhi New Delhi No. PA/19/2018-CPMU-Part(2) Dated : 2\"“September, 2020 Dear Chief Secretary As you are aware, POSHAN Abhiyaan (National Nutrition Mission) — PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon’ble Prime Minister on 8\" March, 2018. The programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anemia in adolescent girls, pregnant women, lactating mothers as well as children. 2. We are now celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan A an dolan” in the process by adhering COVID-19 protocols. 3. Identification and referral of SAM and MAM children (while adhering to COVID-19 protocols as mandated by administration from time to time), and plantation of Kitchen/ Nutri Gardens will be the major activities pursued during POSHAN Maah. 4.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\nNoe c D-L- 24) >| ASrevs (Ee Pele) Anita Karwal Ram Mohan Mishra Secretary Secretary Government of India Government of India School Education serra arr Ministry of Women & Literacy Child Development Shastri Bhawan, Shastri Bhawan, New Delhi New Delhi No. PA/19/2018-CPMU-Part(2) Dated : 2\"“September, 2020 Dear Chief Secretary As you are aware, POSHAN Abhiyaan (National Nutrition Mission) — PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon’ble Prime Minister on 8\" March, 2018. The programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anemia in adolescent girls, pregnant women, lactating mothers as well as children. 2. We are now celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan A an dolan” in the process by adhering COVID-19 protocols. 3. Identification and referral of SAM and MAM children (while adhering to COVID-19 protocols as mandated by administration from time to time), and plantation of Kitchen/ Nutri Gardens will be the major activities pursued during POSHAN Maah. 4.",
+      "token_estimate": 239,
+      "char_count": 1152
+    },
+    {
+      "chunk_id": "aaaaa_0028",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "4. Children are not only the future citizens of India, they could be excellent ambassadors to motivate and counsel! family members and Community for increasing their awareness about importance of good nutrition, balance diet as well as hygienic habits to be maintained during handling, cooking, eating and storing the food. Healthy dietary habits need to be inculcated at a young age. Therefore, special activities for children have been conceptualized in Poshan Maah 2020. §. It is requested that all Schools in your State may be directed to organize a POSHAN Assembly with students in virtual mode to discuss malnutrition, its impact on Society and value of healthy and balanced diet. An essay competition and e-Quiz/ecompetitions focusing on malnutrition/nutrition awareness may also be organized. Department of School Education, Government of India shall be circulating detail guidelines in this regard. Swayam Prabha channels of Ministry of Education will also telecast programmes on Poshan Abhiyan during Poshan Maah. A de 6. Your kind intervention shall be extremely hel population of the Country with Poshan Maah, 2020, whic pful in engaging with young h is essential for its success.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\n4. Children are not only the future citizens of India, they could be excellent ambassadors to motivate and counsel! family members and Community for increasing their awareness about importance of good nutrition, balance diet as well as hygienic habits to be maintained during handling, cooking, eating and storing the food. Healthy dietary habits need to be inculcated at a young age. Therefore, special activities for children have been conceptualized in Poshan Maah 2020. §. It is requested that all Schools in your State may be directed to organize a POSHAN Assembly with students in virtual mode to discuss malnutrition, its impact on Society and value of healthy and balanced diet. An essay competition and e-Quiz/ecompetitions focusing on malnutrition/nutrition awareness may also be organized. Department of School Education, Government of India shall be circulating detail guidelines in this regard. Swayam Prabha channels of Ministry of Education will also telecast programmes on Poshan Abhiyan during Poshan Maah. A de 6. Your kind intervention shall be extremely hel population of the Country with Poshan Maah, 2020, whic pful in engaging with young h is essential for its success.",
+      "token_estimate": 247,
+      "char_count": 1192
+    },
+    {
+      "chunk_id": "aaaaa_0029",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "Your kind intervention shall be extremely hel population of the Country with Poshan Maah, 2020, whic pful in engaging with young h is essential for its success. With kind regards, Yours sincerely, Yours sincerely, (Smt. Anita Karwal) | (Ram Mohan Mishra) Secretary Secretary School Education and Literacy Women & Child Development Chief Secretaries of States/UTs & Line cD-1-2{ 2] Qea) -Us | Rajesh Bhushan Vaidya Rajesh Sunil Kumar Ram Mohan Mishra Secretary Kotecha Secretary Secretary | Government of India Secretary Government of India Government of India Ministry of Health & Government of India | Ministry of Panchayat i | Ministry of Women & Family Welfare, Ministry of Ayush Raj, Child Development, Nirman Bhawan, Ayush Bhawan, INA Krishi Bhawan, Shastri Bhawan, | New Delhi New Delhi New Delhi New Delhi D.O. No. PA/19/2018-CPMU Dated the 7 September, 2020 Dear Chief Secretary, As you would be aware, POSHAN Abhiyaan (National Nutrition Mission) — PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon'ble Prime Minister on 8\" March, 2018.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\nYour kind intervention shall be extremely hel population of the Country with Poshan Maah, 2020, whic pful in engaging with young h is essential for its success. With kind regards, Yours sincerely, Yours sincerely, (Smt. Anita Karwal) | (Ram Mohan Mishra) Secretary Secretary School Education and Literacy Women & Child Development Chief Secretaries of States/UTs & Line cD-1-2{ 2] Qea) -Us | Rajesh Bhushan Vaidya Rajesh Sunil Kumar Ram Mohan Mishra Secretary Kotecha Secretary Secretary | Government of India Secretary Government of India Government of India Ministry of Health & Government of India | Ministry of Panchayat i | Ministry of Women & Family Welfare, Ministry of Ayush Raj, Child Development, Nirman Bhawan, Ayush Bhawan, INA Krishi Bhawan, Shastri Bhawan, | New Delhi New Delhi New Delhi New Delhi D.O. No. PA/19/2018-CPMU Dated the 7 September, 2020 Dear Chief Secretary, As you would be aware, POSHAN Abhiyaan (National Nutrition Mission) — PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon'ble Prime Minister on 8\" March, 2018.",
+      "token_estimate": 225,
+      "char_count": 1069
+    },
+    {
+      "chunk_id": "aaaaa_0030",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "The programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anemia in adolescent girls, pregnant women, lactating mothers as well as children. pa The Country is celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan, while adhering to COVID-19 protocols. 3. As you know, one important part of POSHAN Abhiyaan is the early identification of children suffering from Severe Acute Malnutrition (SAM). This early identification is important for timely initiation of treatment and minimizing the risk of complications. Therefore, during Rashtriya Poshan Maah this year, a drive for identification and treatment of children with SAM will be undertaken. The drive will be continued for a couple of months with efforts undertaken that enhance processes and make them enduring so as to help such children, so that they can function as close to normal as feasible. The existing procedures may be followed in this regard till the new guidelines are issued. The districts wherein children with SAM have been identified and the best ameliorative care administered will be recognised. 4.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\nThe programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anemia in adolescent girls, pregnant women, lactating mothers as well as children. pa The Country is celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan, while adhering to COVID-19 protocols. 3. As you know, one important part of POSHAN Abhiyaan is the early identification of children suffering from Severe Acute Malnutrition (SAM). This early identification is important for timely initiation of treatment and minimizing the risk of complications. Therefore, during Rashtriya Poshan Maah this year, a drive for identification and treatment of children with SAM will be undertaken. The drive will be continued for a couple of months with efforts undertaken that enhance processes and make them enduring so as to help such children, so that they can function as close to normal as feasible. The existing procedures may be followed in this regard till the new guidelines are issued. The districts wherein children with SAM have been identified and the best ameliorative care administered will be recognised. 4.",
+      "token_estimate": 244,
+      "char_count": 1185
+    },
+    {
+      "chunk_id": "aaaaa_0031",
+      "doc": "aaaaa.pdf",
+      "page_start": 12,
+      "page_end": 16,
+      "heading": "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important."
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+      "level": 2,
+      "heading_x0": 221,
+      "heading_conf": 0.853,
+      "text": "The districts wherein children with SAM have been identified and the best ameliorative care administered will be recognised. 4. Indigenous systems of Ayurveda, Sidha and Unani will also be utilized in various aspects to provide guidance on good nutrition, complementary feeding etc. 5: To strengthen the community support to this drive, Poshan Panchayats will be organized where all members of Village Health Sanitation and Nutrition Committee (VHSNC) and public will participate to discuss, ongoing activities, health and nutrition education, and remedial measures being taken. With kind regards, Yours sincerely, Yours sincerely, Yours sjncerely, Yours sincerely, Rajesh Bhushan Vaidya Rajesh Sunil Kumar Ram Mohan Secretary, Kotecha, Secretary Mishra MoHFW Secretary, MoPR Secretary",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.\n\nThe districts wherein children with SAM have been identified and the best ameliorative care administered will be recognised. 4. Indigenous systems of Ayurveda, Sidha and Unani will also be utilized in various aspects to provide guidance on good nutrition, complementary feeding etc. 5: To strengthen the community support to this drive, Poshan Panchayats will be organized where all members of Village Health Sanitation and Nutrition Committee (VHSNC) and public will participate to discuss, ongoing activities, health and nutrition education, and remedial measures being taken. With kind regards, Yours sincerely, Yours sincerely, Yours sjncerely, Yours sincerely, Rajesh Bhushan Vaidya Rajesh Sunil Kumar Ram Mohan Secretary, Kotecha, Secretary Mishra MoHFW Secretary, MoPR Secretary",
+      "token_estimate": 148,
+      "char_count": 785
+    },
+    {
+      "chunk_id": "aaaaa_0032",
+      "doc": "aaaaa.pdf",
+      "page_start": 16,
+      "page_end": 17,
+      "heading": "AYUSH MWCD",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+        "AYUSH MWCD"
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD",
+      "level": 4,
+      "heading_x0": 725,
+      "heading_conf": 0.915,
+      "text": "Chief Secretaries/ Administrators of States/UTs Iq A RAL & Woe vy Cb) 17368 Ministry of Environment, = = & Farmera Weltare, _ Child Development >_< Ministry of Women 3)\") yao 1 Government of india Government of Tndin Dear Chief Secretary/Administrator As you are aware, POSHAN Abhiyaan (National Nutrition Mission) PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon'ble Prime Minister on 8\" March, 2018. The programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anaemia in adolescent girls, pregnant women, lactating mothers as well as children. 2. We are celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan Andolan” in the process while adhering to COVID-19 protocols. In this Poshan Maah, one important aspect identified for focusing is creation of Poshan Vatikas. 3. Poshan Vatikas support awareness and outreach on nutrition, to create micro-nutri environments in every village. For rolling out of this initiative, a joint letter is already sent to all States/UTs along with Ministry of Panchayat i Raj and Ministry of Rural Development. 4.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD\n\nChief Secretaries/ Administrators of States/UTs Iq A RAL & Woe vy Cb) 17368 Ministry of Environment, = = & Farmera Weltare, _ Child Development >_< Ministry of Women 3)\") yao 1 Government of india Government of Tndin Dear Chief Secretary/Administrator As you are aware, POSHAN Abhiyaan (National Nutrition Mission) PM’s Over arching Scheme for Holistic Nourishment was launched by the Hon'ble Prime Minister on 8\" March, 2018. The programme strives to reduce the level of stunting, under-nutrition, low birth weight in children and anaemia in adolescent girls, pregnant women, lactating mothers as well as children. 2. We are celebrating Poshan Maah during the month of September, 2020 to further accelerate various activities under POSHAN Abhiyaan and to create a “Jan Andolan” in the process while adhering to COVID-19 protocols. In this Poshan Maah, one important aspect identified for focusing is creation of Poshan Vatikas. 3. Poshan Vatikas support awareness and outreach on nutrition, to create micro-nutri environments in every village. For rolling out of this initiative, a joint letter is already sent to all States/UTs along with Ministry of Panchayat i Raj and Ministry of Rural Development. 4.",
+      "token_estimate": 251,
+      "char_count": 1206
+    },
+    {
+      "chunk_id": "aaaaa_0033",
+      "doc": "aaaaa.pdf",
+      "page_start": 16,
+      "page_end": 17,
+      "heading": "AYUSH MWCD",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+        "AYUSH MWCD"
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD",
+      "level": 4,
+      "heading_x0": 725,
+      "heading_conf": 0.915,
+      "text": "For rolling out of this initiative, a joint letter is already sent to all States/UTs along with Ministry of Panchayat i Raj and Ministry of Rural Development. 4. This plan aims to utilize space in Anganwadi Centres, panchayat areas, vacant lands of village, etc. The cultivation of vegetables, fruits, important herbs etc. in these areas will be helpful not only in economic aspect to the rural population but also as a resource to fulfil their nutrition al needs. 5; The Department Agriculture in your State/ UT may create mode! Poshan Vatikas from various schemes, and seeds for usage in the Poshan Vatikas are also being delivered to Panchayat i Raj Institutions. 6. The State Forest Departments will extend technical and other assistance including supply of tree seedlings from appropriate schemes being implemented by them for planting forest-food trees in Poshan Vatikas.",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD\n\nFor rolling out of this initiative, a joint letter is already sent to all States/UTs along with Ministry of Panchayat i Raj and Ministry of Rural Development. 4. This plan aims to utilize space in Anganwadi Centres, panchayat areas, vacant lands of village, etc. The cultivation of vegetables, fruits, important herbs etc. in these areas will be helpful not only in economic aspect to the rural population but also as a resource to fulfil their nutrition al needs. 5; The Department Agriculture in your State/ UT may create mode! Poshan Vatikas from various schemes, and seeds for usage in the Poshan Vatikas are also being delivered to Panchayat i Raj Institutions. 6. The State Forest Departments will extend technical and other assistance including supply of tree seedlings from appropriate schemes being implemented by them for planting forest-food trees in Poshan Vatikas.",
+      "token_estimate": 188,
+      "char_count": 877
+    },
+    {
+      "chunk_id": "aaaaa_0034",
+      "doc": "aaaaa.pdf",
+      "page_start": 16,
+      "page_end": 17,
+      "heading": "AYUSH MWCD",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+        "AYUSH MWCD"
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD",
+      "level": 4,
+      "heading_x0": 725,
+      "heading_conf": 0.915,
+      "text": "The State Forest Departments may also utilize schemes being implemented by them in planting such local forestry trees which enhance forest-food production in forest areas as per their natural composition, for the benefit of the local people. re Request to kindly instruct all field formations to create Poshan Vatikas across your State/ UT for improving the nutrition al requirements of Anganwadi Centres and public. With kind regards, Yours sincerely, Soe AL Yn (Sanjay Agarwal) (R P Gupta) (Ram Mohan Mishra) Secretary, MoAC&FW Secretary, MoEF& CC Secretary, MWCD To Chief Secretaries of all States / Administrators of all UTs",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > AYUSH MWCD\n\nThe State Forest Departments may also utilize schemes being implemented by them in planting such local forestry trees which enhance forest-food production in forest areas as per their natural composition, for the benefit of the local people. re Request to kindly instruct all field formations to create Poshan Vatikas across your State/ UT for improving the nutrition al requirements of Anganwadi Centres and public. With kind regards, Yours sincerely, Soe AL Yn (Sanjay Agarwal) (R P Gupta) (Ram Mohan Mishra) Secretary, MoAC&FW Secretary, MoEF& CC Secretary, MWCD To Chief Secretaries of all States / Administrators of all UTs",
+      "token_estimate": 131,
+      "char_count": 628
+    },
+    {
+      "chunk_id": "aaaaa_0035",
+      "doc": "aaaaa.pdf",
+      "page_start": 17,
+      "page_end": 18,
+      "heading": "Copy to:",
+      "heading_path": [
+        "Annexure III",
+        "4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important.",
+        "Copy to:"
+      ],
+      "heading_path_str": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > Copy to:",
+      "level": 4,
+      "heading_x0": 217,
+      "heading_conf": 0.96,
+      "text": "Addl. Chief Secretary/Pr. Secretary/Secretary of States/UTs of Department of WCD and Department of Agriculture and Department of Environment & Forests ate UtHR/Government of India Ministry of Women & Child Development Shastri Bhawan, New Delhi-110001. Dated: 75\" January, 2021 To a All Chief/Principal Secretaries/Secretaries of all States/UTs. Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘’Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg This Ministry had issued Streamlined Guidelines on the subject cited above, vide D.O. letter of even number dated 13.01.2021 (copy enclosed for ready reference). 2: It is requested that the said Guidelines be shared with all District Magistrates/Collectors for strict adherence. 3. Compliance in this regard may be reported to this Ministry immediately. Encls. As above: 21 1} aorl",
+      "contextualized_text": "Annexure III > 4. Developing Kitchen/Nutri-gardens in the Anganwadi premises, on Panchayat/Community/land in the Village is the other goal, which is equally important. > Copy to:\n\nAddl. Chief Secretary/Pr. Secretary/Secretary of States/UTs of Department of WCD and Department of Agriculture and Department of Environment & Forests ate UtHR/Government of India Ministry of Women & Child Development Shastri Bhawan, New Delhi-110001. Dated: 75\" January, 2021 To a All Chief/Principal Secretaries/Secretaries of all States/UTs. Subject: Streamlining Guidelines on Quality Assurance, Roles and Responsibilities of Duty Holders, procedure for procurement, integrating AYUSH concepts and Data Management and Monitoring through ‘’Poshan Tracker’ for transparency, efficiency and accountability in delivery of Supplementary Nutrition - reg This Ministry had issued Streamlined Guidelines on the subject cited above, vide D.O. letter of even number dated 13.01.2021 (copy enclosed for ready reference). 2: It is requested that the said Guidelines be shared with all District Magistrates/Collectors for strict adherence. 3. Compliance in this regard may be reported to this Ministry immediately. Encls. As above: 21 1} aorl",
+      "token_estimate": 191,
+      "char_count": 1033
+    }
+  ]
+}

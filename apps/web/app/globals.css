@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 217 82% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 30 92% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 82% 30%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply text-foreground antialiased;
+    background:
+      radial-gradient(1200px 600px at 100% -10%, rgba(11, 61, 145, 0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 100%, rgba(217, 119, 6, 0.06), transparent 55%),
+      linear-gradient(180deg, #f6f8fc 0%, #eef2f8 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_28px_-12px_rgba(11,61,145,0.16)];
+  }
+  .gradient-ministry {
+    background: linear-gradient(135deg, #0b3d91 0%, #12539e 55%, #1a6bc5 100%);
+  }
+  .gradient-ministry-soft {
+    background: linear-gradient(135deg, rgba(11, 61, 145, 0.08) 0%, rgba(26, 107, 197, 0.04) 100%);
+  }
+  .dot-pattern {
+    background-image: radial-gradient(rgba(11, 61, 145, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(11, 61, 145, 0.2);
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(11, 61, 145, 0.4);
+  }
+}

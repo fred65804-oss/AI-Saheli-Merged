@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Saheli</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div>
+          <div class="title">AI Saheli</div>
+          <div class="subtitle">Ministry of Women &amp; Child Development</div>
+        </div>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="chat" role="tab">Chat</button>
+        <button class="tab" data-tab="dashboard" role="tab">Dashboard</button>
+      </nav>
+      <div class="status" id="status">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">connecting…</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- CHAT -->
+      <section class="panel" id="tab-chat">
+        <div class="chat-shell">
+          <div class="chat-log" id="chatLog" aria-live="polite"></div>
+          <form class="composer" id="composer">
+            <select id="lang" class="lang" title="Language"></select>
+            <input
+              id="input"
+              type="text"
+              placeholder="Ask about Poshan, Vatsalya, or Shakti…"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="sendBtn">Send</button>
+          </form>
+          <div class="hint" id="chatHint"></div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="panel hidden" id="tab-dashboard">
+        <div class="dash-head">
+          <div>
+            <h2>Live analytics</h2>
+            <div class="muted" id="dashUpdated">—</div>
+          </div>
+          <button class="ghost" id="refreshBtn">Refresh</button>
+        </div>
+
+        <div class="kpi-grid" id="kpiGrid"></div>
+
+        <div class="breakdowns">
+          <div class="card">
+            <h3>Intents</h3>
+            <div class="bars" id="byIntent"></div>
+          </div>
+          <div class="card">
+            <h3>Languages</h3>
+            <div class="bars" id="byLang"></div>
+          </div>
+          <div class="card">
+            <h3>Channels</h3>
+            <div class="bars" id="byChannel"></div>
+          </div>
+          <div class="card">
+            <h3>Tool usage</h3>
+            <div class="bars" id="toolUsage"></div>
+          </div>
+          <div class="card">
+            <h3>Escalations by category</h3>
+            <div class="bars" id="escByCat"></div>
+          </div>
+          <div class="card">
+            <h3>Top districts</h3>
+            <div class="bars" id="byDistrict"></div>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <h3>Recent turns</h3>
+          <div class="table-wrap">
+            <table class="feed" id="recent">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Ch</th>
+                  <th>Lang</th>
+                  <th>Intent</th>
+                  <th>Message</th>
+                  <th>Flags</th>
+                  <th class="num">Cites</th>
+                  <th class="num">ms</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
