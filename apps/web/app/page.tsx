@@ -24,7 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { postChat, type ChatResponse, type Citation } from "@/lib/api";
+import { getMeta, postChat, type ChatResponse, type Citation, type LanguageMeta } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 type Turn =
@@ -51,12 +51,10 @@ const WHISPER_LANGS: Record<string, string> = {
   bn: "bengali",
 };
 
-const LANGS = [
-  { code: "en", label: "EN" },
-  { code: "hi", label: "हिं" },
-  { code: "ta", label: "த" },
-  { code: "bn", label: "বাং" },
-];
+// Fallback shown while /meta loads (or if it's unreachable) — English only,
+// never the source of truth. The real list (all Indian languages the
+// language layer supports) always comes from the backend.
+const FALLBACK_LANGS: LanguageMeta[] = [{ code: "en", name: "English", native: "English" }];
 
 const JOURNEY_STARTERS = [
   {
@@ -135,6 +133,7 @@ export default function ChatPage() {
   const [mode, setMode] = useState<ChatMode | null>(null);
   const [sessionId, setSessionId] = useState<string>("");
   const [lang, setLang] = useState<string>("en");
+  const [languages, setLanguages] = useState<LanguageMeta[]>(FALLBACK_LANGS);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -155,6 +154,14 @@ export default function ChatPage() {
 
   useEffect(() => {
     setSessionId(newSessionId());
+  }, []);
+
+  useEffect(() => {
+    getMeta()
+      .then((m) => setLanguages(m.languages))
+      .catch(() => {
+        /* keep the English-only fallback — chat still works, just without the full picker */
+      });
   }, []);
 
   useEffect(() => {
@@ -461,7 +468,7 @@ export default function ChatPage() {
             <ArrowLeft className="h-4 w-4" /> Modes
           </Button>
           <div className="flex overflow-hidden rounded-full border bg-white/70 shadow-sm">
-            {LANGS.map((l) => (
+            {languages.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLang(l.code)}
@@ -472,7 +479,7 @@ export default function ChatPage() {
                     : "text-muted-foreground hover:bg-ministry-soft"
                 )}
               >
-                {l.label}
+                {l.native}
               </button>
             ))}
           </div>
@@ -546,7 +553,7 @@ export default function ChatPage() {
           </div>
           <div className="flex items-center gap-2">
             <div className="flex rounded-full border bg-white/70 overflow-hidden shadow-sm">
-              {LANGS.map((l) => (
+              {languages.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => setLang(l.code)}
@@ -557,7 +564,7 @@ export default function ChatPage() {
                       : "text-muted-foreground hover:bg-ministry-soft"
                   )}
                 >
-                  {l.label}
+                  {l.native}
                 </button>
               ))}
             </div>

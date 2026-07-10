@@ -15,3 +15,8 @@ os.environ["AZURE_OPENAI_API_KEY"] = ""
 os.environ["AZURE_OPENAI_ENDPOINT"] = ""
 os.environ["AZURE_OPENAI_DEPLOYMENT"] = ""
 os.environ["LLM_PROVIDER"] = "auto"
+
+# Auth tests get their own SQLite file, never the dev DB at data/auth.db —
+# same reasoning as above: must be set before apps.backend.auth.db builds
+# its engine at import time.
+os.environ["AUTH_DATABASE_URL"] = "sqlite:///./data/test_auth.db"

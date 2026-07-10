@@ -28,9 +28,12 @@ const nextConfig = {
       { source: "/voice", destination: `${BACKEND_ORIGIN}/voice` },
       { source: "/warmup", destination: `${BACKEND_ORIGIN}/warmup` },
       { source: "/health", destination: `${BACKEND_ORIGIN}/health` },
-      // Only the dashboard API sub-paths — /dashboard itself is a Next page.
-      { source: "/dashboard/stats", destination: `${BACKEND_ORIGIN}/dashboard/stats` },
-      { source: "/dashboard/recent", destination: `${BACKEND_ORIGIN}/dashboard/recent` },
+      { source: "/meta", destination: `${BACKEND_ORIGIN}/meta` },
+      { source: "/helplines", destination: `${BACKEND_ORIGIN}/helplines` },
+      { source: "/tools/:path*", destination: `${BACKEND_ORIGIN}/tools/:path*` },
+      { source: "/auth/:path*", destination: `${BACKEND_ORIGIN}/auth/:path*` },
+      // Analytics API sub-paths — /dashboard itself is a Next page.
+      { source: "/analytics/:path*", destination: `${BACKEND_ORIGIN}/analytics/:path*` },
     ];
   },
 };

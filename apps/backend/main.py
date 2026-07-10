@@ -31,7 +31,7 @@ from contextlib import asynccontextmanager
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -40,8 +40,11 @@ log = logging.getLogger("ai-saheli")
 
 from agents.orchestrator.graph import default_orchestrator, run_turn
 from agents.orchestrator.llm import get_llm
+from apps.backend.auth.db import init_db
+from apps.backend.auth.deps import get_current_user
+from apps.backend.auth.router import router as auth_router
 from apps.backend.config import get_settings
-from apps.backend.dashboard import router as dashboard_router
+from apps.backend.dashboard import public_router as dashboard_public_router, router as dashboard_router
 from language.provider import LanguageProvider, get_language_provider
 from mcp.knowledge_base.schemas import KBQueryRequest
 from mcp.knowledge_base.tool import query_knowledge_base
@@ -95,6 +98,7 @@ class VoiceResponse(BaseModel):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    init_db()
     app.state.graph = default_orchestrator()
     app.state.language = get_language_provider()
     # We do NOT warm the KB automatically at startup: the retriever runs the
@@ -119,7 +123,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(dashboard_router)
+app.include_router(auth_router)
+# /meta and /helplines are app metadata (languages, scheme cards, safety
+# helpline numbers) that the public chat page also depends on — no login wall.
+app.include_router(dashboard_public_router)
+# The rest of the dashboard (tool passthroughs, analytics) is Ministry-internal
+# — every route in dashboard_router requires a logged-in user. /chat, /voice,
+# /health, /warmup stay open so other channels (WhatsApp, voice IVR) keep
+# working without a login wall.
+app.include_router(dashboard_router, dependencies=[Depends(get_current_user)])
 
 
 def _has_non_ascii(text: str) -> bool:

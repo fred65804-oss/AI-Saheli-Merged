@@ -84,6 +84,16 @@ class Settings(BaseSettings):
     # --- Audit trace ---
     trace_sink_path: str = "logs/interactions.jsonl"
 
+    # --- Auth ---
+    # Dev default so the app runs out of the box; MUST be overridden via .env
+    # (a long random value) before any real deployment — anyone who knows this
+    # default can forge access tokens.
+    jwt_secret_key: str = "dev-insecure-secret-change-me-not-for-prod"
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 15
+    refresh_token_expire_days: int = 30
+    auth_database_url: str = "sqlite:///./data/auth.db"
+
     @property
     def _azure_ready(self) -> bool:
         return bool(

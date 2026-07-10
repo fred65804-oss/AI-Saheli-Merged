@@ -7,10 +7,12 @@ uses (registry cards, Pydantic schemas, the helpline YAML store, the JSONL
 audit trace). Adding a scheme / language / rule upstream changes the UI with
 zero frontend edits.
 
-Endpoints:
+Endpoints (public_router — no login required, the citizen-facing chat UI reads these):
   GET  /meta               app metadata: provider/model, languages, cards, enums,
                            tool form schemas (Pydantic model_json_schema)
   GET  /helplines          full validated helpline directory
+
+Endpoints (router — Ministry-internal, mounted with the auth dependency in main.py):
   POST /tools/kb-search    knowledge_base passthrough
   POST /tools/eligibility  eligibility rules passthrough
   POST /tools/geo          geo_locator passthrough
@@ -51,13 +53,18 @@ from mcp.helpline_directory.tool import lookup_helplines
 from mcp.knowledge_base.schemas import KBQueryRequest, KBQueryResponse, Scheme as KBScheme
 from mcp.knowledge_base.tool import query_knowledge_base
 
+# /meta and /helplines are app metadata, not Ministry-internal analytics —
+# the public chat page needs them too (language picker, scheme cards, safety
+# helpline numbers), so they stay on a separate, unauthenticated router.
+# Everything else here (tool passthroughs, analytics) is Ministry-only.
+public_router = APIRouter()
 router = APIRouter()
 
 
 # --------------------------------------------------------------------------- #
 # Metadata — the UI builds itself from this
 # --------------------------------------------------------------------------- #
-@router.get("/meta")
+@public_router.get("/meta")
 async def meta() -> dict:
     s = get_settings()
     return {
@@ -82,7 +89,7 @@ async def meta() -> dict:
     }
 
 
-@router.get("/helplines")
+@public_router.get("/helplines")
 async def helplines() -> dict:
     store = get_helpline_store()
     return {
@@ -239,9 +246,10 @@ def _build_summary(hours: int | None = None) -> dict:
     }
 
 
-def _build_recent(limit: int = 50, hours: int | None = None) -> dict:
-    rows = _read_traces(hours)
-    recent = rows[-limit:][::-1]  # newest first
+def _build_recent(limit: int = 50, hours: int | None = None, offset: int = 0) -> dict:
+    rows = _read_traces(hours)[::-1]  # newest first
+    total = len(rows)
+    page = rows[offset : offset + limit]
     feed = [
         {
             "created_at": r.get("created_at", ""),
@@ -254,17 +262,25 @@ def _build_recent(limit: int = 50, hours: int | None = None) -> dict:
             "confidence": r.get("confidence"),
             "escalation": bool(r.get("escalation")),
             "safety_category": r.get("safety_category"),
+            "safety_source": r.get("safety_source"),
             "agent_used": r.get("agent_used"),
             "district": r.get("district"),
             "tool_calls": r.get("tool_calls") or [],
             "citation_count": r.get("citation_count", 0),
             "awaiting_input": bool(r.get("awaiting_input")),
+            "grounding_ok": bool(r.get("grounding_ok", True)),
             "fallback": bool(r.get("fallback")),
             "total_latency_ms": r.get("total_latency_ms", 0.0),
         }
-        for r in recent
+        for r in page
     ]
-    return {"count": len(feed), "items": feed}
+    return {
+        "count": len(feed),
+        "total": total,
+        "offset": offset,
+        "limit": limit,
+        "items": feed,
+    }
 
 
 @router.get("/analytics/summary")
@@ -277,9 +293,10 @@ async def analytics_summary(
 @router.get("/analytics/recent")
 async def analytics_recent(
     limit: int = Query(default=50, ge=1, le=500),
+    offset: int = Query(default=0, ge=0),
     hours: int | None = Query(default=None, ge=1, le=24 * 365),
 ) -> dict:
-    return _build_recent(limit, hours)
+    return _build_recent(limit, hours, offset)
 
 
 @router.get("/dashboard/stats")

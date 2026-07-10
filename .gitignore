@@ -14,6 +14,10 @@ env/
 # Logs / audit traces
 logs/
 *.jsonl
+
+# Local SQLite auth store
+data/
+*.db
  
 # OS / editor
 .DS_Store
