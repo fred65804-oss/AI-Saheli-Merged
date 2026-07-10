@@ -152,10 +152,11 @@ def _bucket_key(ts: datetime, by_day: bool) -> str:
     return ts.strftime("%Y-%m-%d") if by_day else ts.strftime("%Y-%m-%d %H:00")
 
 
-@router.get("/analytics/summary")
-async def analytics_summary(
-    hours: int | None = Query(default=None, ge=1, le=24 * 365)
-) -> dict:
+def _sorted_buckets(counter: Counter) -> list[dict]:
+    return [{"key": key, "value": value} for key, value in counter.most_common()]
+
+
+def _build_summary(hours: int | None = None) -> dict:
     rows = _read_traces(hours)
     total = len(rows)
     sessions = len({r.get("session_id") for r in rows if r.get("session_id")})
@@ -179,7 +180,6 @@ async def analytics_summary(
     for r in rows:
         tool_usage.update(r.get("tool_calls") or [])
 
-    # Timeline: hourly buckets under 48h of span, daily beyond.
     stamps: list[datetime] = []
     for r in rows:
         try:
@@ -239,11 +239,7 @@ async def analytics_summary(
     }
 
 
-@router.get("/analytics/recent")
-async def analytics_recent(
-    limit: int = Query(default=50, ge=1, le=500),
-    hours: int | None = Query(default=None, ge=1, le=24 * 365),
-) -> dict:
+def _build_recent(limit: int = 50, hours: int | None = None) -> dict:
     rows = _read_traces(hours)
     recent = rows[-limit:][::-1]  # newest first
     feed = [
@@ -269,3 +265,65 @@ async def analytics_recent(
         for r in recent
     ]
     return {"count": len(feed), "items": feed}
+
+
+@router.get("/analytics/summary")
+async def analytics_summary(
+    hours: int | None = Query(default=None, ge=1, le=24 * 365)
+) -> dict:
+    return _build_summary(hours)
+
+
+@router.get("/analytics/recent")
+async def analytics_recent(
+    limit: int = Query(default=50, ge=1, le=500),
+    hours: int | None = Query(default=None, ge=1, le=24 * 365),
+) -> dict:
+    return _build_recent(limit, hours)
+
+
+@router.get("/dashboard/stats")
+async def dashboard_stats(
+    hours: int | None = Query(default=None, ge=1, le=24 * 365)
+) -> dict:
+    summary = _build_summary(hours)
+    totals = summary["totals"]
+    rows = _read_traces(hours)
+    confidences = [r.get("confidence") for r in rows if r.get("confidence") is not None]
+    last_updated = next(
+        (r.get("created_at") for r in reversed(rows) if r.get("created_at")),
+        datetime.now(timezone.utc).isoformat(),
+    )
+    return {
+        "kpis": {
+            "total_turns": totals["turns"],
+            "unique_sessions": totals["sessions"],
+            "escalations": totals["escalations"],
+            "escalation_rate": totals["escalation_rate"],
+            "awaiting_input": totals["slot_questions"],
+            "avg_confidence": (
+                round(sum(confidences) / len(confidences), 4) if confidences else None
+            ),
+            "avg_latency_ms": totals["avg_latency_ms"] or None,
+            "grounded_share": totals["grounding_rate"] or None,
+            "fallback_count": totals["fallbacks"],
+        },
+        "intents": _sorted_buckets(Counter(summary["by_intent"])),
+        "languages": _sorted_buckets(Counter(summary["by_lang"])),
+        "channels": _sorted_buckets(Counter(summary["by_channel"])),
+        "safety_categories": _sorted_buckets(Counter(summary["escalation_by_category"])),
+        "top_tools": _sorted_buckets(Counter(summary["tool_usage"])),
+        "turns_by_day": [
+            {"key": bucket["t"], "value": bucket["count"]} for bucket in summary["timeline"]
+        ],
+        "updated_at": last_updated,
+    }
+
+
+@router.get("/dashboard/recent")
+async def dashboard_recent(
+    limit: int = Query(default=50, ge=1, le=500),
+    hours: int | None = Query(default=None, ge=1, le=24 * 365),
+) -> dict:
+    recent = _build_recent(limit, hours)
+    return {"turns": recent["items"]}

@@ -6,6 +6,22 @@ const BACKEND_ORIGIN = process.env.BACKEND_ORIGIN || "http://127.0.0.1:8000";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  webpack(config, { dev }) {
+    // Next 14 applies Node export conditions while compiling Web Workers.
+    // Force Transformers.js to its browser bundle so ONNX Runtime uses web WASM/WebGPU.
+    config.resolve.alias["@huggingface/transformers$"] = path.resolve(
+      process.cwd(),
+      "node_modules/@huggingface/transformers/dist/transformers.web.js"
+    );
+    if (!dev) {
+      // ONNX Runtime ships pre-minified ESM worker assets containing import.meta.
+      // Next 14's Terser pass incorrectly parses those assets as classic scripts.
+      // The runtime assets are already minified upstream; disabling the extra
+      // webpack minification pass preserves their required module semantics.
+      config.optimization.minimize = false;
+    }
+    return config;
+  },
   async rewrites() {
     return [
       { source: "/chat", destination: `${BACKEND_ORIGIN}/chat` },
@@ -20,3 +36,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+import path from "node:path";

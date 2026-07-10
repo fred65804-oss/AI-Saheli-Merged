@@ -39,6 +39,17 @@
 }
 
 @layer components {
+  .avatar-face {
+    object-position: 50% 8%;
+    transform: scale(1.7);
+    transform-origin: 50% 12%;
+  }
+  .avatar-speaking {
+    box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.12), 0 8px 20px -8px rgba(11, 61, 145, 0.5);
+  }
+  .avatar-speaking-frame {
+    animation: avatar-frame-talk 280ms steps(1, end) infinite;
+  }
   .card-glass {
     @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_28px_-12px_rgba(11,61,145,0.16)];
   }
@@ -51,6 +62,18 @@
   .dot-pattern {
     background-image: radial-gradient(rgba(11, 61, 145, 0.08) 1px, transparent 1px);
     background-size: 18px 18px;
+  }
+}
+
+@keyframes avatar-frame-talk {
+  0%, 42% { opacity: 0; }
+  43%, 100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-speaking-frame {
+    animation: none;
+    opacity: 1;
   }
 }
 

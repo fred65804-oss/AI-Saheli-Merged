@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   AlertTriangle,
@@ -11,6 +12,12 @@ import {
   ShieldAlert,
   Sparkles,
   Utensils,
+  ArrowLeft,
+  LoaderCircle,
+  MessageCircle,
+  Mic,
+  Square,
+  UserRound,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +40,16 @@ type Turn =
       citations: Citation[];
       trace_id: string;
     };
+
+type ChatMode = "text" | "avatar";
+type VoiceStatus = "loading" | "ready" | "recording" | "transcribing" | "error";
+
+const WHISPER_LANGS: Record<string, string> = {
+  en: "english",
+  hi: "hindi",
+  ta: "tamil",
+  bn: "bengali",
+};
 
 const LANGS = [
   { code: "en", label: "EN" },
@@ -94,14 +111,47 @@ function fmtTime(ts: number) {
   });
 }
 
+async function decodeTo16Khz(blob: Blob) {
+  const audioContext = new AudioContext();
+  try {
+    const decoded = await audioContext.decodeAudioData(await blob.arrayBuffer());
+    const offline = new OfflineAudioContext(
+      1,
+      Math.ceil(decoded.duration * 16_000),
+      16_000
+    );
+    const source = offline.createBufferSource();
+    source.buffer = decoded;
+    source.connect(offline.destination);
+    source.start();
+    const rendered = await offline.startRendering();
+    return new Float32Array(rendered.getChannelData(0));
+  } finally {
+    await audioContext.close();
+  }
+}
+
 export default function ChatPage() {
+  const [mode, setMode] = useState<ChatMode | null>(null);
   const [sessionId, setSessionId] = useState<string>("");
   const [lang, setLang] = useState<string>("en");
   const [turns, setTurns] = useState<Turn[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [speakingTurnTs, setSpeakingTurnTs] = useState<number | null>(null);
+  const [voiceStatus, setVoiceStatus] = useState<VoiceStatus>("loading");
+  const [voiceDetail, setVoiceDetail] = useState("Preparing private speech recognition…");
+  const [pendingTranscript, setPendingTranscript] = useState("");
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const whisperWorkerRef = useRef<Worker | null>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
+  const captureContextRef = useRef<AudioContext | null>(null);
+  const vadFrameRef = useRef<number | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+  const shouldAutoListenRef = useRef(false);
+  const startRecordingRef = useRef<() => void>(() => undefined);
 
   useEffect(() => {
     setSessionId(newSessionId());
@@ -114,9 +164,163 @@ export default function ChatPage() {
     });
   }, [turns, busy]);
 
+  useEffect(() => {
+    return () => window.speechSynthesis?.cancel();
+  }, []);
+
+  const stopSpeaking = () => {
+    window.speechSynthesis?.cancel();
+    setSpeakingTurnTs(null);
+  };
+
+  const stopRecording = () => {
+    if (vadFrameRef.current !== null) {
+      cancelAnimationFrame(vadFrameRef.current);
+      vadFrameRef.current = null;
+    }
+    void captureContextRef.current?.close();
+    captureContextRef.current = null;
+
+    const recorder = mediaRecorderRef.current;
+    if (recorder?.state === "recording") {
+      setVoiceStatus("transcribing");
+      setVoiceDetail("Understanding what you said…");
+      recorder.stop();
+    }
+  };
+
+  const startRecording = async () => {
+    if (
+      mode !== "avatar" ||
+      busy ||
+      speakingTurnTs !== null ||
+      voiceStatus !== "ready"
+    ) {
+      return;
+    }
+
+    try {
+      const stream =
+        mediaStreamRef.current ||
+        (await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          },
+        }));
+      mediaStreamRef.current = stream;
+      shouldAutoListenRef.current = true;
+      audioChunksRef.current = [];
+
+      const recorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = recorder;
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) audioChunksRef.current.push(event.data);
+      };
+      recorder.onstop = async () => {
+        try {
+          const blob = new Blob(audioChunksRef.current, { type: recorder.mimeType });
+          const audio = await decodeTo16Khz(blob);
+          whisperWorkerRef.current?.postMessage(
+            {
+              type: "transcribe",
+              audio,
+              language: WHISPER_LANGS[lang] || "english",
+            },
+            [audio.buffer]
+          );
+        } catch (cause) {
+          setVoiceStatus("error");
+          setVoiceDetail(cause instanceof Error ? cause.message : "Could not process microphone audio");
+        }
+      };
+      recorder.start(250);
+      setVoiceStatus("recording");
+      setVoiceDetail("Listening… speak naturally");
+
+      const captureContext = new AudioContext();
+      captureContextRef.current = captureContext;
+      const source = captureContext.createMediaStreamSource(stream);
+      const analyser = captureContext.createAnalyser();
+      analyser.fftSize = 1024;
+      source.connect(analyser);
+      const samples = new Uint8Array(analyser.fftSize);
+      const startedAt = performance.now();
+      let speechStarted = false;
+      let lastSpeechAt = startedAt;
+
+      const detectSilence = () => {
+        analyser.getByteTimeDomainData(samples);
+        let energy = 0;
+        for (const sample of samples) {
+          const normalized = (sample - 128) / 128;
+          energy += normalized * normalized;
+        }
+        const rms = Math.sqrt(energy / samples.length);
+        const now = performance.now();
+
+        if (rms > 0.018) {
+          speechStarted = true;
+          lastSpeechAt = now;
+        }
+
+        if (
+          (speechStarted && now - lastSpeechAt > 1200) ||
+          (!speechStarted && now - startedAt > 10_000) ||
+          now - startedAt > 30_000
+        ) {
+          stopRecording();
+          return;
+        }
+        vadFrameRef.current = requestAnimationFrame(detectSilence);
+      };
+      vadFrameRef.current = requestAnimationFrame(detectSilence);
+    } catch (cause) {
+      setVoiceStatus("error");
+      setVoiceDetail(
+        cause instanceof Error
+          ? cause.message
+          : "Microphone access is required for voice mode"
+      );
+    }
+  };
+  startRecordingRef.current = () => {
+    void startRecording();
+  };
+
+  const speakResponse = (text: string, turnTs: number) => {
+    if (mode !== "avatar" || !("speechSynthesis" in window)) return;
+
+    stopSpeaking();
+    const cleanText = text
+      .replace(/https?:\/\/\S+/g, "")
+      .replace(/[*_#`]/g, "")
+      .trim();
+    if (!cleanText) return;
+
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.lang =
+      ({ en: "en-IN", hi: "hi-IN", ta: "ta-IN", bn: "bn-IN" } as Record<string, string>)[
+        lang
+      ] || lang;
+    utterance.rate = 0.95;
+    utterance.pitch = 1.05;
+    utterance.onstart = () => setSpeakingTurnTs(turnTs);
+    utterance.onend = () => {
+      setSpeakingTurnTs(null);
+      if (shouldAutoListenRef.current) {
+        window.setTimeout(() => startRecordingRef.current(), 250);
+      }
+    };
+    utterance.onerror = () => setSpeakingTurnTs(null);
+    window.speechSynthesis.speak(utterance);
+  };
+
   const send = async (raw?: string) => {
     const text = (raw ?? input).trim();
     if (!text || busy || !sessionId) return;
+    stopSpeaking();
     setError(null);
     setInput("");
     setTurns((t) => [...t, { role: "user", text, ts: Date.now() }]);
@@ -127,12 +331,14 @@ export default function ChatPage() {
         message: text,
         lang,
       });
+      const responseText = r.response || "(no response)";
+      const responseTs = Date.now();
       setTurns((t) => [
         ...t,
         {
           role: "assistant",
-          text: r.response || "(no response)",
-          ts: Date.now(),
+          text: responseText,
+          ts: responseTs,
           intent: r.intent,
           confidence: r.confidence,
           escalation: r.escalation,
@@ -141,6 +347,7 @@ export default function ChatPage() {
           trace_id: r.trace_id,
         },
       ]);
+      speakResponse(responseText, responseTs);
     } catch (e: any) {
       setError(e.message || "Request failed");
     } finally {
@@ -148,25 +355,190 @@ export default function ChatPage() {
     }
   };
 
+  useEffect(() => {
+    if (mode !== "avatar") return;
+
+    setVoiceStatus("loading");
+    setVoiceDetail("Downloading Whisper for private speech recognition…");
+    const worker = new Worker(new URL("./whisper.worker.ts", import.meta.url), {
+      type: "module",
+    });
+    whisperWorkerRef.current = worker;
+
+    worker.onmessage = (event) => {
+      const message = event.data as {
+        type: string;
+        text?: string;
+        message?: string;
+        progress?: { status?: string; progress?: number; file?: string };
+      };
+
+      if (message.type === "progress" && message.progress?.status === "progress") {
+        const percent = Math.round(message.progress.progress || 0);
+        setVoiceDetail(`Preparing Whisper… ${percent}%`);
+      } else if (message.type === "notice" && message.message) {
+        setVoiceDetail(message.message);
+      } else if (message.type === "ready") {
+        setVoiceStatus("ready");
+        setVoiceDetail("Tap the microphone and start speaking");
+      } else if (message.type === "result") {
+        const transcript = message.text?.trim() || "";
+        setVoiceStatus("ready");
+        if (transcript) {
+          setVoiceDetail("Sending your question…");
+          setPendingTranscript(transcript);
+        } else {
+          setVoiceDetail("I could not hear that. Tap the microphone to try again.");
+        }
+      } else if (message.type === "error") {
+        setVoiceStatus("error");
+        setVoiceDetail(message.message || "Whisper speech recognition failed");
+      }
+    };
+    worker.onerror = () => {
+      setVoiceStatus("error");
+      setVoiceDetail("Whisper could not start in this browser");
+    };
+    worker.postMessage({ type: "load" });
+
+    return () => {
+      worker.terminate();
+      whisperWorkerRef.current = null;
+      if (vadFrameRef.current !== null) cancelAnimationFrame(vadFrameRef.current);
+      void captureContextRef.current?.close();
+      captureContextRef.current = null;
+      mediaRecorderRef.current?.state === "recording" && mediaRecorderRef.current.stop();
+      mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
+      mediaStreamRef.current = null;
+      shouldAutoListenRef.current = false;
+    };
+  }, [mode]);
+
+  useEffect(() => {
+    if (!pendingTranscript) return;
+    const transcript = pendingTranscript;
+    setPendingTranscript("");
+    void send(transcript);
+    // `send` intentionally uses the current chat session and selected language.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingTranscript]);
+
   const resetSession = () => {
+    stopSpeaking();
     setSessionId(newSessionId());
     setTurns([]);
     setError(null);
   };
 
+  const chooseMode = (nextMode: ChatMode) => {
+    stopSpeaking();
+    setMode(nextMode);
+    setSessionId(newSessionId());
+    setTurns([]);
+    setInput("");
+    setError(null);
+  };
+
+  const leaveChat = () => {
+    stopSpeaking();
+    setMode(null);
+    setTurns([]);
+    setInput("");
+    setError(null);
+  };
+
   const emptyState = turns.length === 0;
+
+  if (!mode) {
+    return <ModePicker onChoose={chooseMode} />;
+  }
+
+  if (mode === "avatar") {
+    return (
+      <Card className="flex h-[calc(100vh-11rem)] min-h-[560px] flex-col overflow-hidden p-0">
+        <div className="flex items-center justify-between border-b border-white/60 bg-white/70 px-4 py-3">
+          <Button type="button" variant="ghost" size="sm" onClick={leaveChat} className="gap-2 rounded-full">
+            <ArrowLeft className="h-4 w-4" /> Modes
+          </Button>
+          <div className="flex overflow-hidden rounded-full border bg-white/70 shadow-sm">
+            {LANGS.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                className={cn(
+                  "px-3 py-1.5 text-xs font-medium transition-all",
+                  lang === l.code
+                    ? "gradient-ministry text-white shadow-inner"
+                    : "text-muted-foreground hover:bg-ministry-soft"
+                )}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+          <Button variant="outline" size="sm" onClick={resetSession} className="rounded-full">
+            New session
+          </Button>
+        </div>
+
+        <div className="dot-pattern flex min-h-0 flex-1 flex-col items-center justify-center gap-5 bg-ministry-soft/20 p-6">
+          <SaheliAvatar size="hero" speaking={speakingTurnTs !== null} />
+          <div className="min-h-6 text-center text-sm font-medium text-ministry" aria-live="polite">
+            {speakingTurnTs !== null ? "Speaking…" : busy ? "Thinking…" : voiceDetail}
+          </div>
+        </div>
+
+        <div className="border-t border-white/60 bg-white/70 p-4">
+          <div className="mx-auto flex max-w-2xl justify-center">
+            <Button
+              type="button"
+              onClick={voiceStatus === "recording" ? stopRecording : startRecording}
+              disabled={
+                busy ||
+                speakingTurnTs !== null ||
+                voiceStatus === "loading" ||
+                voiceStatus === "transcribing" ||
+                voiceStatus === "error"
+              }
+              className={cn(
+                "h-14 min-w-48 rounded-full px-7 text-base shadow-lg",
+                voiceStatus === "recording"
+                  ? "bg-rose-600 text-white hover:bg-rose-700"
+                  : "gradient-ministry"
+              )}
+            >
+              {voiceStatus === "loading" || voiceStatus === "transcribing" ? (
+                <LoaderCircle className="h-5 w-5 animate-spin" />
+              ) : voiceStatus === "recording" ? (
+                <Square className="h-4 w-4 fill-current" />
+              ) : (
+                <Mic className="h-5 w-5" />
+              )}
+              {voiceStatus === "loading"
+                ? "Loading voice"
+                : voiceStatus === "transcribing"
+                  ? "Understanding"
+                  : voiceStatus === "recording"
+                    ? "Stop speaking"
+                    : "Start speaking"}
+            </Button>
+          </div>
+          {error && <div className="mx-auto mt-2 max-w-2xl text-sm text-destructive">{error}</div>}
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
       <Card className="flex flex-col h-[calc(100vh-11rem)] overflow-hidden p-0">
         <div className="flex items-center justify-between border-b border-white/60 px-5 py-3 bg-gradient-to-r from-white/80 to-ministry-soft/40">
           <div className="flex items-center gap-3">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-            </span>
+            <Button type="button" variant="ghost" size="sm" onClick={leaveChat} className="gap-2 rounded-full">
+              <ArrowLeft className="h-4 w-4" /> Modes
+            </Button>
             <div className="leading-tight">
-              <div className="text-sm font-medium text-foreground">Live orchestrator</div>
+              <div className="text-sm font-medium text-foreground">Text chat</div>
               <div className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
                 {sessionId.slice(-10)}
               </div>
@@ -195,21 +567,40 @@ export default function ChatPage() {
           </div>
         </div>
 
-        <div
-          ref={scrollerRef}
-          className="flex-1 overflow-y-auto scrollbar-thin px-6 py-6 space-y-5"
-        >
-          {emptyState ? (
-            <EmptyState
-              onPick={(t, l) => {
-                setLang(l);
-                send(t);
-              }}
-            />
-          ) : (
-            turns.map((t, i) => <Message key={i} turn={t} />)
-          )}
-          {busy && <TypingBubble />}
+        <div className="flex min-h-0 flex-1 flex-col sm:flex-row">
+          <div className="hidden">
+            <SaheliAvatar size="stage" speaking={speakingTurnTs !== null} />
+            <div className="text-center">
+              <div className="text-sm font-semibold text-ministry">AI Saheli</div>
+              <div className="text-[11px] text-muted-foreground">
+                {speakingTurnTs !== null ? "Speaking…" : busy ? "Thinking…" : "Ready to help"}
+              </div>
+            </div>
+          </div>
+
+          <div
+            ref={scrollerRef}
+            className="min-h-0 flex-1 overflow-y-auto scrollbar-thin px-6 py-6 space-y-5"
+          >
+            {emptyState ? (
+              <EmptyState
+                onPick={(t, l) => {
+                  setLang(l);
+                  send(t);
+                }}
+              />
+            ) : (
+              turns.map((t, i) => (
+                <Message
+                  key={i}
+                  turn={t}
+                  speaking={t.role === "assistant" && t.ts === speakingTurnTs}
+                  showAvatar={false}
+                />
+              ))
+            )}
+            {busy && <TypingBubble showAvatar={false} />}
+          </div>
         </div>
 
         <form
@@ -261,6 +652,54 @@ export default function ChatPage() {
   );
 }
 
+function ModePicker({ onChoose }: { onChoose: (mode: ChatMode) => void }) {
+  const modes = [
+    {
+      id: "text" as const,
+      title: "Text chat",
+      description: "A standard chat with written questions and answers. No voice or avatar.",
+      icon: MessageCircle,
+    },
+    {
+      id: "avatar" as const,
+      title: "Voice avatar",
+      description: "Speak naturally while AI Saheli listens locally and answers through the avatar.",
+      icon: UserRound,
+    },
+  ];
+
+  return (
+    <div className="grid min-h-[calc(100vh-11rem)] place-items-center py-8">
+      <div className="w-full max-w-3xl text-center">
+        <div className="mb-8 space-y-2">
+          <h1 className="text-3xl font-semibold tracking-tight text-ministry">Choose how to chat</h1>
+          <p className="text-sm text-muted-foreground">You can return here and switch modes at any time.</p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {modes.map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => onChoose(item.id)}
+                className="group rounded-3xl border border-white/80 bg-white/75 p-7 text-left shadow-lg backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-ministry/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ministry"
+              >
+                <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl gradient-ministry text-white shadow-md transition-transform group-hover:scale-105">
+                  <Icon className="h-7 w-7" />
+                </div>
+                <h2 className="text-xl font-semibold text-foreground">{item.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                <div className="mt-6 text-sm font-semibold text-ministry">Start {item.title.toLowerCase()} →</div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function EmptyState({
   onPick,
 }: {
@@ -269,12 +708,6 @@ function EmptyState({
   return (
     <div className="h-full grid place-items-center text-center">
       <div className="max-w-lg space-y-6">
-        <div className="relative mx-auto h-20 w-20">
-          <div className="absolute inset-0 rounded-full gradient-ministry blur-2xl opacity-30" />
-          <div className="relative h-20 w-20 rounded-full gradient-ministry grid place-items-center shadow-lg">
-            <Sparkles className="h-9 w-9 text-white" />
-          </div>
-        </div>
         <div className="space-y-2">
           <h2 className="text-2xl font-semibold text-ministry">Namaste 🙏</h2>
           <p className="text-sm text-muted-foreground">
@@ -317,7 +750,15 @@ function EmptyState({
   );
 }
 
-function Message({ turn }: { turn: Turn }) {
+function Message({
+  turn,
+  speaking,
+  showAvatar = true,
+}: {
+  turn: Turn;
+  speaking: boolean;
+  showAvatar?: boolean;
+}) {
   if (turn.role === "user") {
     return (
       <div className="flex flex-col items-end gap-1">
@@ -331,7 +772,8 @@ function Message({ turn }: { turn: Turn }) {
   const intentClass = turn.intent ? INTENT_STYLE[turn.intent] : "";
   return (
     <div className="flex gap-2.5">
-      <div className="flex-shrink-0 h-9 w-9 rounded-full gradient-ministry grid place-items-center text-white font-semibold text-sm shadow-md">
+      {showAvatar && <SaheliAvatar speaking={speaking} />}
+      <div className="hidden">
         स
       </div>
       <div className="min-w-0 flex-1 space-y-2">
@@ -384,10 +826,11 @@ function CitationChip({ c }: { c: Citation }) {
   );
 }
 
-function TypingBubble() {
+function TypingBubble({ showAvatar = true }: { showAvatar?: boolean }) {
   return (
     <div className="flex gap-2.5">
-      <div className="flex-shrink-0 h-9 w-9 rounded-full gradient-ministry grid place-items-center text-white font-semibold text-sm shadow-md">
+      {showAvatar && <SaheliAvatar />}
+      <div className="hidden">
         स
       </div>
       <div className="rounded-2xl rounded-tl-md bg-white border border-white/70 px-4 py-3 shadow-sm">
@@ -397,6 +840,61 @@ function TypingBubble() {
           <span className="h-2 w-2 rounded-full bg-ministry/70 animate-bounce" />
         </div>
       </div>
+    </div>
+  );
+}
+
+function SaheliAvatar({
+  speaking = false,
+  size = "message",
+}: {
+  speaking?: boolean;
+  size?: "message" | "stage" | "hero";
+}) {
+  return (
+    <div
+      className={cn(
+        "relative flex-shrink-0 overflow-hidden rounded-full border-2 border-white bg-ministry-soft shadow-md ring-1 ring-ministry/15",
+        size === "hero"
+          ? "h-56 w-56 sm:h-72 sm:w-72"
+          : size === "stage"
+            ? "h-24 w-24 sm:h-32 sm:w-32"
+            : "h-10 w-10",
+        speaking && "avatar-speaking"
+      )}
+      aria-label={speaking ? "AI Saheli is speaking" : "AI Saheli"}
+    >
+      <Image
+        src="/ai-saheli-avatar.png"
+        alt=""
+        fill
+        priority={size !== "message"}
+        sizes={
+          size === "hero"
+            ? "(min-width: 640px) 288px, 224px"
+            : size === "stage"
+              ? "(min-width: 640px) 128px, 96px"
+              : "40px"
+        }
+        className="avatar-face object-cover"
+      />
+      <Image
+        src="/ai-saheli-avatar-speaking.png"
+        alt=""
+        fill
+        priority={size !== "message"}
+        sizes={
+          size === "hero"
+            ? "(min-width: 640px) 288px, 224px"
+            : size === "stage"
+              ? "(min-width: 640px) 128px, 96px"
+              : "40px"
+        }
+        className={cn(
+          "avatar-face object-cover opacity-0",
+          speaking && "avatar-speaking-frame"
+        )}
+      />
     </div>
   );
 }
