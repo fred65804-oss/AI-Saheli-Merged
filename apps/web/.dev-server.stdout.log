@@ -1,0 +1,32 @@
+
+> ai-saheli-web@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.5s (610 modules)
+ GET / 200 in 5805ms
+ ○ Compiling /tools ...
+ ✓ Compiled /tools in 2.5s (632 modules)
+ GET /tools 200 in 2602ms
+ ✓ Compiled /system in 206ms (638 modules)
+ GET /system 200 in 303ms
+ ✓ Compiled /dashboard in 230ms (658 modules)
+ GET /dashboard 200 in 321ms
+ ✓ Compiled /login in 187ms (668 modules)
+ GET /login 200 in 265ms
+ GET / 200 in 259ms
+ GET /tools 200 in 72ms
+ GET /system 200 in 75ms
+ GET /dashboard 200 in 74ms
+ GET /login 200 in 107ms
+ GET / 200 in 116ms
+ GET / 200 in 60ms
+ ✓ Compiled in 1446ms (676 modules)
+ ✓ Compiled in 283ms (676 modules)
+ GET / 200 in 119ms
+ GET / 200 in 39ms

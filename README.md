@@ -11,12 +11,19 @@ dynamic questioning, and specialist handoff.
 ## Quickstart
 ```bash
 pip install -r requirements.txt
-cp .env.example .env            # add ANTHROPIC_API_KEY for live LLM (optional)
+cp .env.example .env            # add an LLM key (Azure/Anthropic/OpenAI) for live synthesis (optional)
 
-pytest                          # 31 tests, no API key required
+pytest                          # 79 tests, no API key required (stop the backend first — local Qdrant is single-writer)
 python eval/run_routing_eval.py # routing accuracy + escalation recall
 python scripts/chat_cli.py      # interactive terminal demo
 uvicorn apps.backend.main:app --reload   # REST API on http://127.0.0.1:8000
+```
+
+**Demo day (full web app, one command):**
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_demo.ps1
+# backend :8000 → wait for /health → POST /warmup (KB + LLM + ASR + TTS)
+# → Next.js web app on http://localhost:3000
 ```
 
 ## What's built

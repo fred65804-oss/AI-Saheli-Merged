@@ -6,18 +6,20 @@ AI Saheli is a **working demo of an Agentic AI ecosystem** for India's Ministry 
 Presented by **Uneecops Technologies**. Demo must be leadership-ready — polished, grounded, and safe.
 
 ## Current Status
-> **Phase 3 IN PROGRESS — real specialist agents live; LLM layer is multi-provider.**
+> **Phase 4 IN PROGRESS — Next.js web app live (chat, voice avatar, analytics, tools, system); voice is fully server-piped.**
 >
-> ✅ **Orchestrator** — LangGraph safety gate → capability-card routing → slot-filling (with topic-change detection: a new request mid-question re-routes instead of being swallowed as the answer, and an unparseable reply is bounded to 2 re-asks, never looping) → specialist handoff. 59 tests, all passing.
-> ✅ **Knowledge Base** — 2,579 chunks from 23 official PDFs in Qdrant (hybrid dense+BM25, reranker). recall@6=1.00, MRR=0.933.
+> ✅ **Orchestrator** — LangGraph safety gate → capability-card routing → slot-filling (with topic-change detection: a new request mid-question re-routes instead of being swallowed as the answer, and an unparseable reply is bounded to 2 re-asks, never looping) → specialist handoff. 79 tests, all passing.
+> ✅ **Knowledge Base** — 2,579 chunks from 23 official PDFs in Qdrant (hybrid dense+BM25). Cross-encoder rerank is **OFF by default** (`KB_RERANK=true` to enable): the bge-reranker forward pass measured ~2s/candidate on the demo laptop CPU (104s/query at 50 candidates, blocking the event loop); hybrid RRF alone answers in ~0.3s. ⚠️ `rag/eval/gold.jsonl` is missing — the recall/MRR harness (`rag/eval/run.py`) cannot run until it is restored.
 > ✅ **MCP Tools** — all 4 tools built: `knowledge_base`, `helpline_directory`, `geo_locator`, `eligibility`.
-> ✅ **Language Layer** — `FreeProvider`: faster-whisper ASR + deep-translator NMT + edge-tts TTS. 10 Indian languages. Zero keys needed.
-> ✅ **Voice + Text API** — FastAPI `/chat`, `/voice`, `/health` all live. Language layer wired: translate-in → orchestrator → translate-out → TTS.
-> ✅ **Real specialist agents** — Poshan/Vatsalya/Shakti/General now call MCP tools for VERIFIED FACTS and retrieve official KB passages, then an LLM synthesizes a grounded, cited answer from them (never inventing amounts/rules). No LLM key → deterministic tool-composed fallback (same behaviour as before, demo never breaks). Mocks kept only for tests.
-> ✅ **Multi-provider LLM** — `LLM_PROVIDER=auto` resolves Anthropic or OpenAI from whichever key is set in `.env`; model names are env-driven with per-provider defaults (no model name hardcoded in code).
-> ✅ **Zero hardcoded escalation data** — the 181/1098/112 safety-gate message now reads its numbers from `mcp/helpline_directory/data/helplines.yaml` (previously a hardcoded dict in `guardrails/safety.py`).
+> ✅ **Language Layer** — `FreeProvider`: faster-whisper ASR (model cached per-process, `WHISPER_MODEL_SIZE=small` default — "base" garbles Hindi; script-anchoring initial_prompts keep Devanagari output) + deep-translator NMT + edge-tts TTS. 10 Indian languages. Zero keys needed.
+> ✅ **Voice + Text API** — FastAPI `/chat`, `/voice`, `/health` live. `/warmup` preloads KB + both LLM clients + ASR + TTS — **always run it before a demo** (start_demo.ps1 does).
+> ✅ **Real specialist agents** — Poshan/Vatsalya/Shakti/General call MCP tools for VERIFIED FACTS and retrieve official KB passages, then an LLM synthesizes a grounded, cited answer from them (never inventing amounts/rules). No LLM key → deterministic tool-composed fallback. Mocks kept only for tests.
+> ✅ **Multi-provider LLM** — `LLM_PROVIDER=auto` resolves Azure OpenAI, Anthropic or OpenAI from whichever key is set in `.env`; model names are env-driven with per-provider defaults.
+> ✅ **Web app (Next.js 14, apps/web)** — chat (text + voice-avatar modes), analytics dashboard, tool explorer, system panel, email/password auth (JWT + refresh rotation). The Next dev server proxies API paths to the backend (next.config.mjs rewrites). Voice avatar records in the browser and round-trips `POST /voice` — ASR/TTS run **server-side**; no in-browser Whisper (that stack was removed: the ~200 MB model download bricked the mic when it failed, and browser speechSynthesis had no Hindi voice on most machines).
+> ✅ **One-command demo startup** — `powershell -File scripts\start_demo.ps1` (backend → health-wait → warmup → frontend).
+> ✅ **Zero hardcoded escalation data** — the 181/1098/112 safety-gate message reads its numbers from `mcp/helpline_directory/data/helplines.yaml`.
 >
-> Next: WhatsApp webhook, Web UI + analytics dashboard, Redis/Postgres persistence.
+> ❌ Not built: WhatsApp webhook (Journeys 1/3 run on web, not WhatsApp) · password-reset backend (`/forgot-password` page is a UI stub that calls nothing) · Redis/Postgres session persistence (MemorySaver + SQLite auth) · WebSocket streaming · synthetic personas · `rag/eval/gold.jsonl`.
 
 ## Non-Negotiable Principles
 1. **Grounding over fluency** — every scheme fact must cite an official source. Never invent benefit amounts or eligibility rules.
@@ -34,7 +36,7 @@ Presented by **Uneecops Technologies**. Demo must be leadership-ready — polish
 | Shakti Agent | Mission Shakti (women safety) | HIGH — distress → 181 / 112 + nearest OSC |
 
 ## 4 Demo Journeys (Script These First)
-1. Pregnant woman asks about nutrition in Hindi **by voice** on WhatsApp
+1. Pregn ant woman asks about nutrition in Hindi **by voice** on WhatsApp
 2. Parent worried child isn't hitting growth milestones
 3. Woman seeking safety/helpline support → routed to 181 + nearest OSC
 4. Citizen discovers PMMVY eligibility → Ministry analytics dashboard flip
@@ -48,6 +50,7 @@ Presented by **Uneecops Technologies**. Demo must be leadership-ready — polish
 - [`dev/tech-stack.md`](dev/tech-stack.md) — Technology decisions & rationale
 - [`dev/guardrails.md`](dev/guardrails.md) — Safety, grounding, escalation rules
 - [`dev/api-integrations.md`](dev/api-integrations.md) — Bhashini, WhatsApp, geo APIs
+- [`dev/whatsapp-integration-plan.md`](dev/whatsapp-integration-plan.md) — **Zero-cost WhatsApp rollout plan (not yet started)**
 - [`dev/roadmap.md`](dev/roadmap.md) — Phased build plan
 - [`demo/journeys.md`](demo/journeys.md) — Scripted demo scenarios & personas
 - [`dev/orchestrator-build.md`](dev/orchestrator-build.md) — **Phase 1 orchestrator build: file map, run, contract**
@@ -56,16 +59,20 @@ Presented by **Uneecops Technologies**. Demo must be leadership-ready — polish
 ```
 ai-saheli/
   apps/
-    backend/            # FastAPI: /chat ✅ /voice ✅ /health ✅ /meta ✅ /helplines ✅
-      main.py           #   /tools/* ✅ /analytics/* ✅ — /whatsapp-webhook ❌
-      config.py         # pydantic-settings (env vars, multi-provider LLM)
+    backend/            # FastAPI: /chat ✅ /voice ✅ /health ✅ /warmup ✅ /meta ✅
+      main.py           #   /helplines ✅ /tools/* ✅ /analytics/* ✅ /auth/* ✅
+      config.py         # pydantic-settings (env vars, multi-provider LLM, KB_RERANK)
       dashboard.py      # ✅ dashboard/tools/analytics API (UI is 100% data-driven)
-    web/
-      static/           # ✅ web UI — chat (text+voice), analytics dashboard, tool
-                        #   explorer, system panel. Self-contained HTML/JS/CSS served
-                        #   by FastAPI at "/" (no Node/build step — decision: demo
-                        #   robustness on a machine without Node; Next.js stays the
-                        #   production path)
+      auth/             # ✅ email/password JWT auth (signup/login/refresh/logout/me)
+    web/                # ✅ Next.js 14 app (THE web UI — port 3000, proxies API → :8000)
+      app/page.tsx      #   chat: text mode + voice-avatar mode (records → POST /voice)
+      app/dashboard/    #   Ministry analytics dashboard (login-walled)
+      app/tools/        #   tool explorer: KB search, eligibility form (generated from
+                        #     the backend's Pydantic JSON Schema), geo locator, helplines
+      app/system/       #   system panel: health, LLM config, capability cards, languages
+      app/login|signup|forgot-password/   # auth pages (forgot-password = UI stub, no backend)
+      static/           # ⚠️ LEGACY pre-Next.js static UI — no longer served by anything;
+                        #   kept only as reference, do not extend
 
   agents/
     orchestrator/       # ✅ LangGraph supervisor

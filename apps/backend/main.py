@@ -185,6 +185,23 @@ async def _translated_turn(
     return state, localized, degraded
 
 
+def _silent_wav_base64(seconds: float = 0.4, rate: int = 16_000) -> str:
+    """A tiny in-memory silent WAV — used only to force faster-whisper to load."""
+    import io as _io
+    import struct
+    import wave
+
+    buf = _io.BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(rate)
+        w.writeframes(struct.pack(f"<{int(rate * seconds)}h", *([0] * int(rate * seconds))))
+    import base64 as _b64
+
+    return _b64.b64encode(buf.getvalue()).decode()
+
+
 @app.post("/warmup")
 async def warmup() -> dict:
     """Preload the KB reranker + embedder AND pay the first-LLM-call tax.
@@ -227,6 +244,22 @@ async def warmup() -> dict:
                 result[f"{key}_error"] = str(e)
     else:
         result["llm"] = "offline"
+
+    # Voice pipeline — first transcribe() constructs the faster-whisper model
+    # (~150 MB download on the first-ever run) and first synthesize() opens
+    # the edge-tts connection. Pay both here so the first live voice turn in
+    # the demo is fast instead of eating a cold model load.
+    provider: LanguageProvider = app.state.language
+    try:
+        await provider.transcribe(_silent_wav_base64(), "hi")
+        result["asr"] = "ready"
+    except Exception as e:
+        result["asr_error"] = str(e)
+    try:
+        audio = await provider.synthesize("नमस्ते", "hi")
+        result["tts"] = "ready" if audio else "empty"
+    except Exception as e:
+        result["tts_error"] = str(e)
 
     result["took_ms"] = round((time.perf_counter() - start) * 1000, 1)
     return result

@@ -74,6 +74,16 @@ class Settings(BaseSettings):
     kb_citation_timeout_seconds: float = 15.0
     # How many KB passages a specialist retrieves for answer synthesis.
     kb_synthesis_k: int = 6
+    # Cross-encoder reranking of KB candidates. The bge-reranker-v2-m3 forward
+    # pass runs synchronously on the event loop (see mcp/knowledge_base/tool.py)
+    # at ~2s PER CANDIDATE on a laptop CPU — 50 candidates measured 104s/query
+    # on the demo machine, freezing every concurrent request. Hybrid RRF alone
+    # answers in ~0.3s with the same top-6 document set, so rerank is OFF by
+    # default; enable on GPU/server hardware where it costs milliseconds.
+    kb_rerank: bool = False
+    # Candidate pool when reranking is enabled (was 50; 12 keeps the same
+    # top-6 docs at a quarter of the cost — measured on the demo corpus).
+    kb_rerank_candidates: int = 12
     # Inner LLM budget for grounded answer synthesis. Distinct from the outer
     # specialist wait_for so a stalled endpoint degrades to the deterministic
     # fallback (composed from verified tool facts + citation hint) rather

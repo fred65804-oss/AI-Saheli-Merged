@@ -198,18 +198,29 @@ class OrchestratorNodes:
 
     # ----------------------------------------------------------------- route
     async def route(self, state: AgentState) -> dict:
+        message = state.get("user_message", "")
         with Stopwatch() as sw:
             decision = await self.router.route(
-                state.get("user_message", ""),
+                message,
                 conversation_summary=state.get("conversation_summary", ""),
             )
-        collected = slots.merge_slots(
-            state.get("collected_facts", {}), decision.extracted_slots
-        )
         routable = (
             decision.intent != UNCLEAR
             and decision.confidence >= self.settings.router_confidence_threshold
         )
+
+        # Fold in what the citizen ALREADY told us, so slot_check never asks a
+        # question the opening message answered ("a plan for my 5-month-old" →
+        # beneficiary_type=child). The router's LLM extraction is validated
+        # against the card (it can hallucinate keys/enum values), then any
+        # required slot it missed is backfilled deterministically.
+        extracted = dict(decision.extracted_slots or {})
+        card = get_card(decision.intent) if routable else None
+        if card is not None:
+            extracted = slots.coerce_card_slots(card, extracted)
+            for name, value in slots.extract_stated_slots(card, message).items():
+                extracted.setdefault(name, value)
+        collected = slots.merge_slots(state.get("collected_facts", {}), extracted)
         return {
             "intent": decision.intent if routable else None,
             "confidence": decision.confidence,

@@ -71,14 +71,25 @@
 ---
 
 ## Phase 4 — Dashboard + Polish
-**Status: 🔄 IN PROGRESS — web UI + analytics dashboard BUILT**
+**Status: 🔄 IN PROGRESS — Next.js web app BUILT (chat, voice avatar, analytics, tools, system)**
 
-> Stack decision: built as a **self-contained static app served by FastAPI at `/`**
-> (apps/web/static — no Node/build step; Node isn't installed on the demo machine
-> and one server = fewer demo-day moving parts). Next.js remains the production path.
+> Stack decision (SUPERSEDED, then superseded again): originally a static app served
+> by FastAPI at `/`; the project has since **migrated to Next.js 14** (`apps/web`) —
+> Node IS on the demo machine. The Next dev server proxies API paths to the backend
+> (next.config.mjs rewrites), so the whole app is one origin. The old static UI
+> survives at `apps/web/static/` as unused legacy reference only.
 > The UI is 100% data-driven: languages, scheme cards, enum choices, the eligibility
 > form (generated from the backend's JSON Schema), helplines and all analytics come
 > from APIs — nothing hardcoded in the frontend.
+>
+> **Voice architecture (fixed 2026-07-13):** the first Next.js voice implementation ran
+> Whisper **in the browser** (transformers.js, ~200 MB download) + browser speechSynthesis
+> for TTS — it bricked when the model download failed and had no Hindi voice on most
+> Windows machines. Voice now round-trips `POST /voice`: server-side faster-whisper ASR
+> (`WHISPER_MODEL_SIZE=small`, script-anchored Devanagari) + edge-tts (hi-IN-SwaraNeural).
+> **KB rerank OFF by default** (`KB_RERANK` env): the cross-encoder measured ~2s/candidate
+> on the demo CPU (104s/query), so grounded answers now use hybrid RRF (~0.3s retrieval;
+> grounded voice turn ≈ 12s end-to-end).
 
 - [x] Analytics dashboard (`/` → Dashboard tab; APIs: `/analytics/summary`, `/analytics/recent`)
   - [x] KPI stat tiles: turns, sessions, escalations + rate, grounding rate, avg latency, slot questions, fallbacks
@@ -90,9 +101,13 @@
   - [x] MCP tool-call usage
   - [x] Real-time query feed reading `logs/interactions.jsonl` (auto-refresh, window filter)
   - [x] Table-view twin on every chart (accessibility)
-- [x] "AI Saheli" chat UI — text + voice (MediaRecorder → `/voice` → TTS audio replies), language picker (11 languages from `/meta`), citations, escalation banner, intent chips, dynamic-questioning display
-- [x] Tool explorer — live KB search, eligibility checker (form generated from Pydantic JSON Schema), helpline directory, facility locator
-- [x] System panel — runtime health, provider/model, registered capability cards
+- [x] "AI Saheli" chat UI — text mode + voice-avatar mode (MediaRecorder → WAV → `/voice` → edge-tts MP3 replies, auto-listen loop), language picker (11 languages from `/meta`), citations, escalation banner, intent chips, dynamic-questioning display
+- [x] Tool explorer (`/tools`, login-walled) — live KB search, eligibility checker (form generated from Pydantic JSON Schema), helpline directory, facility locator
+- [x] System panel (`/system`) — runtime health, provider/model, registered capability cards, languages
+- [x] Auth — email/password signup/login, JWT access + rotated refresh tokens; analytics + tools behind login
+- [x] One-command demo startup: `scripts/start_demo.ps1` (backend → health-wait → `/warmup` → frontend)
+- [ ] Password reset — `/forgot-password` page is a UI stub; no backend endpoint or email delivery exists
+- [ ] Restore `rag/eval/gold.jsonl` (missing — retrieval eval harness cannot run)
 - [ ] WebSocket streaming for token-by-token responses in web app
 - [ ] Redis session persistence (replace MemorySaver)
 - [ ] Load 4 synthetic personas (Sunita, Kavitha, Meena, Rajesh)
@@ -111,7 +126,7 @@ Sunita: [Hindi voice note] "Mujhe pregnancy mein kya khana chahiye?"
 AI: [Hindi voice reply] Tailored nutrition advice for 2nd trimester
     + cite Poshan 2.0 guideline + nearest AWC in Varanasi
 ```
-**Status:** Orchestrator + voice endpoint ✅ | Real Poshan agent ✅ | WhatsApp ❌
+**Status:** Orchestrator + voice endpoint ✅ | Real Poshan agent ✅ | Web voice-avatar E2E verified (Hindi in → grounded cited answer + Hindi TTS out, ~12s) ✅ | WhatsApp ❌ (runs on web instead)
 
 ### Journey 2 — Child Growth Milestone 📊
 **Persona:** Kavitha, Tamil-speaking mother, 14-month-old child, Madurai
@@ -137,7 +152,7 @@ Sunita: "Kya mujhe PMMVY ka labh mil sakta hai?"
 AI: Eligibility confirmed → ₹5,000 in 3 instalments → how to apply → CDO office
 [Presenter flips to Ministry dashboard showing all 4 journeys' analytics]
 ```
-**Status:** Eligibility rules ✅ | Real Shakti agent ✅ | Dashboard ❌
+**Status:** Eligibility rules ✅ | Real Shakti agent ✅ | Dashboard ✅ (Next.js `/dashboard`, login-walled)
 
 ---
 

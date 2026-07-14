@@ -7,10 +7,8 @@ import {
   BookOpen,
   Baby,
   HeartHandshake,
-  Phone,
   Send,
   ShieldAlert,
-  Sparkles,
   Utensils,
   ArrowLeft,
   LoaderCircle,
@@ -22,9 +20,16 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { getMeta, postChat, type ChatResponse, type Citation, type LanguageMeta } from "@/lib/api";
+import {
+  getMeta,
+  postChat,
+  postVoice,
+  type ChatResponse,
+  type Citation,
+  type LanguageMeta,
+} from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 type Turn =
@@ -42,14 +47,8 @@ type Turn =
     };
 
 type ChatMode = "text" | "avatar";
-type VoiceStatus = "loading" | "ready" | "recording" | "transcribing" | "error";
-
-const WHISPER_LANGS: Record<string, string> = {
-  en: "english",
-  hi: "hindi",
-  ta: "tamil",
-  bn: "bengali",
-};
+// "processing" covers the full backend round trip: ASR → orchestrator → TTS.
+type VoiceStatus = "ready" | "recording" | "processing" | "error";
 
 // Fallback shown while /meta loads (or if it's unreachable) — English only,
 // never the source of truth. The real list (all Indian languages the
@@ -109,24 +108,22 @@ function fmtTime(ts: number) {
   });
 }
 
-async function decodeTo16Khz(blob: Blob) {
-  const audioContext = new AudioContext();
-  try {
-    const decoded = await audioContext.decodeAudioData(await blob.arrayBuffer());
-    const offline = new OfflineAudioContext(
-      1,
-      Math.ceil(decoded.duration * 16_000),
-      16_000
-    );
-    const source = offline.createBufferSource();
-    source.buffer = decoded;
-    source.connect(offline.destination);
-    source.start();
-    const rendered = await offline.startRendering();
-    return new Float32Array(rendered.getChannelData(0));
-  } finally {
-    await audioContext.close();
-  }
+// Base64-encode the raw recorded blob as-is (webm/opus straight from
+// MediaRecorder). The backend hands the bytes to faster-whisper, which
+// decodes any container/codec via ffmpeg — so we do NOT decode, resample,
+// or re-encode in the browser. That old client-side pipeline
+// (decodeAudioData → OfflineAudioContext → manual WAV) was fragile and
+// could emit silent audio on some browsers; sending the original recording
+// is both simpler and what actually made speech reach Whisper.
+async function blobToBase64(blob: Blob): Promise<string> {
+  const dataUrl: string = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+  // strip the "data:audio/webm;base64," prefix
+  return dataUrl.slice(dataUrl.indexOf(",") + 1);
 }
 
 export default function ChatPage() {
@@ -139,11 +136,10 @@ export default function ChatPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [speakingTurnTs, setSpeakingTurnTs] = useState<number | null>(null);
-  const [voiceStatus, setVoiceStatus] = useState<VoiceStatus>("loading");
-  const [voiceDetail, setVoiceDetail] = useState("Preparing private speech recognition…");
-  const [pendingTranscript, setPendingTranscript] = useState("");
+  const [voiceStatus, setVoiceStatus] = useState<VoiceStatus>("ready");
+  const [voiceDetail, setVoiceDetail] = useState("Tap the microphone and start speaking");
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const whisperWorkerRef = useRef<Worker | null>(null);
+  const replyAudioRef = useRef<HTMLAudioElement | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const captureContextRef = useRef<AudioContext | null>(null);
@@ -177,6 +173,8 @@ export default function ChatPage() {
 
   const stopSpeaking = () => {
     window.speechSynthesis?.cancel();
+    replyAudioRef.current?.pause();
+    replyAudioRef.current = null;
     setSpeakingTurnTs(null);
   };
 
@@ -190,7 +188,7 @@ export default function ChatPage() {
 
     const recorder = mediaRecorderRef.current;
     if (recorder?.state === "recording") {
-      setVoiceStatus("transcribing");
+      setVoiceStatus("processing");
       setVoiceDetail("Understanding what you said…");
       recorder.stop();
     }
@@ -201,7 +199,8 @@ export default function ChatPage() {
       mode !== "avatar" ||
       busy ||
       speakingTurnTs !== null ||
-      voiceStatus !== "ready"
+      // "error" is retryable — a denied mic prompt must not brick the button.
+      (voiceStatus !== "ready" && voiceStatus !== "error")
     ) {
       return;
     }
@@ -228,18 +227,20 @@ export default function ChatPage() {
       recorder.onstop = async () => {
         try {
           const blob = new Blob(audioChunksRef.current, { type: recorder.mimeType });
-          const audio = await decodeTo16Khz(blob);
-          whisperWorkerRef.current?.postMessage(
-            {
-              type: "transcribe",
-              audio,
-              language: WHISPER_LANGS[lang] || "english",
-            },
-            [audio.buffer]
-          );
+          if (blob.size < 1200) {
+            // Nothing meaningful captured (mic muted / stopped instantly).
+            setVoiceStatus("ready");
+            setVoiceDetail("I didn't catch any audio — tap the microphone and speak.");
+            return;
+          }
+          await sendVoice(await blobToBase64(blob));
         } catch (cause) {
-          setVoiceStatus("error");
-          setVoiceDetail(cause instanceof Error ? cause.message : "Could not process microphone audio");
+          setVoiceStatus("ready");
+          setVoiceDetail(
+            cause instanceof Error
+              ? cause.message
+              : "Could not process microphone audio — tap the mic to try again"
+          );
         }
       };
       recorder.start(250);
@@ -324,6 +325,79 @@ export default function ChatPage() {
     window.speechSynthesis.speak(utterance);
   };
 
+  // Play the edge-tts MP3 the backend returned (near-human Indian-language
+  // voices, rendered server-side — no dependency on browser voice packs).
+  const playReply = (b64: string, turnTs: number) => {
+    stopSpeaking();
+    const audio = new Audio(`data:audio/mp3;base64,${b64}`);
+    replyAudioRef.current = audio;
+    audio.onplay = () => setSpeakingTurnTs(turnTs);
+    const finish = () => {
+      setSpeakingTurnTs(null);
+      if (replyAudioRef.current === audio) replyAudioRef.current = null;
+      if (shouldAutoListenRef.current) {
+        window.setTimeout(() => startRecordingRef.current(), 250);
+      }
+    };
+    audio.onended = finish;
+    audio.onerror = finish;
+    void audio.play().catch(finish);
+  };
+
+  // One full voice turn through the backend: WAV → faster-whisper ASR →
+  // orchestrator → NMT → edge-tts → MP3 reply. The browser only records
+  // and plays audio; no speech model ever downloads into the page.
+  const sendVoice = async (audioBase64: string) => {
+    if (!sessionId) return;
+    stopSpeaking();
+    setError(null);
+    setBusy(true);
+    setVoiceStatus("processing");
+    setVoiceDetail("Understanding what you said…");
+    try {
+      const r = await postVoice({
+        session_id: sessionId,
+        audio_base64: audioBase64,
+        lang,
+      });
+      const now = Date.now();
+      const responseTs = now + 1;
+      setTurns((t) => [
+        ...t,
+        { role: "user", text: r.transcript, ts: now },
+        {
+          role: "assistant",
+          text: r.response || "(no response)",
+          ts: responseTs,
+          intent: r.intent,
+          confidence: r.confidence,
+          escalation: r.escalation,
+          awaiting_input: r.awaiting_input,
+          citations: r.citations || [],
+          trace_id: r.trace_id,
+        },
+      ]);
+      setVoiceStatus("ready");
+      setVoiceDetail("Tap the microphone and start speaking");
+      if (r.audio_base64) {
+        playReply(r.audio_base64, responseTs);
+      } else {
+        // Server TTS degraded — browser voice keeps the avatar speaking.
+        speakResponse(r.response, responseTs);
+      }
+    } catch (e) {
+      // 422 = "couldn't hear speech" — the backend message is user-facing.
+      setVoiceStatus("ready");
+      setVoiceDetail(
+        e instanceof Error && e.message
+          ? e.message
+          : "Something went wrong — tap the microphone to try again."
+      );
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const send = async (raw?: string) => {
     const text = (raw ?? input).trim();
     if (!text || busy || !sessionId) return;
@@ -365,70 +439,23 @@ export default function ChatPage() {
   useEffect(() => {
     if (mode !== "avatar") return;
 
-    setVoiceStatus("loading");
-    setVoiceDetail("Downloading Whisper for private speech recognition…");
-    const worker = new Worker(new URL("./whisper.worker.ts", import.meta.url), {
-      type: "module",
-    });
-    whisperWorkerRef.current = worker;
-
-    worker.onmessage = (event) => {
-      const message = event.data as {
-        type: string;
-        text?: string;
-        message?: string;
-        progress?: { status?: string; progress?: number; file?: string };
-      };
-
-      if (message.type === "progress" && message.progress?.status === "progress") {
-        const percent = Math.round(message.progress.progress || 0);
-        setVoiceDetail(`Preparing Whisper… ${percent}%`);
-      } else if (message.type === "notice" && message.message) {
-        setVoiceDetail(message.message);
-      } else if (message.type === "ready") {
-        setVoiceStatus("ready");
-        setVoiceDetail("Tap the microphone and start speaking");
-      } else if (message.type === "result") {
-        const transcript = message.text?.trim() || "";
-        setVoiceStatus("ready");
-        if (transcript) {
-          setVoiceDetail("Sending your question…");
-          setPendingTranscript(transcript);
-        } else {
-          setVoiceDetail("I could not hear that. Tap the microphone to try again.");
-        }
-      } else if (message.type === "error") {
-        setVoiceStatus("error");
-        setVoiceDetail(message.message || "Whisper speech recognition failed");
-      }
-    };
-    worker.onerror = () => {
-      setVoiceStatus("error");
-      setVoiceDetail("Whisper could not start in this browser");
-    };
-    worker.postMessage({ type: "load" });
+    // Speech recognition + TTS run server-side (/voice) — nothing to
+    // download here; the mic is ready immediately.
+    setVoiceStatus("ready");
+    setVoiceDetail("Tap the microphone and start speaking");
 
     return () => {
-      worker.terminate();
-      whisperWorkerRef.current = null;
       if (vadFrameRef.current !== null) cancelAnimationFrame(vadFrameRef.current);
       void captureContextRef.current?.close();
       captureContextRef.current = null;
-      mediaRecorderRef.current?.state === "recording" && mediaRecorderRef.current.stop();
+      if (mediaRecorderRef.current?.state === "recording") mediaRecorderRef.current.stop();
       mediaStreamRef.current?.getTracks().forEach((track) => track.stop());
       mediaStreamRef.current = null;
       shouldAutoListenRef.current = false;
+      replyAudioRef.current?.pause();
+      replyAudioRef.current = null;
     };
   }, [mode]);
-
-  useEffect(() => {
-    if (!pendingTranscript) return;
-    const transcript = pendingTranscript;
-    setPendingTranscript("");
-    void send(transcript);
-    // `send` intentionally uses the current chat session and selected language.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pendingTranscript]);
 
   const resetSession = () => {
     stopSpeaking();
@@ -500,13 +527,7 @@ export default function ChatPage() {
             <Button
               type="button"
               onClick={voiceStatus === "recording" ? stopRecording : startRecording}
-              disabled={
-                busy ||
-                speakingTurnTs !== null ||
-                voiceStatus === "loading" ||
-                voiceStatus === "transcribing" ||
-                voiceStatus === "error"
-              }
+              disabled={busy || speakingTurnTs !== null || voiceStatus === "processing"}
               className={cn(
                 "h-14 min-w-48 rounded-full px-7 text-base shadow-lg",
                 voiceStatus === "recording"
@@ -514,19 +535,19 @@ export default function ChatPage() {
                   : "gradient-ministry"
               )}
             >
-              {voiceStatus === "loading" || voiceStatus === "transcribing" ? (
+              {voiceStatus === "processing" ? (
                 <LoaderCircle className="h-5 w-5 animate-spin" />
               ) : voiceStatus === "recording" ? (
                 <Square className="h-4 w-4 fill-current" />
               ) : (
                 <Mic className="h-5 w-5" />
               )}
-              {voiceStatus === "loading"
-                ? "Loading voice"
-                : voiceStatus === "transcribing"
-                  ? "Understanding"
-                  : voiceStatus === "recording"
-                    ? "Stop speaking"
+              {voiceStatus === "processing"
+                ? "Understanding"
+                : voiceStatus === "recording"
+                  ? "Stop speaking"
+                  : voiceStatus === "error"
+                    ? "Try again"
                     : "Start speaking"}
             </Button>
           </div>
@@ -537,7 +558,7 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
+    <div className="mx-auto w-full max-w-4xl">
       <Card className="flex flex-col h-[calc(100vh-11rem)] overflow-hidden p-0">
         <div className="flex items-center justify-between border-b border-white/60 px-5 py-3 bg-gradient-to-r from-white/80 to-ministry-soft/40">
           <div className="flex items-center gap-3">
@@ -643,18 +664,6 @@ export default function ChatPage() {
           </div>
         )}
       </Card>
-
-      <aside className="space-y-4">
-        <QuickStarters
-          starters={JOURNEY_STARTERS}
-          onPick={(t, l) => {
-            setLang(l);
-            send(t);
-          }}
-        />
-        <InfoCard />
-        <HelplineStrip />
-      </aside>
     </div>
   );
 }
@@ -670,7 +679,7 @@ function ModePicker({ onChoose }: { onChoose: (mode: ChatMode) => void }) {
     {
       id: "avatar" as const,
       title: "Voice avatar",
-      description: "Speak naturally while AI Saheli listens locally and answers through the avatar.",
+      description: "Speak naturally in your language — AI Saheli listens and answers aloud through the avatar.",
       icon: UserRound,
     },
   ];
@@ -902,111 +911,6 @@ function SaheliAvatar({
           speaking && "avatar-speaking-frame"
         )}
       />
-    </div>
-  );
-}
-
-function QuickStarters({
-  starters,
-  onPick,
-}: {
-  starters: typeof JOURNEY_STARTERS;
-  onPick: (text: string, lang: string) => void;
-}) {
-  return (
-    <Card>
-      <CardContent className="pt-5">
-        <div className="flex items-center gap-2 mb-3">
-          <Sparkles className="h-4 w-4 text-ministry" />
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Demo journeys
-          </div>
-        </div>
-        <ul className="space-y-2">
-          {starters.map((s) => {
-            const Icon = s.icon;
-            return (
-              <li key={s.text}>
-                <button
-                  onClick={() => onPick(s.text, s.lang)}
-                  className="w-full text-left rounded-lg border border-white/70 bg-white/60 hover:bg-white hover:border-ministry hover:shadow-md px-3 py-2 transition-all group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div
-                      className={cn(
-                        "h-7 w-7 rounded-md grid place-items-center bg-gradient-to-br text-white",
-                        s.color
-                      )}
-                    >
-                      <Icon className="h-3.5 w-3.5" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-sm font-medium">{s.label}</div>
-                      <div className="text-[11px] text-muted-foreground truncate">
-                        {s.text}
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </CardContent>
-    </Card>
-  );
-}
-
-function InfoCard() {
-  const steps = [
-    "Safety gate runs first — non-bypassable",
-    "Router picks the right scheme agent",
-    "Specialist calls MCP tools + grounded RAG",
-    "Every reply carries authoritative citations",
-  ];
-  return (
-    <Card>
-      <CardContent className="pt-5">
-        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
-          How it works
-        </div>
-        <ol className="space-y-2.5">
-          {steps.map((s, i) => (
-            <li key={s} className="flex gap-2.5 text-sm">
-              <span className="flex-shrink-0 h-5 w-5 rounded-full gradient-ministry text-white text-[10px] font-bold grid place-items-center">
-                {i + 1}
-              </span>
-              <span className="text-muted-foreground leading-snug">{s}</span>
-            </li>
-          ))}
-        </ol>
-      </CardContent>
-    </Card>
-  );
-}
-
-function HelplineStrip() {
-  const lines = [
-    { label: "CHILDLINE", num: "1098" },
-    { label: "Women Helpline", num: "181" },
-    { label: "Emergency", num: "112" },
-  ];
-  return (
-    <div className="rounded-xl bg-gradient-to-br from-accent/90 to-orange-600 text-white p-4 shadow-md">
-      <div className="flex items-center gap-2 mb-2">
-        <Phone className="h-4 w-4" />
-        <div className="text-[11px] font-semibold uppercase tracking-wider">
-          In an emergency
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-2">
-        {lines.map((l) => (
-          <div key={l.num} className="rounded-lg bg-white/15 backdrop-blur-sm px-2 py-2 text-center">
-            <div className="text-lg font-bold leading-none">{l.num}</div>
-            <div className="text-[10px] opacity-90 mt-1">{l.label}</div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

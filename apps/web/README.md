@@ -19,11 +19,15 @@ The web app reads `NEXT_PUBLIC_API_BASE` (default `http://127.0.0.1:8000`).
 Override in `.env.local` if the backend runs elsewhere.
 
 ## Pages
-- `/` — chat UI (calls `POST /chat`, threads state via a per-session id).
-- `/dashboard` — analytics (calls `GET /dashboard/stats` + `GET /dashboard/recent`).
+- `/` — chat UI: text mode + voice-avatar mode (calls `POST /chat` / `POST /voice`, threads state via a per-session id).
+- `/dashboard` — analytics, login-walled (calls `GET /analytics/summary` + `GET /analytics/recent`).
+- `/tools` — tool explorer, login-walled (KB search, eligibility, geo locator, helplines).
+- `/system` — system panel (health, LLM config, capability cards, languages).
+- `/login`, `/signup`, `/forgot-password` — auth pages (`forgot-password` is a UI stub, no backend endpoint).
 
 ## Routes it depends on (backend)
-- `POST /chat`
-- `GET /dashboard/stats`
-- `GET /dashboard/recent`
-- `GET /health`
+- `POST /chat`, `POST /voice`
+- `GET /meta`, `GET /helplines`, `GET /health`
+- `GET /analytics/summary`, `GET /analytics/recent`
+- `POST /tools/kb-search`, `POST /tools/eligibility`, `POST /tools/geo`, `POST /tools/helpline`
+- `POST /auth/signup`, `POST /auth/login`, `POST /auth/refresh`, `POST /auth/logout`, `GET /auth/me`

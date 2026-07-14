@@ -35,6 +35,51 @@ export async function postChat(input: {
 }
 
 // --------------------------------------------------------------------------- //
+// Voice — one full voice turn through the backend pipeline:
+// audio → faster-whisper ASR → orchestrator → NMT → edge-tts → audio.
+// The browser only records and plays; all speech models run server-side
+// (no in-browser model downloads, near-human Hindi TTS via edge-tts).
+// --------------------------------------------------------------------------- //
+export type VoiceResponse = {
+  transcript: string;
+  response: string;
+  response_en: string;
+  audio_base64: string;
+  intent: string | null;
+  confidence: number | null;
+  escalation: boolean;
+  awaiting_input: boolean;
+  citations: Citation[];
+  trace_id: string;
+  degraded: boolean;
+};
+
+export async function postVoice(input: {
+  session_id: string;
+  audio_base64: string;
+  lang: string;
+  channel?: string;
+}): Promise<VoiceResponse> {
+  const r = await fetch(`${API_BASE}/voice`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ channel: "voice", ...input }),
+  });
+  if (!r.ok) {
+    // FastAPI errors carry {"detail": "..."} — surface the human-readable
+    // message (e.g. "Could not hear any speech in that recording…").
+    let detail = "";
+    try {
+      detail = (await r.json())?.detail ?? "";
+    } catch {
+      /* non-JSON body */
+    }
+    throw new Error(detail || `voice ${r.status}`);
+  }
+  return r.json();
+}
+
+// --------------------------------------------------------------------------- //
 // Meta — languages, scheme cards, enums. Nothing about schemes/languages is
 // hardcoded in the UI; it all comes from here (same source the orchestrator
 // and router use).
@@ -53,11 +98,158 @@ export type AppMeta = {
   languages: LanguageMeta[];
   cards: CapabilityCard[];
   enums: Record<string, string[]>;
+  // Pydantic model_json_schema() of EligibilityRequest — drives the dynamic
+  // eligibility form (fields, types, enum choices come from the SAME model
+  // the rules engine validates against).
+  eligibility_schema: Record<string, unknown>;
 };
 
 export async function getMeta(): Promise<AppMeta> {
   const r = await authFetch(`/meta`, { cache: "no-store" });
   if (!r.ok) throw new Error(`meta ${r.status}`);
+  return r.json();
+}
+
+export type HealthInfo = {
+  status: string;
+  llm: string;
+  provider: string;
+  model: string;
+  language: string;
+};
+
+export async function getHealth(): Promise<HealthInfo> {
+  const r = await fetch(`${API_BASE}/health`, { cache: "no-store" });
+  if (!r.ok) throw new Error(`health ${r.status}`);
+  return r.json();
+}
+
+// --------------------------------------------------------------------------- //
+// Tool passthroughs — the Ministry-internal tool explorer. All of these are
+// login-walled on the backend (mounted behind get_current_user), hence
+// authFetch. Shapes mirror the mcp/* Pydantic schemas exactly.
+// --------------------------------------------------------------------------- //
+export type KBChunk = {
+  text: string;
+  scheme: string;
+  doc: string;
+  heading_path_str: string;
+  page_start: number | null;
+  page_end: number | null;
+  chunk_id: string | null;
+  score: number;
+  citation: string;
+};
+
+export async function toolKbSearch(input: {
+  query: string;
+  scheme?: string | null;
+  k?: number;
+}): Promise<{ chunks: KBChunk[]; latency_ms: number }> {
+  const r = await authFetch(`/tools/kb-search`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!r.ok) throw new Error(`kb-search ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+export type RuleResult = {
+  scheme: string;
+  eligible: boolean | null;
+  benefit_summary: string;
+  amount: string | null;
+  instalments: string | null;
+  reason: string;
+  needs: string[];
+  source_doc: string;
+  source_url: string;
+};
+
+export type EligibilityResult = {
+  eligible: RuleResult[];
+  ineligible: RuleResult[];
+  uncertain: RuleResult[];
+  checked_schemes: string[];
+  latency_ms: number;
+};
+
+export async function toolEligibility(
+  body: Record<string, unknown>
+): Promise<EligibilityResult> {
+  const r = await authFetch(`/tools/eligibility`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`eligibility ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+export type Facility = {
+  id: string;
+  name: string;
+  type: string;
+  district: string;
+  state: string;
+  address: string;
+  phone: string | null;
+  hours: string | null;
+  source: string;
+};
+
+export async function toolGeo(input: {
+  service_type: string;
+  district: string;
+  state?: string | null;
+  limit?: number;
+}): Promise<{
+  facilities: Facility[];
+  district_matched: string | null;
+  count: number;
+  note: string | null;
+  latency_ms: number;
+}> {
+  const r = await authFetch(`/tools/geo`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!r.ok) throw new Error(`geo ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+export type HelplineEntry = {
+  id: string;
+  name: string;
+  number: string | null;
+  categories: string[];
+  when_to_call: string;
+  hours: string | null;
+  languages: string[];
+  scheme: string | null;
+  priority: number;
+  source_url: string;
+  escalation_note: string | null;
+};
+
+export async function toolHelpline(input: {
+  category: string;
+  lang?: string;
+  scheme?: string | null;
+}): Promise<{
+  primary: HelplineEntry;
+  secondary: HelplineEntry[];
+  escalation_note: string | null;
+  latency_ms: number;
+}> {
+  const r = await authFetch(`/tools/helpline`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  if (!r.ok) throw new Error(`helpline ${r.status}: ${await r.text()}`);
   return r.json();
 }
 

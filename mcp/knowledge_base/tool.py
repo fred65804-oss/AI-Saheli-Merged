@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import time
 
+from apps.backend.config import get_settings
 from mcp.knowledge_base.schemas import KBChunk, KBQueryRequest, KBQueryResponse
 from rag.retrieve import retrieve
 
@@ -33,7 +34,17 @@ from rag.retrieve import retrieve
 async def query_knowledge_base(request: KBQueryRequest) -> KBQueryResponse:
     start = time.perf_counter()
     scheme = request.scheme.value if request.scheme else None
-    results = retrieve(request.query, scheme, request.k)
+    # Rerank policy comes from Settings: OFF by default because the
+    # cross-encoder blocks the event loop for ~2s per candidate on CPU
+    # (see the kb_rerank comment in apps/backend/config.py for the numbers).
+    s = get_settings()
+    results = retrieve(
+        request.query,
+        scheme,
+        request.k,
+        prefetch=s.kb_rerank_candidates if s.kb_rerank else max(request.k * 4, 24),
+        rerank=s.kb_rerank,
+    )
     latency_ms = (time.perf_counter() - start) * 1000
     return KBQueryResponse(
         chunks=[KBChunk(**r) for r in results],

@@ -37,6 +37,31 @@ class RouterDecision(BaseModel):
     secondary_intents: list[str] = Field(default_factory=list)
 
 
+def _slot_catalogue(cards: list[AgentCapabilityCard]) -> str:
+    """The extractable facts, derived FROM the cards (never hardcoded).
+
+    Without this the router had no idea which slot names the specialists
+    actually require, so it never extracted them and the orchestrator asked a
+    question the citizen had already answered ("I need a plan for my 5-month-old"
+    → "is this for a pregnant woman, a new mother, or a child?").
+    """
+    lines: list[str] = []
+    seen: set[str] = set()
+    for c in cards:
+        for spec in list(c.required_slots) + list(c.optional_slots):
+            if spec.name in seen:
+                continue
+            seen.add(spec.name)
+            detail = f"  - {spec.name} ({spec.type}"
+            if spec.enum_values:
+                detail += f"; one of: {', '.join(spec.enum_values)}"
+            detail += ")"
+            if spec.required:
+                detail += "  [REQUIRED by " + c.scheme + " — extract it whenever the message implies it]"
+            lines.append(detail)
+    return "\n".join(lines)
+
+
 def build_router_system(cards: list[AgentCapabilityCard]) -> str:
     """Generate the router system prompt from the registered cards."""
     blocks = []
@@ -54,11 +79,19 @@ def build_router_system(cards: list[AgentCapabilityCard]) -> str:
         "child welfare assistant. Classify the citizen's message into exactly one "
         "specialist intent, or 'unclear' if it is too ambiguous to route.\n\n"
         f"Available intents:\n{catalogue}\n\n"
-        f"Return intent as one of: {ids}, unclear.\n"
-        "Also extract any useful facts present in the message into extracted_slots "
-        "(e.g. pregnancy_stage, child_age_months, district, child_order, "
-        "income_band). Give a calibrated confidence in [0,1]. If the message "
-        "mixes topics, pick the primary one and list others in secondary_intents.\n"
+        f"Return intent as one of: {ids}, unclear.\n\n"
+        "Then extract EVERY fact the message already states into extracted_slots, "
+        "using exactly these keys and (for enums) exactly these values:\n"
+        f"{_slot_catalogue(cards)}\n\n"
+        "Extraction rules — these prevent us asking the citizen something they "
+        "already told us:\n"
+        "  * 'my 5 month old' / 'my baby' / 'my son' → beneficiary_type=child "
+        "(and child_age_months=5 when an age is given).\n"
+        "  * 'I am pregnant' / 'pregnancy mein' → beneficiary_type=pregnant_woman.\n"
+        "  * 'I just delivered' / 'breastfeeding' → beneficiary_type=lactating_mother.\n"
+        "  * Only emit a key when the message genuinely supports it — never guess.\n\n"
+        "Give a calibrated confidence in [0,1]. If the message mixes topics, pick "
+        "the primary one and list others in secondary_intents.\n"
         "Messages may be in Hindi, English, or romanized Hinglish."
     )
 

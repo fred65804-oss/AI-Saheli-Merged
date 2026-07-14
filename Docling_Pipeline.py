@@ -89,7 +89,7 @@ def _page(item) -> Optional[int]:
         return None
     if isinstance(prov, list):
         if prov:
-            return getattr(prov[0], "page_no", None)
+            return getattr(prov[0], "page_no", None) 
         return None
     return getattr(prov, "page_no", None)
 

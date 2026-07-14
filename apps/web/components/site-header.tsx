@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { LogOut, MessageSquare, BarChart3 } from "lucide-react";
+import { LogOut, MessageSquare, BarChart3, Wrench, ServerCog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/auth-context";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 const NAV = [
   { href: "/", label: "Chat", icon: MessageSquare },
   { href: "/dashboard", label: "Analytics", icon: BarChart3 },
+  { href: "/tools", label: "Tools", icon: Wrench },
+  { href: "/system", label: "System", icon: ServerCog },
 ];
 
 export function SiteHeader() {
