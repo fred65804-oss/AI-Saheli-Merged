@@ -34,7 +34,7 @@ def _client() -> QdrantClient:
 def _reranker():
     from sentence_transformers import CrossEncoder
 
-    return CrossEncoder(RERANKER_MODEL)
+    return CrossEncoder(RERANKER_MODEL, local_files_only=True)
 
 
 def _scheme_filter(scheme: str | None):

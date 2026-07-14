@@ -44,6 +44,7 @@ from agents.specialists.base import (
 )
 from mcp.eligibility.schemas import (
     BeneficiaryType,
+    CasteCategory,
     EligibilityRequest,
     IncomeBand,
     RuleResult,
@@ -67,7 +68,13 @@ _PMMVY_HINTS = (
 # Facts that only exist because THIS agent's PMMVY branch asked for them —
 # their presence means we're mid-conversation on PMMVY, even if this turn's
 # message ("first child") carries no PMMVY keyword at all.
-_PMMVY_CONTINUATION_FACTS = ("child_order", "income_band", "second_child_is_girl")
+_PMMVY_CONTINUATION_FACTS = (
+    "child_order",
+    "income_band",
+    "caste_category",
+    "pmmvy_qualifier",
+    "second_child_is_girl",
+)
 
 # Slot-value translations: the orchestrator collects human-friendly enum
 # strings; the tools speak typed schema values.
@@ -77,6 +84,7 @@ _INCOME_BAND = {
     "below_threshold": IncomeBand.BPL,
     "above_threshold": IncomeBand.APL,
 }
+_CASTE_CATEGORY = {"sc": CasteCategory.SC, "st": CasteCategory.ST}
 # How to ask for each fact PMMVY's rules engine might report as missing.
 # income_band stands in for the socio-economic bucket (income/caste/NFSA) —
 # it is the single best question, and it already matches the card's own
@@ -86,6 +94,9 @@ _NEEDS_SLOT_SPECS: dict[str, dict] = {
     "second_child_is_girl": {"type": "bool", "enum_values": None},
     "income_band": {"type": "enum", "enum_values": ["bpl", "below_threshold", "above_threshold"]},
 }
+_PMMVY_QUALIFIER_VALUES = [
+    "sc", "st", "bpl", "nfsa", "disabled", "below_8_lakh", "above_8_lakh"
+]
 
 
 def _pick(results: list[RuleResult], scheme_contains: str) -> RuleResult | None:
@@ -98,11 +109,38 @@ def _pick(results: list[RuleResult], scheme_contains: str) -> RuleResult | None:
 def _pmmvy_slot_request(pmmvy: RuleResult) -> SlotRequest | None:
     if not pmmvy.needs:
         return None
+    socioeconomic_needs = {"annual_family_income", "caste_category", "income_band"}
+    if socioeconomic_needs.intersection(pmmvy.needs):
+        return SlotRequest(
+            name="pmmvy_qualifier",
+            reason=pmmvy.reason,
+            type="enum",
+            enum_values=_PMMVY_QUALIFIER_VALUES,
+        )
     name = "income_band" if "income_band" in pmmvy.needs else pmmvy.needs[0]
     spec = _NEEDS_SLOT_SPECS.get(name)
     if spec is None:
         return None
     return SlotRequest(name=name, reason=pmmvy.reason, type=spec["type"], enum_values=spec["enum_values"])
+
+
+def _pmmvy_socioeconomic_fields(facts: dict) -> dict:
+    """Map the broad conversational qualifier to typed PMMVY rule inputs."""
+    qualifier = str(facts.get("pmmvy_qualifier", "")).lower()
+    raw_caste = str(facts.get("caste_category", "")).lower()
+    return {
+        "income_band": _INCOME_BAND.get(str(facts.get("income_band", "")).lower())
+        or (IncomeBand.BPL if qualifier == "bpl" else None),
+        "caste_category": _CASTE_CATEGORY.get(qualifier)
+        or _CASTE_CATEGORY.get(raw_caste),
+        "nfsa_member": True if qualifier == "nfsa" else None,
+        "is_disabled": True if qualifier == "disabled" else None,
+        "annual_family_income": (
+            799_999 if qualifier == "below_8_lakh"
+            else 800_000 if qualifier == "above_8_lakh"
+            else None
+        ),
+    }
 
 
 class RealShaktiAgent(SpecialistAgent):
@@ -210,12 +248,16 @@ class RealShaktiAgent(SpecialistAgent):
         tool_calls = ["eligibility"]
 
         child_order = _CHILD_ORDER.get(str(facts.get("child_order", "")).lower())
-        income_band = _INCOME_BAND.get(str(facts.get("income_band", "")).lower())
+        socioeconomic = _pmmvy_socioeconomic_fields(facts)
         elig = await check_eligibility(
             EligibilityRequest(
                 beneficiary_type=BeneficiaryType.PREGNANT_WOMAN,
                 child_order=child_order,
-                income_band=income_band,
+                income_band=socioeconomic["income_band"],
+                caste_category=socioeconomic["caste_category"],
+                nfsa_member=socioeconomic["nfsa_member"],
+                is_disabled=socioeconomic["is_disabled"],
+                annual_family_income=socioeconomic["annual_family_income"],
                 second_child_is_girl=to_bool(facts.get("second_child_is_girl")),
                 district=facts.get("district"),
             )

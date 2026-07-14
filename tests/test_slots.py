@@ -46,6 +46,21 @@ def test_merge_slots_does_not_overwrite_with_blank():
     assert merged["lang"] == "hi"
 
 
+@pytest.mark.parametrize(
+    "reply,expected",
+    [
+        ("ST", "st"),
+        ("Category - ST", "st"),
+        ("I am from SC category", "sc"),
+        ("We have an NFSA ration card", "nfsa"),
+        ("BPL", "bpl"),
+    ],
+)
+def test_pmmvy_qualifier_accepts_valid_categories(reply, expected):
+    spec = SlotSpec(name="pmmvy_qualifier", type="enum", ask_prompt="qualifier?")
+    assert slots.extract_slot_value(spec, reply) == expected
+
+
 def test_next_missing_slot_picks_lowest_priority_first():
     # Poshan requires beneficiary_type (priority 10). Nothing collected yet.
     nxt = slots.next_missing_slot(POSHAN_CARD, {})

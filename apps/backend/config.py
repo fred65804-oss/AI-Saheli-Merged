@@ -32,7 +32,8 @@ class Settings(BaseSettings):
     # --- LLM ---
     # "auto" picks the first provider with credentials (azure, anthropic, openai).
     # Set explicitly ("azure" | "anthropic" | "openai") to pin one.
-    llm_provider: str = "auto"
+    # Azure is the active provider while the public OpenAI project has no quota.
+    llm_provider: str = "azure"
     # Empty = use the resolved provider's default from PROVIDER_DEFAULT_MODELS.
     # (For Azure, the "model" is the DEPLOYMENT name — see azure_* fields below.)
     llm_model: str = ""
@@ -46,10 +47,10 @@ class Settings(BaseSettings):
     # model when you deployed it in the Azure portal) + an api-version — not a
     # bare model name like public OpenAI.
     azure_openai_api_key: str = ""
-    azure_openai_endpoint: str = ""            # https://<resource>.openai.azure.com/
-    azure_openai_api_version: str = "2024-10-21"
-    azure_openai_deployment: str = ""          # main model deployment name
-    azure_openai_fast_deployment: str = ""     # optional; falls back to the main one
+    azure_openai_endpoint: str = ""
+    azure_openai_api_version: str = ""
+    azure_openai_deployment: str = ""
+    azure_openai_fast_deployment: str = ""
 
     # --- Orchestrator behaviour ---
     router_confidence_threshold: float = 0.6
@@ -84,6 +85,11 @@ class Settings(BaseSettings):
     # Candidate pool when reranking is enabled (was 50; 12 keeps the same
     # top-6 docs at a quarter of the cost — measured on the demo corpus).
     kb_rerank_candidates: int = 12
+    # Local dense/sparse/reranker models are optional and several hundred MB.
+    # Keep retrieval disabled until those assets have been deliberately
+    # downloaded and verified; otherwise a first request can block FastAPI
+    # while Hugging Face retries an unavailable network connection.
+    kb_local_models_enabled: bool = False
     # Inner LLM budget for grounded answer synthesis. Distinct from the outer
     # specialist wait_for so a stalled endpoint degrades to the deterministic
     # fallback (composed from verified tool facts + citation hint) rather

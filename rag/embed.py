@@ -21,14 +21,18 @@ SPARSE_MODEL = "Qdrant/bm25"
 def _dense():
     from sentence_transformers import SentenceTransformer
 
-    return SentenceTransformer(DENSE_MODEL)
+    # Request handlers must never attempt a model download. A blocked or
+    # unavailable Hugging Face connection otherwise freezes FastAPI's single
+    # event-loop thread and turns an optional grounding lookup into a /chat 500.
+    # Models can still be downloaded explicitly during environment setup.
+    return SentenceTransformer(DENSE_MODEL, local_files_only=True)
 
 
 @lru_cache(maxsize=1)
 def _sparse():
     from fastembed import SparseTextEmbedding
 
-    return SparseTextEmbedding(SPARSE_MODEL)
+    return SparseTextEmbedding(SPARSE_MODEL, local_files_only=True)
 
 
 # --------------------------------------------------------------------------- #

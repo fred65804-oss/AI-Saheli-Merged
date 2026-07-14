@@ -54,6 +54,23 @@ async def test_journey4_pmmvy_routes_to_shakti_with_citation():
     assert "PMMVY" in s3["response"]
 
 
+async def test_pmmvy_second_girl_child_accepts_st_category():
+    """Regression: an ST category must resolve PMMVY, not clear the intent."""
+    g = _graph()
+    sid = "pmmvy-st"
+    await run_turn(g, session_id=sid, message="am i eligible for pmmvy")
+    s2 = await run_turn(g, session_id=sid, message="Second child. She is a girl")
+    assert s2["awaiting_input"] is True
+    assert s2["awaiting_slot"] == "pmmvy_qualifier"
+    assert s2["collected_facts"]["second_child_is_girl"] == "true"
+
+    s3 = await run_turn(g, session_id=sid, message="Category - ST")
+    assert s3["awaiting_input"] is False
+    assert s3["intent"] == "shakti"
+    assert s3["collected_facts"]["pmmvy_qualifier"] == "st"
+    assert "PMMVY" in s3["response"]
+
+
 async def test_journey1_dynamic_slot_filling_then_answer():
     g = _graph()
     sid = "t1"
