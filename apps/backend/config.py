@@ -118,6 +118,21 @@ class Settings(BaseSettings):
     refresh_token_expire_days: int = 30
     auth_database_url: str = "sqlite:///./data/auth.db"
 
+    # --- WhatsApp (Meta Cloud API) ---
+    # Empty by default -> the webhook route 404s the verification handshake
+    # rather than silently accepting an unconfigured integration.
+    whatsapp_access_token: str = ""
+    whatsapp_phone_number_id: str = ""
+    # Any string you invent yourself; Meta echoes it back during webhook
+    # setup so you can prove you own this endpoint. Not a secret from Meta's
+    # side, but treat it like one — never commit the real value.
+    whatsapp_verify_token: str = ""
+    whatsapp_api_version: str = "v21.0"
+
+    @property
+    def whatsapp_configured(self) -> bool:
+        return bool(self.whatsapp_access_token and self.whatsapp_phone_number_id and self.whatsapp_verify_token)
+
     @property
     def _azure_ready(self) -> bool:
         return bool(
