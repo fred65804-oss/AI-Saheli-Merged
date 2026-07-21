@@ -43,3 +43,14 @@ def test_merge_slots_does_not_overwrite_with_blank():
     merged = slots.merge_slots({"district": "Varanasi"}, {"district": "", "lang": "hi"})
     assert merged["district"] == "Varanasi"
     assert merged["lang"] == "hi"
+
+
+def test_next_missing_slot_picks_lowest_priority_first():
+    # Poshan requires beneficiary_type (priority 10). Nothing collected yet.
+    nxt = slots.next_missing_slot(POSHAN_CARD, {})
+    assert nxt is not None and nxt.name == "beneficiary_type"
+
+
+def test_next_missing_slot_none_when_required_filled():
+    nxt = slots.next_missing_slot(POSHAN_CARD, {"beneficiary_type": "child"})
+    assert nxt is None

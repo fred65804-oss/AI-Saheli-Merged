@@ -73,6 +73,19 @@ _INCOME_SYNONYMS = {
     "above_threshold": ["above", "apl", "high income", "zyada aay"],
 }
 
+# PMMVY accepts several alternative socio-economic qualifiers. Keep them in a
+# single tracked slot: a citizen who says "ST" must not be forced into the
+# unrelated income-band field just because income is one possible qualifier.
+_PMMVY_QUALIFIER_PATTERNS = (
+    ("sc", r"\b(?:sc|scheduled caste)\b"),
+    ("st", r"\b(?:st|scheduled tribe|adivasi|tribal)\b"),
+    ("bpl", r"\b(?:bpl|below poverty|antyodaya)\b"),
+    ("nfsa", r"\b(?:nfsa|pmjay|ayushman|e[ -]?shram|mgnrega|ration card)\b"),
+    ("disabled", r"\b(?:disabled|disability|divyang|divyangjan)\b"),
+    ("below_8_lakh", r"\b(?:below|under|less than)\s*(?:₹|rs\.?|inr)?\s*8\s*(?:lakh|lac)\b"),
+    ("above_8_lakh", r"\b(?:above|over|more than|at least)\s*(?:₹|rs\.?|inr)?\s*8\s*(?:lakh|lac)\b"),
+)
+
 _BOOL_TRUE = ["yes", "haan", "han", "ji haan", "girl", "beti", "true", "crisis",
               "hardship", "died", "death", "illness", "sick", "incapacit"]
 _BOOL_FALSE = ["no", "nahi", "nahin", "boy", "beta", "false", "stable", "fine",
@@ -108,6 +121,26 @@ def _match_synonyms(message_norm: str, table: dict[str, list[str]]) -> str | Non
 def _first_int(message: str) -> int | None:
     m = re.search(r"\d+", message)
     return int(m.group()) if m else None
+
+
+def _extract_pmmvy_qualifier(message_norm: str) -> str | None:
+    for value, pattern in _PMMVY_QUALIFIER_PATTERNS:
+        if re.search(pattern, message_norm):
+            return value
+    return None
+
+
+def extract_companion_slots(spec: SlotSpec, value: str, message: str) -> dict[str, str]:
+    """Extract facts that commonly arrive alongside the pending slot answer.
+
+    PMMVY citizens often answer "second child, she is a girl" in one sentence.
+    Capturing both facts avoids an unnecessary second question about the girl
+    child while keeping the primary pending-slot flow unchanged.
+    """
+    if spec.name != "child_order" or value != "second":
+        return {}
+    is_girl = _match_bool(normalize(message))
+    return {"second_child_is_girl": is_girl} if is_girl is not None else {}
 
 
 def extract_slot_value(
@@ -165,6 +198,9 @@ def extract_slot_value(
 
     if spec.name == "income_band":
         return _match_synonyms(norm, _INCOME_SYNONYMS)
+
+    if spec.name == "pmmvy_qualifier":
+        return _extract_pmmvy_qualifier(norm)
 
     if spec.type == "bool":
         return _match_bool(norm)

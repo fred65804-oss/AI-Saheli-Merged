@@ -156,6 +156,7 @@ class OrchestratorNodes:
                 value = slots.extract_slot_value(spec, message)
                 if value is not None:
                     collected[spec.name] = value
+                    collected.update(slots.extract_companion_slots(spec, value, message))
                     filled = f"{spec.name}={value}"
 
             if filled is not None:
