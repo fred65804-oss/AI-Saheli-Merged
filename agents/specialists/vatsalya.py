@@ -33,6 +33,7 @@ from agents.orchestrator.llm import StructuredLLM, get_llm
 from agents.specialists._grounding import (
     chunks_to_citations,
     citation_hint,
+    pick_rule as _pick,
     retrieve_passages,
     synthesize_answer,
     to_bool,
@@ -44,7 +45,7 @@ from agents.specialists.base import (
     SlotRequest,
     SpecialistAgent,
 )
-from mcp.eligibility.schemas import BeneficiaryType, EligibilityRequest, RuleResult
+from mcp.eligibility.schemas import BeneficiaryType, EligibilityRequest
 from mcp.eligibility.tool import check_eligibility
 from mcp.geo_locator.schemas import LookupRequest as GeoRequest, ServiceType
 from mcp.geo_locator.tool import find_facilities
@@ -59,13 +60,6 @@ from mcp.helpline_directory.tool import lookup_helplines
 _FOSTER_HINTS = ("foster",)
 _SPONSOR_HINTS = ("sponsor",)
 _ADOPT_HINTS = ("adopt", "god lena", "god le", "cara", "गोद")
-
-
-def _pick(results: list[RuleResult], scheme_contains: str) -> RuleResult | None:
-    for r in results:
-        if scheme_contains.lower() in r.scheme.lower():
-            return r
-    return None
 
 
 async def _nearest_facility_line(

@@ -13,7 +13,7 @@ on breaking changes. Hand this file to the colleague as the spec.
 
 To fetch grounded scheme content, call the ``knowledge_base`` MCP tool —
 ``mcp/knowledge_base/tool.py:query_knowledge_base`` — rather than hardcoding
-answers or citations. See ``agents/specialists/mocks.py`` for example usage.
+answers or citations. See ``agents/specialists/shakti.py`` for example usage.
 """
 
 from __future__ import annotations

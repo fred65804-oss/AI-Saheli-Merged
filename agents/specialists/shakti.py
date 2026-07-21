@@ -31,6 +31,7 @@ from agents.orchestrator.llm import StructuredLLM, get_llm
 from agents.specialists._grounding import (
     chunks_to_citations,
     citation_hint,
+    pick_rule as _pick,
     retrieve_passages,
     synthesize_answer,
     to_bool,
@@ -86,13 +87,6 @@ _NEEDS_SLOT_SPECS: dict[str, dict] = {
     "second_child_is_girl": {"type": "bool", "enum_values": None},
     "income_band": {"type": "enum", "enum_values": ["bpl", "below_threshold", "above_threshold"]},
 }
-
-
-def _pick(results: list[RuleResult], scheme_contains: str) -> RuleResult | None:
-    for r in results:
-        if scheme_contains.lower() in r.scheme.lower():
-            return r
-    return None
 
 
 def _pmmvy_slot_request(pmmvy: RuleResult) -> SlotRequest | None:

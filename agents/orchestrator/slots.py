@@ -3,9 +3,9 @@
 The mechanism (no fixed decision tree, no LLM guessing *which* fact to ask):
   1. merge_slots: fold the router's extracted_slots (and any specialist `needs`)
      into the running collected_facts.
-  2. next_missing_slot: given the chosen agent's card, find the unfilled REQUIRED
-     slot with the lowest `priority` number — that is the single most important
-     question to ask next.
+  2. slot_check (nodes.py): given the chosen agent's card, find the unfilled
+     REQUIRED slot with the lowest `priority` number — that is the single most
+     important question to ask next.
   3. A node then asks exactly that one question (an LLM only *phrases* it warmly);
      when the reply fills it, we re-check, and hand off once nothing required
      is missing.
@@ -36,27 +36,6 @@ def merge_slots(collected: dict, extracted: dict) -> dict:
             continue
         out[key] = value
     return out
-
-
-def _is_filled(collected: dict, name: str) -> bool:
-    val = collected.get(name)
-    if val is None:
-        return False
-    if isinstance(val, str) and not val.strip():
-        return False
-    return True
-
-
-def next_missing_slot(
-    card: AgentCapabilityCard, collected: dict
-) -> SlotSpec | None:
-    """The highest-priority unfilled REQUIRED slot for this agent, or None."""
-    missing = [
-        s for s in card.required_slots if s.required and not _is_filled(collected, s.name)
-    ]
-    if not missing:
-        return None
-    return sorted(missing, key=lambda s: s.priority)[0]
 
 
 # --------------------------------------------------------------------------- #

@@ -109,14 +109,16 @@ async def test_unparseable_reply_does_not_loop_forever():
 async def test_specialist_timeout_falls_back_gracefully():
     import asyncio
 
+    from agents.orchestrator.capabilities import SHAKTI_CARD
     from agents.specialists import registry
-    from agents.specialists.base import AgentResponse, ContextPacket
-    from agents.specialists.mocks import MockShaktiAgent
+    from agents.specialists.base import AgentResponse, ContextPacket, SpecialistAgent
 
-    class SlowAgent(MockShaktiAgent):
+    class SlowAgent(SpecialistAgent):
+        capability_card = SHAKTI_CARD
+
         async def handle(self, packet: ContextPacket) -> AgentResponse:
-            await asyncio.sleep(5)
-            return await super().handle(packet)
+            await asyncio.sleep(5)  # always longer than the 0.05s timeout below
+            return AgentResponse(answer="too late")
 
     original = registry.SPECIALISTS["shakti"]
     registry.SPECIALISTS["shakti"] = SlowAgent()
