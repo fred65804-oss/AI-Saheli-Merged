@@ -90,6 +90,14 @@ def to_bool(value) -> bool | None:
     return None
 
 
+def pick_rule(results, scheme_contains: str):
+    """First eligibility RuleResult whose scheme name contains the token."""
+    for r in results:
+        if scheme_contains.lower() in r.scheme.lower():
+            return r
+    return None
+
+
 def chunks_to_citations(chunks: list[KBChunk]) -> list[Citation]:
     return [
         Citation(source_doc=c.doc, section=c.heading_path_str or None)

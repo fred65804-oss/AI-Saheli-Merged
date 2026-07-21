@@ -494,22 +494,7 @@ export default function ChatPage() {
           <Button type="button" variant="ghost" size="sm" onClick={leaveChat} className="gap-2 rounded-full">
             <ArrowLeft className="h-4 w-4" /> Modes
           </Button>
-          <div className="flex overflow-hidden rounded-full border bg-white/70 shadow-sm">
-            {languages.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                className={cn(
-                  "px-3 py-1.5 text-xs font-medium transition-all",
-                  lang === l.code
-                    ? "gradient-ministry text-white shadow-inner"
-                    : "text-muted-foreground hover:bg-ministry-soft"
-                )}
-              >
-                {l.native}
-              </button>
-            ))}
-          </div>
+          <LangPicker languages={languages} lang={lang} onSelect={setLang} />
           <Button variant="outline" size="sm" onClick={resetSession} className="rounded-full">
             New session
           </Button>
@@ -573,62 +558,35 @@ export default function ChatPage() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <div className="flex rounded-full border bg-white/70 overflow-hidden shadow-sm">
-              {languages.map((l) => (
-                <button
-                  key={l.code}
-                  onClick={() => setLang(l.code)}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium transition-all",
-                    lang === l.code
-                      ? "gradient-ministry text-white shadow-inner"
-                      : "text-muted-foreground hover:bg-ministry-soft"
-                  )}
-                >
-                  {l.native}
-                </button>
-              ))}
-            </div>
+            <LangPicker languages={languages} lang={lang} onSelect={setLang} />
             <Button variant="outline" size="sm" onClick={resetSession} className="rounded-full">
               New session
             </Button>
           </div>
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col sm:flex-row">
-          <div className="hidden">
-            <SaheliAvatar size="stage" speaking={speakingTurnTs !== null} />
-            <div className="text-center">
-              <div className="text-sm font-semibold text-ministry">AI Saheli</div>
-              <div className="text-[11px] text-muted-foreground">
-                {speakingTurnTs !== null ? "Speaking…" : busy ? "Thinking…" : "Ready to help"}
-              </div>
-            </div>
-          </div>
-
-          <div
-            ref={scrollerRef}
-            className="min-h-0 flex-1 overflow-y-auto scrollbar-thin px-6 py-6 space-y-5"
-          >
-            {emptyState ? (
-              <EmptyState
-                onPick={(t, l) => {
-                  setLang(l);
-                  send(t);
-                }}
+        <div
+          ref={scrollerRef}
+          className="min-h-0 flex-1 overflow-y-auto scrollbar-thin px-6 py-6 space-y-5"
+        >
+          {emptyState ? (
+            <EmptyState
+              onPick={(t, l) => {
+                setLang(l);
+                send(t);
+              }}
+            />
+          ) : (
+            turns.map((t, i) => (
+              <Message
+                key={i}
+                turn={t}
+                speaking={t.role === "assistant" && t.ts === speakingTurnTs}
+                showAvatar={false}
               />
-            ) : (
-              turns.map((t, i) => (
-                <Message
-                  key={i}
-                  turn={t}
-                  speaking={t.role === "assistant" && t.ts === speakingTurnTs}
-                  showAvatar={false}
-                />
-              ))
-            )}
-            {busy && <TypingBubble showAvatar={false} />}
-          </div>
+            ))
+          )}
+          {busy && <TypingBubble showAvatar={false} />}
         </div>
 
         <form
@@ -664,6 +622,35 @@ export default function ChatPage() {
           </div>
         )}
       </Card>
+    </div>
+  );
+}
+
+function LangPicker({
+  languages,
+  lang,
+  onSelect,
+}: {
+  languages: LanguageMeta[];
+  lang: string;
+  onSelect: (code: string) => void;
+}) {
+  return (
+    <div className="flex overflow-hidden rounded-full border bg-white/70 shadow-sm">
+      {languages.map((l) => (
+        <button
+          key={l.code}
+          onClick={() => onSelect(l.code)}
+          className={cn(
+            "px-3 py-1.5 text-xs font-medium transition-all",
+            lang === l.code
+              ? "gradient-ministry text-white shadow-inner"
+              : "text-muted-foreground hover:bg-ministry-soft"
+          )}
+        >
+          {l.native}
+        </button>
+      ))}
     </div>
   );
 }
@@ -789,9 +776,6 @@ function Message({
   return (
     <div className="flex gap-2.5">
       {showAvatar && <SaheliAvatar speaking={speaking} />}
-      <div className="hidden">
-        स
-      </div>
       <div className="min-w-0 flex-1 space-y-2">
         <div className="max-w-[92%] rounded-2xl rounded-tl-md bg-white border border-white/70 px-4 py-3 text-sm shadow-sm whitespace-pre-wrap leading-relaxed">
           {turn.text}
@@ -846,9 +830,6 @@ function TypingBubble({ showAvatar = true }: { showAvatar?: boolean }) {
   return (
     <div className="flex gap-2.5">
       {showAvatar && <SaheliAvatar />}
-      <div className="hidden">
-        स
-      </div>
       <div className="rounded-2xl rounded-tl-md bg-white border border-white/70 px-4 py-3 shadow-sm">
         <div className="flex gap-1">
           <span className="h-2 w-2 rounded-full bg-ministry/70 animate-bounce [animation-delay:-0.2s]" />

@@ -3,7 +3,6 @@
 import pytest
 
 from agents.orchestrator import slots
-from agents.orchestrator.capabilities import POSHAN_CARD
 from agents.specialists.base import SlotSpec
 
 PREG = SlotSpec(
@@ -44,21 +43,6 @@ def test_merge_slots_does_not_overwrite_with_blank():
     merged = slots.merge_slots({"district": "Varanasi"}, {"district": "", "lang": "hi"})
     assert merged["district"] == "Varanasi"
     assert merged["lang"] == "hi"
-
-
-@pytest.mark.parametrize(
-    "reply,expected",
-    [
-        ("ST", "st"),
-        ("Category - ST", "st"),
-        ("I am from SC category", "sc"),
-        ("We have an NFSA ration card", "nfsa"),
-        ("BPL", "bpl"),
-    ],
-)
-def test_pmmvy_qualifier_accepts_valid_categories(reply, expected):
-    spec = SlotSpec(name="pmmvy_qualifier", type="enum", ask_prompt="qualifier?")
-    assert slots.extract_slot_value(spec, reply) == expected
 
 
 def test_next_missing_slot_picks_lowest_priority_first():

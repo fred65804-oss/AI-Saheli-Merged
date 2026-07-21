@@ -31,6 +31,7 @@ from agents.orchestrator.llm import StructuredLLM, get_llm
 from agents.specialists._grounding import (
     chunks_to_citations,
     citation_hint,
+    pick_rule as _pick,
     retrieve_passages,
     synthesize_answer,
     to_bool,
@@ -100,13 +101,6 @@ _NEEDS_SLOT_SPECS: dict[str, dict] = {
 _PMMVY_QUALIFIER_VALUES = [
     "sc", "st", "bpl", "nfsa", "disabled", "below_8_lakh", "above_8_lakh"
 ]
-
-
-def _pick(results: list[RuleResult], scheme_contains: str) -> RuleResult | None:
-    for r in results:
-        if scheme_contains.lower() in r.scheme.lower():
-            return r
-    return None
 
 
 def _pmmvy_slot_request(pmmvy: RuleResult) -> SlotRequest | None:

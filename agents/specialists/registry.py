@@ -5,9 +5,6 @@ metadata from each agent's ``capability_card`` (it never hardcodes scheme
 knowledge). The real agents resolve their LLM lazily from env-driven settings
 (``get_llm``): with a key they synthesize grounded answers; without one they
 serve deterministic tool-composed fallbacks (offline mode, tests).
-
-The mock agents remain in ``mocks.py`` for tests and offline experimentation —
-swap any entry back if needed. Nothing else in the orchestrator changes.
 """
 
 from __future__ import annotations
