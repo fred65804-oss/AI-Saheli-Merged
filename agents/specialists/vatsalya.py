@@ -44,6 +44,7 @@ from agents.specialists.base import (
     SlotRequest,
     SpecialistAgent,
 )
+from agents.specialists.overview_answer import answer_scheme_overview
 from mcp.eligibility.schemas import BeneficiaryType, EligibilityRequest, RuleResult
 from mcp.eligibility.tool import check_eligibility
 from mcp.geo_locator.schemas import LookupRequest as GeoRequest, ServiceType
@@ -100,6 +101,9 @@ class RealVatsalyaAgent(SpecialistAgent):
         return self._llm
 
     async def handle(self, packet: ContextPacket) -> AgentResponse:
+        if packet.request_type == "overview":
+            return await answer_scheme_overview(self.llm, packet)
+
         msg = packet.user_message.lower()
         facts = packet.collected_facts
         if any(k in msg for k in _FOSTER_HINTS):
@@ -148,6 +152,7 @@ class RealVatsalyaAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts) or "Foster care is arranged by your District Child Protection Unit (DCPU) under a CWC order.",
+            channel=packet.channel,
         )
         return AgentResponse(answer=answer, citations=citations, tool_calls=tool_calls, confidence=0.86 if synthesized else 0.8)
 
@@ -198,6 +203,7 @@ class RealVatsalyaAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(answer=answer, citations=citations, tool_calls=tool_calls, confidence=0.86 if synthesized else 0.8)
 
@@ -248,6 +254,7 @@ class RealVatsalyaAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(answer=answer, citations=citations, tool_calls=tool_calls, confidence=0.85 if synthesized else 0.78)
 
@@ -300,5 +307,6 @@ class RealVatsalyaAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(answer=answer, citations=citations, tool_calls=tool_calls, confidence=0.82 if synthesized else 0.78)

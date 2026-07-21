@@ -158,7 +158,7 @@ def test_voice_full_pipeline_shape():
     )
     assert r.status_code == 200
     body = r.json()
-    assert body["transcript"] == "am i eligible for pmmvy"
+    assert body["transcript"] == "am i eligible for PMMVY"
     assert body["response"].startswith("[hi]")
     assert body["response_en"]
     assert body["audio_base64"] == "BASE64AUDIO"

@@ -20,6 +20,7 @@ import io
 import os
 import tempfile
 import threading
+from apps.backend.config import get_settings
 
 # faster-whisper model is expensive to construct (and the first-ever call
 # downloads ~150 MB). Build it once per process and reuse — previously it was
@@ -43,6 +44,13 @@ def _get_whisper_model():
                 size = os.getenv("WHISPER_MODEL_SIZE", "small")
                 _WHISPER_MODEL = WhisperModel(size, device="cpu", compute_type="int8")
     return _WHISPER_MODEL
+
+
+_ASR_HOTWORDS = (
+    "PMMVY, Pradhan Mantri Matru Vandana Yojana, "
+    "Mission Shakti, Mission Vatsalya, Poshan"
+)
+
 
 # Language code → Edge TTS voice name (female default)
 _EDGE_VOICES: dict[str, str] = {
@@ -143,11 +151,15 @@ class FreeProvider:
         def _run() -> str:
             _log_incoming_audio(audio_bytes, tmp_path, lang)  # ASR_DEBUG diagnostics
             model = _get_whisper_model()
+            settings = get_settings()
             segments, _ = model.transcribe(
                 tmp_path,
                 language=lang if lang != "en" else None,
                 initial_prompt=_ASR_PROMPTS.get(lang),
+                hotwords=_ASR_HOTWORDS,
                 vad_filter=True,  # trim leading/trailing silence from mic recordings
+                beam_size = settings.asr_beam_size,
+                best_of = settings.asr_best_of
             )
             text = " ".join(seg.text for seg in segments).strip()
             if not text and os.getenv("ASR_DEBUG"):
@@ -186,7 +198,7 @@ class FreeProvider:
                          .replace("ShrutiNeural", "MohanNeural") \
                          .replace("NeerjaNeural", "PrabhatNeural")
 
-        communicate = edge_tts.Communicate(text=text, voice=voice)
+        communicate = edge_tts.Communicate(text=text, voice=voice, rate = "-4%", pitch = "-2Hz", volume = "+0%")
         buf = io.BytesIO()
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":

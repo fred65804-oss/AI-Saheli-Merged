@@ -46,7 +46,7 @@ _WOMEN_VIOLENCE: list[str] = [
     "peet rahe", "peet raha", "peet rahi", "peetta", "peet-ta", "pitai",
     "ghar me violence", "ghar mein violence", "par violence", "violence hota",
     "pati maar", "pati peet", "pati mujhe",
-    "dhamki", "dhamka", "pareshan kar", "ched", "chhed",
+    "dhamki", "dhamka", "pareshan kar", "mujhe ched", "mujhe chhed", "ched raha", "ched rahi", "chhed raha", "chhed rahi", "chedkhani", "chhedkhani",
     "balatkar", "darr lagta", "dar lagta", "mujhe bachao", "bachao mujhe",
     "koi bachao", "madad chahiye", "sasural", "jaan se maar",
     # Devanagari

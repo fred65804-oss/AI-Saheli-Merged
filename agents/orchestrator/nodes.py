@@ -27,6 +27,7 @@ from agents.guardrails import safety
 from agents.guardrails.lexicon import DistressCategory
 from agents.orchestrator import prompts, slots
 from agents.orchestrator.llm import StructuredLLM
+from agents.orchestrator.request_type import classify_request_type
 from agents.orchestrator.router import UNCLEAR, Router
 from agents.orchestrator.state import AgentState
 from agents.orchestrator.trace import (
@@ -85,6 +86,8 @@ class OrchestratorNodes:
                     source=result.source,
                     escalate=result.escalate,
                     category=result.category.value,
+                    matched_phrase = result.matched_phrase,
+                    rationale = result.rationale
                 ),
             ),
         }
@@ -114,24 +117,136 @@ class OrchestratorNodes:
         """
         spec_dict = state.get("awaiting_slot_spec") or {}
         spec = SlotSpec(**spec_dict) if spec_dict else None
+
         collected = dict(state.get("collected_facts", {}))
         message = state.get("user_message", "")
         current_intent = state.get("intent")
+        current_type = state.get("request_type", "guidance")
 
         with Stopwatch() as sw:
-            decision = await self.router.route(
-                message, conversation_summary=state.get("conversation_summary", "")
+            # Fast path: parse the pending answer locally before making an LLM
+            # routing call. A deterministic topic/request check still wins so
+            # messages such as "how do I adopt a child" are not swallowed as
+            # beneficiary_type=child.
+            filled = None
+            if spec is not None:
+                value = slots.extract_slot_value(spec, message)
+                if value is not None:
+                    collected[spec.name] = value
+                    collected.update(
+                        slots.extract_companion_slots(spec, value, message)
+                    )
+                    filled = f"{spec.name}={value}"
+
+            explicit_type = classify_request_type(message)
+            request_type_changed = (
+                explicit_type is not None and explicit_type != current_type
             )
+            keyword_decision = self.router.keyword_route(message)
+            keyword_routable = (
+                keyword_decision.intent != UNCLEAR
+                and keyword_decision.confidence
+                >= self.settings.router_confidence_threshold
+            )
+            intent_changed = (
+                keyword_routable
+                and keyword_decision.intent != current_intent
+            )
+
+            if intent_changed or request_type_changed:
+                target_intent = (
+                    keyword_decision.intent
+                    if keyword_routable
+                    else current_intent
+                )
+                target_type = (
+                    explicit_type
+                    or keyword_decision.request_type
+                    or current_type
+                )
+                return {
+                    "intent": target_intent,
+                    "request_type": target_type,
+                    "active_agent": target_intent,
+                    "confidence": (
+                        keyword_decision.confidence
+                        if keyword_routable
+                        else state.get("confidence")
+                    ),
+                    "collected_facts": collected,
+                    "awaiting_slot": None,
+                    "awaiting_slot_spec": None,
+                    "extra_required_slots": [],
+                    "slot_attempts": 0,
+                    "_slot_outcome": "slot_check",
+                    "trace_events": _append_event(
+                        state,
+                        _event(
+                            "continue_slot",
+                            sw.ms,
+                            topic_change_to=target_intent,
+                            request_type=target_type,
+                            routing="deterministic",
+                        ),
+                    ),
+                }
+
+            if filled is not None:
+                return {
+                    "collected_facts": collected,
+                    "awaiting_slot": None,
+                    "awaiting_slot_spec": None,
+                    "slot_attempts": 0,
+                    "_slot_outcome": "slot_check",
+                    "trace_events": _append_event(
+                        state,
+                        _event(
+                            "continue_slot",
+                            sw.ms,
+                            filled=filled,
+                            routing="skipped",
+                        ),
+                    ),
+                }
+
+            # The deterministic slot parser could not resolve the reply. Only
+            # this slower path invokes the full router.
+            decision = await self.router.route(
+                message,
+                conversation_summary=state.get("conversation_summary", ""),
+            )
+
             routable = (
                 decision.intent != UNCLEAR
                 and decision.confidence >= self.settings.router_confidence_threshold
             )
+
+            # Detect a change in what the citizen wants, even when the specialist
+            # remains the same. Example: PMMVY eligibility → PMMVY overview.
+            explicit_type = classify_request_type(message)
+            current_type = state.get("request_type", "guidance")
+
+            request_type_changed = (
+                explicit_type is not None and explicit_type != current_type
+            )
+
+            topic_changed = (
+                routable and (
+                    decision.intent != current_intent or request_type_changed
+                )
+            )
+
             collected = slots.merge_slots(collected, decision.extracted_slots)
 
-            # 1. Topic change → abandon the pending slot, switch intent.
-            if routable and decision.intent != current_intent:
+            # 1. Topic/request change → abandon the pending slot.
+            if topic_changed:
                 return {
                     "intent": decision.intent,
+                    "request_type": (
+                        decision.request_type
+                        or explicit_type
+                        or "guidance"
+                    ),
                     "active_agent": decision.intent,
                     "confidence": decision.confidence,
                     "collected_facts": collected,
@@ -146,6 +261,11 @@ class OrchestratorNodes:
                             "continue_slot",
                             sw.ms,
                             topic_change_to=decision.intent,
+                            request_type=(
+                                decision.request_type
+                                or explicit_type
+                                or "guidance"
+                            ),
                         ),
                     ),
                 }
@@ -224,6 +344,7 @@ class OrchestratorNodes:
         collected = slots.merge_slots(state.get("collected_facts", {}), extracted)
         return {
             "intent": decision.intent if routable else None,
+            "request_type": decision.request_type or "guidance",
             "confidence": decision.confidence,
             "active_agent": decision.intent if routable else None,
             "collected_facts": collected,
@@ -235,6 +356,7 @@ class OrchestratorNodes:
                     sw.ms,
                     intent=decision.intent,
                     confidence=decision.confidence,
+                    request_type=decision.request_type,
                     routable=routable,
                     rationale=decision.rationale,
                 ),
@@ -246,12 +368,21 @@ class OrchestratorNodes:
         intent = state.get("intent")
         card = get_card(intent) if intent else None
         collected = state.get("collected_facts", {})
+        request_type = state.get("request_type", "guidance")
 
         # Required slots = card's required + any the specialist asked for.
         extra = [SlotSpec(**d) for d in state.get("extra_required_slots", [])]
-        required = (list(card.required_slots) if card else []) + extra
+
+        # Overview questions must reach the specialist immediately.
+        # No personal fields are required for a definition or scheme summary.
+        if request_type == "overview":
+            required: list[SlotSpec] = []
+        else:
+            required = (list(card.required_slots) if card else []) + extra
         missing = [
-            s for s in required if s.required and not _is_filled(collected, s.name)
+            spec
+            for spec in required
+            if spec.required and not _is_filled(collected, spec.name)
         ]
         pending = sorted(missing, key=lambda s: s.priority)[0] if missing else None
         return {
@@ -261,6 +392,7 @@ class OrchestratorNodes:
                 _event(
                     "slot_check",
                     0.0,
+                    request_type=request_type,
                     next_slot=pending.name if pending else None,
                 ),
             ),
@@ -269,12 +401,10 @@ class OrchestratorNodes:
     # -------------------------------------------------------------- ask_slot
     async def ask_slot(self, state: AgentState) -> dict:
         spec = SlotSpec(**state["pending_ask_spec"])
-        with Stopwatch() as sw:
-            question = await self._phrase(
-                prompts.ASK_SLOT_SYSTEM,
-                prompts.ask_slot_user(spec.ask_prompt, spec.enum_values),
-                fallback=spec.ask_prompt,
-            )
+        
+        # The capability-card prompt is already citizen-facing and vetted.
+        question = spec.ask_prompt
+
         return {
             "response": question,
             "awaiting_input": True,
@@ -282,28 +412,23 @@ class OrchestratorNodes:
             "awaiting_slot_spec": spec.model_dump(),
             "pending_ask_spec": None,
             "trace_events": _append_event(
-                state, _event("ask_slot", sw.ms, slot=spec.name)
+                state, _event("ask_slot", 0.0, slot=spec.name, phrasing = "deterministic")
             ),
         }
 
     # --------------------------------------------------------------- clarify
-    async def clarify(self, state: AgentState) -> dict:
-        with Stopwatch() as sw:
-            question = await self._phrase(
-                prompts.CLARIFY_SYSTEM,
-                prompts.clarify_user(state.get("user_message", "")),
-                fallback=(
-                    "Could you tell me a little more — do you need help with "
-                    "nutrition, child protection, or women's safety and schemes?"
-                ),
-            )
+    async def clarify(self, state: AgentState) -> dict:   
+        question = (
+        "Could you tell me a little more—do you need help with "
+        "nutrition, child protection, or women's safety and schemes?"
+        )
         return {
             "response": question,
             "awaiting_input": True,
             "intent": None,
             "awaiting_slot": None,
             "awaiting_slot_spec": None,
-            "trace_events": _append_event(state, _event("clarify", sw.ms)),
+            "trace_events": _append_event(state, _event("clarify", 0.0, phrasing = "deterministic")),
         }
 
     # --------------------------------------------------------------- handoff
@@ -325,8 +450,10 @@ class OrchestratorNodes:
             session_id=state.get("session_id", ""),
             trace_id=state.get("trace_id", ""),
             intent=intent,
+            request_type=state.get("request_type", "guidance"),
             user_message=state.get("user_message", ""),
             lang=state.get("lang", "en"),
+            channel=state.get("channel", "web"),
             citizen_profile=state.get("citizen_profile", {}),
             collected_facts=state.get("collected_facts", {}),
             conversation_summary=state.get("conversation_summary", ""),
@@ -487,6 +614,7 @@ class OrchestratorNodes:
             lang=state.get("lang", "en"),
             user_message=state.get("user_message", ""),
             intent=state.get("intent"),
+            request_type=state.get("request_type"),
             confidence=state.get("confidence"),
             safety_source=state.get("safety_source"),
             safety_category=state.get("safety_category"),

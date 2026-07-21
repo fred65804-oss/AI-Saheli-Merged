@@ -23,6 +23,8 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from agents.orchestrator.request_type import RequestType
+
 CONTRACT_VERSION = "1.0"
 
 SlotType = Literal["enum", "int", "string", "bool"]
@@ -83,11 +85,14 @@ class ContextPacket(BaseModel):
     intent: str
     user_message: str = Field(description="latest citizen message (normalized)")
     lang: str = "en"
+    # Adding 'channel', so that the bot can answer concisely accordingly to the channel
+    channel: str = "web"
     citizen_profile: dict = Field(default_factory=dict)
     collected_facts: dict = Field(
         default_factory=dict, description="slot values gathered by the orchestrator"
     )
     conversation_summary: str = ""
+    request_type: RequestType = "guidance"
 
 
 # --------------------------------------------------------------------------- #

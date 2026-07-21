@@ -97,7 +97,7 @@ VATSALYA_CARD = AgentCapabilityCard(
         "Bachche ko god kaise le?",
     ],
     keywords=[
-        "adopt", "god lena", "foster", "sponsor", "cara", "child protection",
+        "mission vatsalya", "vatsalya", "adopt", "god lena", "foster", "sponsor", "cara", "child protection",
         "care and protection", "report a child", "child in need", "child who needs",
         "cwc", "dcpu", "child welfare", "orphan", "anath", "balgrah",
         "child care institution", "गोद", "अनाथ", "बाल कल्याण",

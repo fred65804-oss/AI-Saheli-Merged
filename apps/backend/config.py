@@ -41,6 +41,10 @@ class Settings(BaseSettings):
     llm_fast_model: str = ""
     anthropic_api_key: str = ""
     openai_api_key: str = ""
+    # Router/safety responses are small structured objects
+    llm_fast_max_tokens: int = 256
+    # Specialist responses are intentionally concise
+    llm_answer_max_tokens: int = 512
 
     # --- Azure OpenAI ---
     # Azure uses a resource endpoint + a DEPLOYMENT name (what you named the
@@ -96,6 +100,10 @@ class Settings(BaseSettings):
     # than surfacing "having trouble fetching" to the citizen. Must be < the
     # specialist timeout minus a KB retrieval budget.
     llm_synthesis_timeout_seconds: float = 20.0
+
+    # Defining Beam Size and best_of for ASR
+    asr_beam_size: int = 5
+    asr_best_of:int = 5
 
     # --- Audit trace ---
     trace_sink_path: str = "logs/interactions.jsonl"

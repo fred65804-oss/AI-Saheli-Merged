@@ -19,6 +19,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import sys
+import time
 from contextlib import asynccontextmanager
 
 # Windows/httpx workaround — uvicorn defaults to ProactorEventLoop on Windows,
@@ -49,6 +50,7 @@ from language.provider import LanguageProvider, get_language_provider
 from mcp.knowledge_base.schemas import KBQueryRequest
 from mcp.knowledge_base.tool import query_knowledge_base
 
+from language.scheme_terms import canonicalize_scheme_terms
 
 class ChatRequest(BaseModel):
     session_id: str = Field(min_length=1)
@@ -63,6 +65,16 @@ class Citation(BaseModel):
     section: str | None = None
 
 
+# Response timing model used to calculate the total time taken
+# including orchestration time, translation time, etc
+class PipelineTimings(BaseModel):
+    asr_ms: float = 0.0
+    translation_in_ms: float = 0.0
+    orchestrator_ms: float = 0.0
+    translation_out_ms: float = 0.0
+    tts_ms: float = 0.0
+    total_request_ms: float = 0.0
+
 class ChatResponse(BaseModel):
     response: str
     response_en: str = ""
@@ -73,7 +85,7 @@ class ChatResponse(BaseModel):
     citations: list[Citation] = []
     trace_id: str = ""
     degraded_translation: bool = False
-
+    timings: PipelineTimings = Field(default_factory=PipelineTimings)
 
 class VoiceRequest(BaseModel):
     session_id: str = Field(min_length=1)
@@ -94,7 +106,7 @@ class VoiceResponse(BaseModel):
     citations: list[Citation] = []
     trace_id: str = ""
     degraded: bool = False
-
+    timings: PipelineTimings = Field(default_factory = PipelineTimings)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -151,7 +163,7 @@ async def _translated_turn(
     message: str,
     channel: str,
     lang: str,
-) -> tuple[dict, str, bool]:
+) -> tuple[dict, str, bool, PipelineTimings]:
     """Run one orchestrator turn wrapped in translate-in / translate-out.
 
     Returns ``(state, localized_response, degraded)``. Any translation failure
@@ -161,8 +173,11 @@ async def _translated_turn(
     lexicon (which covers Hindi/Devanagari terms), but for other languages
     coverage falls back to the L2 LLM classifier alone.
     """
+    timings = PipelineTimings()
     english_in, degraded = message, False
     if lang != "en" and _has_non_ascii(message):
+        # Counter to start counting time
+        started = time.perf_counter()
         # Only translate when the message actually contains non-ASCII characters
         # (i.e. Devanagari, Tamil, etc.). Romanized/Hinglish input should pass
         # through as-is so the safety lexicon can match it directly in English.
@@ -170,19 +185,38 @@ async def _translated_turn(
             english_in = await provider.translate(message, lang, "en")
         except Exception:
             degraded = True
+        finally:
+            timings.translation_in_ms = round(
+                (time.perf_counter() - started) * 1000,
+                2,
+            )
 
+    # Before starting the graph, record the time again
+    started = time.perf_counter()
     state = await run_turn(
         graph, session_id=session_id, message=english_in, channel=channel, lang=lang
     )
 
+    timings.orchestrator_ms = round(
+        (time.perf_counter() - started) * 1000,
+        2,
+    )
+
     localized = state.get("response", "")
+
     if lang != "en" and not degraded and localized:
+        started = time.perf_counter()
         try:
             localized = await provider.translate(localized, "en", lang)
         except Exception:
             degraded = True
+        finally:
+            timings.translation_out_ms = round(
+                (time.perf_counter() - started) * 1000,
+                2,
+            )
 
-    return state, localized, degraded
+    return state, localized, degraded, timings
 
 
 def _silent_wav_base64(seconds: float = 0.4, rate: int = 16_000) -> str:
@@ -279,7 +313,9 @@ async def health() -> dict:
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(req: ChatRequest) -> ChatResponse:
-    state, localized, degraded = await _translated_turn(
+    request_started = time.perf_counter()
+
+    state, localized, degraded, timings = await _translated_turn(
         app.state.language,
         app.state.graph,
         session_id=req.session_id,
@@ -287,6 +323,12 @@ async def chat(req: ChatRequest) -> ChatResponse:
         channel=req.channel,
         lang=req.lang,
     )
+
+    timings.total_request_ms = round(
+        (time.perf_counter() - request_started) * 1000,
+        2,
+    )
+
     return ChatResponse(
         response=localized,
         response_en=state.get("response", ""),
@@ -297,18 +339,37 @@ async def chat(req: ChatRequest) -> ChatResponse:
         citations=[Citation(**c) for c in state.get("citations", [])],
         trace_id=state.get("trace_id", ""),
         degraded_translation=degraded,
+        timings=timings,
     )
 
 
 @app.post("/voice", response_model=VoiceResponse)
 async def voice(req: VoiceRequest) -> VoiceResponse:
     provider: LanguageProvider = app.state.language
+    request_started = time.perf_counter()
+    asr_started = time.perf_counter()
 
     # Without a transcript there is nothing to degrade to — fail loudly.
     try:
-        transcript = await provider.transcribe(req.audio_base64, req.lang)
+        raw_transcript = await provider.transcribe(req.audio_base64, req.lang)
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"Speech recognition failed: {e}")
+
+    asr_ms = round(
+        (time.perf_counter() - asr_started) * 1000,
+        2,
+    )
+
+    # Canonicalize common ASR distortions of supported scheme acronyms before
+    # routing, while retaining the original value in diagnostic logs.
+    transcript = canonicalize_scheme_terms(raw_transcript)
+
+    if transcript != raw_transcript:
+        log.info(
+            "Canonicalized transcript: %r -> %r",
+            raw_transcript,
+            transcript
+        )
 
     # A silent/garbled clip (or the wrong language selected) produces an empty
     # transcript. Running the orchestrator on "" used to silently return the
@@ -323,7 +384,7 @@ async def voice(req: VoiceRequest) -> VoiceResponse:
             "you're speaking, and try again.",
         )
 
-    state, localized, degraded = await _translated_turn(
+    state, localized, degraded, timings = await _translated_turn(
         provider,
         app.state.graph,
         session_id=req.session_id,
@@ -332,13 +393,30 @@ async def voice(req: VoiceRequest) -> VoiceResponse:
         lang=req.lang,
     )
 
-    # TTS failure degrades to text-only — the localized answer still goes back.
+    timings.asr_ms = asr_ms
+
+    # TTS failure degrades to text-only; the localized answer still goes back.
     audio_out = ""
     if localized:
+        tts_started = time.perf_counter()
         try:
             audio_out = await provider.synthesize(localized, req.lang)
         except Exception:
             degraded = True
+            log.exception(
+                "TTS failed for trace_id=%s",
+                state.get("trace_id", ""),
+            )
+        finally:
+            timings.tts_ms = round(
+                (time.perf_counter() - tts_started) * 1000,
+                2,
+            )
+
+    timings.total_request_ms = round(
+        (time.perf_counter() - request_started) * 1000,
+        2,
+    )
 
     return VoiceResponse(
         transcript=transcript,
@@ -352,6 +430,5 @@ async def voice(req: VoiceRequest) -> VoiceResponse:
         citations=[Citation(**c) for c in state.get("citations", [])],
         trace_id=state.get("trace_id", ""),
         degraded=degraded,
+        timings=timings,
     )
-
-

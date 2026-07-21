@@ -1,6 +1,15 @@
 import { API_BASE } from "./utils";
 import { authFetch } from "./auth";
 
+export type PipelineTimings = {
+  asr_ms: number;
+  translation_in_ms: number;
+  orchestrator_ms: number;
+  translation_out_ms: number;
+  tts_ms: number;
+  total_request_ms: number;
+}
+
 export type Citation = {
   source_doc: string;
   source_url?: string;
@@ -17,6 +26,7 @@ export type ChatResponse = {
   citations: Citation[];
   trace_id: string;
   degraded_translation: boolean;
+  timings: PipelineTimings;
 };
 
 export async function postChat(input: {
@@ -52,6 +62,7 @@ export type VoiceResponse = {
   citations: Citation[];
   trace_id: string;
   degraded: boolean;
+  timings: PipelineTimings;
 };
 
 export async function postVoice(input: {

@@ -104,6 +104,37 @@ async def test_topic_change_during_slot_fill_switches_intent():
     assert "CARA" in s2["response"] or "adopt" in s2["response"].lower()
 
 
+@pytest.mark.parametrize(
+    "message",
+    [
+        "What is Poshan 2.0?",
+        "What is Mission Vatsalya?",
+        "What is Mission Shakti?",
+        "What is PMMVY?",
+    ],
+)
+async def test_scheme_overview_never_collects_personal_slots(message):
+    g = _graph()
+    state = await run_turn(g, session_id=f"overview-{message}", message=message)
+    assert state["request_type"] == "overview"
+    assert state["awaiting_input"] is False
+    assert state["response"]
+    assert state["citations"]
+
+
+async def test_same_scheme_switch_from_eligibility_to_overview():
+    g = _graph()
+    sid = "same-scheme-switch"
+    first = await run_turn(g, session_id=sid, message="Am I eligible for PMMVY?")
+    assert first["awaiting_slot"] == "child_order"
+
+    second = await run_turn(g, session_id=sid, message="Actually, what is PMMVY?")
+    assert second["intent"] == "shakti"
+    assert second["request_type"] == "overview"
+    assert second["awaiting_input"] is False
+    assert second["response"]
+
+
 async def test_unparseable_reply_does_not_loop_forever():
     """An answer we can't parse re-asks at most twice, then clarifies — it must
     never loop on the same slot question indefinitely."""

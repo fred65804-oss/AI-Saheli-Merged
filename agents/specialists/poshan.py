@@ -30,6 +30,7 @@ from agents.specialists.base import (
     SlotRequest,
     SpecialistAgent,
 )
+from agents.specialists.overview_answer import answer_scheme_overview
 from mcp.eligibility.schemas import BeneficiaryType, EligibilityRequest, RuleResult
 from mcp.eligibility.tool import check_eligibility
 from mcp.geo_locator.schemas import LookupRequest as GeoRequest, ServiceType
@@ -81,6 +82,9 @@ class RealPoshanAgent(SpecialistAgent):
         return self._llm
 
     async def handle(self, packet: ContextPacket) -> AgentResponse:
+        if packet.request_type == "overview":
+            return await answer_scheme_overview(self.llm, packet)
+
         facts = packet.collected_facts
 
         # 1. Dynamic questioning: trimester decides the guidance.
@@ -208,6 +212,7 @@ class RealPoshanAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(
             answer=answer,

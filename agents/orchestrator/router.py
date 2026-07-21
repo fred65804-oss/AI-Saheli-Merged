@@ -17,10 +17,16 @@ from pydantic import BaseModel, Field
 
 from agents.guardrails.lexicon import normalize
 from agents.orchestrator.llm import StructuredLLM
+from language.scheme_terms import canonicalize_scheme_terms
+from agents.orchestrator.request_type import (
+    RequestType,
+    classify_request_type,
+    is_broad_scheme_discovery,
+)
 from agents.specialists.base import AgentCapabilityCard
 
-UNCLEAR = "unclear"
 
+UNCLEAR = "unclear"
 
 class RouterDecision(BaseModel):
     """Structured router output (also the LLM's enforced schema)."""
@@ -36,6 +42,14 @@ class RouterDecision(BaseModel):
     )
     secondary_intents: list[str] = Field(default_factory=list)
 
+    request_type: RequestType | None = Field(
+        default=None,
+        description=(
+            "overview for definitions and scheme discovery; eligibility for "
+            "personal qualification; service for application/location/contact; "
+            "guidance for personalized advice"
+        ),
+    )
 
 def _slot_catalogue(cards: list[AgentCapabilityCard]) -> str:
     """The extractable facts, derived FROM the cards (never hardcoded).
@@ -78,6 +92,13 @@ def build_router_system(cards: list[AgentCapabilityCard]) -> str:
         "You are the routing brain of AI Saheli, a Government of India women & "
         "child welfare assistant. Classify the citizen's message into exactly one "
         "specialist intent, or 'unclear' if it is too ambiguous to route.\n\n"
+        "Also classify request_type as exactly one of:\n"
+        "- overview: definitions, explanations, scheme lists, or general benefits\n"
+        "- eligibility: whether this citizen qualifies or can receive a benefit\n"
+        "- service: application, registration, contact, reporting, or nearest facility\n"
+        "- guidance: personalized nutrition, care, protection, or welfare guidance\n"
+        "An overview must not be classified as eligibility merely because the scheme "
+        "has eligibility rules.\n\n"
         f"Available intents:\n{catalogue}\n\n"
         f"Return intent as one of: {ids}, unclear.\n\n"
         "Then extract EVERY fact the message already states into extracted_slots, "
@@ -98,7 +119,7 @@ def build_router_system(cards: list[AgentCapabilityCard]) -> str:
 
 def keyword_scores(message: str, cards: list[AgentCapabilityCard]) -> dict[str, int]:
     """Count distinct card keywords present in the message."""
-    norm = normalize(message)
+    norm = normalize(canonicalize_scheme_terms(message))
     scores: dict[str, int] = {}
     for c in cards:
         if c.fallback:
@@ -110,12 +131,30 @@ def keyword_scores(message: str, cards: list[AgentCapabilityCard]) -> dict[str, 
     return scores
 
 
-def _keyword_route(message: str, cards: list[AgentCapabilityCard]) -> RouterDecision:
+def _keyword_route(
+    message: str,
+    cards: list[AgentCapabilityCard],
+    request_type: RequestType,
+) -> RouterDecision:
     """Deterministic fallback when the LLM gives nothing usable."""
     scores = keyword_scores(message, cards)
+
+    if not scores and request_type == "overview" and is_broad_scheme_discovery(message):
+        fallback_card = next((card for card in cards if card.fallback), None)
+        if fallback_card is not None:
+            return RouterDecision(
+                intent=fallback_card.scheme,
+                confidence=0.8,
+                rationale="broad scheme discovery",
+                request_type="overview",
+            )
+
     if not scores:
         return RouterDecision(
-            intent=UNCLEAR, confidence=0.3, rationale="no keyword signal"
+            intent=UNCLEAR,
+            confidence=0.3,
+            rationale="no keyword signal",
+            request_type=request_type,
         )
     ranked = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
     top_scheme, top_score = ranked[0]
@@ -127,6 +166,7 @@ def _keyword_route(message: str, cards: list[AgentCapabilityCard]) -> RouterDeci
             confidence=0.4,
             rationale=f"keyword tie between {ranked[0][0]} and {ranked[1][0]}",
             secondary_intents=[s for s, _ in ranked[:2]],
+            request_type=request_type,
         )
     confidence = min(0.6 + 0.1 * (top_score - runner_up), 0.9)
     return RouterDecision(
@@ -134,6 +174,7 @@ def _keyword_route(message: str, cards: list[AgentCapabilityCard]) -> RouterDeci
         confidence=confidence,
         rationale=f"keyword match ({top_score} hits)",
         secondary_intents=[s for s, _ in ranked[1:3]],
+        request_type=request_type,
     )
 
 
@@ -143,12 +184,32 @@ class Router:
         self._cards = cards
         self._allowed = {c.scheme for c in cards} | {UNCLEAR}
 
+    def keyword_route(self, message: str) -> RouterDecision:
+        """Fast deterministic routing without an LLM call"""
+        request_type = classify_request_type(message) or "guidance"
+        return _keyword_route(message, self._cards, request_type)
+
     async def route(
         self,
         message: str,
         *,
         conversation_summary: str = "",
     ) -> RouterDecision:
+        # First, check if the user is just asking about some basic schemes, etc
+        # If this is the case, return the deterministic answer directly, thereby reducing LLM calls and making
+        # answer generation fast
+        explicit_type = classify_request_type(message)
+        request_type: RequestType = explicit_type or "guidance"
+        
+        # Generate a deterministic answer fastly
+        deterministic = _keyword_route(
+            message, self._cards, request_type
+        )
+        
+        if (deterministic.intent != UNCLEAR and deterministic.confidence > 0.7):
+            return deterministic
+
+        # LLM Routing
         system = build_router_system(self._cards)
         user = message
         if conversation_summary:
@@ -159,9 +220,17 @@ class Router:
         except Exception:
             decision = RouterDecision()  # force keyword fallback below
 
+        # Explicit wording such as "What is..." or "Am I eligible..."
+        # takes precedence over an uncertain LLM request-type classification.
+        explicit_type = classify_request_type(message)
+        request_type: RequestType = (
+            explicit_type or decision.request_type or "guidance"
+        )
+        decision.request_type = request_type
+
         # Validate the LLM's intent; fall back to keywords if it is empty/invalid.
         if decision.intent not in self._allowed or (
             decision.intent == UNCLEAR and decision.confidence == 0.0
         ):
-            return _keyword_route(message, self._cards)
+            return _keyword_route(message, self._cards, request_type)
         return decision

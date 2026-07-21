@@ -33,11 +33,11 @@ T = TypeVar("T", bound=BaseModel)
 class StructuredLLM(Protocol):
     """The only LLM surface the orchestrator depends on."""
 
-    async def parse(self, system: str, user: str, schema: type[T]) -> T:
+    async def parse(self, system: str, user: str, schema: type[T], *, fast: bool = True) -> T:
         """Return an instance of ``schema`` populated by the model."""
         ...
 
-    async def complete(self, system: str, user: str) -> str:
+    async def complete(self, system: str, user: str, *, fast: bool = True) -> str:
         """Return a plain-text completion."""
         ...
 
@@ -78,6 +78,14 @@ class _LangChainLLM:
 
     def _model_name(self, fast: bool) -> str:
         return self._s.resolved_fast_model if fast else self._s.resolved_model
+
+    def _max_tokens(self, fast: bool) -> int:
+        return (
+            self._s.llm_fast_max_tokens
+            if fast
+            else self._s.llm_answer_max_tokens
+        )
+
 
     async def parse(self, system: str, user: str, schema: type[T], *, fast: bool = True) -> T:
         from langchain_core.messages import HumanMessage, SystemMessage
@@ -122,7 +130,7 @@ class AnthropicLLM(_LangChainLLM):
             model=self._model_name(fast),
             api_key=self._s.anthropic_api_key,
             temperature=0,
-            max_tokens=1024,
+            max_tokens=self._max_tokens(fast),
             timeout=30,
         )
 
@@ -155,7 +163,7 @@ class OpenAILLM(_LangChainLLM):
             model=self._model_name(fast),
             api_key=self._s.openai_api_key,
             temperature=0,
-            max_tokens=1024,
+            max_tokens=self._max_tokens(fast),
             timeout=30,
         )
 
@@ -177,7 +185,7 @@ class OpenAILLM(_LangChainLLM):
                     {"role": "user", "content": user},
                 ],
                 temperature=0,
-                max_tokens=1024,
+                max_tokens=self._max_tokens(fast),
             )
             return (resp.choices[0].message.content or "").strip()
 
@@ -209,7 +217,7 @@ class AzureOpenAILLM(_LangChainLLM):
             api_key=self._s.azure_openai_api_key,
             api_version=self._s.azure_openai_api_version,
             temperature=0,
-            max_tokens=1024,
+            max_tokens=self._max_tokens(fast),
             timeout=30,
         )
 
@@ -235,7 +243,7 @@ class AzureOpenAILLM(_LangChainLLM):
                     {"role": "user", "content": user},
                 ],
                 temperature=0,
-                max_tokens=1024,
+                max_tokens=self._max_tokens(fast),
             )
             return (resp.choices[0].message.content or "").strip()
 

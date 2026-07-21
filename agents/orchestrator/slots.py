@@ -98,8 +98,8 @@ _INCOME_SYNONYMS = {
 # single tracked slot: a citizen who says "ST" must not be forced into the
 # unrelated income-band field just because income is one possible qualifier.
 _PMMVY_QUALIFIER_PATTERNS = (
-    ("sc", r"\b(?:sc|scheduled caste)\b"),
-    ("st", r"\b(?:st|scheduled tribe|adivasi|tribal)\b"),
+    ("sc", r"\b(?:s[\s.\-]*c|scheduled?\s+caste)\b"),
+    ("st", r"\b(?:s[\s.\-]*t|scheduled?\s+tribe|adivasi|tribal)\b"),
     ("bpl", r"\b(?:bpl|below poverty|antyodaya)\b"),
     ("nfsa", r"\b(?:nfsa|pmjay|ayushman|e[ -]?shram|mgnrega|ration card)\b"),
     ("disabled", r"\b(?:disabled|disability|divyang|divyangjan)\b"),

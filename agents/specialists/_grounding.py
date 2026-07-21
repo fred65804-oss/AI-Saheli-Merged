@@ -97,6 +97,22 @@ def chunks_to_citations(chunks: list[KBChunk]) -> list[Citation]:
     ]
 
 
+# Section below introduces instructions for generating short summary for the model to answer
+_TEXT_DELIVERY_STYLE = (
+    "Write 3-6 short sentences of plain, warm, simple language that a "
+    "first-time reader understands. Use no markdown or headings."
+)
+
+_VOICE_DELIVERY_STYLE = (
+    "Write for listening, not for reading. Normally use 2-4 short, "
+    "conversational sentences. Lead with the direct answer. Use familiar "
+    "words and natural transitions. Avoid headings, markdown, numbered lists, "
+    "citations, URLs, bracketed remarks, and bureaucratic phrasing. Do not "
+    "repeat the citizen's question. End with at most one short, useful "
+    "follow-up question. Include every verified fact even if this requires "
+    "more than four sentences."
+)
+
 _SYNTHESIS_SYSTEM = """You are AI Saheli, a warm and respectful assistant of the \
 Ministry of Women & Child Development, Government of India. You are answering a \
 citizen's question about {scheme_display}.
@@ -112,8 +128,7 @@ the citizen to the helpline or centre named in the verified facts (or to their \
 nearest Anganwadi Centre).
 4. Never give medical, legal or psychological counselling — connect the citizen \
 to the right service instead.
-5. Write 3–6 short sentences of plain, warm, simple language a first-time reader \
-understands. No markdown, no headings.
+5. {delivery_style}.
 6. Reply in ENGLISH ONLY. The orchestrator's language layer translates the \
 answer back to the citizen's chosen language after you respond — do not \
 translate yourself, do not mix languages, do not reply in Hindi/Hinglish even \
@@ -170,6 +185,7 @@ async def synthesize_answer(
     tool_facts: list[str],
     chunks: list[KBChunk],
     fallback: str,
+    channel: str = "web"
 ) -> tuple[str, bool]:
     """LLM-woven grounded answer, or the deterministic ``fallback``.
 
@@ -177,7 +193,19 @@ async def synthesize_answer(
     deterministic fallback was used (no LLM / empty reply / error), which the
     caller may reflect in its confidence.
     """
-    system = _SYNTHESIS_SYSTEM.format(scheme_display=scheme_display)
+    if not chunks and not tool_facts:
+        # Never ask the LLM to answer a scheme question without authoritative
+        # material. Callers must provide either verified facts/passages or a
+        # vetted deterministic fallback.
+        return fallback, False
+    
+    delivery_style = (
+        _VOICE_DELIVERY_STYLE
+        if channel.lower() == "voice"
+        else _TEXT_DELIVERY_STYLE
+    )
+
+    system = _SYNTHESIS_SYSTEM.format(scheme_display=scheme_display, delivery_style = delivery_style)
     user = build_synthesis_user(user_message, collected_facts, tool_facts, chunks)
     # Inner timeout distinct from the outer specialist wait_for: if the LLM
     # stalls (Azure quota throttling, endpoint hiccup, proxy) we degrade to

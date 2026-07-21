@@ -17,6 +17,7 @@ from agents.specialists._grounding import (
     synthesize_answer,
 )
 from agents.specialists.base import AgentResponse, ContextPacket, SpecialistAgent
+from agents.specialists.overview_answer import answer_broad_overview
 
 # Deterministic navigation copy (UX template, not scheme knowledge) — used
 # when no LLM is available.
@@ -41,6 +42,9 @@ class RealGeneralAgent(SpecialistAgent):
         return self._llm
 
     async def handle(self, packet: ContextPacket) -> AgentResponse:
+        if packet.request_type == "overview":
+            return await answer_broad_overview(self.llm, packet)
+
         chunks = await retrieve_passages(packet.user_message, scheme=None)
         citations = chunks_to_citations(chunks)
 
@@ -52,6 +56,7 @@ class RealGeneralAgent(SpecialistAgent):
             tool_facts=[],
             chunks=chunks,
             fallback=_FALLBACK,
+            channel=packet.channel,
         )
         return AgentResponse(
             answer=answer,

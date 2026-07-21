@@ -9,6 +9,7 @@ real tracked slot rather than only prose) without any key or network.
 import pytest
 
 from agents.orchestrator.llm import FakeLLM
+from agents.specialists._grounding import synthesize_answer
 from agents.specialists.base import ContextPacket
 from agents.specialists.general import RealGeneralAgent
 from agents.specialists.poshan import RealPoshanAgent
@@ -18,11 +19,17 @@ from agents.specialists.vatsalya import RealVatsalyaAgent
 pytestmark = pytest.mark.asyncio
 
 
-def _packet(message: str, intent: str, facts: dict | None = None) -> ContextPacket:
+def _packet(
+    message: str,
+    intent: str,
+    facts: dict | None = None,
+    request_type: str = "guidance",
+) -> ContextPacket:
     return ContextPacket(
         session_id="s1",
         trace_id="t1",
         intent=intent,
+        request_type=request_type,
         user_message=message,
         collected_facts=facts or {},
     )
@@ -41,6 +48,39 @@ class PromptCapturingLLM(FakeLLM):
         self.system = system
         self.user = user
         return self._reply
+
+
+async def test_synthesis_prompt_uses_channel_specific_delivery_style():
+    voice_llm = PromptCapturingLLM()
+    await synthesize_answer(
+        voice_llm,
+        scheme_display="Mission Shakti",
+        user_message="What is Mission Shakti?",
+        collected_facts={},
+        tool_facts=["Verified scheme overview: Mission Shakti supports women."],
+        chunks=[],
+        fallback="Mission Shakti supports women.",
+        channel="voice",
+    )
+
+    text_llm = PromptCapturingLLM()
+    await synthesize_answer(
+        text_llm,
+        scheme_display="Mission Shakti",
+        user_message="What is Mission Shakti?",
+        collected_facts={},
+        tool_facts=["Verified scheme overview: Mission Shakti supports women."],
+        chunks=[],
+        fallback="Mission Shakti supports women.",
+        channel="web",
+    )
+
+    assert voice_llm.system is not None
+    assert "Write for listening, not for reading" in voice_llm.system
+    assert "End with at most one short, useful follow-up question" in voice_llm.system
+    assert text_llm.system is not None
+    assert "Write 3-6 short sentences" in text_llm.system
+    assert "Write for listening" not in text_llm.system
 
 
 # --------------------------------------------------------------------------- #
@@ -108,7 +148,13 @@ async def test_vatsalya_adoption_branch_does_not_lead_with_childline():
 async def test_vatsalya_foster_branch_uses_eligibility_tool():
     llm = PromptCapturingLLM()
     agent = RealVatsalyaAgent(llm=llm)
-    resp = await agent.handle(_packet("what is the foster care process", "vatsalya"))
+    resp = await agent.handle(
+        _packet(
+            "am I eligible for foster care",
+            "vatsalya",
+            request_type="eligibility",
+        )
+    )
     assert "eligibility" in resp.tool_calls
     assert "4,000" in llm.user
     assert len(resp.citations) >= 1
@@ -233,6 +279,27 @@ async def test_shakti_general_info_branch_skips_eligibility():
     resp = await agent.handle(_packet("tell me about mission shakti", "shakti"))
     assert "eligibility" not in resp.tool_calls
     assert resp.answer != ""
+
+
+@pytest.mark.parametrize(
+    ("message", "intent", "agent_cls"),
+    [
+        ("What is Poshan 2.0?", "poshan", RealPoshanAgent),
+        ("What is Mission Vatsalya?", "vatsalya", RealVatsalyaAgent),
+        ("What is Mission Shakti?", "shakti", RealShaktiAgent),
+        ("What is PMMVY?", "shakti", RealShaktiAgent),
+        ("What is foster care?", "vatsalya", RealVatsalyaAgent),
+    ],
+)
+async def test_overview_returns_answer_without_slots(message, intent, agent_cls):
+    agent = agent_cls(llm=FakeLLM())
+    response = await agent.handle(
+        _packet(message, intent, request_type="overview")
+    )
+    assert response.answer
+    assert not response.needs
+    assert response.citations
+    assert "overview_registry" in response.tool_calls
 
 
 async def test_vatsalya_sponsorship_uncertain_asks_family_in_crisis_as_tracked_slot():

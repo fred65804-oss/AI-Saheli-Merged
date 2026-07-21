@@ -12,6 +12,7 @@ from typing import Any, TypedDict
 
 from pydantic import BaseModel
 
+from agents.orchestrator.request_type import RequestType
 
 class CitizenProfile(BaseModel):
     """Synthetic-only in the demo. Built up from collected slots."""
@@ -44,6 +45,7 @@ class AgentState(TypedDict, total=False):
     confidence: float | None
     active_agent: str | None
     reroute_count: int
+    request_type: RequestType
 
     # dynamic questioning
     awaiting_slot: str | None              # slot name we asked for last turn

@@ -59,6 +59,9 @@ from mcp.helpline_directory.schemas import (
 )
 from mcp.helpline_directory.tool import lookup_helplines
 
+from agents.specialists.overview_answer import answer_scheme_overview
+from language.scheme_terms import canonicalize_scheme_terms
+
 # Branch triggers — deterministic routing heuristics, not scheme knowledge.
 _SAFETY_HINTS = ("one stop", "osc", "sakhi centre", "sakhi center", "unsafe", "helpline", "safety")
 _PMMVY_HINTS = (
@@ -156,7 +159,12 @@ class RealShaktiAgent(SpecialistAgent):
         return self._llm
 
     async def handle(self, packet: ContextPacket) -> AgentResponse:
-        msg = packet.user_message.lower()
+        if packet.request_type == "overview":
+            return await answer_scheme_overview(self.llm, packet)
+
+        # Canonicalize the user message so that if the user's message contains terms like PMMVY, etc
+        # the agent can process the message accordingly with the correctly understood term
+        msg = canonicalize_scheme_terms(packet.user_message).lower()
         facts = packet.collected_facts
         if any(k in msg for k in _SAFETY_HINTS):
             return await self._handle_safety(packet)
@@ -233,6 +241,7 @@ class RealShaktiAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(
             answer=answer,
@@ -317,6 +326,7 @@ class RealShaktiAgent(SpecialistAgent):
             tool_facts=tool_facts,
             chunks=chunks,
             fallback=" ".join(fallback_parts),
+            channel=packet.channel,
         )
         return AgentResponse(
             answer=answer,
@@ -354,6 +364,7 @@ class RealShaktiAgent(SpecialistAgent):
             tool_facts=[],
             chunks=chunks,
             fallback=fallback,
+            channel=packet.channel,
         )
         return AgentResponse(
             answer=answer,

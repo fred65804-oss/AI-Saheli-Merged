@@ -19,6 +19,7 @@ from typing import Protocol
 
 from pydantic import BaseModel, Field
 
+from agents.orchestrator.request_type import RequestType
 from apps.backend.config import get_settings
 
 
@@ -35,6 +36,7 @@ class InteractionTrace(BaseModel):
     lang: str = "en"
     user_message: str = ""
     intent: str | None = None
+    request_type: RequestType | None = None
     confidence: float | None = None
     safety_source: str | None = None       # lexicon | llm | none
     safety_category: str | None = None
