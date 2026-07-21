@@ -23,6 +23,9 @@ const nextConfig = {
       { source: "/helplines", destination: `${BACKEND_ORIGIN}/helplines` },
       { source: "/tools/:path*", destination: `${BACKEND_ORIGIN}/tools/:path*` },
       { source: "/auth/:path*", destination: `${BACKEND_ORIGIN}/auth/:path*` },
+      // Meta's WhatsApp webhook — proxied so ONE public tunnel (ngrok → :3000)
+      // serves both the web app and the webhook.
+      { source: "/whatsapp-webhook", destination: `${BACKEND_ORIGIN}/whatsapp-webhook` },
       // Analytics API sub-paths — /dashboard itself is a Next page.
       { source: "/analytics/:path*", destination: `${BACKEND_ORIGIN}/analytics/:path*` },
     ];
