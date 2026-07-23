@@ -1,12 +1,12 @@
 # Built from apps/web/ (see docker-compose.yml `context: ./apps/web`) — the
 # frontend has no dependency on anything outside this directory.
 
-FROM node:20-alpine AS deps
+FROM node:26-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:20-alpine AS builder
+FROM node:26-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -21,7 +21,7 @@ RUN npm run build
 
 # Standalone output (next.config.mjs `output: "standalone"`) copies only the
 # node_modules actually used at runtime — a fraction of the full `npm ci` tree.
-FROM node:20-alpine AS runner
+FROM node:26-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 # server.js binds to process.env.HOSTNAME, and Docker auto-sets HOSTNAME to
