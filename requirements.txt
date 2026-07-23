@@ -13,7 +13,7 @@ langchain-openai>=0.2.0
 
 # Models / validation
 pydantic>=2.7
-pydantic-settings>=2.3
+pydantic-settings>=2.14.2
 
 # Config
 python-dotenv>=1.0
