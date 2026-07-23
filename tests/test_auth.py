@@ -6,7 +6,8 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-from apps.backend.auth.db import init_db
+from apps.backend.auth.db import SessionLocal, init_db
+from apps.backend.auth.models import User
 from apps.backend.main import app
 
 
@@ -23,6 +24,15 @@ def _fresh_auth_db():
 def client():
     with TestClient(app) as c:
         yield c
+
+
+@pytest.fixture()
+def db_session():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 def _signup(client, email="alice@example.com", password="correct-horse-1", name="Alice"):
@@ -123,12 +133,33 @@ def test_analytics_route_requires_auth(client):
     assert r.status_code == 401
 
 
-def test_analytics_route_accessible_with_token(client):
+def test_analytics_route_rejects_citizen(client):
     tokens = _signup(client, email="dash1@example.com").json()
     r = client.get(
         "/analytics/summary", headers={"Authorization": f"Bearer {tokens['access_token']}"}
     )
+    assert r.status_code == 403
+
+
+def test_analytics_route_accessible_to_admin(client, db_session):
+    tokens = _signup(client, email="admin1@example.com").json()
+    user = db_session.query(User).filter(User.email == "admin1@example.com").first()
+    user.role = "admin"
+    db_session.commit()
+
+    r = client.get(
+        "/analytics/summary", headers={"Authorization": f"Bearer {tokens['access_token']}"}
+    )
     assert r.status_code == 200
+
+
+def test_signup_cannot_self_assign_admin_role(client):
+    r = client.post(
+        "/auth/signup",
+        json={"name": "Eve", "email": "eve@example.com", "password": "correct-horse-1", "role": "admin"},
+    )
+    assert r.status_code == 201
+    assert r.json()["user"]["role"] == "citizen"
 
 
 def test_meta_stays_public(client):

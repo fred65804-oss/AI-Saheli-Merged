@@ -1,0 +1,21 @@
+t=2026-07-22T10:31:47+0530 lvl=info msg="no configuration paths supplied"
+t=2026-07-22T10:31:47+0530 lvl=info msg="using configuration at default config path" path=C:\\Users\\yashwin.verma\\AppData\\Local\\ngrok\\ngrok.yml
+t=2026-07-22T10:31:47+0530 lvl=info msg="open config file" path=C:\\Users\\yashwin.verma\\AppData\\Local\\ngrok\\ngrok.yml err=nil
+t=2026-07-22T10:31:47+0530 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-07-22T10:31:47+0530 lvl=warn msg="can't bind default web address, trying alternatives" obj=web addr=127.0.0.1:4040
+t=2026-07-22T10:31:47+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4041 allow_hosts=[]
+t=2026-07-22T10:31:47+0530 lvl=info msg="client session established" obj=tunnels.session
+t=2026-07-22T10:31:47+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-07-22T10:31:47+0530 lvl=eror msg="session closing" obj=tunnels.session err="failed to start tunnel: The endpoint 'https://marbles-lilly-earache.ngrok-free.dev' is already online. Either\n1. stop your existing endpoint first, or\n2. start both endpoints with `--pooling-enabled` to load balance between them.\r\n\r\nERR_NGROK_334\r\n"
+t=2026-07-22T10:31:47+0530 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=a1830884f358 err="reconnecting session closed"
+t=2026-07-22T10:31:47+0530 lvl=info msg="no more state changes" obj=tunnels.session
+t=2026-07-22T10:31:47+0530 lvl=info msg="received stop request" obj=app stopReq="{err:{Inner:{Inner:0x2c748dab0e70}} restart:false}"
+t=2026-07-22T10:31:47+0530 lvl=eror msg="terminating with error" obj=app err="failed to start tunnel: The endpoint 'https://marbles-lilly-earache.ngrok-free.dev' is already online. Either\n1. stop your existing endpoint first, or\n2. start both endpoints with `--pooling-enabled` to load balance between them.\r\n\r\nERR_NGROK_334\r\n"
+t=2026-07-22T10:31:47+0530 lvl=crit msg="command failed" err="failed to start tunnel: The endpoint 'https://marbles-lilly-earache.ngrok-free.dev' is already online. Either\n1. stop your existing endpoint first, or\n2. start both endpoints with `--pooling-enabled` to load balance between them.\r\n\r\nERR_NGROK_334\r\n"
+ERROR:  failed to start tunnel: The endpoint 'https://marbles-lilly-earache.ngrok-free.dev' is already online. Either
+ERROR:  1. stop your existing endpoint first, or
+ERROR:  2. start both endpoints with `--pooling-enabled` to load balance between them.
+ERROR:  
+ERROR:  ERR_NGROK_334
+ERROR:  https://ngrok.com/docs/errors/err_ngrok_334
+ERROR:  

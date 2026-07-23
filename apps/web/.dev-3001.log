@@ -1,0 +1,12 @@
+
+> ai-saheli-web@0.1.0 dev
+> next dev -p 3001
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3001
+  - Experiments (use with caution):
+    · proxyTimeout
+
+ ✓ Starting...
+ ✓ Ready in 4.4s
+[?25h

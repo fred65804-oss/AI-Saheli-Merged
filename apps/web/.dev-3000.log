@@ -1,0 +1,26 @@
+
+> ai-saheli-web@0.1.0 dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3000
+  - Experiments (use with caution):
+    · proxyTimeout
+
+ ✓ Starting...
+ ✓ Ready in 1829ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.8s (602 modules)
+ GET / 200 in 4007ms
+ GET / 200 in 30ms
+ GET / 200 in 58ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 819ms (632 modules)
+ ✓ Compiled /login in 308ms (628 modules)
+ ✓ Compiled /tools in 382ms (644 modules)
+ ✓ Compiled /system in 342ms (662 modules)
+ ○ Compiling /_not-found ...
+ GET / 200 in 2119ms
+ GET / 200 in 1852ms
+ ✓ Compiled /_not-found in 2.9s (655 modules)
+ GET / 200 in 268ms

@@ -26,6 +26,10 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     name: Mapped[str] = mapped_column(String(255), nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
+    # "citizen" (default) or "admin". Signup always creates "citizen" — see
+    # apps/backend/auth/service.py; the only way to become admin is
+    # scripts/create_admin.py run directly against the DB.
+    role: Mapped[str] = mapped_column(String(20), default="citizen", nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_now)
 

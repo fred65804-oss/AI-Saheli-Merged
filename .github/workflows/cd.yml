@@ -1,0 +1,148 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: pytest
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - working-directory: apps/web
+        run: npm ci && npm run build
+
+  build-and-push:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      backend_image: ${{ steps.meta-backend.outputs.tags }}
+      web_image: ${{ steps.meta-web.outputs.tags }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # GHCR image names must be all-lowercase; github.repository isn't
+      # (this repo is "AI-Saheli-Merged").
+      - id: repo
+        run: echo "name=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}-backend
+          tags: |
+            type=sha,format=long
+            type=raw,value=latest
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: apps/backend/Dockerfile
+          push: true
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - id: meta-web
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.name }}-web
+          tags: |
+            type=sha,format=long
+            type=raw,value=latest
+      - uses: docker/build-push-action@v5
+        with:
+          context: ./apps/web
+          push: true
+          tags: ${{ steps.meta-web.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Scan the actual image that would ship — before it's used anywhere —
+      # not just the source tree (that's ci.yml's job on every PR).
+      - uses: aquasecurity/trivy-action@master
+        continue-on-error: true # report-only for now, see DEVSECOPS_PLAN.md #3
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ github.repository }}-backend:${{ github.sha }}
+          severity: CRITICAL,HIGH
+
+  deploy-staging:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Check STAGING_HOST is configured
+        id: check
+        env:
+          STAGING_HOST: ${{ secrets.STAGING_HOST }}
+        run: echo "configured=$([ -n \"$STAGING_HOST\" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: No staging host yet — skipping deploy
+        if: steps.check.outputs.configured == 'false'
+        run: |
+          echo "::notice::STAGING_HOST secret not set. See DEVSECOPS_PLAN.md 'Step 0' — provision a Linux host, add SSH_HOST/SSH_KEY/JWT_SECRET_KEY as GitHub Environment secrets under 'staging', then this job deploys automatically on every push to main."
+
+      - name: Deploy to staging over SSH
+        if: steps.check.outputs.configured == 'true'
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_SSH_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          script: |
+            cd /opt/ai-saheli
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            git pull
+            docker compose pull
+            docker compose up -d
+            curl -sf --retry 10 --retry-delay 5 http://localhost:8000/health
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment: production # configure a required reviewer on this GitHub Environment
+    steps:
+      - name: Check PROD_HOST is configured
+        id: check
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: echo "configured=$([ -n \"$PROD_HOST\" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: No production host yet — skipping deploy
+        if: steps.check.outputs.configured == 'false'
+        run: echo "::notice::PROD_HOST secret not set. Nothing to deploy to yet."
+
+      - name: Deploy to production over SSH
+        if: steps.check.outputs.configured == 'true'
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_SSH_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            cd /opt/ai-saheli
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            git pull
+            docker compose pull
+            docker compose up -d
+            curl -sf --retry 10 --retry-delay 5 http://localhost:8000/health

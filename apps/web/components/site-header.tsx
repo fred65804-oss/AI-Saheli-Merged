@@ -8,16 +8,17 @@ import { useAuth } from "@/contexts/auth-context";
 import { Button } from "@/components/ui/button";
 
 const NAV = [
-  { href: "/", label: "Chat", icon: MessageSquare },
-  { href: "/dashboard", label: "Analytics", icon: BarChart3 },
-  { href: "/tools", label: "Tools", icon: Wrench },
-  { href: "/system", label: "System", icon: ServerCog },
+  { href: "/", label: "Chat", icon: MessageSquare, adminOnly: false },
+  { href: "/dashboard", label: "Analytics", icon: BarChart3, adminOnly: true },
+  { href: "/tools", label: "Tools", icon: Wrench, adminOnly: true },
+  { href: "/system", label: "System", icon: ServerCog, adminOnly: false },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
   const { user, loading, logout } = useAuth();
   const router = useRouter();
+  const nav = NAV.filter((item) => !item.adminOnly || user?.role === "admin");
 
   return (
     <header className="border-b border-border bg-white sticky top-0 z-30">
@@ -35,7 +36,7 @@ export function SiteHeader() {
         </Link>
         <div className="flex items-center gap-3">
           <nav className="flex items-center gap-1">
-            {NAV.map((item) => {
+            {nav.map((item) => {
               const active = pathname === item.href;
               const Icon = item.icon;
               return (

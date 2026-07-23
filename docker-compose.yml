@@ -1,0 +1,56 @@
+name: ai-saheli
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ai_saheli_data:/app/data
+      - ai_saheli_logs:/app/logs
+    # Exposed directly too (in addition to going through Caddy) purely for
+    # local debugging convenience — curl :8000/health, POST :8000/warmup.
+    # Drop this port mapping once this compose file targets a shared host.
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+      # Must be a build arg, not a runtime `environment:` — see the comment
+      # in apps/web/Dockerfile on why next.config.mjs's rewrites() need this
+      # at `next build` time.
+      args:
+        BACKEND_ORIGIN: http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+volumes:
+  ai_saheli_data:
+  ai_saheli_logs:
+  caddy_data:

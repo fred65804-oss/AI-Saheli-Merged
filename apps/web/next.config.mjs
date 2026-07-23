@@ -6,6 +6,10 @@ const BACKEND_ORIGIN = process.env.BACKEND_ORIGIN || "http://127.0.0.1:8000";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Standalone output bundles a minimal server + only the node_modules
+  // actually used at runtime — what the Docker image copies (see
+  // apps/web/Dockerfile) instead of the full node_modules tree.
+  output: "standalone",
   // Next's external-rewrite proxy defaults to 30 seconds. A voice turn can
   // legitimately take longer (ASR + retrieval/LLM + translation + TTS), so
   // keep the proxy alive long enough for the backend's bounded pipeline to

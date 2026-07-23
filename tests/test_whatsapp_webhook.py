@@ -9,7 +9,7 @@ ignore status callbacks (delivered/read receipts) rather than crash on them.
 from fastapi.testclient import TestClient
 
 from apps.backend.main import app
-from apps.backend.whatsapp_webhook import _extract_inbound
+from apps.backend.whatsapp_webhook import _extract_inbound, _parse_language_choice
 
 client = TestClient(app)
 
@@ -81,3 +81,18 @@ def test_extract_inbound_ignores_status_callbacks():
 def test_extract_inbound_handles_malformed_payload():
     assert _extract_inbound({}) is None
     assert _extract_inbound({"entry": []}) is None
+
+
+def test_parse_language_choice_matches_digit():
+    assert _parse_language_choice("1") == "hi"
+    assert _parse_language_choice("10") == "pa"
+
+
+def test_parse_language_choice_matches_name_case_insensitive():
+    assert _parse_language_choice("English") == "en"
+    assert _parse_language_choice(" tamil ") == "ta"
+
+
+def test_parse_language_choice_rejects_unknown():
+    assert _parse_language_choice("french") is None
+    assert _parse_language_choice("") is None

@@ -50,7 +50,7 @@ const TABS: { id: ToolTab; label: string; icon: typeof Search }[] = [
 
 export default function ToolsPage() {
   return (
-    <RequireAuth>
+    <RequireAuth requireAdmin>
       <ToolsExplorer />
     </RequireAuth>
   );

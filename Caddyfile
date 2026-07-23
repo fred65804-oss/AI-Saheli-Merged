@@ -1,0 +1,7 @@
+# Local/laptop mode: plain HTTP on :80, no domain to get a cert for yet.
+# Once this stack moves to a real host with a domain, replace ":80" with that
+# domain (e.g. "saheli.example.gov.in") and Caddy issues/renews HTTPS
+# automatically — no other change needed.
+:80 {
+	reverse_proxy web:3000
+}

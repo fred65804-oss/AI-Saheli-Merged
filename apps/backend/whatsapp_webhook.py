@@ -36,6 +36,42 @@ router = APIRouter()
 
 GRAPH_TIMEOUT_SECONDS = 20.0
 
+# wa_id -> chosen language code, or "" while the menu has been sent and we're
+# waiting on their reply. Absent = never contacted before.
+# ponytail: in-memory, lost on backend restart (same durability as the rest
+# of session state here — MemorySaver, no Redis/Postgres). Upgrade together
+# if/when sessions move to a real store.
+_wa_lang: dict[str, str] = {}
+
+# code -> (menu digit, display name). Matches the 10 languages free_provider
+# actually supports (see language/free_provider.py _VOICES).
+_LANGUAGES: list[tuple[str, str, str]] = [
+    ("1", "hi", "Hindi / हिन्दी"),
+    ("2", "en", "English"),
+    ("3", "bn", "Bengali / বাংলা"),
+    ("4", "ta", "Tamil / தமிழ்"),
+    ("5", "te", "Telugu / తెలుగు"),
+    ("6", "mr", "Marathi / मराठी"),
+    ("7", "gu", "Gujarati / ગુજરાતી"),
+    ("8", "kn", "Kannada / ಕನ್ನಡ"),
+    ("9", "ml", "Malayalam / മലയാളം"),
+    ("10", "pa", "Punjabi / ਪੰਜਾਬੀ"),
+]
+
+_LANGUAGE_MENU = "Namaste! 🙏 Please choose your language / कृपया अपनी भाषा चुनें:\n" + "\n".join(
+    f"{digit}. {name}" for digit, _, name in _LANGUAGES
+) + "\n\nReply with a number."
+
+
+def _parse_language_choice(text: str) -> str | None:
+    """Match a menu digit or a language's English name, else None."""
+    text = text.strip().lower()
+    for digit, code, name in _LANGUAGES:
+        english_name = name.split(" / ")[0].lower()
+        if text == digit or text == code or text == english_name:
+            return code
+    return None
+
 
 @dataclass
 class InboundMessage:
@@ -98,9 +134,28 @@ async def _handle_inbound(inbound: InboundMessage, graph, provider: LanguageProv
         return
 
     try:
+        lang = _wa_lang.get(inbound.wa_id)
+        if lang is None:
+            # First-ever contact from this wa_id — ask, don't guess.
+            _wa_lang[inbound.wa_id] = ""
+            await _send_text(inbound.wa_id, _LANGUAGE_MENU, settings)
+            return
+        if lang == "":
+            # Awaiting their menu reply. A voice note here can't be
+            # transcribed without knowing the language yet, so re-show the
+            # menu regardless of message kind.
+            choice = _parse_language_choice(inbound.text or "")
+            if choice is None:
+                await _send_text(inbound.wa_id, _LANGUAGE_MENU, settings)
+                return
+            _wa_lang[inbound.wa_id] = choice
+            name = next(name for _, code, name in _LANGUAGES if code == choice)
+            await _send_text(inbound.wa_id, f"{name} ✅ — you can ask your question now.", settings)
+            return
+
         if inbound.kind == "audio":
             audio_b64 = await _download_media_base64(inbound.media_id, settings)
-            text = await provider.transcribe(audio_b64, "hi")
+            text = await provider.transcribe(audio_b64, lang)
             if not text.strip():
                 await _send_text(inbound.wa_id, "Sorry, I couldn't hear that clearly. Could you try again?", settings)
                 return
@@ -108,7 +163,7 @@ async def _handle_inbound(inbound: InboundMessage, graph, provider: LanguageProv
             text = inbound.text or ""
 
         _, localized, _, _ = await translated_turn(
-            provider, graph, session_id=inbound.wa_id, message=text, channel="whatsapp", lang="hi"
+            provider, graph, session_id=inbound.wa_id, message=text, channel="whatsapp", lang=lang
         )
         if localized:
             await _send_text(inbound.wa_id, localized, settings)

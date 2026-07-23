@@ -94,7 +94,7 @@ function timelineLabel(t: string) {
 
 export default function DashboardPage() {
   return (
-    <RequireAuth>
+    <RequireAuth requireAdmin>
       <DashboardContent />
     </RequireAuth>
   );

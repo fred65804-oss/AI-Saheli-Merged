@@ -385,3 +385,30 @@ This document describes the plan. Nothing has been built yet — not the
 pipeline files (Dockerfiles, `docker-compose.yml`, `.github/workflows/`,
 `DEPLOYMENT.md`), not the admin/citizen role split, not the WhatsApp
 webhook. Say which piece to start with.
+
+## Build order (added 2026-07-23 — Docker Desktop now installed, no staging
+## host provisioned yet)
+
+Sequenced so nothing blocks on [Step 0](#step-0--you-need-an-actual-computer-to-deploy-to-do-this-first)
+until it has to.
+
+1. **Containerize locally** — `apps/backend/Dockerfile`, `apps/web/Dockerfile`,
+   `docker-compose.yml`, `.dockerignore`. Verify with `docker compose build`
+   and `docker compose up` against a throwaway `.env` — full chat round-trip
+   at `:3000`, no VM required for this step.
+2. **Role-based access** (see [Feature A](#a-role-based-access-dashboard--admin-only-chatbot--everyone)) —
+   independent of Docker/CI, do in parallel with step 1.
+3. **CI** — `.github/workflows/ci.yml` (pytest, `next build`, gitleaks/
+   pip-audit/npm-audit/trivy in report-only mode), Dependabot config. Still
+   no host required.
+4. **Blocked on the user**: provision the staging VM per Step 0 and hand over
+   its IP + SSH access.
+5. **CD to staging** — GHCR push + SSH deploy workflow, gated on step 4.
+6. **Production gate** — same deploy job against `PROD_HOST`, gated on a
+   GitHub "production" environment reviewer, gated on step 5 + the Ministry's
+   prod-hosting decision.
+7. **`DEPLOYMENT.md`** runbook.
+8. **WhatsApp webhook go-live** — code already exists
+   (`apps/backend/whatsapp_webhook.py`); once step 5 gives a real HTTPS
+   domain, point Meta's webhook at it and add the `WHATSAPP_*` secrets. No
+   further code changes.

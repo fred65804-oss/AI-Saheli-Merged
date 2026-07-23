@@ -42,7 +42,7 @@ log = logging.getLogger("ai-saheli")
 from agents.orchestrator.graph import default_orchestrator
 from agents.orchestrator.llm import get_llm
 from apps.backend.auth.db import init_db
-from apps.backend.auth.deps import get_current_user
+from apps.backend.auth.deps import require_admin
 from apps.backend.auth.router import router as auth_router
 from apps.backend.config import get_settings
 from apps.backend.dashboard import public_router as dashboard_public_router, router as dashboard_router
@@ -132,10 +132,9 @@ app.include_router(auth_router)
 # helpline numbers) that the public chat page also depends on — no login wall.
 app.include_router(dashboard_public_router)
 # The rest of the dashboard (tool passthroughs, analytics) is Ministry-internal
-# — every route in dashboard_router requires a logged-in user. /chat, /voice,
-# /health, /warmup stay open so other channels (WhatsApp, voice IVR) keep
-# working without a login wall.
-app.include_router(dashboard_router, dependencies=[Depends(get_current_user)])
+# and admin-only. /chat, /voice, /health, /warmup stay open so other channels
+# (WhatsApp, voice IVR) keep working without a login wall.
+app.include_router(dashboard_router, dependencies=[Depends(require_admin)])
 # WhatsApp is a third channel into the same _translated_turn/run_turn pipeline
 # as /chat and /voice — same no-login-wall posture, Meta itself is the caller.
 app.include_router(whatsapp_router)
