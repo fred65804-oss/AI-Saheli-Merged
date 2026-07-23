@@ -2,7 +2,7 @@
 
 pypdfium2>=4            # render PDF pages to images (permissive license)
 rapidocr-onnxruntime   # free, pip-only OCR engine (default backend)
-onnxruntime>=1.17      # RapidOCR runtime
+onnxruntime>=1.27.0      # RapidOCR runtime
 numpy
 Pillow>=10
 wordninja              # repairs OCR space-drops ("coordinateand" -> "coordinate and")
