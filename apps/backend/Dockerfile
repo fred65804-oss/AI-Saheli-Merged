@@ -1,7 +1,7 @@
 # Built from the repo ROOT (see docker-compose.yml `context: .`) because the
 # backend imports the top-level agents/, mcp/, rag/, language/ packages, not
 # just apps/backend/.
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 WORKDIR /app
 
