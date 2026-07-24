@@ -11,7 +11,8 @@ from __future__ import annotations
 import os
 from collections.abc import Iterator
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect, text
+from sqlalchemy.engine import Engine
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from apps.backend.config import get_settings
@@ -37,11 +38,34 @@ engine = _make_engine()
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 
+def _migrate_schema(bind: Engine) -> None:
+    """Apply backwards-compatible upgrades to existing auth databases.
+
+    ``MetaData.create_all`` creates missing tables but does not add new
+    columns to tables that already exist. Keep explicit additive migrations
+    here until the project adopts a dedicated migration tool such as Alembic.
+    """
+    schema = inspect(bind)
+    if "users" not in schema.get_table_names():
+        return
+
+    user_columns = {column["name"] for column in schema.get_columns("users")}
+    if "role" not in user_columns:
+        with bind.begin() as connection:
+            connection.execute(
+                text(
+                    "ALTER TABLE users "
+                    "ADD COLUMN role VARCHAR(20) NOT NULL DEFAULT 'citizen'"
+                )
+            )
+
+
 def init_db() -> None:
-    """Create tables that don't exist yet. Idempotent — safe on every startup."""
+    """Create and upgrade auth tables. Idempotent — safe on every startup."""
     from apps.backend.auth import models  # noqa: F401  (registers tables on Base)
 
     Base.metadata.create_all(bind=engine)
+    _migrate_schema(engine)
 
 
 def get_db() -> Iterator[Session]:

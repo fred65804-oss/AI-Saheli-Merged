@@ -35,8 +35,17 @@ def db_session():
         db.close()
 
 
-def _signup(client, email="alice@example.com", password="correct-horse-1", name="Alice"):
-    return client.post("/auth/signup", json={"name": name, "email": email, "password": password})
+def _signup(
+    client,
+    email="alice@example.com",
+    password="correct-horse-1",
+    name="Alice",
+    role="citizen",
+):
+    return client.post(
+        "/auth/signup",
+        json={"name": name, "email": email, "password": password, "role": role},
+    )
 
 
 def test_signup_creates_user_and_returns_tokens(client):
@@ -153,13 +162,24 @@ def test_analytics_route_accessible_to_admin(client, db_session):
     assert r.status_code == 200
 
 
-def test_signup_cannot_self_assign_admin_role(client):
-    r = client.post(
-        "/auth/signup",
-        json={"name": "Eve", "email": "eve@example.com", "password": "correct-horse-1", "role": "admin"},
-    )
+def test_signup_can_create_explicit_admin_demo_account(client):
+    r = _signup(client, email="eve@example.com", name="Eve", role="admin")
     assert r.status_code == 201
-    assert r.json()["user"]["role"] == "citizen"
+    assert r.json()["user"]["role"] == "admin"
+
+
+def test_login_rejects_role_mismatch(client):
+    _signup(client, email="role1@example.com", password="right-password-1", role="citizen")
+    r = client.post(
+        "/auth/login",
+        json={
+            "email": "role1@example.com",
+            "password": "right-password-1",
+            "role": "admin",
+        },
+    )
+    assert r.status_code == 403
+    assert "registered as Citizen" in r.json()["detail"]
 
 
 def test_meta_stays_public(client):

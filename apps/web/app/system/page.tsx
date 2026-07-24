@@ -14,6 +14,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { RequireAuth } from "@/components/require-auth";
 import { getHealth, getMeta, type AppMeta, type HealthInfo } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +23,13 @@ const SCHEME_STYLE: Record<string, string> = {
   vatsalya: "bg-sky-100 text-sky-800 border-sky-200",
   shakti: "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200",
   general: "bg-slate-100 text-slate-700 border-slate-200",
+};
+
+const SCHEME_SURFACE: Record<string, string> = {
+  poshan: "border-l-emerald-500 from-emerald-50/70",
+  vatsalya: "border-l-sky-500 from-sky-50/70",
+  shakti: "border-l-fuchsia-500 from-fuchsia-50/70",
+  general: "border-l-slate-400 from-slate-50/70",
 };
 
 export default function SystemPage() {
@@ -44,12 +52,16 @@ export default function SystemPage() {
   useEffect(load, []);
 
   return (
-    <div className="space-y-5">
+    <RequireAuth requireAdmin>
+      <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-ministry">System panel</h1>
+          <div className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Staff workspace
+          </div>
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-ministry">System status</h1>
           <p className="text-sm text-muted-foreground">
-            Live runtime configuration — everything shown here is read from the backend, nothing is hardcoded.
+            Review service availability, language coverage, and AI configuration.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -107,7 +119,7 @@ export default function SystemPage() {
 
       {meta && (
         <>
-          <Card>
+          <Card className="surface-raised border-blue-100">
             <CardContent className="pt-5">
               <div className="mb-3 flex items-center gap-2">
                 <Cpu className="h-4 w-4 text-ministry" />
@@ -123,7 +135,7 @@ export default function SystemPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="surface-raised border-blue-100">
             <CardContent className="pt-5">
               <div className="mb-3 flex items-center gap-2">
                 <Bot className="h-4 w-4 text-ministry" />
@@ -135,7 +147,10 @@ export default function SystemPage() {
                 {meta.cards.map((c) => (
                   <div
                     key={c.scheme}
-                    className="rounded-xl border border-white/70 bg-white/70 p-4"
+                    className={cn(
+                      "ui-lift rounded-xl border border-l-4 border-white/80 bg-gradient-to-r to-white p-4 shadow-sm",
+                      SCHEME_SURFACE[c.scheme] || SCHEME_SURFACE.general,
+                    )}
                   >
                     <div className="mb-1.5 flex flex-wrap items-center gap-2">
                       <span
@@ -161,7 +176,7 @@ export default function SystemPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="surface-raised border-blue-100">
             <CardContent className="pt-5">
               <div className="mb-3 flex items-center gap-2">
                 <Languages className="h-4 w-4 text-ministry" />
@@ -173,7 +188,7 @@ export default function SystemPage() {
                 {meta.languages.map((l) => (
                   <span
                     key={l.code}
-                    className="rounded-full border border-white/70 bg-white/70 px-3 py-1 text-sm"
+                    className="rounded-full border border-blue-100 bg-white/80 px-3 py-1 text-sm shadow-sm transition-colors hover:border-ministry/30 hover:bg-blue-50"
                     title={l.name}
                   >
                     {l.native}{" "}
@@ -185,7 +200,8 @@ export default function SystemPage() {
           </Card>
         </>
       )}
-    </div>
+      </div>
+    </RequireAuth>
   );
 }
 
@@ -203,15 +219,29 @@ function StatusCard({
   hint: string;
 }) {
   return (
-    <Card>
+    <Card
+      className={cn(
+        "ui-lift overflow-hidden border-t-4 bg-gradient-to-br to-white",
+        ok
+          ? "border-t-emerald-500 from-emerald-50/60"
+          : "border-t-slate-300 from-slate-50/70",
+      )}
+    >
       <CardContent className="pt-5">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {label}
           </span>
-          <Icon className={cn("h-4 w-4", ok ? "text-emerald-600" : "text-muted-foreground")} />
+          <span
+            className={cn(
+              "grid h-8 w-8 place-items-center rounded-lg",
+              ok ? "bg-emerald-100" : "bg-slate-100",
+            )}
+          >
+            <Icon className={cn("h-4 w-4", ok ? "text-emerald-600" : "text-muted-foreground")} />
+          </span>
         </div>
-        <div className={cn("mt-1.5 text-xl font-semibold", ok ? "text-foreground" : "text-muted-foreground")}>
+        <div className={cn("font-display mt-1.5 text-xl font-semibold", ok ? "text-foreground" : "text-muted-foreground")}>
           {value}
         </div>
         <div className="mt-0.5 truncate text-xs text-muted-foreground" title={hint}>

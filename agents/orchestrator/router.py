@@ -206,7 +206,7 @@ class Router:
             message, self._cards, request_type
         )
         
-        if (deterministic.intent != UNCLEAR and deterministic.confidence > 0.7):
+        if (deterministic.intent != UNCLEAR and deterministic.confidence >= 0.7):
             return deterministic
 
         # LLM Routing

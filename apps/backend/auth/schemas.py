@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, EmailStr, Field, field_validator
 
@@ -11,6 +12,7 @@ class SignupRequest(BaseModel):
     name: str = Field(min_length=1, max_length=255)
     email: EmailStr
     password: str = Field(min_length=8, max_length=128)
+    role: Literal["citizen", "admin"] = "citizen"
 
     @field_validator("name")
     @classmethod
@@ -24,6 +26,7 @@ class SignupRequest(BaseModel):
 class LoginRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=1)
+    role: Literal["citizen", "admin"] | None = None
 
 
 class RefreshRequest(BaseModel):

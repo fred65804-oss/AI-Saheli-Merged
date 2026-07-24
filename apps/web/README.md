@@ -20,10 +20,10 @@ Override in `.env.local` if the backend runs elsewhere.
 
 ## Pages
 - `/` — chat UI: text mode + voice-avatar mode (calls `POST /chat` / `POST /voice`, threads state via a per-session id).
-- `/dashboard` — analytics, login-walled (calls `GET /analytics/summary` + `GET /analytics/recent`).
-- `/tools` — tool explorer, login-walled (KB search, eligibility, geo locator, helplines).
-- `/system` — system panel (health, LLM config, capability cards, languages).
-- `/login`, `/signup`, `/forgot-password` — auth pages (`forgot-password` is a UI stub, no backend endpoint).
+- `/dashboard` — admin analytics (calls `GET /analytics/summary` + `GET /analytics/recent`).
+- `/tools` — admin tool explorer (KB search, eligibility, geo locator, helplines).
+- `/system` — admin system panel (health, LLM config, capability cards, languages).
+- `/login`, `/signup`, `/forgot-password` — role-aware auth pages (`forgot-password` is a UI stub, no backend endpoint).
 
 ## Routes it depends on (backend)
 - `POST /chat`, `POST /voice`

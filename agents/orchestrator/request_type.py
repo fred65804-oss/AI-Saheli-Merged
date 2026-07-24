@@ -15,7 +15,14 @@ _OVERVIEW_PATTERNS = (
     r"\boverview\b",
     r"\bwhat schemes\b",
     r"\bwhich schemes\b",
-    r"\bkaun si yojana\b"
+    r"\bkaun si yojana\b",
+    r"\bkya hai\b",
+    r"\bkya hota hai\b",
+    r"\bke baare mein batao",
+    r"\bke bare me batao",
+    r"\bke baare mein bataao",
+    r"\bke baare me bataao",
+    r"^\s*(?:schemes?|yojana)\s*[?.!]*$"
 )
 
 _ELIGIBILITY_PATTERNS = (
@@ -66,6 +73,11 @@ def classify_request_type(message: str) -> RequestType | None:
 
 def is_broad_scheme_discovery(message: str) -> bool:
     text = normalize(message)
+
+    # Accept a direct response to the clarification prompt
+    if re.fullmatch(r"(?:schemes?|yojana)[?.!]*", text):
+        return True 
+    
     return bool(
         re.search(
             r"\b(?:what|which|available|government|ministry).{0,30}"

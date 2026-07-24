@@ -84,6 +84,12 @@ _PMMVY_QUALIFIER_PATTERNS = (
     ("disabled", r"\b(?:disabled|disability|divyang|divyangjan)\b"),
     ("below_8_lakh", r"\b(?:below|under|less than)\s*(?:₹|rs\.?|inr)?\s*8\s*(?:lakh|lac)\b"),
     ("above_8_lakh", r"\b(?:above|over|more than|at least)\s*(?:₹|rs\.?|inr)?\s*8\s*(?:lakh|lac)\b"),
+    # General category is not itself a qualifying category.
+    # The specialist will ask the income-threshold question next
+    (
+        "general", r"\b(?:general(?:\s+(?:category|caste))"
+        r"samanya(?:\s+varg)?)\b",
+    )
 )
 
 _BOOL_TRUE = ["yes", "haan", "han", "ji haan", "girl", "beti", "true", "crisis",
@@ -104,6 +110,13 @@ def _norm_slots(text: str) -> str:
 
 
 def _match_bool(message_norm: str) -> str | None:
+    # Check for negative answers first
+    if re.search(r"\b(?:no|nahi|nahin|na|boy|beta|ladka|false)\b", message_norm):
+        return "False"
+    if re.search(r"\b(?:yes|haan|haa|ha|ji haan|hanji|true|haanji)", message_norm):
+        return "True"
+    if re.search(r"\b(?:girl|beti|ladki)", message_norm):
+        return "True"
     if any(h in message_norm for h in _BOOL_FALSE):
         return "false"
     if any(h in message_norm for h in _BOOL_TRUE):

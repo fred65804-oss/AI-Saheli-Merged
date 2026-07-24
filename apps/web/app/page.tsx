@@ -11,8 +11,13 @@ import {
   ShieldAlert,
   Utensils,
   LoaderCircle,
+  Languages,
   MessageCircle,
   Mic,
+  Globe2,
+  LockKeyhole,
+  RotateCcw,
+  ShieldCheck,
   Square,
 } from "lucide-react";
 
@@ -59,24 +64,44 @@ const STARTERS = [
     title: "Nutrition during pregnancy",
     text: "Pregnancy mein kya khana chahiye?",
     icon: Utensils,
+    scheme: "Poshan",
+    cardClass:
+      "border-emerald-200/80 bg-gradient-to-br from-emerald-50/90 to-white hover:border-emerald-300",
+    accentClass: "bg-emerald-500",
+    iconClass: "bg-emerald-100 text-emerald-700",
   },
   {
     lang: "en",
     title: "My child's growth",
     text: "My 14-month-old is not gaining weight — what should I do?",
     icon: Baby,
+    scheme: "Vatsalya",
+    cardClass:
+      "border-sky-200/80 bg-gradient-to-br from-sky-50/90 to-white hover:border-sky-300",
+    accentClass: "bg-sky-500",
+    iconClass: "bg-sky-100 text-sky-700",
   },
   {
     lang: "en",
     title: "Safety and support",
     text: "I feel unsafe at home, where can I get help?",
     icon: ShieldAlert,
+    scheme: "Shakti",
+    cardClass:
+      "border-fuchsia-200/80 bg-gradient-to-br from-fuchsia-50/90 to-white hover:border-fuchsia-300",
+    accentClass: "bg-fuchsia-500",
+    iconClass: "bg-fuchsia-100 text-fuchsia-700",
   },
   {
     lang: "en",
     title: "Maternity benefit (PMMVY)",
     text: "Am I eligible for PMMVY for my first child?",
     icon: HeartHandshake,
+    scheme: "PMMVY",
+    cardClass:
+      "border-amber-200/80 bg-gradient-to-br from-amber-50/90 to-white hover:border-amber-300",
+    accentClass: "bg-amber-500",
+    iconClass: "bg-amber-100 text-amber-700",
   },
 ];
 
@@ -151,6 +176,7 @@ export default function ChatPage() {
   }, []);
 
   useEffect(() => {
+    if (turns.length === 0 && !busy) return;
     scrollerRef.current?.scrollTo({
       top: scrollerRef.current.scrollHeight,
       behavior: "smooth",
@@ -508,9 +534,9 @@ export default function ChatPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl">
-      <Card className="flex h-[calc(100vh-11rem)] min-h-[560px] flex-col overflow-hidden p-0 shadow-sm">
+      <Card className="chat-shell surface-raised flex h-[calc(100dvh-12rem)] min-h-[590px] flex-col overflow-hidden border-blue-100/90 p-0 shadow-[0_18px_55px_-30px_rgba(11,61,145,0.42)]">
         {/* Header: identity · mode toggle · language / session controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-white px-5 py-3">
+        <div className="chat-toolbar flex flex-wrap items-center justify-between gap-3 border-b border-border bg-white px-5 py-3 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex items-center gap-3">
             <SaheliAvatar speaking={speakingTurnTs !== null} />
             <div className="leading-tight">
@@ -523,27 +549,41 @@ export default function ChatPage() {
 
           <ModeToggle mode={mode} onSwitch={switchMode} />
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 lg:justify-self-end">
             <LangPicker languages={languages} lang={lang} onSelect={setLang} />
-            <Button variant="outline" size="sm" onClick={resetSession}>
-              New chat
+            <Button variant="outline" size="sm" onClick={resetSession} className="bg-white">
+              <RotateCcw className="h-3.5 w-3.5" />
+              New conversation
             </Button>
           </div>
         </div>
 
         {mode === "avatar" ? (
           <>
-            <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 bg-white p-6">
-              <SaheliAvatar size="hero" speaking={speakingTurnTs !== null} />
-              <div className="min-h-6 text-center text-sm text-muted-foreground" aria-live="polite">
+            <div className="voice-stage flex min-h-0 flex-1 flex-col items-center justify-center gap-6 overflow-y-auto bg-white p-6 scrollbar-thin">
+              <div className="voice-avatar">
+                <SaheliAvatar size="hero" speaking={speakingTurnTs !== null} />
+              </div>
+              <div className="voice-status min-h-6 text-center text-sm text-muted-foreground" aria-live="polite">
                 {speakingTurnTs !== null ? "Speaking…" : busy ? "Thinking…" : voiceDetail}
               </div>
+              {voiceStatus === "recording" && (
+                <div className="voice-waveform flex h-8 items-center gap-1" aria-label="Microphone is receiving audio">
+                  {[14, 24, 18, 30, 20, 26, 16].map((height, index) => (
+                    <span
+                      key={index}
+                      className="w-1 animate-pulse rounded-full bg-ministry/70"
+                      style={{ height, animationDelay: `${index * 90}ms` }}
+                    />
+                  ))}
+                </div>
+              )}
               <Button
                 type="button"
                 onClick={voiceStatus === "recording" ? stopRecording : startRecording}
                 disabled={busy || speakingTurnTs !== null || voiceStatus === "processing"}
                 className={cn(
-                  "h-12 min-w-44 rounded-full px-7 text-base",
+                  "voice-action h-12 min-w-44 rounded-full px-7 text-base",
                   voiceStatus === "recording"
                     ? "bg-rose-600 text-white hover:bg-rose-700"
                     : "bg-ministry text-white hover:bg-ministry-muted"
@@ -564,9 +604,13 @@ export default function ChatPage() {
                       ? "Try again"
                       : "Start speaking"}
               </Button>
+              <div className="voice-privacy flex max-w-md items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs text-muted-foreground">
+                <LockKeyhole className="h-3.5 w-3.5 shrink-0 text-ministry" />
+                Microphone audio is used only to process this conversation.
+              </div>
             </div>
             {error && (
-              <div className="border-t border-border bg-destructive/10 px-4 py-2 text-sm text-destructive">
+              <div role="alert" className="border-t border-border bg-destructive/10 px-4 py-2 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -575,7 +619,7 @@ export default function ChatPage() {
           <>
             <div
               ref={scrollerRef}
-              className="min-h-0 flex-1 space-y-5 overflow-y-auto bg-white px-6 py-6 scrollbar-thin"
+              className="chat-scroll min-h-0 flex-1 space-y-5 overflow-y-auto bg-white px-6 py-6 scrollbar-thin"
             >
               {emptyState ? (
                 <EmptyState
@@ -602,9 +646,10 @@ export default function ChatPage() {
                 e.preventDefault();
                 send();
               }}
-              className="flex gap-2 border-t border-border bg-white p-3"
+              className="chat-composer flex gap-2 border-t border-border bg-white p-3"
             >
               <Input
+                aria-label="Message AI Saheli"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={
@@ -625,7 +670,7 @@ export default function ChatPage() {
             </form>
 
             {error && (
-              <div className="border-t border-border bg-destructive/10 px-4 py-2 text-sm text-destructive">
+              <div role="alert" className="border-t border-border bg-destructive/10 px-4 py-2 text-sm text-destructive">
                 {error}
               </div>
             )}
@@ -659,6 +704,7 @@ function ModeToggle({
         return (
           <button
             key={o.id}
+            type="button"
             role="tab"
             aria-selected={active}
             onClick={() => onSwitch(o.id)}
@@ -688,22 +734,23 @@ function LangPicker({
   onSelect: (code: string) => void;
 }) {
   return (
-    <div className="flex overflow-hidden rounded-full border border-border bg-white">
-      {languages.map((l) => (
-        <button
-          key={l.code}
-          onClick={() => onSelect(l.code)}
-          className={cn(
-            "px-3 py-1.5 text-xs font-medium transition-colors",
-            lang === l.code
-              ? "bg-ministry text-white"
-              : "text-muted-foreground hover:bg-muted"
-          )}
-        >
-          {l.native}
-        </button>
-      ))}
-    </div>
+    <label className="relative flex items-center">
+      <span className="sr-only">Conversation language</span>
+      <Globe2 className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-ministry" />
+      <select
+        aria-label="Conversation language"
+        value={lang}
+        onChange={(event) => onSelect(event.target.value)}
+        className="h-8 min-w-[132px] appearance-none rounded-full border border-border bg-white py-1 pl-8 pr-8 text-xs font-medium text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {languages.map((language) => (
+          <option key={language.code} value={language.code}>
+            {language.native} · {language.name}
+          </option>
+        ))}
+      </select>
+      <span className="pointer-events-none absolute right-3 text-[10px] text-muted-foreground">▾</span>
+    </label>
   );
 }
 
@@ -713,29 +760,66 @@ function EmptyState({
   onPick: (text: string, lang: string) => void;
 }) {
   return (
-    <div className="grid h-full place-items-center text-center">
-      <div className="w-full max-w-xl space-y-8">
-        <div className="space-y-3">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+    <div className="chat-empty dot-pattern relative grid min-h-full place-items-center overflow-hidden rounded-2xl px-2 text-center">
+      <div
+        className="hero-halo absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-75 blur-2xl"
+        aria-hidden="true"
+      />
+      <div className="chat-welcome-content fade-up relative w-full max-w-2xl space-y-5">
+        <div className="chat-welcome-intro space-y-3">
+          <div className="chat-welcome-avatar hero-halo mx-auto grid h-36 w-36 place-items-center rounded-[2.5rem] border border-white/80 shadow-[0_22px_60px_-24px_rgba(30,64,175,0.55)]">
+            <SaheliAvatar size="welcome" />
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Badge className="gap-1.5 bg-ministry text-white hover:bg-ministry/90">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              Government scheme guidance
+            </Badge>
+            <Badge variant="outline" className="gap-1.5 bg-white/80">
+              <Languages className="h-3.5 w-3.5 text-ministry" />
+              11 Indian languages
+            </Badge>
+          </div>
+          <h2 className="chat-welcome-title font-display text-2xl font-semibold tracking-tight text-foreground">
             How can I help you today?
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
+          <p className="chat-welcome-description mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
             Ask me about nutrition, child care, women&apos;s safety, or any
             government scheme — in English, हिन्दी, or your own language.
           </p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="chat-starters grid gap-3 sm:grid-cols-2">
           {STARTERS.map((s) => {
             const Icon = s.icon;
             return (
               <button
                 key={s.text}
+                type="button"
                 onClick={() => onPick(s.text, s.lang)}
-                className="group rounded-xl border border-border bg-white p-4 text-left transition-colors hover:border-ministry/50 hover:bg-ministry-soft/50"
+                className={cn(
+                  "chat-starter ui-lift group relative overflow-hidden rounded-2xl border p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  s.cardClass,
+                )}
               >
-                <Icon className="mb-2.5 h-4 w-4 text-ministry" />
-                <div className="text-sm font-medium text-foreground">{s.title}</div>
-                <div className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                <span
+                  className={cn("absolute inset-x-0 top-0 h-1", s.accentClass)}
+                  aria-hidden="true"
+                />
+                <div className="chat-starter-heading mb-3 flex items-center justify-between gap-3">
+                  <span
+                    className={cn(
+                      "grid h-9 w-9 place-items-center rounded-xl",
+                      s.iconClass,
+                    )}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="rounded-full border border-slate-200/70 bg-white/75 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                    {s.scheme}
+                  </span>
+                </div>
+                <div className="text-sm font-semibold text-foreground">{s.title}</div>
+                <div className="chat-starter-description mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                   {s.text}
                 </div>
               </button>
@@ -758,8 +842,8 @@ function Message({
 }) {
   if (turn.role === "user") {
     return (
-      <div className="flex flex-col items-end gap-1">
-        <div className="max-w-[75%] rounded-2xl rounded-tr-md bg-ministry px-4 py-2.5 text-sm text-white">
+      <div className="fade-up flex flex-col items-end gap-1">
+        <div className="max-w-[75%] rounded-2xl rounded-tr-md bg-gradient-to-br from-ministry to-blue-700 px-4 py-2.5 text-sm text-white shadow-[0_10px_24px_-14px_rgba(30,64,175,0.8)]">
           {turn.text}
         </div>
         <span className="pr-2 text-[10px] text-muted-foreground">{fmtTime(turn.ts)}</span>
@@ -768,10 +852,10 @@ function Message({
   }
   const intentClass = turn.intent ? INTENT_STYLE[turn.intent] : "";
   return (
-    <div className="flex gap-2.5">
+    <div className="fade-up flex gap-2.5">
       {showAvatar && <SaheliAvatar speaking={speaking} />}
       <div className="min-w-0 flex-1 space-y-2">
-        <div className="max-w-[92%] whitespace-pre-wrap rounded-2xl rounded-tl-md border border-border bg-muted/50 px-4 py-3 text-sm leading-relaxed">
+        <div className="max-w-[92%] whitespace-pre-wrap rounded-2xl rounded-tl-md border border-slate-200/80 bg-white/90 px-4 py-3 text-sm leading-relaxed shadow-[0_8px_24px_-18px_rgba(15,23,42,0.5)]">
           {turn.text}
         </div>
         <div className="flex flex-wrap items-center gap-1.5 pl-1">
@@ -824,7 +908,7 @@ function TypingBubble({ showAvatar = true }: { showAvatar?: boolean }) {
   return (
     <div className="flex gap-2.5">
       {showAvatar && <SaheliAvatar />}
-      <div className="rounded-2xl rounded-tl-md border border-border bg-muted/50 px-4 py-3">
+      <div className="rounded-2xl rounded-tl-md border border-blue-100 bg-gradient-to-br from-blue-50 to-white px-4 py-3 shadow-sm">
         <div className="flex gap-1">
           <span className="h-2 w-2 animate-bounce rounded-full bg-ministry/70 [animation-delay:-0.2s]" />
           <span className="h-2 w-2 animate-bounce rounded-full bg-ministry/70 [animation-delay:-0.1s]" />
@@ -840,7 +924,7 @@ function SaheliAvatar({
   size = "message",
 }: {
   speaking?: boolean;
-  size?: "message" | "stage" | "hero";
+  size?: "message" | "welcome" | "stage" | "hero";
 }) {
   return (
     <div
@@ -848,6 +932,8 @@ function SaheliAvatar({
         "relative flex-shrink-0 overflow-hidden rounded-full border-2 border-white bg-ministry-soft shadow-md ring-1 ring-ministry/15",
         size === "hero"
           ? "h-56 w-56 sm:h-72 sm:w-72"
+          : size === "welcome"
+            ? "h-24 w-24 sm:h-32 sm:w-32"
           : size === "stage"
             ? "h-24 w-24 sm:h-32 sm:w-32"
             : "h-10 w-10",

@@ -1,78 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
-import { CheckCircle2, KeyRound } from "lucide-react";
+import { KeyRound, MailQuestion } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { AuthShell } from "@/components/auth-shell";
 
 export default function ForgotPasswordPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  // No backend call yet — password reset delivery isn't built. This just
-  // confirms the request was captured so the flow is testable end to end
-  // once the email/reset-link backend lands.
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <div className="mx-auto max-w-sm mt-8">
-      <Card>
-        <CardHeader className="space-y-1.5 items-center text-center">
-          <div className="h-11 w-11 rounded-full bg-primary text-primary-foreground grid place-items-center mb-1">
+    <AuthShell>
+      <Card className="h-full border-0 shadow-none">
+        <CardHeader className="items-center space-y-1.5 text-center">
+          <div className="mb-1 grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground">
             <KeyRound className="h-5 w-5" />
           </div>
-          <CardTitle className="normal-case tracking-normal text-xl font-semibold text-foreground">
-            Reset your password
-          </CardTitle>
+          <h1 className="font-display text-xl font-semibold text-foreground">
+            Password assistance
+          </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your account email and we'll send you a reset link.
+            Password reset email is not connected in this demo environment.
           </p>
         </CardHeader>
         <CardContent>
-          {submitted ? (
-            <div className="flex flex-col items-center gap-3 py-4 text-center">
-              <CheckCircle2 className="h-8 w-8 text-emerald-500" />
-              <p className="text-sm text-foreground">
-                If an account exists for <b>{email}</b>, we've sent a password reset link to it.
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Didn't get it? Check your spam folder or try again in a few minutes.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={onSubmit} className="space-y-3.5">
-              <div className="space-y-1.5">
-                <label className="text-xs font-medium text-muted-foreground" htmlFor="email">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@mowcd.gov.in"
-                />
+          <div className="rounded-lg border border-ministry/15 bg-ministry-soft/70 p-4">
+            <div className="flex gap-3">
+              <MailQuestion className="mt-0.5 h-5 w-5 shrink-0 text-ministry" />
+              <div>
+                <h2 className="text-sm font-semibold text-foreground">Contact your administrator</h2>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                  Ask the administrator who created your staff account to reset your password or issue a new account.
+                </p>
               </div>
-              <Button type="submit" className="w-full">
-                Send reset link
-              </Button>
-            </form>
-          )}
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            <Link href="/login" className="text-primary hover:underline">
-              Back to sign in
-            </Link>
-          </p>
+            </div>
+          </div>
+          <Link
+            href="/login"
+            className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
+            Back to sign in
+          </Link>
         </CardContent>
       </Card>
-    </div>
+    </AuthShell>
   );
 }

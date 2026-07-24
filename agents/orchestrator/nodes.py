@@ -419,8 +419,9 @@ class OrchestratorNodes:
     # --------------------------------------------------------------- clarify
     async def clarify(self, state: AgentState) -> dict:   
         question = (
-        "Could you tell me a little more—do you need help with "
-        "nutrition, child protection, or women's safety and schemes?"
+        "Please choose one: nutrition, child protection through "
+        "Mission Vatsalya, women's safety through Mission Shakti, "
+        "or information about government schemes."
         )
         return {
             "response": question,

@@ -15,6 +15,7 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
+  Sparkles,
   Wrench,
 } from "lucide-react";
 
@@ -212,17 +213,23 @@ function DashboardContent() {
               MoWCD · {live ? "Live analytics" : "Analytics"}
             </span>
           </div>
-          <h1 className="text-3xl font-semibold text-foreground">Ministry Dashboard</h1>
+          <h1 className="font-display text-3xl font-semibold text-foreground">Ministry Dashboard</h1>
           <p className="text-sm text-muted-foreground max-w-xl">
-            Every citizen turn is audited — safe, grounded, and cited. This view
-            reads the orchestrator's audit trace directly, live.
+            Monitor service quality, safety escalation, and response performance
+            across citizen conversations.
           </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex rounded-md border border-border overflow-hidden">
+          <div
+            role="group"
+            aria-label="Analytics time range"
+            className="flex overflow-hidden rounded-md border border-border bg-white"
+          >
             {RANGES.map((r) => (
               <button
                 key={r.label}
+                type="button"
+                aria-pressed={hours === r.hours}
                 onClick={() => setHours(r.hours)}
                 className={cn(
                   "px-3 py-1.5 text-xs font-medium transition-colors",
@@ -238,6 +245,7 @@ function DashboardContent() {
           <Button
             variant={live ? "default" : "outline"}
             size="sm"
+            aria-pressed={live}
             onClick={() => setLive((v) => !v)}
           >
             {live ? "Live: on" : "Live: off"}
@@ -256,15 +264,24 @@ function DashboardContent() {
       )}
 
       {error && (
-        <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-sm text-destructive flex items-center gap-3">
+        <div role="alert" className="rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-sm text-destructive flex items-center gap-3">
           <AlertTriangle className="h-4 w-4 flex-shrink-0" />
           <span>{error} — is the backend running on port 8000?</span>
         </div>
       )}
 
       {summary && summary.totals.turns === 0 && !error && (
-        <div className="rounded-lg border border-border p-10 text-center text-sm text-muted-foreground">
-          No interactions recorded yet for this window — start a chat to populate live analytics.
+        <div className="dot-pattern surface-raised fade-up rounded-2xl border border-blue-100 p-12 text-center">
+          <div className="hero-halo mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl text-ministry shadow-sm">
+            <Sparkles className="h-6 w-6" />
+          </div>
+          <div className="font-display text-base font-semibold text-foreground">
+            Your analytics canvas is ready
+          </div>
+          <p className="mx-auto mt-1 max-w-md text-sm leading-6 text-muted-foreground">
+            Start a citizen conversation to populate scheme routing, response
+            quality, safety, and service metrics for this window.
+          </p>
         </div>
       )}
 
@@ -359,7 +376,7 @@ function DashboardContent() {
 
           <TimelineCard timeline={summary.timeline} />
 
-          <Card>
+          <Card className="surface-raised overflow-hidden">
             <CardHeader className="space-y-3">
               <div className="flex-row items-center justify-between space-y-0 flex flex-wrap gap-2">
                 <CardTitle className="normal-case tracking-normal text-sm font-semibold text-foreground">
@@ -373,6 +390,7 @@ function DashboardContent() {
                 <div className="relative flex-1 min-w-[200px]">
                   <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
                   <Input
+                    aria-label="Search recent conversations"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search message, trace or session id..."
@@ -380,9 +398,10 @@ function DashboardContent() {
                   />
                 </div>
                 <select
+                  aria-label="Filter conversations by scheme"
                   value={intentFilter}
                   onChange={(e) => setIntentFilter(e.target.value)}
-                  className="h-9 rounded-md border border-input bg-background px-2 text-sm"
+                  className="h-9 rounded-md border border-input bg-white px-2 text-sm"
                 >
                   <option value="all">All schemes</option>
                   {Object.keys(summary.by_intent).map((k) => (
@@ -444,6 +463,13 @@ const KPI_TONE: Record<KpiTone, string> = {
   accent: "bg-amber-50 text-amber-700",
 };
 
+const KPI_SURFACE: Record<KpiTone, string> = {
+  neutral: "from-blue-50/80 border-t-blue-500",
+  destructive: "from-rose-50/80 border-t-rose-500",
+  success: "from-emerald-50/80 border-t-emerald-500",
+  accent: "from-amber-50/80 border-t-amber-500",
+};
+
 function Kpi({
   icon,
   label,
@@ -458,7 +484,12 @@ function Kpi({
   tone: KpiTone;
 }) {
   return (
-    <Card>
+    <Card
+      className={cn(
+        "ui-lift relative overflow-hidden border-t-4 bg-gradient-to-br to-white",
+        KPI_SURFACE[tone],
+      )}
+    >
       <CardContent className="pt-5">
         <div className="flex items-start justify-between gap-2">
           <div className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -468,7 +499,9 @@ function Kpi({
             {icon}
           </div>
         </div>
-        <div className="mt-3 text-3xl font-bold tabular-nums text-foreground">{value}</div>
+        <div className="font-display mt-3 text-3xl font-bold tabular-nums text-foreground">
+          {value}
+        </div>
         {hint && <div className="mt-1 text-xs text-muted-foreground">{hint}</div>}
       </CardContent>
     </Card>
@@ -492,10 +525,12 @@ function BarCard({
   const max = Math.max(1, ...entries.map(([, v]) => v));
   const total = entries.reduce((s, [, v]) => s + v, 0);
   return (
-    <Card>
+    <Card className="surface-raised overflow-hidden">
       <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
         <div className="flex items-center gap-2">
-          <span className="text-foreground">{icon}</span>
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-blue-50 text-ministry">
+            {icon}
+          </span>
           <CardTitle className="normal-case tracking-normal text-sm font-semibold text-foreground">
             {title}
           </CardTitle>
@@ -509,15 +544,23 @@ function BarCard({
             <span>{emptyLabel}</span>
           </div>
         ) : (
-          entries.map(([k, v]) => (
-            <div key={k} className="space-y-1.5">
+          entries.map(([k, v], index) => (
+            <div
+              key={k}
+              className="fade-up space-y-1.5"
+              style={{ animationDelay: `${index * 55}ms` }}
+            >
               <div className="flex justify-between text-xs items-center">
                 <span className="font-medium">{labelFn(k)}</span>
                 <span className="text-muted-foreground tabular-nums">
                   {v} <span className="opacity-60">({((v / (total || 1)) * 100).toFixed(0)}%)</span>
                 </span>
               </div>
-              <div className="h-2 rounded-full bg-secondary overflow-hidden">
+              <div
+                className="h-2.5 overflow-hidden rounded-full bg-secondary"
+                role="img"
+                aria-label={`${labelFn(k)}: ${v}, ${((v / (total || 1)) * 100).toFixed(0)} percent`}
+              >
                 <div
                   className={cn("h-full rounded-full transition-all duration-500", colorFor(k).bar)}
                   style={{ width: `${(v / max) * 100}%` }}
@@ -534,41 +577,56 @@ function BarCard({
 function TimelineCard({ timeline }: { timeline: AnalyticsSummary["timeline"] }) {
   const max = Math.max(1, ...timeline.map((b) => b.count));
   return (
-    <Card>
-      <CardHeader className="flex-row items-center gap-2 space-y-0">
-        <span className="text-foreground">
-          <BarChart3 className="h-4 w-4" />
-        </span>
-        <CardTitle className="normal-case tracking-normal text-sm font-semibold text-foreground">
-          Turns over time
-          <span className="text-muted-foreground font-normal"> · {timeline.length || 0} buckets</span>
-        </CardTitle>
+    <Card className="surface-raised overflow-hidden">
+      <CardHeader className="flex-row items-center justify-between gap-3 space-y-0">
+        <div className="flex items-center gap-2">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-blue-50 text-ministry">
+            <BarChart3 className="h-4 w-4" />
+          </span>
+          <CardTitle className="normal-case tracking-normal text-sm font-semibold text-foreground">
+            Turns over time
+            <span className="text-muted-foreground font-normal"> · {timeline.length || 0} buckets</span>
+          </CardTitle>
+        </div>
+        {timeline.length > 0 && (
+          <div className="flex items-center gap-3 text-[10px] text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <span className="h-2 w-2 rounded-full bg-ministry" /> Turns
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="h-2 w-2 rounded-full bg-rose-500" /> Escalations
+            </span>
+          </div>
+        )}
       </CardHeader>
       <CardContent>
         {timeline.length === 0 ? (
-          <div className="text-xs text-muted-foreground py-10 text-center">
+          <div className="flex flex-col items-center gap-2 py-10 text-center text-xs text-muted-foreground">
+            <BarChart3 className="h-7 w-7 text-ministry/45" />
             No traces recorded yet — run a conversation to populate.
           </div>
         ) : (
-          <div className="flex items-end gap-1.5 h-44 px-1">
+          <div className="relative flex h-44 items-end gap-1.5 rounded-xl bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_24%,rgba(148,163,184,0.14)_25%)] px-2 pt-2">
             {timeline.map((b) => (
               <div
                 key={b.t}
                 className="flex-1 flex flex-col items-center gap-1.5 group"
                 title={`${b.t}: ${b.count} turns, ${b.escalations} escalations`}
+                role="img"
+                aria-label={`${b.t}: ${b.count} turns, ${b.escalations} escalations`}
               >
-                <div className="text-[10px] font-medium tabular-nums text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="text-[11px] font-medium tabular-nums text-muted-foreground">
                   {b.count}
                 </div>
                 <div className="w-full flex-1 flex items-end">
                   <div
-                    className="w-full rounded-t-sm bg-primary/80 group-hover:bg-primary transition-colors flex flex-col justify-end overflow-hidden"
+                    className="flex w-full flex-col justify-end overflow-hidden rounded-t-md bg-gradient-to-t from-blue-700 to-blue-500 shadow-[0_8px_16px_-10px_rgba(30,64,175,0.8)] transition-all duration-300 group-hover:brightness-110"
                     style={{ height: `${(b.count / max) * 100}%`, minHeight: "4px" }}
                   >
                     {b.escalations > 0 && (
                       <div
                         className="w-full bg-destructive"
-                        style={{ height: `${(b.escalations / b.count) * 100}%` }}
+                        style={{ height: `${(b.escalations / Math.max(1, b.count)) * 100}%` }}
                       />
                     )}
                   </div>
@@ -606,17 +664,22 @@ function RecentTable({
   return (
     <div className="overflow-x-auto scrollbar-thin">
       <table className="w-full text-sm">
+        <caption className="sr-only">
+          Recent citizen conversations with scheme routing, confidence, latency, citations, and status
+        </caption>
         <thead>
           <tr className="border-b border-border bg-secondary/40 text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
-            <th className="px-4 py-3 text-left w-8"></th>
+            <th className="px-4 py-3 text-left w-10">
+              <span className="sr-only">Details</span>
+            </th>
             <th className="px-4 py-3 text-left">Time</th>
             <th className="px-4 py-3 text-left">Lang</th>
             <th className="px-4 py-3 text-left">Scheme</th>
             <th className="px-4 py-3 text-left">Message</th>
-            <th className="px-4 py-3 text-right">Conf</th>
+            <th className="px-4 py-3 text-right">Confidence</th>
             <th className="px-4 py-3 text-right">Latency</th>
-            <th className="px-4 py-3 text-right">Cites</th>
-            <th className="px-4 py-3 text-left">Flags</th>
+            <th className="px-4 py-3 text-right">Citations</th>
+            <th className="px-4 py-3 text-left">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -625,12 +688,17 @@ function RecentTable({
             const intentColor = r.intent ? colorFor(r.intent).chip : "";
             return (
               <Fragment key={r.trace_id}>
-                <tr
-                  onClick={() => onToggle(r.trace_id)}
-                  className="border-b border-border last:border-0 hover:bg-secondary/40 transition-colors cursor-pointer"
-                >
+                <tr className="border-b border-border last:border-0 transition-colors hover:bg-secondary/40">
                   <td className="px-4 py-2.5 text-muted-foreground">
-                    {isOpen ? <ChevronDown className="h-3.5 w-3.5" /> : <ChevronRight className="h-3.5 w-3.5" />}
+                    <button
+                      type="button"
+                      aria-label={isOpen ? "Collapse conversation details" : "Expand conversation details"}
+                      aria-expanded={isOpen}
+                      onClick={() => onToggle(r.trace_id)}
+                      className="grid h-7 w-7 place-items-center rounded-md transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      {isOpen ? <ChevronDown className="h-3.5 w-3.5" /> : <ChevronRight className="h-3.5 w-3.5" />}
+                    </button>
                   </td>
                   <td className="px-4 py-2.5 whitespace-nowrap text-xs text-muted-foreground tabular-nums">
                     {fmtTime(r.created_at)}
@@ -661,10 +729,10 @@ function RecentTable({
                   </td>
                   <td className="px-4 py-2.5 text-right text-xs tabular-nums">{r.citation_count}</td>
                   <td className="px-4 py-2.5 space-x-1">
-                    {r.escalation && <Badge variant="destructive">esc</Badge>}
-                    {r.awaiting_input && <Badge variant="accent">slot</Badge>}
-                    {r.fallback && <Badge variant="muted">fallback</Badge>}
-                    {!r.grounding_ok && <Badge variant="outline">ungrounded</Badge>}
+                    {r.escalation && <Badge variant="destructive">Escalated</Badge>}
+                    {r.awaiting_input && <Badge variant="accent">Needs input</Badge>}
+                    {r.fallback && <Badge variant="muted">Fallback</Badge>}
+                    {!r.grounding_ok && <Badge variant="outline">Ungrounded</Badge>}
                   </td>
                 </tr>
                 {isOpen && (

@@ -2,13 +2,13 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import * as authApi from "@/lib/auth";
-import type { AuthUser } from "@/lib/auth";
+import type { AuthRole, AuthUser } from "@/lib/auth";
 
 type AuthContextValue = {
   user: AuthUser | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  signup: (name: string, email: string, password: string) => Promise<void>;
+  login: (email: string, password: string, role: AuthRole) => Promise<AuthUser>;
+  signup: (name: string, email: string, password: string, role: AuthRole) => Promise<AuthUser>;
   logout: () => Promise<void>;
 };
 
@@ -31,12 +31,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  const login = useCallback(async (email: string, password: string) => {
-    setUser(await authApi.login(email, password));
+  const login = useCallback(async (email: string, password: string, role: AuthRole) => {
+    const nextUser = await authApi.login(email, password, role);
+    setUser(nextUser);
+    return nextUser;
   }, []);
 
-  const signup = useCallback(async (name: string, email: string, password: string) => {
-    setUser(await authApi.signup(name, email, password));
+  const signup = useCallback(async (name: string, email: string, password: string, role: AuthRole) => {
+    const nextUser = await authApi.signup(name, email, password, role);
+    setUser(nextUser);
+    return nextUser;
   }, []);
 
   const logout = useCallback(async () => {

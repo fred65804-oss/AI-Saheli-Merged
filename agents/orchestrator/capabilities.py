@@ -139,6 +139,7 @@ SHAKTI_CARD = AgentCapabilityCard(
         "pmmvy", "matru vandana", "maternity benefit", "one stop", "osc", "sakhi",
         "181", "mission shakti", "mahila", "nari adalat", "sakhi niwas",
         "beti bachao", "empower", "dowry", "dahej", "rights", "adhikar",
+        "women's safety", "women safety", "womens safety", "women's empowerment", "women empowerment",
     ],
     required_slots=[],
     optional_slots=[

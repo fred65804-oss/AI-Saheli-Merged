@@ -1,9 +1,9 @@
 """One-off: create (or promote) the first admin account for this environment.
 
-There is no public path to becoming admin — /auth/signup always creates
-"citizen" — so this script is the only way an admin account gets made. Run it
-once per environment (local, staging, production), directly against that
-environment's data/auth.db (or AUTH_DATABASE_URL).
+The demo signup flow can create either role. This script remains useful for
+promoting an existing account without changing its password, or for
+bootstrapping an administrator directly against an environment's data/auth.db
+(or AUTH_DATABASE_URL).
 
 Usage:
     python scripts/create_admin.py admin@example.com "Admin Name" "a-strong-password"

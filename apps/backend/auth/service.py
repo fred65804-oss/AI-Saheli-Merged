@@ -37,18 +37,36 @@ def _issue_pair(db: Session, user: User, family_id: str | None = None) -> TokenP
     )
 
 
-def signup(db: Session, *, name: str, email: str, password: str) -> TokenPair:
+def signup(
+    db: Session,
+    *,
+    name: str,
+    email: str,
+    password: str,
+    role: str = "citizen",
+) -> TokenPair:
     email = email.strip().lower()
     if db.query(User).filter(User.email == email).first() is not None:
         raise HTTPException(status.HTTP_409_CONFLICT, "An account with this email already exists.")
-    user = User(name=name, email=email, hashed_password=security.hash_password(password))
+    user = User(
+        name=name,
+        email=email,
+        hashed_password=security.hash_password(password),
+        role=role,
+    )
     db.add(user)
     db.commit()
     db.refresh(user)
     return _issue_pair(db, user)
 
 
-def login(db: Session, *, email: str, password: str) -> TokenPair:
+def login(
+    db: Session,
+    *,
+    email: str,
+    password: str,
+    expected_role: str | None = None,
+) -> TokenPair:
     email = email.strip().lower()
     user = db.query(User).filter(User.email == email).first()
     # Same error for "no such user" and "wrong password" — don't leak which
@@ -58,6 +76,12 @@ def login(db: Session, *, email: str, password: str) -> TokenPair:
         raise invalid
     if not user.is_active:
         raise HTTPException(status.HTTP_403_FORBIDDEN, "This account has been disabled.")
+    if expected_role is not None and user.role != expected_role:
+        label = "Administrator" if user.role == "admin" else "Citizen"
+        raise HTTPException(
+            status.HTTP_403_FORBIDDEN,
+            f"This account is registered as {label}. Select the matching role to sign in.",
+        )
     return _issue_pair(db, user)
 
 

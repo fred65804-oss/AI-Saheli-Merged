@@ -23,12 +23,23 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 @router.post("/signup", response_model=TokenPair, status_code=201)
 async def signup(req: SignupRequest, db: Session = Depends(get_db)) -> TokenPair:
-    return service.signup(db, name=req.name, email=req.email, password=req.password)
+    return service.signup(
+        db,
+        name=req.name,
+        email=req.email,
+        password=req.password,
+        role=req.role,
+    )
 
 
 @router.post("/login", response_model=TokenPair)
 async def login(req: LoginRequest, db: Session = Depends(get_db)) -> TokenPair:
-    return service.login(db, email=req.email, password=req.password)
+    return service.login(
+        db,
+        email=req.email,
+        password=req.password,
+        expected_role=req.role,
+    )
 
 
 @router.post("/refresh", response_model=TokenPair)

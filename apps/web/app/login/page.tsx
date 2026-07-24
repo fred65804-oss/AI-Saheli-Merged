@@ -3,16 +3,23 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, Suspense, useState } from "react";
-import { LogIn } from "lucide-react";
+import { Eye, EyeOff, LogIn } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/auth-context";
+import { AuthShell } from "@/components/auth-shell";
+import { AuthRoleSelector } from "@/components/auth-role-selector";
+import type { AuthRole } from "@/lib/auth";
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense
+      fallback={
+        <div className="mx-auto mt-8 h-[420px] max-w-sm animate-pulse rounded-xl border border-border bg-white" />
+      }
+    >
       <LoginForm />
     </Suspense>
   );
@@ -26,14 +33,17 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [role, setRole] = useState<AuthRole>("admin");
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
     setBusy(true);
     try {
-      await login(email, password);
-      router.push(searchParams.get("next") || "/dashboard");
+      const user = await login(email, password, role);
+      const requestedPath = searchParams.get("next");
+      router.push(user.role === "admin" ? requestedPath || "/dashboard" : "/");
     } catch (e: any) {
       setError(e.message || "Login failed");
     } finally {
@@ -42,21 +52,26 @@ function LoginForm() {
   };
 
   return (
-    <div className="mx-auto max-w-sm mt-8">
-      <Card>
+    <AuthShell>
+      <Card className="h-full border-0 shadow-none">
         <CardHeader className="space-y-1.5 items-center text-center">
           <div className="h-11 w-11 rounded-full bg-primary text-primary-foreground grid place-items-center mb-1">
             <LogIn className="h-5 w-5" />
           </div>
-          <CardTitle className="normal-case tracking-normal text-xl font-semibold text-foreground">
+          <h1 className="font-display text-xl font-semibold text-foreground">
             Sign in
-          </CardTitle>
+          </h1>
           <p className="text-sm text-muted-foreground">
-            Ministry dashboard access — MoWCD staff only.
+            Choose your role and continue to the appropriate workspace.
           </p>
         </CardHeader>
         <CardContent>
           <form onSubmit={onSubmit} className="space-y-3.5">
+            <AuthRoleSelector
+              legend="Sign in as"
+              value={role}
+              onChange={setRole}
+            />
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-muted-foreground" htmlFor="email">
                 Email
@@ -69,6 +84,8 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@mowcd.gov.in"
+                aria-invalid={Boolean(error)}
+                aria-describedby={error ? "login-error" : undefined}
               />
             </div>
             <div className="space-y-1.5">
@@ -79,24 +96,36 @@ function LoginForm() {
                 <Link
                   href="/forgot-password"
                   className="text-xs text-primary hover:underline"
-                  tabIndex={-1}
                 >
                   Forgot password?
                 </Link>
               </div>
-              <Input
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-              />
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="pr-11"
+                  aria-invalid={Boolean(error)}
+                  aria-describedby={error ? "login-error" : undefined}
+                />
+                <button
+                  type="button"
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  onClick={() => setShowPassword((visible) => !visible)}
+                  className="absolute right-1.5 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-md text-muted-foreground hover:bg-secondary hover:text-foreground"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
             </div>
 
             {error && (
-              <div className="rounded-md border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive">
+              <div id="login-error" role="alert" className="rounded-md border border-destructive/30 bg-destructive/5 px-3 py-2 text-xs text-destructive">
                 {error}
               </div>
             )}
@@ -106,13 +135,13 @@ function LoginForm() {
             </Button>
           </form>
           <p className="mt-4 text-center text-xs text-muted-foreground">
-            No account?{" "}
+            Need a demo account?{" "}
             <Link href="/signup" className="text-primary hover:underline">
-              Sign up
+              Create one
             </Link>
           </p>
         </CardContent>
       </Card>
-    </div>
+    </AuthShell>
   );
 }

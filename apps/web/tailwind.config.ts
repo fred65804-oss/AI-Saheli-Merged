@@ -50,7 +50,17 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["system-ui", "Segoe UI", "Roboto", "sans-serif"],
+        sans: [
+          "Segoe UI Variable",
+          "Noto Sans",
+          "Noto Sans Devanagari",
+          "Noto Sans Bengali",
+          "Noto Sans Tamil",
+          "Noto Sans Telugu",
+          "system-ui",
+          "sans-serif",
+        ],
+        display: ["Segoe UI Variable Display", "Noto Sans", "system-ui", "sans-serif"],
       },
     },
   },

@@ -2,11 +2,13 @@ import { API_BASE } from "./utils";
 
 const REFRESH_KEY = "ai-saheli-refresh-token";
 
+export type AuthRole = "citizen" | "admin";
+
 export type AuthUser = {
   id: string;
   name: string;
   email: string;
-  role: string;
+  role: AuthRole;
   created_at: string;
 };
 
@@ -54,20 +56,39 @@ async function requestTokenPair(path: string, body: unknown): Promise<TokenPair>
     body: JSON.stringify(body),
   });
   if (!r.ok) {
-    const detail = await r.json().catch(() => null);
-    throw new Error(detail?.detail || `${path} failed (${r.status})`);
+    const payload = await r.json().catch(() => null);
+    const detail = payload?.detail;
+    const message =
+      typeof detail === "string"
+        ? detail
+        : Array.isArray(detail)
+          ? detail
+              .map((item) => (typeof item?.msg === "string" ? item.msg : null))
+              .filter(Boolean)
+              .join(" ")
+          : "";
+    throw new Error(message || `${path} failed (${r.status})`);
   }
   return r.json();
 }
 
-export async function signup(name: string, email: string, password: string): Promise<AuthUser> {
-  const tokens = await requestTokenPair("/auth/signup", { name, email, password });
+export async function signup(
+  name: string,
+  email: string,
+  password: string,
+  role: AuthRole,
+): Promise<AuthUser> {
+  const tokens = await requestTokenPair("/auth/signup", { name, email, password, role });
   setSession(tokens);
   return tokens.user;
 }
 
-export async function login(email: string, password: string): Promise<AuthUser> {
-  const tokens = await requestTokenPair("/auth/login", { email, password });
+export async function login(
+  email: string,
+  password: string,
+  role: AuthRole,
+): Promise<AuthUser> {
+  const tokens = await requestTokenPair("/auth/login", { email, password, role });
   setSession(tokens);
   return tokens.user;
 }
