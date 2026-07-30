@@ -112,7 +112,11 @@ def build_router_system(cards: list[AgentCapabilityCard]) -> str:
         "  * 'I just delivered' / 'breastfeeding' → beneficiary_type=lactating_mother.\n"
         "  * Only emit a key when the message genuinely supports it — never guess.\n\n"
         "Give a calibrated confidence in [0,1]. If the message mixes topics, pick "
-        "the primary one and list others in secondary_intents.\n"
+        "the one the citizen wants to act on now and list the others in "
+        "secondary_intents. Example: 'my husband beats me and I am also pregnant' "
+        "→ intent=shakti (immediate safety) with poshan in secondary_intents.\n"
+        "If a conversation summary is provided and the latest message contradicts "
+        "it, trust the latest message — the citizen may have changed topic.\n"
         "Messages may be in Hindi, English, or romanized Hinglish."
     )
 

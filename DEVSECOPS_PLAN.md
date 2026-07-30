@@ -99,6 +99,7 @@ If you take nothing else from this: **the pipeline automates steps 2–7. Step
   Docker image at build time (rather than downloading them the first time a
   container starts) avoids a slow/flaky first request and avoids needing
   internet access from the production host at all — which matters given this
+  
   project's "sovereign by design" principle.
 - **A leftover Vercel serverless entrypoint exists** (`[tool.vercel]` in
   `pyproject.toml`) but doesn't fit this app — Vercel's stateless serverless

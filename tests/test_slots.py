@@ -3,7 +3,13 @@
 import pytest
 
 from agents.orchestrator import slots
+from agents.orchestrator.llm import FakeLLM
+from agents.orchestrator.nodes import OrchestratorNodes
+from agents.orchestrator.router import Router
+from agents.orchestrator.trace import NullTraceSink
 from agents.specialists.base import SlotSpec
+from agents.specialists.registry import routable_cards
+from apps.backend.config import get_settings
 
 PREG = SlotSpec(
     name="pregnancy_stage", type="enum", ask_prompt="stage?",
@@ -45,12 +51,41 @@ def test_merge_slots_does_not_overwrite_with_blank():
     assert merged["lang"] == "hi"
 
 
-def test_next_missing_slot_picks_lowest_priority_first():
+# "Ask the lowest-priority required slot first" used to live in
+# slots.next_missing_slot(); it now runs inline in OrchestratorNodes.slot_check
+# (nodes.py). These two tests follow it there — the behaviour is the whole point
+# of dynamic questioning (principle #5), so it stays covered rather than deleted.
+def _nodes() -> OrchestratorNodes:
+    llm = FakeLLM()
+    return OrchestratorNodes(
+        llm=llm,
+        router=Router(llm, routable_cards()),
+        settings=get_settings(),
+        sink=NullTraceSink(),
+    )
+
+
+@pytest.mark.asyncio
+async def test_slot_check_picks_lowest_priority_first():
     # Poshan requires beneficiary_type (priority 10). Nothing collected yet.
-    nxt = slots.next_missing_slot(POSHAN_CARD, {})
-    assert nxt is not None and nxt.name == "beneficiary_type"
+    out = await _nodes().slot_check({"intent": "poshan", "collected_facts": {}})
+    assert out["pending_ask_spec"] is not None
+    assert out["pending_ask_spec"]["name"] == "beneficiary_type"
 
 
-def test_next_missing_slot_none_when_required_filled():
-    nxt = slots.next_missing_slot(POSHAN_CARD, {"beneficiary_type": "child"})
-    assert nxt is None
+@pytest.mark.asyncio
+async def test_slot_check_none_when_required_filled():
+    out = await _nodes().slot_check(
+        {"intent": "poshan", "collected_facts": {"beneficiary_type": "child"}}
+    )
+    assert out["pending_ask_spec"] is None
+
+
+@pytest.mark.asyncio
+async def test_slot_check_skips_personal_slots_for_overview():
+    """An overview question ("what is Poshan 2.0?") must reach the specialist
+    without collecting personal facts first."""
+    out = await _nodes().slot_check(
+        {"intent": "poshan", "collected_facts": {}, "request_type": "overview"}
+    )
+    assert out["pending_ask_spec"] is None

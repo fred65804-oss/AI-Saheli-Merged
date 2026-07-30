@@ -21,7 +21,19 @@ from apps.backend.config import get_settings
 from mcp.knowledge_base.schemas import KBQueryRequest
 from mcp.knowledge_base.tool import query_knowledge_base
 
-pytestmark = pytest.mark.asyncio
+pytestmark = [
+    pytest.mark.asyncio,
+    # This is the one integration test that needs real local assets: the e5 +
+    # bm25 models and the built Qdrant index. Both are absent in CI (and in a
+    # fresh clone), where KB_LOCAL_MODELS_ENABLED stays false and
+    # query_knowledge_base returns zero chunks — the assertions below would
+    # then fail for an environmental reason, not a regression. Skip instead of
+    # failing, so a red suite always means real breakage.
+    pytest.mark.skipif(
+        not get_settings().kb_local_models_enabled,
+        reason="KB_LOCAL_MODELS_ENABLED is false — retrieval assets not present",
+    ),
+]
 
 
 def _graph():

@@ -45,6 +45,7 @@ from agents.specialists.base import (
     SlotRequest,
     SpecialistAgent,
 )
+from agents.specialists.overview_answer import answer_scheme_overview
 from mcp.eligibility.schemas import BeneficiaryType, EligibilityRequest
 from mcp.eligibility.tool import check_eligibility
 from mcp.geo_locator.schemas import LookupRequest as GeoRequest, ServiceType

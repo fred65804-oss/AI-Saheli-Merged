@@ -5,19 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import {
   AlertTriangle,
   BookOpen,
-  Baby,
-  HeartHandshake,
   Send,
-  ShieldAlert,
-  Utensils,
   LoaderCircle,
-  Languages,
   MessageCircle,
   Mic,
   Globe2,
   LockKeyhole,
   RotateCcw,
-  ShieldCheck,
   Square,
 } from "lucide-react";
 
@@ -58,53 +52,6 @@ type VoiceStatus = "ready" | "recording" | "processing" | "error";
 // language layer supports) always comes from the backend.
 const FALLBACK_LANGS: LanguageMeta[] = [{ code: "en", name: "English", native: "English" }];
 
-const STARTERS = [
-  {
-    lang: "hi",
-    title: "Nutrition during pregnancy",
-    text: "Pregnancy mein kya khana chahiye?",
-    icon: Utensils,
-    scheme: "Poshan",
-    cardClass:
-      "border-emerald-200/80 bg-gradient-to-br from-emerald-50/90 to-white hover:border-emerald-300",
-    accentClass: "bg-emerald-500",
-    iconClass: "bg-emerald-100 text-emerald-700",
-  },
-  {
-    lang: "en",
-    title: "My child's growth",
-    text: "My 14-month-old is not gaining weight — what should I do?",
-    icon: Baby,
-    scheme: "Vatsalya",
-    cardClass:
-      "border-sky-200/80 bg-gradient-to-br from-sky-50/90 to-white hover:border-sky-300",
-    accentClass: "bg-sky-500",
-    iconClass: "bg-sky-100 text-sky-700",
-  },
-  {
-    lang: "en",
-    title: "Safety and support",
-    text: "I feel unsafe at home, where can I get help?",
-    icon: ShieldAlert,
-    scheme: "Shakti",
-    cardClass:
-      "border-fuchsia-200/80 bg-gradient-to-br from-fuchsia-50/90 to-white hover:border-fuchsia-300",
-    accentClass: "bg-fuchsia-500",
-    iconClass: "bg-fuchsia-100 text-fuchsia-700",
-  },
-  {
-    lang: "en",
-    title: "Maternity benefit (PMMVY)",
-    text: "Am I eligible for PMMVY for my first child?",
-    icon: HeartHandshake,
-    scheme: "PMMVY",
-    cardClass:
-      "border-amber-200/80 bg-gradient-to-br from-amber-50/90 to-white hover:border-amber-300",
-    accentClass: "bg-amber-500",
-    iconClass: "bg-amber-100 text-amber-700",
-  },
-];
-
 const INTENT_STYLE: Record<string, string> = {
   poshan: "bg-emerald-50 text-emerald-700 border-emerald-200",
   vatsalya: "bg-sky-50 text-sky-700 border-sky-200",
@@ -114,6 +61,30 @@ const INTENT_STYLE: Record<string, string> = {
 
 function newSessionId() {
   return `web-${Math.random().toString(36).slice(2, 10)}-${Date.now()}`;
+}
+
+// Warm opening line shown as Saheli's first message. Static by design — a fixed
+// greeting needs no LLM call, so it appears instantly, costs nothing, and works
+// even offline. The language layer never sees it (it isn't a backend turn), so
+// it stays English regardless of the picker; the citizen's first real question
+// still round-trips through translation as usual.
+const GREETING =
+  "Namaste! 🙏 I'm AI Saheli. How can I help you today? You can ask me about " +
+  "nutrition (Poshan), child care and protection (Vatsalya), or women's safety " +
+  "and government schemes (Mission Shakti).";
+
+function greetingTurn(): Turn {
+  return {
+    role: "assistant",
+    text: GREETING,
+    ts: Date.now(),
+    intent: null,
+    confidence: null,
+    escalation: false,
+    awaiting_input: false,
+    citations: [],
+    trace_id: "greeting",
+  };
 }
 
 function fmtTime(ts: number) {
@@ -165,6 +136,7 @@ export default function ChatPage() {
 
   useEffect(() => {
     setSessionId(newSessionId());
+    setTurns([greetingTurn()]);
   }, []);
 
   useEffect(() => {
@@ -517,7 +489,7 @@ export default function ChatPage() {
   const resetSession = () => {
     stopSpeaking();
     setSessionId(newSessionId());
-    setTurns([]);
+    setTurns([greetingTurn()]);
     setError(null);
   };
 
@@ -529,8 +501,6 @@ export default function ChatPage() {
     setError(null);
     setMode(next);
   };
-
-  const emptyState = turns.length === 0;
 
   return (
     <div className="mx-auto w-full max-w-4xl">
@@ -621,23 +591,14 @@ export default function ChatPage() {
               ref={scrollerRef}
               className="chat-scroll min-h-0 flex-1 space-y-5 overflow-y-auto bg-white px-6 py-6 scrollbar-thin"
             >
-              {emptyState ? (
-                <EmptyState
-                  onPick={(t, l) => {
-                    setLang(l);
-                    send(t);
-                  }}
+              {turns.map((t, i) => (
+                <Message
+                  key={i}
+                  turn={t}
+                  speaking={t.role === "assistant" && t.ts === speakingTurnTs}
+                  showAvatar={false}
                 />
-              ) : (
-                turns.map((t, i) => (
-                  <Message
-                    key={i}
-                    turn={t}
-                    speaking={t.role === "assistant" && t.ts === speakingTurnTs}
-                    showAvatar={false}
-                  />
-                ))
-              )}
+              ))}
               {busy && <TypingBubble showAvatar={false} />}
             </div>
 
@@ -751,83 +712,6 @@ function LangPicker({
       </select>
       <span className="pointer-events-none absolute right-3 text-[10px] text-muted-foreground">▾</span>
     </label>
-  );
-}
-
-function EmptyState({
-  onPick,
-}: {
-  onPick: (text: string, lang: string) => void;
-}) {
-  return (
-    <div className="chat-empty dot-pattern relative grid min-h-full place-items-center overflow-hidden rounded-2xl px-2 text-center">
-      <div
-        className="hero-halo absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-75 blur-2xl"
-        aria-hidden="true"
-      />
-      <div className="chat-welcome-content fade-up relative w-full max-w-2xl space-y-5">
-        <div className="chat-welcome-intro space-y-3">
-          <div className="chat-welcome-avatar hero-halo mx-auto grid h-36 w-36 place-items-center rounded-[2.5rem] border border-white/80 shadow-[0_22px_60px_-24px_rgba(30,64,175,0.55)]">
-            <SaheliAvatar size="welcome" />
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <Badge className="gap-1.5 bg-ministry text-white hover:bg-ministry/90">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              Government scheme guidance
-            </Badge>
-            <Badge variant="outline" className="gap-1.5 bg-white/80">
-              <Languages className="h-3.5 w-3.5 text-ministry" />
-              11 Indian languages
-            </Badge>
-          </div>
-          <h2 className="chat-welcome-title font-display text-2xl font-semibold tracking-tight text-foreground">
-            How can I help you today?
-          </h2>
-          <p className="chat-welcome-description mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
-            Ask me about nutrition, child care, women&apos;s safety, or any
-            government scheme — in English, हिन्दी, or your own language.
-          </p>
-        </div>
-        <div className="chat-starters grid gap-3 sm:grid-cols-2">
-          {STARTERS.map((s) => {
-            const Icon = s.icon;
-            return (
-              <button
-                key={s.text}
-                type="button"
-                onClick={() => onPick(s.text, s.lang)}
-                className={cn(
-                  "chat-starter ui-lift group relative overflow-hidden rounded-2xl border p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                  s.cardClass,
-                )}
-              >
-                <span
-                  className={cn("absolute inset-x-0 top-0 h-1", s.accentClass)}
-                  aria-hidden="true"
-                />
-                <div className="chat-starter-heading mb-3 flex items-center justify-between gap-3">
-                  <span
-                    className={cn(
-                      "grid h-9 w-9 place-items-center rounded-xl",
-                      s.iconClass,
-                    )}
-                  >
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <span className="rounded-full border border-slate-200/70 bg-white/75 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-                    {s.scheme}
-                  </span>
-                </div>
-                <div className="text-sm font-semibold text-foreground">{s.title}</div>
-                <div className="chat-starter-description mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                  {s.text}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
   );
 }
 

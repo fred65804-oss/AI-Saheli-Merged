@@ -44,10 +44,29 @@ async def test_llm_decision_is_used_when_valid():
             extracted_slots={"district": "Lucknow"},
         )
 
-    d = await _router(responder).route("I have a question about child welfare")
+    # The message must carry NO strong keyword signal, otherwise route()'s
+    # deterministic fast-path returns before the LLM is ever consulted (see
+    # test_confident_keyword_route_skips_the_llm below).
+    d = await _router(responder).route("I need some guidance please")
     assert d.intent == "vatsalya"
     assert d.confidence == 0.95
     assert d.extracted_slots["district"] == "Lucknow"
+
+
+async def test_confident_keyword_route_skips_the_llm():
+    """route() short-circuits on a confident keyword match (>=0.7) to save an
+    LLM call per turn. Pins that: the responder below would return a different
+    intent, so if it ever runs the assertion fails."""
+    called = False
+
+    def responder(system, user, schema):
+        nonlocal called
+        called = True
+        return RouterDecision(intent="poshan", confidence=0.99)
+
+    d = await _router(responder).route("how do i adopt a child")
+    assert d.intent == "vatsalya"
+    assert called is False
 
 
 async def test_invalid_llm_intent_falls_back_to_keywords():

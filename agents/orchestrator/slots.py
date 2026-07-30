@@ -110,13 +110,20 @@ def _norm_slots(text: str) -> str:
 
 
 def _match_bool(message_norm: str) -> str | None:
+    """Returns the STRING "true"/"false" (collected facts are all strings).
+
+    Lowercase throughout: `to_bool` accepts either case, but the substring
+    branches below already emit lowercase, and a function returning both
+    "True" and "true" invites a consumer to compare with == and get it
+    silently wrong.
+    """
     # Check for negative answers first
     if re.search(r"\b(?:no|nahi|nahin|na|boy|beta|ladka|false)\b", message_norm):
-        return "False"
+        return "false"
     if re.search(r"\b(?:yes|haan|haa|ha|ji haan|hanji|true|haanji)", message_norm):
-        return "True"
+        return "true"
     if re.search(r"\b(?:girl|beti|ladki)", message_norm):
-        return "True"
+        return "true"
     if any(h in message_norm for h in _BOOL_FALSE):
         return "false"
     if any(h in message_norm for h in _BOOL_TRUE):

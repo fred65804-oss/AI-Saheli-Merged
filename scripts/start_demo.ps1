@@ -1,4 +1,4 @@
-# start_demo.ps1 — one-command, demo-day startup for AI Saheli.
+﻿# start_demo.ps1 — one-command, demo-day startup for AI Saheli.
 #
 #   powershell -ExecutionPolicy Bypass -File scripts\start_demo.ps1
 #
