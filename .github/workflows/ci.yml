@@ -6,6 +6,20 @@ on:
   pull_request:
 
 jobs:
+
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - run: pip install ruff
+      
+      - run: ruff check --select E9,F63,F7,F82 .
+
   backend-test:
     runs-on: ubuntu-latest
     steps:
@@ -13,9 +27,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: 'pip'
+          cache-dependency-path: requirements.lock.txt
       - run: pip install -r requirements.lock.txt
       # tests/conftest.py blanks every API key before Settings loads, so this
-      # runs fully offline — no secrets needed in CI.
+      # runs fully offline — no secrets needed in CI.  
       - run: pytest
 
   frontend-build:
@@ -46,7 +62,6 @@ jobs:
   # --- Report-only for now (see DEVSECOPS_PLAN.md #3): torch / sentence-
   # transformers / faster-whisper pull in dependency trees that almost always
   # carry some known CVEs. Triage the baseline once, then remove
-  # continue-on-error (or add --fail-on / severity flags) to start enforcing.
   dependency-audit:
     runs-on: ubuntu-latest
     steps:
