@@ -48,7 +48,6 @@ jobs:
   # --- Report-only for now (see DEVSECOPS_PLAN.md #3): torch / sentence-
   # transformers / faster-whisper pull in dependency trees that almost always
   # carry some known CVEs. Triage the baseline once, then remove
-  # continue-on-error (or add --fail-on / severity flags) to start enforcing.
   dependency-audit:
     runs-on: ubuntu-latest
     steps:
