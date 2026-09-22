@@ -14,6 +14,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
+      - run: pip freeze
       # tests/conftest.py blanks every API key before Settings loads, so this
       # runs fully offline — no secrets needed in CI.
       - run: pytest
